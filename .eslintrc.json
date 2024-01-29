@@ -1,3 +1,25 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "no-console": ["warn", { "allow": ["info", "error"] }],
+    "quotes": ["error", "single"],
+    "arrow-body-style": ["error", "as-needed"],
+    "no-underscore-dangle": "off",
+    "no-restricted-syntax": "off",
+
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "ctx|args|req|res|next|^_"
+      }
+    ],
+    "@typescript-eslint/no-empty-interface": "off"
+  }
 }
