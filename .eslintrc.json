@@ -1,18 +1,16 @@
 {
   "root": true,
-  "plugins": ["@typescript-eslint"],
-  "extends": [
-    "next/core-web-vitals",
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
+  "plugins": ["@typescript-eslint", "simple-import-sort"],
+  "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier", "next"],
   "rules": {
     "no-console": ["warn", { "allow": ["info", "error"] }],
     "quotes": ["error", "single"],
     "arrow-body-style": ["error", "as-needed"],
     "no-underscore-dangle": "off",
     "no-restricted-syntax": "off",
+
+    "simple-import-sort/imports": "warn",
+    "simple-import-sort/exports": "warn",
 
     "@typescript-eslint/no-unused-vars": [
       "error",
