@@ -1,8 +1,10 @@
 'use client';
 
-import { Avatar, Button, DropdownMenu, Text } from '@radix-ui/themes';
+import { Avatar, Button, DropdownMenu, Flex, Text } from '@radix-ui/themes';
 import cx from 'classnames';
+import eq from 'lodash/eq';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import * as React from 'react';
 
 import { Activity, ChevronDown, Flash, Lock, Scale, Server, TagUser } from '../icons';
@@ -11,8 +13,6 @@ import styles from './header.module.scss';
 export interface IHeaderProps {}
 
 export default function Header(_props: IHeaderProps) {
-  // const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
   const icons = {
     chevron: <ChevronDown fill="white" size={20} />,
     scale: <Scale className="text-warning" fill="currentColor" size={30} />,
@@ -23,7 +23,9 @@ export default function Header(_props: IHeaderProps) {
     user: <TagUser className="text-danger" fill="currentColor" size={30} />,
   };
 
-  // const menuItems = ['Home', 'About', 'Services'];
+  const pathname = usePathname();
+
+  const getButtonVariant = (href: string) => (eq(pathname, href) ? 'solid' : 'ghost');
 
   return (
     <header className={cx(styles['d-wrapper'])}>
@@ -38,45 +40,48 @@ export default function Header(_props: IHeaderProps) {
         {/* Nav */}
         <nav className={cx(styles['d-wrapper__nav'])}>
           <Link href="/" className={cx(styles['d-wrapper__nav__link'])}>
-            <Button className={cx(styles['d-wrapper__nav__link--btn'])} size={'3'} variant="ghost" color="gray">
+            <Button className={cx(styles['d-wrapper__nav__link--btn'])} size={'3'} variant={getButtonVariant('/')} radius="none">
               <Text size={'6'}>Home</Text>
             </Button>
           </Link>
           <Link href="/about" className={cx(styles['d-wrapper__nav__link'])}>
-            <Button className={cx(styles['d-wrapper__nav__link--btn'])} size={'3'} variant="ghost" color="gray">
+            <Button className={cx(styles['d-wrapper__nav__link--btn'])} size={'3'} variant={getButtonVariant('/about')} radius="none">
               <Text size={'6'}>About</Text>
             </Button>
           </Link>
           <DropdownMenu.Root>
             <DropdownMenu.Trigger>
-              <Button className={cx(styles['d-wrapper__nav__dropdown-trigger'])} size={'3'} variant="ghost" color="gray">
-                <Text size={'6'}>Services</Text>
-                {icons.chevron}
+              <Button
+                className={cx(styles['d-wrapper__nav__dropdown-trigger'])}
+                size={'3'}
+                variant={getButtonVariant('/services')}
+                radius="none"
+              >
+                <Flex align={'center'} gap={'1'}>
+                  <Text size={'6'}>Services</Text>
+                  {icons.chevron}
+                </Flex>
               </Button>
             </DropdownMenu.Trigger>
             <DropdownMenu.Content>
-              <DropdownMenu.Item shortcut="⌘ E">Edit</DropdownMenu.Item>
-              <DropdownMenu.Item shortcut="⌘ D">Duplicate</DropdownMenu.Item>
-              <DropdownMenu.Separator />
-              <DropdownMenu.Item shortcut="⌘ N">Archive</DropdownMenu.Item>
-
-              <DropdownMenu.Sub>
-                <DropdownMenu.SubTrigger>More</DropdownMenu.SubTrigger>
-                <DropdownMenu.SubContent>
-                  <DropdownMenu.Item>Move to project…</DropdownMenu.Item>
-                  <DropdownMenu.Item>Move to folder…</DropdownMenu.Item>
-
-                  <DropdownMenu.Separator />
-                  <DropdownMenu.Item>Advanced options…</DropdownMenu.Item>
-                </DropdownMenu.SubContent>
-              </DropdownMenu.Sub>
-
-              <DropdownMenu.Separator />
-              <DropdownMenu.Item>Share</DropdownMenu.Item>
-              <DropdownMenu.Item>Add to favorites</DropdownMenu.Item>
-              <DropdownMenu.Separator />
-              <DropdownMenu.Item shortcut="⌘ ⌫" color="red">
-                Delete
+              {/* <DropdownMenu.Separator /> */}
+              <DropdownMenu.Item>
+                <Flex justify={'center'} align={'center'} gap={'2'}>
+                  {icons.lock}
+                  Service 1
+                </Flex>
+              </DropdownMenu.Item>
+              <DropdownMenu.Item>
+                <Flex justify={'center'} align={'center'} gap={'2'}>
+                  {icons.activity}
+                  Service 2
+                </Flex>
+              </DropdownMenu.Item>
+              <DropdownMenu.Item>
+                <Flex justify={'center'} align={'center'} gap={'2'}>
+                  {icons.server}
+                  Service 3
+                </Flex>
               </DropdownMenu.Item>
             </DropdownMenu.Content>
           </DropdownMenu.Root>

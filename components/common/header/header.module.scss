@@ -28,17 +28,22 @@
       @apply flex;
     }
     &__link {
-      &--btn > span {
-        @apply text-white;
+      &--btn {
+        @apply rounded-none;
         &:hover {
-          @apply text-gray-300;
+          // @apply text-gray-300;
+          @apply cursor-pointer;
+        }
+        // TODO: Remove unused styles later
+        > span {
+          // @apply text-white;
         }
       }
     }
     &__dropdown {
       &-trigger {
         @apply flex;
-        @apply gap-x-1;
+        // @apply gap-x-1;
         @apply items-center;
         @apply cursor-pointer;
         &:focus-visible {
