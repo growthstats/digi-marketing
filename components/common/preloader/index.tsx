@@ -1,6 +1,7 @@
 'use client';
 import './preloader.css';
 
+import { Heading } from '@radix-ui/themes';
 import { gsap } from 'gsap';
 import Lottie from 'lottie-react';
 import * as React from 'react';
@@ -52,7 +53,7 @@ export default function Preloader(_props: IPreloaderProps) {
       );
 
       tl.to('.hide', {
-        x: '0%',
+        x: '-20%',
         duration: 2,
         opacity: 1,
       });
@@ -76,9 +77,10 @@ export default function Preloader(_props: IPreloaderProps) {
     return (
       <div ref={containerRef} className="preloader">
         <div ref={prlRef} className="prl-logo">
-          <h1 ref={prlHideRef} className="hide">
-            Growth Stats &trade;
-          </h1>
+          <Heading as="h1" size={'9'} ref={prlHideRef} className="hide">
+            Growth Stats
+            <span color="black">&trade;</span>
+          </Heading>
         </div>
         <div ref={lightCyanSliderRef} className="lightCyan-slider"></div>
         <div ref={persianGreenSliderRef} className="persianGreen-slider"></div>

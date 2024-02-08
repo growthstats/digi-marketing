@@ -14,9 +14,6 @@
 }
 
 .prl-logo {
-  font-family: 'Abril Fatface', cursive;
-  font-size: 2.25rem /* 20px */;
-  line-height: 2.75rem /* 28px */;
   z-index: 20;
 }
 
@@ -32,11 +29,13 @@
   transform: translateX(-100%);
 }
 .lightCyan-slider {
-  background: #d5f2ef;
+  background: #ccf8e3;
+  /* background: #d5f2ef; */
 }
 
 .persianGreen-slider {
-  background: #03a6a6;
+  background: #33e38f;
+  /* background: #03a6a6; */
 }
 
 .white-slider {
@@ -45,7 +44,11 @@
 
 .hide {
   opacity: 0;
-  color: #03a6a6;
+  color: #01dd73;
+  > span {
+    color: #0e0e0e;
+  }
+  /* color: #03a6a6; */
   font-weight: lighter;
 }
 
