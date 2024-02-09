@@ -1,0 +1,63 @@
+.d-container {
+  @apply relative;
+  @apply min-h-[100px];
+  @apply h-[90vh];
+  @apply overflow-hidden;
+  @apply flex;
+  @apply justify-center;
+  &:before {
+    content: '';
+    @apply absolute;
+    @apply top-0;
+    @apply left-0;
+    @apply right-0;
+    @apply bottom-0;
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
+    z-index: 1;
+  }
+  &__bg-video {
+    @apply absolute;
+    @apply w-full;
+    @apply h-full;
+    @apply object-cover;
+  }
+  &__overlay-content {
+    @apply absolute;
+    @apply z-10;
+    @apply flex;
+    @apply flex-col;
+    @apply w-full;
+    @apply px-4;
+    @apply mx-auto;
+    @apply bottom-[5%];
+    @apply text-center;
+    @apply text-white;
+    @screen md {
+      @apply bottom-[10%];
+      @apply w-9/12;
+    }
+    // @screen lg {
+    //   @apply bottom-40;
+    // }
+  }
+  &__hero-title {
+    // @apply text-5xl;
+    @apply flex;
+    @apply flex-col;
+    @apply text-white;
+    // TODO: Remove unsed styles later
+    text-shadow: 0 0 7px #66ffcc; // 0 0 7px #66ffcc;
+    & span {
+      // @apply text-gray-500;
+      text-shadow:
+        0 0 5px #0fa,
+        0 0 10px #0fa;
+    }
+  }
+  &__hero-subtitle {
+    @apply text-xl;
+    @apply my-5;
+    @apply mx-0;
+    @apply text-white;
+  }
+}
