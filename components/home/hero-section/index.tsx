@@ -8,7 +8,7 @@ export interface IHeroSectionProps {}
 
 export default function HeroSection(_props: IHeroSectionProps) {
   return (
-    <div className={cx(styles['d-container'])}>
+    <section className={cx(styles['d-container'])}>
       <video
         className={cx(styles['d-container__bg-video'])}
         autoPlay
@@ -22,11 +22,9 @@ export default function HeroSection(_props: IHeroSectionProps) {
       <div className={cx(styles['d-container__overlay-content'])}>
         <Heading as="h1" weight={'bold'} className={cx(styles['d-container__hero-title'])} size={'9'}>
           <Text>Your Gateway To</Text>
-          {/* <Text>To</Text> */}
           <Text>Digital Success</Text>
         </Heading>
-        <p className={cx(styles['d-container__hero-subtitle'])}>Empower your brand in the digital landscape with data-driven strategies.</p>
       </div>
-    </div>
+    </section>
   );
 }
