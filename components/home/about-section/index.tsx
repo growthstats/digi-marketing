@@ -1,4 +1,4 @@
-import { Box, Container, Heading, Section, Strong, Text } from '@radix-ui/themes';
+import { Box, Button, Container, Heading, Section, Strong, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -60,6 +60,24 @@ export default function AboutSection(_props: IAboutSectionProps) {
       { opacity: 0, y: 20 }, // from state
       { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
     );
+
+    // Timeline for CTA
+    const tlCTA = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#about-section__cta',
+        start: 'top 90%',
+        end: 'bottom 10%',
+        scrub: false,
+        markers: true,
+        toggleActions: 'play reverse play reverse',
+      },
+    });
+
+    tlCTA.fromTo(
+      '#about-section__cta',
+      { opacity: 0, y: 20 }, // from state
+      { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
+    );
   }, []);
 
   return (
@@ -71,7 +89,7 @@ export default function AboutSection(_props: IAboutSectionProps) {
         {View}
       </Box>
       <Container>
-        <Text as="p" mb="5" size="6" id="about-section__text-content" className={cx(styles['d-container__text-content'])}>
+        <Text as="p" mb="8" size="6" id="about-section__text-content" className={cx(styles['d-container__text-content'])}>
           At <Strong>Growth Stats</Strong>, we understand that in the fast-paced world of{' '}
           <Text as="span" color="mint" weight={'bold'}>
             digital marketing
@@ -83,6 +101,9 @@ export default function AboutSection(_props: IAboutSectionProps) {
           </Text>
         </Text>
       </Container>
+      <Button id="about-section__cta" variant="outline" size={'4'} className={cx(styles['d-container__cta'])}>
+        Learn More
+      </Button>
     </Section>
   );
 }
