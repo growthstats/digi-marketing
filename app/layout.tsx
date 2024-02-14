@@ -10,21 +10,17 @@ import { LenisScroller } from '@/components/common/lennis-scroller';
 import Preloader from '@/components/common/preloader';
 import VisualEditing from '@/components/VisualEditiing';
 
-import { Providers } from './providers';
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="light">
       <body className="bg-white">
         <Theme accentColor="grass" grayColor="olive">
-          <Providers>
-            <Preloader />
-            <Header />
-            {children}
-            {draftMode().isEnabled && <VisualEditing />}
-            <Footer />
-            <LenisScroller />
-          </Providers>
+          <Preloader />
+          <Header />
+          {children}
+          {draftMode().isEnabled && <VisualEditing />}
+          <Footer />
+          <LenisScroller />
         </Theme>
       </body>
     </html>
