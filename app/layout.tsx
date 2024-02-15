@@ -2,6 +2,8 @@ import '@radix-ui/themes/styles.css';
 import './globals.css';
 
 import { Theme } from '@radix-ui/themes';
+import cx from 'classnames';
+import { Inter } from 'next/font/google';
 import { draftMode } from 'next/headers';
 
 import Footer from '@/components/common/footer';
@@ -10,10 +12,12 @@ import { LenisScroller } from '@/components/common/lennis-scroller';
 import Preloader from '@/components/common/preloader';
 import VisualEditing from '@/components/VisualEditiing';
 
+const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' });
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="light">
-      <body className="bg-white">
+      <body className={cx('bg-white', inter.variable)}>
         <Theme accentColor="grass" grayColor="olive">
           <Preloader />
           <Header />
