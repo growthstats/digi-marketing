@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Section, Strong, Text } from '@radix-ui/themes';
+import { Box, Button, Container, Flex, Grid, Heading, Section, Strong, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -82,13 +82,16 @@ export default function AboutSection(_props: IAboutSectionProps) {
 
   return (
     <Section id="about-section" size={'3'} className="border">
-      <Grid columns={'2'} gap={'3'} width={'auto'}>
+      <Grid columns={{ initial: '1', md: '2' }} gap={'3'} width={'auto'}>
         {/* Col 1 */}
         <Box id="about-section__illustration" py={'5'} style={{ border: '1px solid red' }}>
           {View}
         </Box>
         {/* Col 2 */}
         <Container className="border border-blue-700">
+          <Heading id="about-section__heading" as="h2" size={'8'} mb={'8'} className={cx(styles['d-container__heading'])}>
+            10 Years of success for our clients
+          </Heading>
           <Text as="p" mb="8" size="6" id="about-section__text-content" className={cx(styles['d-container__text-content'])}>
             At <Strong>Growth Stats</Strong>, we understand that in the fast-paced world of{' '}
             <Text as="span" color="mint" weight={'bold'}>
@@ -100,32 +103,13 @@ export default function AboutSection(_props: IAboutSectionProps) {
               online presence, boosting engagement, and driving conversions.
             </Text>
           </Text>
+          <Flex justify={'center'}>
+            <Button id="about-section__cta" variant="outline" size={'4'}>
+              Learn More
+            </Button>
+          </Flex>
         </Container>
       </Grid>
     </Section>
-    // <Section id="about-section" size={'3'} className={cx(styles['d-container'])}>
-    //   <Heading id="about-section__heading" as="h2" size={'9'} className={cx(styles['d-container__heading'])}>
-    //     10 Years of success for our clients
-    //   </Heading>
-    //   <Box id="about-section__illustration" className={cx(styles['d-container____illustration'])} py={'5'}>
-    //     {View}
-    //   </Box>
-    //   <Container>
-    //     <Text as="p" mb="8" size="6" id="about-section__text-content" className={cx(styles['d-container__text-content'])}>
-    //       At <Strong>Growth Stats</Strong>, we understand that in the fast-paced world of{' '}
-    //       <Text as="span" color="mint" weight={'bold'}>
-    //         digital marketing
-    //       </Text>
-    //       , staying ahead is key. Our innovative strategies and data-driven approach ensure your brand not only survives but thrives in the
-    //       digital landscape. With a dedicated team of experts, we specialise in maximising your{' '}
-    //       <Text as="span" color="mint" weight={'bold'}>
-    //         online presence, boosting engagement, and driving conversions.
-    //       </Text>
-    //     </Text>
-    //   </Container>
-    //   <Button id="about-section__cta" variant="outline" size={'4'} className={cx(styles['d-container__cta'])}>
-    //     Learn More
-    //   </Button>
-    // </Section>
   );
 }
