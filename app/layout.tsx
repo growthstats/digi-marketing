@@ -3,6 +3,8 @@ import './globals.css';
 
 import { Theme } from '@radix-ui/themes';
 import cx from 'classnames';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Inter } from 'next/font/google';
 import { draftMode } from 'next/headers';
 
@@ -15,6 +17,8 @@ import VisualEditing from '@/components/VisualEditiing';
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  gsap.registerPlugin(ScrollTrigger);
+
   return (
     <html lang="en" className="light">
       <body className={cx('bg-white', inter.variable)}>

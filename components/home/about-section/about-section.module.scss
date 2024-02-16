@@ -1,8 +1,5 @@
 .d-container {
-  @apply container;
   @apply mx-auto;
-  @apply flex;
-  @apply flex-col;
   &__heading {
     @apply opacity-0;
     @apply translate-y-12;
