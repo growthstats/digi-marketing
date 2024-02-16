@@ -9,12 +9,6 @@
     @apply translate-y-12;
     @apply text-center;
   }
-  &__illustration {
-    @apply opacity-0;
-    @apply border;
-    @apply mx-auto;
-    @apply w-[500px];
-  }
   &__text-content {
     @apply text-center;
   }

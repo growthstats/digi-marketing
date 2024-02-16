@@ -1,10 +1,12 @@
 .d-container {
   @apply relative;
+  @apply w-screen;
   @apply min-h-[100px];
   @apply h-[90vh];
   @apply overflow-hidden;
   @apply flex;
   @apply justify-center;
+  left: calc(-50vw + 50%);
   &:before {
     content: '';
     @apply absolute;
