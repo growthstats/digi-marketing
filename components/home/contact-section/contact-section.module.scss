@@ -1,0 +1,25 @@
+.d-section {
+  &__text-wrapper {
+    @apply flex;
+    @apply flex-col;
+  }
+  &__text-title1 {
+    @apply uppercase;
+  }
+  &__text-title2 {
+    @apply uppercase;
+  }
+  &__card {
+    @apply bg-slate-800;
+    @apply px-12;
+    @apply py-14;
+    @apply w-96;
+    @apply ml-auto;
+    &__content {
+      @apply flex;
+      @apply flex-col;
+      @apply text-center;
+      @apply text-white;
+    }
+  }
+}

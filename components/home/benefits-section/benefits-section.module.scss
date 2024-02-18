@@ -1,0 +1,17 @@
+@use '/styles/mixin/layout.module.scss' as *;
+
+.d-section {
+  @apply bg-slate-800;
+  @include edge-to-edge;
+  &__container {
+    @apply container;
+    @apply mx-auto;
+    h3 {
+      @apply text-white;
+      @apply max-w-[60%];
+    }
+    &__card {
+      @apply bg-white;
+    }
+  }
+}
