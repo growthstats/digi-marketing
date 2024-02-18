@@ -5,15 +5,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLottie } from 'lottie-react';
 import * as React from 'react';
 
-import lottieServicesSection from '@/assets/lottie-why-choose-gs-animation.json';
+import lottieWhyChooseSection from '@/assets/lottie-why-choose-gs-animation.json';
 
-import styles from './services-section.module.scss';
+import styles from './why-choose-section.module.scss';
 
-export interface IServicesSectionProps {}
+export interface IWhyChooseSectionProps {}
 
-export default function ServicesSection(_props: IServicesSectionProps) {
+export default function WhyChooseSection(_props: IWhyChooseSectionProps) {
   const options = {
-    animationData: lottieServicesSection,
+    animationData: lottieWhyChooseSection,
     loop: true,
   };
   const style = {
@@ -28,7 +28,7 @@ export default function ServicesSection(_props: IServicesSectionProps) {
     // Timeline for heading
     const tlHeading = gsap.timeline({
       scrollTrigger: {
-        trigger: '#services-section__heading',
+        trigger: '#why-choose-section__heading',
         start: 'top 80%',
         end: 'bottom 10%',
         scrub: false,
@@ -38,7 +38,7 @@ export default function ServicesSection(_props: IServicesSectionProps) {
     });
 
     tlHeading.fromTo(
-      '#services-section__heading',
+      '#why-choose-section__heading',
       { opacity: 0, y: 20 }, // from state
       { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
     );
@@ -46,7 +46,7 @@ export default function ServicesSection(_props: IServicesSectionProps) {
     // Timeline for text content
     const tlTextContent = gsap.timeline({
       scrollTrigger: {
-        trigger: '#services-section__text-content',
+        trigger: '#why-choose-section__text-content',
         start: 'top 80%',
         end: 'bottom 10%',
         scrub: false,
@@ -56,7 +56,7 @@ export default function ServicesSection(_props: IServicesSectionProps) {
     });
 
     tlTextContent.fromTo(
-      '#services-section__text-content',
+      '#why-choose-section__text-content',
       { opacity: 0, y: 20 }, // from state
       { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
     );
@@ -64,7 +64,7 @@ export default function ServicesSection(_props: IServicesSectionProps) {
     // Timeline for CTA
     const tlCTA = gsap.timeline({
       scrollTrigger: {
-        trigger: '#services-section__cta',
+        trigger: '#why-choose-section__cta',
         start: 'top 90%',
         end: 'bottom 10%',
         scrub: false,
@@ -74,24 +74,24 @@ export default function ServicesSection(_props: IServicesSectionProps) {
     });
 
     tlCTA.fromTo(
-      '#services-section__cta',
+      '#why-choose-section__cta',
       { opacity: 0, y: 20 }, // from state
       { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
     );
   }, []);
 
   return (
-    <Section id="services-section" size={'3'} className={cx(styles['d-section'])}>
+    <Section id="why-choose-section" size={'3'} className={cx(styles['d-section'])}>
       <Grid columns={{ initial: '1', md: '2' }} gap={'3'} width={'auto'}>
         {/* Col 1 */}
         <div className={cx(styles['d-section__container'])}>
-          <Heading id="services-section__heading" as="h2" size={'8'} mb={'5'} className={cx(styles['d-section__heading'])}>
+          <Heading id="why-choose-section__heading" as="h2" size={'8'} mb={'5'} className={cx(styles['d-section__heading'])}>
             <Text>Why Choose</Text>{' '}
             <Text weight={'bold'} color="mint">
               Growth Stats?
             </Text>
           </Heading>
-          <Text as="p" mb="5" size="6" id="services-section__text-content" className={cx(styles['d-section__text-content'])}>
+          <Text as="p" mb="5" size="6" id="why-choose-section__text-content" className={cx(styles['d-section__text-content'])}>
             We leverage cutting-edge technologies, harnessing the power of{' '}
             <Text as="span" color="mint" weight={'bold'}>
               Data Analytics
@@ -103,13 +103,13 @@ export default function ServicesSection(_props: IServicesSectionProps) {
             approach ensures you&apos;re always in the loop, empowering you to make informed decisions.
           </Text>
           <Flex justify={'center'}>
-            <Button id="services-section__cta" variant="outline" size={'4'}>
+            <Button id="why-choose-section__cta" variant="outline" size={'4'}>
               Learn More
             </Button>
           </Flex>
         </div>
         {/* Col 2 */}
-        <Box id="services-section__illustration" py={'5'}>
+        <Box id="why-choose-section__illustration" py={'5'}>
           {View}
         </Box>
       </Grid>
