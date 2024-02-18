@@ -47,7 +47,7 @@ export default function ServicesSection(_props: IServicesSectionProps) {
     // Timeline for text content
     const tlTextContent = gsap.timeline({
       scrollTrigger: {
-        trigger: '#about-section__sub-heading',
+        trigger: '#services-section__sub-heading',
         start: 'top 80%',
         end: 'bottom 10%',
         scrub: false,
@@ -57,7 +57,7 @@ export default function ServicesSection(_props: IServicesSectionProps) {
     });
 
     tlTextContent.fromTo(
-      '#about-section__sub-heading',
+      '#services-section__sub-heading',
       { opacity: 0, y: 20 }, // from state
       { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
     );
@@ -65,7 +65,7 @@ export default function ServicesSection(_props: IServicesSectionProps) {
     // Timeline for CTA
     const tlCTA = gsap.timeline({
       scrollTrigger: {
-        trigger: '#about-section__cta',
+        trigger: '#services-section__card-container',
         start: 'top 90%',
         end: 'bottom 10%',
         scrub: false,
@@ -75,7 +75,7 @@ export default function ServicesSection(_props: IServicesSectionProps) {
     });
 
     tlCTA.fromTo(
-      '#about-section__cta',
+      '#services-section__card-container',
       { opacity: 0, y: 20 }, // from state
       { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
     );
@@ -96,15 +96,18 @@ export default function ServicesSection(_props: IServicesSectionProps) {
         </Text>
       </Box>
       {/* Services Grid */}
-      <Grid columns={{ initial: '1', md: '2', lg: '3' }} gap={'9'} width={'auto'}>
+      <Grid id="services-section__card-container" columns={{ initial: '1', md: '2', lg: '3' }} gap={'9'} width={'auto'}>
         {curatedServices.map((service: TCuratedService) => {
           const IconComponent = iconComponents[service.icon];
 
           return (
             <Card key={service.id} variant="classic" className={cx(styles['d-section__card'])}>
               <Box className={cx(styles['d-section__card-content'])}>
-                <IconComponent width={60} height={60} />
-                <Text as="div" size="5" weight="bold">
+                <div className={cx(styles['d-section__card__overlay'])}></div>
+                <div className={cx(styles['d-section__card__circle'])}>
+                  <IconComponent width={60} height={60} />
+                </div>
+                <Text as="div" size="5" weight="bold" className={cx(styles['d-section__card__title'])}>
                   {service.title}
                 </Text>
                 <Text as="div" color="gray" size="4">

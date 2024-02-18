@@ -9,7 +9,76 @@
     }
   }
   &__card {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    @apply bg-white;
+    @apply relative;
+    @apply no-underline;
+    @apply overflow-hidden;
+    @apply z-10;
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease-out;
+    &:hover {
+      transform: translateY(-5px) scale(1.005);
+      box-shadow:
+        0 24px 36px rgba(0, 0, 0, 0.11),
+        0 24px 46px rgba(184, 249, 211, 0.48),
+        rgba(0, 0, 0, 0.15);
+    }
+    &:active {
+      transform: scale(1);
+      box-shadow:
+        0 15px 24px rgba(0, 0, 0, 0.11),
+        0 15px 24px rgba(184, 249, 211, 0.48),
+        rgba(0, 0, 0, 0.15);
+    }
+    &__overlay {
+      @apply w-[118px];
+      @apply h-[118px];
+      @apply absolute;
+      @apply top-16;
+      border-radius: 50%;
+      @apply bg-[#b8f9d3];
+      z-index: -1;
+      transition: transform 0.3s ease-out;
+      .d-section__card:hover & {
+        transform: scale(7) translateZ(0);
+      }
+    }
+    &__circle {
+      @apply w-[131px];
+      @apply h-[131px];
+      @apply bg-white;
+      @apply border;
+      @apply border-2;
+      @apply border-[#b8f9d3];
+      @apply flex;
+      @apply justify-center;
+      @apply items-center;
+      @apply relative;
+      border-radius: 50%;
+      z-index: 1;
+      transition: all 0.3s ease-out;
+      &:after {
+        content: '';
+        @apply w-[118px];
+        @apply h-[118px];
+        @apply block;
+        @apply absolute;
+        @apply bg-[#b8f9d3];
+        border-radius: 50%;
+        transition: opacity 0.3s ease-out;
+        .d-section__card:hover & {
+          @apply bg-[#e2fced];
+        }
+      }
+      .d-section__card:hover & {
+        @apply border-[#e2fced];
+        @apply bg-[#b8f9d3];
+      }
+      svg {
+        z-index: 10000;
+        transform: translateZ(0);
+      }
+    }
   }
   &__card-content {
     @apply flex;
@@ -20,7 +89,6 @@
     @apply text-center;
     @apply py-12;
     @apply px-4;
-    @apply rounded-md;
     svg {
       @apply text-green-800;
     }
