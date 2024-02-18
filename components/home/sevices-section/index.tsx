@@ -1,6 +1,7 @@
 import { Box, Button, Container, Flex, Grid, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLottie } from 'lottie-react';
 import * as React from 'react';
 
@@ -22,6 +23,8 @@ export default function ServicesSection(_props: IServicesSectionProps) {
   const { View } = useLottie(options, style);
 
   React.useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
     // Timeline for heading
     const tlHeading = gsap.timeline({
       scrollTrigger: {
