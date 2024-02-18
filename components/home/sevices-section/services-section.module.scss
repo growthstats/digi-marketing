@@ -1,5 +1,11 @@
-.d-container {
+.d-section {
   @apply mx-auto;
+  &__container {
+    @apply flex;
+    @apply flex-col;
+    @apply items-center;
+    @apply justify-center;
+  }
   &__heading {
     @apply opacity-0;
     @apply translate-y-12;

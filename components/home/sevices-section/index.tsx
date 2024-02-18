@@ -1,11 +1,11 @@
-import { Box, Button, Container, Flex, Grid, Heading, Section, Text } from '@radix-ui/themes';
+import { Box, Button, Flex, Grid, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLottie } from 'lottie-react';
 import * as React from 'react';
 
-import lottieAboutSection from '@/assets/lottie-about-section.json';
+import lottieServicesSection from '@/assets/lottie-why-choose-gs-animation.json';
 
 import styles from './services-section.module.scss';
 
@@ -13,7 +13,7 @@ export interface IServicesSectionProps {}
 
 export default function ServicesSection(_props: IServicesSectionProps) {
   const options = {
-    animationData: lottieAboutSection,
+    animationData: lottieServicesSection,
     loop: true,
   };
   const style = {
@@ -81,17 +81,17 @@ export default function ServicesSection(_props: IServicesSectionProps) {
   }, []);
 
   return (
-    <Section id="services-section" size={'3'} className={cx(styles['d-container'])}>
+    <Section id="services-section" size={'3'} className={cx(styles['d-section'])}>
       <Grid columns={{ initial: '1', md: '2' }} gap={'3'} width={'auto'}>
         {/* Col 1 */}
-        <Container className="border border-blue-700">
-          <Heading id="services-section__heading" as="h2" size={'8'} mb={'5'} className={cx(styles['d-container__heading'])}>
+        <div className={cx(styles['d-section__container'])}>
+          <Heading id="services-section__heading" as="h2" size={'8'} mb={'5'} className={cx(styles['d-section__heading'])}>
             <Text>Why Choose</Text>{' '}
             <Text weight={'bold'} color="mint">
               Growth Stats?
             </Text>
           </Heading>
-          <Text as="p" mb="5" size="6" id="services-section__text-content" className={cx(styles['d-container__text-content'])}>
+          <Text as="p" mb="5" size="6" id="services-section__text-content" className={cx(styles['d-section__text-content'])}>
             We leverage cutting-edge technologies, harnessing the power of{' '}
             <Text as="span" color="mint" weight={'bold'}>
               Data Analytics
@@ -107,9 +107,9 @@ export default function ServicesSection(_props: IServicesSectionProps) {
               Learn More
             </Button>
           </Flex>
-        </Container>
+        </div>
         {/* Col 2 */}
-        <Box id="services-section__illustration" py={'5'} style={{ border: '1px solid red' }}>
+        <Box id="services-section__illustration" py={'5'}>
           {View}
         </Box>
       </Grid>

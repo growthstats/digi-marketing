@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, Grid, Heading, Section, Strong, Text } from '@radix-ui/themes';
+import { Box, Button, Flex, Grid, Heading, Section, Strong, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -81,18 +81,18 @@ export default function AboutSection(_props: IAboutSectionProps) {
   }, []);
 
   return (
-    <Section id="about-section" size={'3'} className="border">
+    <Section id="about-section" size={'3'}>
       <Grid columns={{ initial: '1', md: '2' }} gap={'3'} width={'auto'}>
         {/* Col 1 */}
-        <Box id="about-section__illustration" py={'5'} style={{ border: '1px solid red' }}>
+        <Box id="about-section__illustration" py={'5'}>
           {View}
         </Box>
         {/* Col 2 */}
-        <Container className="border border-blue-700">
-          <Heading id="about-section__heading" as="h2" size={'8'} mb={'8'} className={cx(styles['d-container__heading'])}>
+        <div className={cx(styles['d-section__container'])}>
+          <Heading id="about-section__heading" as="h2" size={'8'} mb={'8'} className={cx(styles['d-section__heading'])}>
             10 Years of success for our clients
           </Heading>
-          <Text as="p" mb="8" size="6" id="about-section__text-content" className={cx(styles['d-container__text-content'])}>
+          <Text as="p" mb="8" size="6" id="about-section__text-content" className={cx(styles['d-section__text-content'])}>
             At <Strong>Growth Stats</Strong>, we understand that in the fast-paced world of{' '}
             <Text as="span" color="mint" weight={'bold'}>
               digital marketing
@@ -108,7 +108,7 @@ export default function AboutSection(_props: IAboutSectionProps) {
               Learn More
             </Button>
           </Flex>
-        </Container>
+        </div>
       </Grid>
     </Section>
   );
