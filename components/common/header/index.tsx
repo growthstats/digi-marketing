@@ -7,22 +7,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import * as React from 'react';
 
-import { Activity, ChevronDown, Flash, Lock, Scale, Server, TagUser } from '../icons';
+import { ActivityIcon, ChevronDownIcon, LockIcon, ServerIcon } from '../icons/icon-components';
 import styles from './header.module.scss';
 
 export interface IHeaderProps {}
 
 export default function Header(_props: IHeaderProps) {
-  const icons = {
-    chevron: <ChevronDown fill="white" size={20} />,
-    scale: <Scale className="text-warning" fill="currentColor" size={30} />,
-    lock: <Lock className="text-success" fill="currentColor" size={30} />,
-    activity: <Activity className="text-secondary" fill="currentColor" size={30} />,
-    flash: <Flash className="text-primary" fill="currentColor" size={30} />,
-    server: <Server className="text-success" fill="currentColor" size={30} />,
-    user: <TagUser className="text-danger" fill="currentColor" size={30} />,
-  };
-
   const pathname = usePathname();
 
   const getButtonVariant = (href: string) => (eq(pathname, href) ? 'solid' : 'ghost');
@@ -59,7 +49,7 @@ export default function Header(_props: IHeaderProps) {
               >
                 <Flex align={'center'} gap={'1'}>
                   <Text size={'6'}>Services</Text>
-                  {icons.chevron}
+                  <ChevronDownIcon fill="white" size={20} />
                 </Flex>
               </Button>
             </DropdownMenu.Trigger>
@@ -67,19 +57,19 @@ export default function Header(_props: IHeaderProps) {
               {/* <DropdownMenu.Separator /> */}
               <DropdownMenu.Item>
                 <Flex justify={'center'} align={'center'} gap={'2'}>
-                  {icons.lock}
+                  <LockIcon className="text-success" fill="currentColor" size={30} />
                   Service 1
                 </Flex>
               </DropdownMenu.Item>
               <DropdownMenu.Item>
                 <Flex justify={'center'} align={'center'} gap={'2'}>
-                  {icons.activity}
+                  <ActivityIcon className="text-secondary" fill="currentColor" size={30} />
                   Service 2
                 </Flex>
               </DropdownMenu.Item>
               <DropdownMenu.Item>
                 <Flex justify={'center'} align={'center'} gap={'2'}>
-                  {icons.server}
+                  <ServerIcon className="text-success" fill="currentColor" size={30} />
                   Service 3
                 </Flex>
               </DropdownMenu.Item>
