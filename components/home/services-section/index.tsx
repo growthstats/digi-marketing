@@ -1,0 +1,121 @@
+import { Box, Card, Grid, Heading, Link, Section, Text } from '@radix-ui/themes';
+import cx from 'classnames';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import * as React from 'react';
+
+import rawCuratedServices from '@/assets/curated-services.json';
+import { iconComponents, TIconName } from '@/components/common/icons';
+
+import styles from './services-section.module.scss';
+
+export interface IServicesSectionProps {}
+
+type TCuratedService = {
+  id: number;
+  title: string;
+  description: string;
+  linkText: string;
+  icon: TIconName;
+};
+
+export default function ServicesSection(_props: IServicesSectionProps) {
+  // Ensure the icon names are correct in the JSON
+  const curatedServices: TCuratedService[] = rawCuratedServices as TCuratedService[];
+
+  React.useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Timeline for heading
+    const tlHeading = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#services-section__heading',
+        start: 'top 80%',
+        end: 'bottom 10%',
+        scrub: false,
+        markers: true,
+        toggleActions: 'play reverse play reverse', // onEnter onLeave onEnterBack onLeaveBack
+      },
+    });
+
+    tlHeading.fromTo(
+      '#services-section__heading',
+      { opacity: 0, y: 20 }, // from state
+      { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
+    );
+
+    // Timeline for text content
+    const tlTextContent = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#about-section__sub-heading',
+        start: 'top 80%',
+        end: 'bottom 10%',
+        scrub: false,
+        markers: true,
+        toggleActions: 'play reverse play reverse',
+      },
+    });
+
+    tlTextContent.fromTo(
+      '#about-section__sub-heading',
+      { opacity: 0, y: 20 }, // from state
+      { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
+    );
+
+    // Timeline for CTA
+    const tlCTA = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#about-section__cta',
+        start: 'top 90%',
+        end: 'bottom 10%',
+        scrub: false,
+        markers: true,
+        toggleActions: 'play reverse play reverse',
+      },
+    });
+
+    tlCTA.fromTo(
+      '#about-section__cta',
+      { opacity: 0, y: 20 }, // from state
+      { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
+    );
+  }, []);
+
+  return (
+    <Section id="services-section">
+      <Heading id="services-section__heading" as="h2" size={'9'} mb={'6'} className={cx(styles['d-section__heading'])}>
+        We Offer{' '}
+        <Text as="span" color="mint">
+          Best Services{' '}
+        </Text>
+        To Our Clients
+      </Heading>
+      <Box id="services-section__sub-heading" className={cx(styles['d-section__sub-heading'])} mb={'8'}>
+        <Text as="p" align={'center'} size={'5'}>
+          Our transparent and client-centric approach ensures you are always in the loop, empowering you to make informed decisions.
+        </Text>
+      </Box>
+      {/* Services Grid */}
+      <Grid columns={{ initial: '1', md: '2', lg: '3' }} gap={'9'} width={'auto'}>
+        {curatedServices.map((service: TCuratedService) => {
+          const IconComponent = iconComponents[service.icon];
+
+          return (
+            <Card key={service.id} variant="classic" className={cx(styles['d-section__card'])}>
+              <Box className={cx(styles['d-section__card-content'])}>
+                <IconComponent width={60} height={60} />
+                <Text as="div" size="5" weight="bold">
+                  {service.title}
+                </Text>
+                <Text as="div" color="gray" size="4">
+                  {service.description}
+                </Text>
+                <Link href={'#'}>{service.linkText}</Link>
+              </Box>
+            </Card>
+          );
+        })}
+      </Grid>
+    </Section>
+  );
+}

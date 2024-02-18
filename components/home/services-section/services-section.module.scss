@@ -1,0 +1,28 @@
+.d-section {
+  &__heading {
+    @apply text-center;
+  }
+  &__sub-heading {
+    @apply px-10;
+    @screen md {
+      @apply px-40;
+    }
+  }
+  &__card {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+  &__card-content {
+    @apply flex;
+    @apply flex-col;
+    @apply justify-center;
+    @apply items-center;
+    @apply gap-4;
+    @apply text-center;
+    @apply py-12;
+    @apply px-4;
+    @apply rounded-md;
+    svg {
+      @apply text-green-800;
+    }
+  }
+}
