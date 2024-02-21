@@ -30,17 +30,21 @@ export default function ContactSection(_props: IContactSectionProps) {
       { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.2 }, // to state
     );
 
-    tlHeading.to('#contact-section__text-title2', {
-      x: 24,
-    });
+    // tlHeading.fromTo(
+    //   '#contact-section__text-title2',
+    //   {
+    //     marginLeft: 0,
+    //   },
+    //   { marginLeft: 64 },
+    // );
   }, []);
 
   return (
     <Section id="contact-section">
-      <Grid columns={{ initial: '1', md: '2' }} gap={'9'}>
+      <Grid columns={{ initial: '1', md: '1fr auto' }} gap={'9'}>
         {/* Col 1 */}
-        <Box id="contact-section__text-wrapper" className={cx(styles['d-section__text-wrapper'])}>
-          <Box>
+        <Box id="contact-section__text-wrapper" className={cx(styles['d-section__text-wrapper'])} grow={'1'}>
+          <Box className="flex justify-center lg:justify-start">
             <Text
               id="contact-section__text-title1"
               as="span"
@@ -51,7 +55,7 @@ export default function ContactSection(_props: IContactSectionProps) {
               Embark on a
             </Text>
           </Box>
-          <Box>
+          <Box className="flex justify-center">
             <Text
               id="contact-section__text-title2"
               as="span"
@@ -62,7 +66,7 @@ export default function ContactSection(_props: IContactSectionProps) {
               Joruney of
             </Text>
           </Box>
-          <Box>
+          <Box className="flex justify-center lg:justify-end">
             <Text
               id="contact-section__text-title3"
               as="span"
@@ -70,7 +74,18 @@ export default function ContactSection(_props: IContactSectionProps) {
               weight={'bold'}
               className={cx(styles['d-section__text-title3'], 'contact-section-text')}
             >
-              Unprecedented Growth
+              Unprecedented
+            </Text>
+          </Box>
+          <Box className="flex justify-center lg:justify-end">
+            <Text
+              id="contact-section__text-title3"
+              as="span"
+              size={'9'}
+              weight={'bold'}
+              className={cx(styles['d-section__text-title3'], 'contact-section-text')}
+            >
+              Growth
             </Text>
           </Box>
         </Box>
