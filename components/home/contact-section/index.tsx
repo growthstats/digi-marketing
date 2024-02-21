@@ -18,7 +18,7 @@ export default function ContactSection(_props: IContactSectionProps) {
         start: 'top 70%',
         end: 'bottom 10%',
         scrub: false,
-        markers: true,
+        markers: false,
         toggleActions: 'play reverse play reverse', // onEnter onLeave onEnterBack onLeaveBack
       },
     });

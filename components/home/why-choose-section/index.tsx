@@ -32,7 +32,7 @@ export default function WhyChooseSection(_props: IWhyChooseSectionProps) {
         start: 'top 80%',
         end: 'bottom 10%',
         scrub: false,
-        markers: true,
+        markers: false,
         toggleActions: 'play reverse play reverse', // onEnter onLeave onEnterBack onLeaveBack
       },
     });
@@ -50,7 +50,7 @@ export default function WhyChooseSection(_props: IWhyChooseSectionProps) {
         start: 'top 80%',
         end: 'bottom 10%',
         scrub: false,
-        markers: true,
+        markers: false,
         toggleActions: 'play reverse play reverse',
       },
     });
@@ -68,7 +68,7 @@ export default function WhyChooseSection(_props: IWhyChooseSectionProps) {
         start: 'top 90%',
         end: 'bottom 10%',
         scrub: false,
-        markers: true,
+        markers: false,
         toggleActions: 'play reverse play reverse',
       },
     });

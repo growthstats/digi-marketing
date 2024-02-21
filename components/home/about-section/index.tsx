@@ -32,7 +32,7 @@ export default function AboutSection(_props: IAboutSectionProps) {
         start: 'top 80%',
         end: 'bottom 10%',
         scrub: false,
-        markers: true,
+        markers: false,
         toggleActions: 'play reverse play reverse', // onEnter onLeave onEnterBack onLeaveBack
       },
     });
@@ -50,7 +50,7 @@ export default function AboutSection(_props: IAboutSectionProps) {
         start: 'top 80%',
         end: 'bottom 10%',
         scrub: false,
-        markers: true,
+        markers: false,
         toggleActions: 'play reverse play reverse',
       },
     });
@@ -68,7 +68,7 @@ export default function AboutSection(_props: IAboutSectionProps) {
         start: 'top 90%',
         end: 'bottom 10%',
         scrub: false,
-        markers: true,
+        markers: false,
         toggleActions: 'play reverse play reverse',
       },
     });
