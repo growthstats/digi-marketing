@@ -81,7 +81,7 @@ export default function AboutSection(_props: IAboutSectionProps) {
   }, []);
 
   return (
-    <Section id="about-section" size={'3'}>
+    <Section id="about-section" size={'3'} className={cx(styles['d-section'])}>
       <Grid columns={{ initial: '1', md: '2' }} gap={'3'} width={'auto'}>
         {/* Col 1 */}
         <Box id="about-section__illustration" py={'5'}>

@@ -1,5 +1,7 @@
-import { Box, Button, Card, Grid, Section, Text } from '@radix-ui/themes';
+import { Box, Card, Grid, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import * as React from 'react';
 
 import styles from './contact-section.module.scss';
@@ -7,23 +9,67 @@ import styles from './contact-section.module.scss';
 export interface IContactSectionProps {}
 
 export default function ContactSection(_props: IContactSectionProps) {
+  React.useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tlHeading = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#contact-section__text-wrapper',
+        start: 'top 70%',
+        end: 'bottom 10%',
+        scrub: false,
+        markers: true,
+        toggleActions: 'play reverse play reverse', // onEnter onLeave onEnterBack onLeaveBack
+      },
+    });
+
+    tlHeading.fromTo(
+      // '#contact-section__text-title1',
+      '.contact-section-text',
+      { opacity: 0, y: 20 }, // from state
+      { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.2 }, // to state
+    );
+
+    tlHeading.to('#contact-section__text-title2', {
+      x: 24,
+    });
+  }, []);
+
   return (
     <Section id="contact-section">
       <Grid columns={{ initial: '1', md: '2' }} gap={'9'}>
         {/* Col 1 */}
-        <Box className={cx(styles['d-section__text-wrapper'])}>
+        <Box id="contact-section__text-wrapper" className={cx(styles['d-section__text-wrapper'])}>
           <Box>
-            <Text as="span" size={'9'} weight={'bold'} className={cx(styles['d-section__text-title1'])}>
+            <Text
+              id="contact-section__text-title1"
+              as="span"
+              size={'9'}
+              weight={'bold'}
+              className={cx(styles['d-section__text-title1'], 'contact-section-text')}
+            >
               Embark on a
             </Text>
           </Box>
           <Box>
-            <Text as="span" size={'9'} weight={'bold'} className={cx(styles['d-section__text-title1'])}>
+            <Text
+              id="contact-section__text-title2"
+              as="span"
+              size={'9'}
+              weight={'bold'}
+              className={cx(styles['d-section__text-title2'], 'contact-section-text')}
+            >
               Joruney of
             </Text>
           </Box>
           <Box>
-            <Text as="span" size={'9'} weight={'bold'} className={cx(styles['d-section__text-title2'])}>
+            <Text
+              id="contact-section__text-title3"
+              as="span"
+              size={'9'}
+              weight={'bold'}
+              className={cx(styles['d-section__text-title3'], 'contact-section-text')}
+            >
               Unprecedented Growth
             </Text>
           </Box>
@@ -38,14 +84,14 @@ export default function ContactSection(_props: IContactSectionProps) {
               Let&apos;s transform your online presence and elevate your brand to new heights. Explore our services and take the first step
               towards digital excellence.
             </Text>
-            <Button variant="outline" radius="none">
-              Work with us
-            </Button>
+            <Box>
+              <button className={cx(styles['d-section__card__cta'])}>
+                <Text weight={'bold'}>Work with us</Text>
+              </button>
+            </Box>
           </Box>
         </Card>
       </Grid>
     </Section>
   );
 }
-
-// Embark on a journey of unprecedented growth with Growth Stats

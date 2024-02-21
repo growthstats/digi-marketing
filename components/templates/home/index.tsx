@@ -19,7 +19,6 @@ export default function HomePageTemplate(_props: IHomePageTemplateProps) {
       <BenefitsSection />
       <ServicesSection />
       <ContactSection />
-      <div style={{ minHeight: '100vh', backgroundColor: '#efefef' }}>SBC</div>
     </div>
   );
 }

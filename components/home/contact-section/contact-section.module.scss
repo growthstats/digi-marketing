@@ -1,12 +1,14 @@
+@use '/styles/mixin/button.module.scss' as *;
+
 .d-section {
   &__text-wrapper {
     @apply flex;
     @apply flex-col;
+    @apply justify-center;
   }
-  &__text-title1 {
-    @apply uppercase;
-  }
-  &__text-title2 {
+  &__text-title1,
+  &__text-title2,
+  &__text-title3 {
     @apply uppercase;
   }
   &__card {
@@ -20,6 +22,13 @@
       @apply flex-col;
       @apply text-center;
       @apply text-white;
+    }
+    &__cta {
+      @apply py-3;
+      @apply px-6;
+      @apply text-white;
+      @apply uppercase;
+      @include btn-border-drawing(#fff, #b8f9d3, 4px, bottom, right);
     }
   }
 }
