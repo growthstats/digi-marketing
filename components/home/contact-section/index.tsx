@@ -2,14 +2,14 @@ import { Box, Card, Grid, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import * as React from 'react';
+import { useEffect } from 'react';
 
 import styles from './contact-section.module.scss';
 
 export interface IContactSectionProps {}
 
 export default function ContactSection(_props: IContactSectionProps) {
-  React.useEffect(() => {
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     const tlHeading = gsap.timeline({
@@ -29,14 +29,6 @@ export default function ContactSection(_props: IContactSectionProps) {
       { opacity: 0, y: 20 }, // from state
       { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.2 }, // to state
     );
-
-    // tlHeading.fromTo(
-    //   '#contact-section__text-title2',
-    //   {
-    //     marginLeft: 0,
-    //   },
-    //   { marginLeft: 64 },
-    // );
   }, []);
 
   return (
@@ -44,7 +36,7 @@ export default function ContactSection(_props: IContactSectionProps) {
       <Grid columns={{ initial: '1', md: '1fr auto' }} gap={'9'}>
         {/* Col 1 */}
         <Box id="contact-section__text-wrapper" className={cx(styles['d-section__text-wrapper'])} grow={'1'}>
-          <Box className="flex justify-center lg:justify-start">
+          <Box className="flex justify-center ">
             <Text
               id="contact-section__text-title1"
               as="span"
@@ -66,7 +58,7 @@ export default function ContactSection(_props: IContactSectionProps) {
               Joruney of
             </Text>
           </Box>
-          <Box className="flex justify-center lg:justify-end">
+          <Box className="flex justify-center ">
             <Text
               id="contact-section__text-title3"
               as="span"
@@ -77,7 +69,7 @@ export default function ContactSection(_props: IContactSectionProps) {
               Unprecedented
             </Text>
           </Box>
-          <Box className="flex justify-center lg:justify-end">
+          <Box className="flex justify-center ">
             <Text
               id="contact-section__text-title3"
               as="span"

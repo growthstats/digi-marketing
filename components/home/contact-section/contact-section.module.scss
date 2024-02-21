@@ -8,6 +8,9 @@
     @screen lg {
       @apply px-8;
     }
+    @screen 2xl {
+      @apply px-28;
+    }
   }
   &__text-title1,
   &__text-title2,
