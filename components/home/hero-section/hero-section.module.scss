@@ -38,19 +38,14 @@
       @apply bottom-[10%];
       @apply w-9/12;
     }
-    // @screen lg {
-    //   @apply bottom-40;
-    // }
   }
   &__hero-title {
     // @apply text-5xl;
     @apply flex;
     @apply flex-col;
     @apply text-white;
-    // TODO: Remove unsed styles later
-    text-shadow: 0 0 7px #66ffcc; // 0 0 7px #66ffcc;
+    text-shadow: 0 0 7px #66ffcc;
     & span {
-      // @apply text-gray-500;
       text-shadow:
         0 0 5px #0fa,
         0 0 10px #0fa;
