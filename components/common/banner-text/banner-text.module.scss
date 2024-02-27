@@ -1,0 +1,17 @@
+.d-container {
+  @apply -mt-1;
+  &__inline-wrapper {
+    @apply bg-[#3eb489];
+    @apply text-white;
+    @apply inline-block;
+    @apply text-nowrap;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  }
+  &__heading {
+    @apply uppercase;
+    @apply leading-tight;
+    @apply tracking-tighter;
+    @apply font-bold;
+    @apply inline-block;
+  }
+}
