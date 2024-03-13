@@ -1,5 +1,4 @@
 .d-wrapper {
-  // @apply bg-gray-800;
   @apply absolute;
   @apply top-0;
   @apply z-10;
@@ -31,10 +30,8 @@
       &--btn {
         @apply rounded-none;
         &:hover {
-          // @apply text-gray-300;
           @apply cursor-pointer;
         }
-        // TODO: Remove unused styles later
         > span {
           @apply text-white;
         }
@@ -43,7 +40,6 @@
     &__dropdown {
       &-trigger {
         @apply flex;
-        // @apply gap-x-1;
         @apply items-center;
         @apply cursor-pointer;
         &:focus-visible {
@@ -56,33 +52,31 @@
           }
         }
       }
-      &-content {
-        @apply p-2;
-        @apply bg-gray-700;
-        @apply text-white;
-        @apply rounded;
-      }
-      &-item {
-        @apply p-2;
-        @apply rounded;
-        &:hover {
-          @apply bg-gray-600;
+      &__content-grid {
+        &__col-icon {
+          @apply text-green-700;
+        }
+        &__col-title {
+          @apply text-slate-600;
+        }
+        &__col-content {
+          @apply flex;
+          @apply flex-col;
+          @apply gap-2;
+          & a {
+            @apply font-bold;
+            @apply text-slate-600;
+            &:hover {
+              @apply text-green-700;
+            }
+          }
         }
       }
     }
   }
   &__cta {
-    // @apply bg-transparent;
-    // @apply border;
-    // @apply border-white;
-    // @apply rounded;
-    // @apply text-white;
-    // @apply py-2;
-    // @apply px-4;
     &:hover {
       @apply cursor-pointer;
-    }
-    > span {
     }
   }
 }

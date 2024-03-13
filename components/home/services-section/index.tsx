@@ -2,7 +2,7 @@ import { Box, Card, Grid, Heading, Link, Section, Text } from '@radix-ui/themes'
 import cx from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import * as React from 'react';
+import { useEffect } from 'react';
 
 import rawCuratedServices from '@/assets/curated-services.json';
 import { iconComponents, TIconName } from '@/components/common/icons';
@@ -23,7 +23,7 @@ export default function ServicesSection(_props: IServicesSectionProps) {
   // Ensure the icon names are correct in the JSON
   const curatedServices: TCuratedService[] = rawCuratedServices as TCuratedService[];
 
-  React.useEffect(() => {
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     // Timeline for heading
