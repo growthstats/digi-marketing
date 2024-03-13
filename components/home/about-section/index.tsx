@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Grid, Heading, Section, Strong, Text } from '@radix-ui/themes';
+import { Box, Button, Flex, Grid, Section, Strong, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -6,6 +6,7 @@ import { useLottie } from 'lottie-react';
 import * as React from 'react';
 
 import lottieAboutSection from '@/assets/lottie-about-section.json';
+import BannerText from '@/components/common/banner-text';
 
 import styles from './about-section.module.scss';
 
@@ -17,7 +18,9 @@ export default function AboutSection(_props: IAboutSectionProps) {
     loop: true,
   };
   const style = {
-    height: 300,
+    width: '70%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   };
 
   const { View } = useLottie(options, style);
@@ -28,7 +31,7 @@ export default function AboutSection(_props: IAboutSectionProps) {
     // Timeline for heading
     const tlHeading = gsap.timeline({
       scrollTrigger: {
-        trigger: '#about-section__heading',
+        trigger: '.about-section__heading',
         start: 'top 80%',
         end: 'bottom 10%',
         scrub: false,
@@ -38,9 +41,9 @@ export default function AboutSection(_props: IAboutSectionProps) {
     });
 
     tlHeading.fromTo(
-      '#about-section__heading',
+      '.about-section__heading',
       { opacity: 0, y: 20 }, // from state
-      { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
+      { opacity: 1, y: 0, duration: 0.5, delay: 0.3, stagger: 0.3 }, // to state
     );
 
     // Timeline for text content
@@ -89,9 +92,10 @@ export default function AboutSection(_props: IAboutSectionProps) {
         </Box>
         {/* Col 2 */}
         <div className={cx(styles['d-section__container'])}>
-          <Heading id="about-section__heading" as="h2" size={'8'} mb={'8'} className={cx(styles['d-section__heading'])}>
-            10 Years of success for our clients
-          </Heading>
+          <Box mb={'8'} className="text-center">
+            <BannerText wrapperClassName="about-section__heading" text="welcome to" textClassName="text-5xl" />
+            <BannerText wrapperClassName="about-section__heading" text="growth stats" textClassName="text-6xl" />
+          </Box>
           <Text as="p" mb="8" size="6" id="about-section__text-content" className={cx(styles['d-section__text-content'])}>
             At <Strong>Growth Stats</Strong>, we understand that in the fast-paced world of{' '}
             <Text as="span" color="mint" weight={'bold'}>

@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Grid, Heading, Section, Text } from '@radix-ui/themes';
+import { Box, Button, Flex, Grid, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -6,6 +6,7 @@ import { useLottie } from 'lottie-react';
 import * as React from 'react';
 
 import lottieWhyChooseSection from '@/assets/lottie-why-choose-gs-animation.json';
+import BannerText from '@/components/common/banner-text';
 
 import styles from './why-choose-section.module.scss';
 
@@ -28,7 +29,7 @@ export default function WhyChooseSection(_props: IWhyChooseSectionProps) {
     // Timeline for heading
     const tlHeading = gsap.timeline({
       scrollTrigger: {
-        trigger: '#why-choose-section__heading',
+        trigger: '.why-choose-section__heading',
         start: 'top 80%',
         end: 'bottom 10%',
         scrub: false,
@@ -38,9 +39,9 @@ export default function WhyChooseSection(_props: IWhyChooseSectionProps) {
     });
 
     tlHeading.fromTo(
-      '#why-choose-section__heading',
+      '.why-choose-section__heading',
       { opacity: 0, y: 20 }, // from state
-      { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
+      { opacity: 1, y: 0, duration: 0.5, delay: 0.3, stagger: 0.3 }, // to state
     );
 
     // Timeline for text content
@@ -85,12 +86,10 @@ export default function WhyChooseSection(_props: IWhyChooseSectionProps) {
       <Grid columns={{ initial: '1', md: '2' }} gap={'3'} width={'auto'}>
         {/* Col 1 */}
         <div className={cx(styles['d-section__container'])}>
-          <Heading id="why-choose-section__heading" as="h2" size={'8'} mb={'5'} className={cx(styles['d-section__heading'])}>
-            <Text>Why Choose</Text>{' '}
-            <Text weight={'bold'} color="mint">
-              Growth Stats?
-            </Text>
-          </Heading>
+          <Box mb={'8'} className="text-center">
+            <BannerText wrapperClassName="why-choose-section__heading" text="why choose" textClassName="text-5xl" />
+            <BannerText wrapperClassName="why-choose-section__heading" text="growth stats?" textClassName="text-6xl" />
+          </Box>
           <Text as="p" mb="5" size="6" id="why-choose-section__text-content" className={cx(styles['d-section__text-content'])}>
             We leverage cutting-edge technologies, harnessing the power of{' '}
             <Text as="span" color="mint" weight={'bold'}>
