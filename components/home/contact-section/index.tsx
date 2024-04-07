@@ -39,9 +39,9 @@ export default function ContactSection(_props: IContactSectionProps) {
         {/* Col 1 */}
         <Box id="contact-section__text-wrapper" className={cx(styles['d-section__text-wrapper'])} grow={'1'}>
           <Box mb={'8'} className="text-center">
-            <BannerText wrapperClassName="about-section__heading" text="Embark on a journey of" textClassName="text-4xl" />
-            <BannerText wrapperClassName="about-section__heading" text="Unprecedented" textClassName="text-5xl" />
-            <BannerText wrapperClassName="about-section__heading" text="growth" textClassName="text-6xl" />
+            <BannerText wrapperClassName="contact-section-text" text="Embark on a journey of" textClassName="text-4xl" />
+            <BannerText wrapperClassName="contact-section-text" text="Unprecedented" textClassName="text-5xl" />
+            <BannerText wrapperClassName="contact-section-text" text="growth" textClassName="text-6xl" />
           </Box>
         </Box>
 
