@@ -4,41 +4,41 @@
     "title": "SEO",
     "description": "We invent and create beautiful brands, digital products, and other most relevant digital things.",
     "linkText": "Learn More",
-    "src": "/seo-icon.png"
+    "src": "/seo-service-alt.avif"
   },
   {
     "id": 2,
-    "title": "Web Design & Development",
+    "title": "Email Marketing & Automation",
     "description": "We invent and create beautiful brands, digital products, and other most relevant digital things.",
     "linkText": "Learn More",
-    "src": "/seo-icon.png"
+    "src": "/email-marketing-service.jpeg"
   },
   {
     "id": 3,
-    "title": "Facebook & Google Ads",
+    "title": "Social Media Services",
     "description": "We invent and create beautiful brands, digital products, and other most relevant digital things.",
     "linkText": "Learn More",
-    "src": "/seo-icon.png"
+    "src": "/social-media-service-alt.webp"
   },
   {
     "id": 4,
-    "title": "Creative Productions",
+    "title": "Web Design",
     "description": "We invent and create beautiful brands, digital products, and other most relevant digital things.",
     "linkText": "Learn More",
-    "src": "/seo-icon.png"
+    "src": "/web-design-service.jpeg"
   },
   {
     "id": 5,
-    "title": "Paid Media Advertising",
+    "title": "Web Development",
     "description": "We invent and create beautiful brands, digital products, and other most relevant digital things.",
     "linkText": "Learn More",
-    "src": "/seo-icon.png"
+    "src": "/web-development-service.jpeg"
   },
   {
     "id": 6,
-    "title": "Social Media Marketing",
+    "title": "3D Websites",
     "description": "We invent and create beautiful brands, digital products, and other most relevant digital things.",
     "linkText": "Learn More",
-    "src": "/seo-icon.png"
+    "src": "/3d-website-service.jpeg"
   }
 ]

@@ -12,6 +12,7 @@ import styles from './why-choose-section.module.scss';
 
 export interface IWhyChooseSectionProps {}
 
+// TODO: Remove this later
 export default function WhyChooseSection(_props: IWhyChooseSectionProps) {
   const options = {
     animationData: lottieWhyChooseSection,

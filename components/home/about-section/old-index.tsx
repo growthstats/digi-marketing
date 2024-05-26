@@ -12,6 +12,7 @@ import styles from './about-section.module.scss';
 
 export interface IAboutSectionProps {}
 
+// TODO: Remove this later
 export default function AboutSection(_props: IAboutSectionProps) {
   const options = {
     animationData: lottieAboutSection,
