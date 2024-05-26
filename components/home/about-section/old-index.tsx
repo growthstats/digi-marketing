@@ -1,9 +1,11 @@
-import { Box, Button, Flex, Section, Strong, Text } from '@radix-ui/themes';
+import { Box, Button, Flex, Grid, Section, Strong, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLottie } from 'lottie-react';
 import { useEffect } from 'react';
 
+import lottieAboutSection from '@/assets/lottie-about-section.json';
 import BannerText from '@/components/common/banner-text';
 
 import styles from './about-section.module.scss';
@@ -11,6 +13,18 @@ import styles from './about-section.module.scss';
 export interface IAboutSectionProps {}
 
 export default function AboutSection(_props: IAboutSectionProps) {
+  const options = {
+    animationData: lottieAboutSection,
+    loop: true,
+  };
+  const style = {
+    width: '70%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  };
+
+  const { View } = useLottie(options, style);
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -71,43 +85,35 @@ export default function AboutSection(_props: IAboutSectionProps) {
 
   return (
     <Section id="about-section" size={'3'} className={cx(styles['d-section'])}>
-      <div className={cx(styles['d-section__container'])}>
-        <Box mb={'8'} className="text-center">
-          <BannerText wrapperClassName="about-section__heading" text="welcome to" textClassName="text-5xl" />
-          <BannerText wrapperClassName="about-section__heading" text="growth stats" textClassName="text-6xl" />
+      <Grid columns={{ initial: '1', md: '2' }} gap={'3'} width={'auto'}>
+        {/* Col 1 */}
+        <Box id="about-section__illustration" py={'5'}>
+          {View}
         </Box>
-        <Text as="div" mb="8" size="6" id="about-section__text-content" className={cx(styles['d-section__text-content'])}>
-          <Text as="p" mb={'1'}>
-            Our <Strong>Digital Marketing</Strong> expertise delivers what Businesses want ……
+        {/* Col 2 */}
+        <div className={cx(styles['d-section__container'])}>
+          <Box mb={'8'} className="text-center">
+            <BannerText wrapperClassName="about-section__heading" text="welcome to" textClassName="text-5xl" />
+            <BannerText wrapperClassName="about-section__heading" text="growth stats" textClassName="text-6xl" />
+          </Box>
+          <Text as="p" mb="8" size="6" id="about-section__text-content" className={cx(styles['d-section__text-content'])}>
+            At <Strong>Growth Stats</Strong>, we understand that in the fast-paced world of{' '}
             <Text as="span" color="mint" weight={'bold'}>
-              Growth
+              digital marketing
+            </Text>
+            , staying ahead is key. Our innovative strategies and data-driven approach ensure your brand not only survives but thrives in
+            the digital landscape. With a dedicated team of experts, we specialise in maximising your{' '}
+            <Text as="span" color="mint" weight={'bold'}>
+              online presence, boosting engagement, and driving conversions.
             </Text>
           </Text>
-          <Text as="p" mb={'1'}>
-            We minutely monitor the <Strong>Online Promotion Impact</Strong> and deliver ……
-            <Text as="span" color="mint" weight={'bold'}>
-              Growth
-            </Text>
-          </Text>
-          <Text as="p" mb={'1'}>
-            <Strong>Creative Visual Inputs</Strong> that make your business website stand out, leading to ……
-            <Text as="span" color="mint" weight={'bold'}>
-              Growth
-            </Text>
-          </Text>
-          <Text as="p" mb={'1'}>
-            Creating <Strong>Engaging Content</Strong> that keeps clients coming to you repeatedly ……
-            <Text as="span" color="mint" weight={'bold'}>
-              Growth
-            </Text>
-          </Text>
-        </Text>
-        <Flex justify={'center'}>
-          <Button id="about-section__cta" variant="outline" size={'4'}>
-            Learn More
-          </Button>
-        </Flex>
-      </div>
+          <Flex justify={'center'}>
+            <Button id="about-section__cta" variant="outline" size={'4'}>
+              Learn More
+            </Button>
+          </Flex>
+        </div>
+      </Grid>
     </Section>
   );
 }

@@ -6,7 +6,6 @@ import eq from 'lodash/eq';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import * as React from 'react';
 
 import { ChevronDownIcon } from '../icons/icon-components';
 import styles from './header.module.scss';

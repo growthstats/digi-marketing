@@ -14,9 +14,10 @@
     @apply no-underline;
     @apply overflow-hidden;
     @apply z-10;
-    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.04);
+    box-shadow: 4px 14p x 26px rgba(0, 0, 0, 0.04);
     transition: all 0.3s ease-out;
     &:hover {
+      @apply bg-slate-100;
       transform: translateY(-5px) scale(1.005);
       box-shadow:
         0 24px 36px rgba(0, 0, 0, 0.11),
@@ -74,7 +75,7 @@
         @apply border-[#e2fced];
         @apply bg-[#b8f9d3];
       }
-      svg {
+      img {
         z-index: 10000;
         transform: translateZ(0);
       }

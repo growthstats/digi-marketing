@@ -2,10 +2,10 @@ import { Box, Card, Grid, Heading, Link, Section, Text } from '@radix-ui/themes'
 import cx from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 import { useEffect } from 'react';
 
 import rawCuratedServices from '@/assets/curated-services.json';
-import { iconComponents, TIconName } from '@/components/common/icons';
 
 import styles from './services-section.module.scss';
 
@@ -16,7 +16,7 @@ type TCuratedService = {
   title: string;
   description: string;
   linkText: string;
-  icon: TIconName;
+  src: string;
 };
 
 export default function ServicesSection(_props: IServicesSectionProps) {
@@ -97,27 +97,23 @@ export default function ServicesSection(_props: IServicesSectionProps) {
       </Box>
       {/* Services Grid */}
       <Grid id="services-section__card-container" columns={{ initial: '1', md: '2', lg: '3' }} gap={'9'} width={'auto'}>
-        {curatedServices.map((service: TCuratedService) => {
-          const IconComponent = iconComponents[service.icon];
-
-          return (
-            <Card key={service.id} variant="classic" className={cx(styles['d-section__card'])}>
-              <Box className={cx(styles['d-section__card-content'])}>
-                <div className={cx(styles['d-section__card__overlay'])}></div>
-                <div className={cx(styles['d-section__card__circle'])}>
-                  <IconComponent width={60} height={60} />
-                </div>
-                <Text as="div" size="5" weight="bold" className={cx(styles['d-section__card__title'])}>
-                  {service.title}
-                </Text>
-                <Text as="div" color="gray" size="4">
-                  {service.description}
-                </Text>
-                <Link href={'#'}>{service.linkText}</Link>
-              </Box>
-            </Card>
-          );
-        })}
+        {curatedServices.map((service: TCuratedService) => (
+          <Card key={service.id} variant="classic" className={cx(styles['d-section__card'])}>
+            <Box className={cx(styles['d-section__card-content'])}>
+              {/* <div className={cx(styles['d-section__card__overlay'])}></div> */}
+              {/* <div className={cx(styles['d-section__card__circle'])}>
+              </div> */}
+              <Image alt={service.title} src={service.src} height={100} width={150} />
+              <Text as="div" size="5" weight="bold" className={cx(styles['d-section__card__title'])}>
+                {service.title}
+              </Text>
+              <Text as="div" color="gray" size="4">
+                {service.description}
+              </Text>
+              <Link href={'#'}>{service.linkText}</Link>
+            </Box>
+          </Card>
+        ))}
       </Grid>
     </Section>
   );
