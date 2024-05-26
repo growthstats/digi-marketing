@@ -8,90 +8,35 @@
       @apply px-40;
     }
   }
+  &__cards-container {
+    @apply max-w-[1144px];
+    @apply mx-auto;
+  }
+  &__card-wrapper {
+    @apply shadow-lg;
+    @apply mx-auto;
+    @apply max-w-[360px];
+    @apply rounded-[var(--radius-5)];
+  }
   &__card {
-    @apply bg-white;
-    @apply relative;
-    @apply no-underline;
-    @apply overflow-hidden;
-    @apply z-10;
-    box-shadow: 4px 14p x 26px rgba(0, 0, 0, 0.04);
-    transition: all 0.3s ease-out;
-    &:hover {
-      @apply bg-slate-100;
-      transform: translateY(-5px) scale(1.005);
-      box-shadow:
-        0 24px 36px rgba(0, 0, 0, 0.11),
-        0 24px 46px rgba(184, 249, 211, 0.48),
-        rgba(0, 0, 0, 0.15);
+    @apply px-4;
+    @apply py-6;
+    &__img {
+      @apply block;
+      @apply object-cover;
+      @apply w-full;
+      @apply h-[203px];
+      @apply bg-[var(--gray-5)];
+      @apply rounded-t-[var(--radius-5)];
     }
-    &:active {
-      transform: scale(1);
-      box-shadow:
-        0 15px 24px rgba(0, 0, 0, 0.11),
-        0 15px 24px rgba(184, 249, 211, 0.48),
-        rgba(0, 0, 0, 0.15);
+    &__inset {
+      @apply -mx-4;
+      @apply -mt-6;
     }
-    &__overlay {
-      @apply w-[118px];
-      @apply h-[118px];
-      @apply absolute;
-      @apply top-16;
-      border-radius: 50%;
-      @apply bg-[#b8f9d3];
-      z-index: -1;
-      transition: transform 0.3s ease-out;
-      .d-section__card:hover & {
-        transform: scale(7) translateZ(0);
-      }
-    }
-    &__circle {
-      @apply w-[131px];
-      @apply h-[131px];
-      @apply bg-white;
-      @apply border;
-      @apply border-2;
-      @apply border-[#b8f9d3];
+    &__cta {
+      @apply w-full;
       @apply flex;
       @apply justify-center;
-      @apply items-center;
-      @apply relative;
-      border-radius: 50%;
-      z-index: 1;
-      transition: all 0.3s ease-out;
-      &:after {
-        content: '';
-        @apply w-[118px];
-        @apply h-[118px];
-        @apply block;
-        @apply absolute;
-        @apply bg-[#b8f9d3];
-        border-radius: 50%;
-        transition: opacity 0.3s ease-out;
-        .d-section__card:hover & {
-          @apply bg-[#e2fced];
-        }
-      }
-      .d-section__card:hover & {
-        @apply border-[#e2fced];
-        @apply bg-[#b8f9d3];
-      }
-      img {
-        z-index: 10000;
-        transform: translateZ(0);
-      }
-    }
-  }
-  &__card-content {
-    @apply flex;
-    @apply flex-col;
-    @apply justify-center;
-    @apply items-center;
-    @apply gap-4;
-    @apply text-center;
-    @apply py-12;
-    @apply px-4;
-    svg {
-      @apply text-green-800;
     }
   }
 }

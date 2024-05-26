@@ -1,4 +1,4 @@
-import { Box, Card, Grid, Heading, Link, Section, Text } from '@radix-ui/themes';
+import { Box, Button, Grid, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -84,35 +84,44 @@ export default function ServicesSection(_props: IServicesSectionProps) {
   return (
     <Section id="services-section">
       <Heading id="services-section__heading" as="h2" size={'9'} mb={'6'} className={cx(styles['d-section__heading'])}>
-        We Offer{' '}
-        <Text as="span" color="mint">
-          Best Services{' '}
+        One Place For{' '}
+        <Text as="span" color="cyan">
+          Best Marketing Services{' '}
         </Text>
-        To Our Clients
+        Online
       </Heading>
       <Box id="services-section__sub-heading" className={cx(styles['d-section__sub-heading'])} mb={'8'}>
         <Text as="p" align={'center'} size={'5'}>
-          Our transparent and client-centric approach ensures you are always in the loop, empowering you to make informed decisions.
+          We offer a complete bouquet of services that help take your business to the next level of growth.
         </Text>
       </Box>
       {/* Services Grid */}
-      <Grid id="services-section__card-container" columns={{ initial: '1', md: '2', lg: '3' }} gap={'9'} width={'auto'}>
+      <Grid
+        id="services-section__card-container"
+        columns={{ initial: '1', md: '2', lg: '3' }}
+        gap={'9'}
+        width={'auto'}
+        className={cx(styles['d-section__cards-container'])}
+      >
         {curatedServices.map((service: TCuratedService) => (
-          <Card key={service.id} variant="classic" className={cx(styles['d-section__card'])}>
-            <Box className={cx(styles['d-section__card-content'])}>
-              {/* <div className={cx(styles['d-section__card__overlay'])}></div> */}
-              {/* <div className={cx(styles['d-section__card__circle'])}>
-              </div> */}
-              <Image alt={service.title} src={service.src} height={100} width={150} />
-              <Text as="div" size="5" weight="bold" className={cx(styles['d-section__card__title'])}>
+          <Box key={service.id} className={cx(styles['d-section__card-wrapper'])}>
+            <Box className={cx(styles['d-section__card'])}>
+              <Box className={cx(styles['d-section__card__inset'])} mb={'4'}>
+                <Image src={service.src} alt={service.title} width={360} height={203} className={cx(styles['d-section__card__img'])} />
+              </Box>
+              <Text as="div" size="5" weight="bold" align={'center'} mb={'3'} color="cyan">
                 {service.title}
               </Text>
-              <Text as="div" color="gray" size="4">
+              <Text as="div" color="gray" size="4" align={'center'} mb={'4'}>
                 {service.description}
               </Text>
-              <Link href={'#'}>{service.linkText}</Link>
+              <Box className={cx(styles['d-section__card__cta'])}>
+                <Button variant="surface" size={'2'}>
+                  Learn More
+                </Button>
+              </Box>
             </Box>
-          </Card>
+          </Box>
         ))}
       </Grid>
     </Section>
