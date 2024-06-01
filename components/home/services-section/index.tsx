@@ -82,7 +82,7 @@ export default function ServicesSection(_props: IServicesSectionProps) {
   }, []);
 
   return (
-    <Section id="services-section">
+    <Section id="services-section" className={cx(styles['d-section'])}>
       <Heading id="services-section__heading" as="h2" size={'9'} mb={'6'} className={cx(styles['d-section__heading'])}>
         One Place For{' '}
         <Text as="span" color="cyan">
@@ -98,8 +98,8 @@ export default function ServicesSection(_props: IServicesSectionProps) {
       {/* Services Grid */}
       <Grid
         id="services-section__card-container"
-        columns={{ initial: '1', md: '2', lg: '3' }}
-        gap={'9'}
+        columns={{ initial: '1', sm: '2', lg: '3' }}
+        gap={'6'}
         width={'auto'}
         className={cx(styles['d-section__cards-container'])}
       >
