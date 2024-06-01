@@ -6,13 +6,17 @@
   &__container {
     @apply container;
     @apply mx-auto;
+    @apply px-6;
   }
   &__heading {
     @apply text-white;
-    @apply max-w-[60%];
+    @screen lg {
+      @apply max-w-[60%];
+    }
   }
   &__card {
     @apply bg-white;
+    @apply p-[var(--space-4)];
   }
   &__icon-wrapper {
     @apply w-16;
