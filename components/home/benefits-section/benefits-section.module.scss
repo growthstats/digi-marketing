@@ -6,12 +6,21 @@
   &__container {
     @apply container;
     @apply mx-auto;
-    h3 {
-      @apply text-white;
-      @apply max-w-[60%];
-    }
-    &__card {
-      @apply bg-white;
-    }
+  }
+  &__heading {
+    @apply text-white;
+    @apply max-w-[60%];
+  }
+  &__card {
+    @apply bg-white;
+  }
+  &__icon-wrapper {
+    @apply w-16;
+    @apply h-16;
+  }
+  &__icon {
+    @apply w-16;
+    @apply h-16;
+    @apply text-[#57b5b3];
   }
 }
