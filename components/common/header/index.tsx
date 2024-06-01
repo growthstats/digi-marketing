@@ -2,6 +2,7 @@
 
 import { Button, DropdownMenu, Flex, Grid, Text } from '@radix-ui/themes';
 import cx from 'classnames';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -67,7 +68,8 @@ export default function Header(_props: IHeaderProps) {
       <nav className={cx(styles['d-container__nav'])}>
         <div className={styles['d-container__logo']}>
           <Link href="/" className={styles['d-container__logo-link']}>
-            Logo
+            {/* FIXME: Get better logo, cropped transparent top and bottom space */}
+            <Image alt="Growth Stats Logo" src={'/logo.png'} width={48} height={48} />
           </Link>
         </div>
         <div className={styles['d-container__nav-links']}>
@@ -110,7 +112,7 @@ export default function Header(_props: IHeaderProps) {
           )}
         </div>
         <div className={styles['d-container__contact-button']}>
-          <Button>Contact</Button>
+          <Button size={'3'}>Contact</Button>
         </div>
       </nav>
     </header>
