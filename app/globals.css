@@ -1,6 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Override the layer order, visit https://www.youtube.com/watch?v=6zMa4qK63hQ for more info */
+
+@layer tw_base, radix_ui, tw_components_utils;
+@import '@radix-ui/themes/styles.css' layer(radix_ui);
+
+@layer tw_base {
+  @tailwind base;
+}
+
+@layer tw_components_utils {
+  @tailwind components;
+  @tailwind utilities;
+}
 
 .radix-themes {
   --default-font-family: var(--font-inter) !important;
