@@ -1,0 +1,14 @@
+.d-container {
+  &__dropdown-service-image {
+  }
+  &__dropdown-service-title {
+  }
+  &__dropdown-content {
+    @apply flex;
+    @apply flex-col;
+    @apply gap-2;
+  }
+  &__dropdown-service-link {
+    @apply text-teal-11;
+  }
+}

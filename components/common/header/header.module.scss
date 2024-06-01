@@ -1,82 +1,46 @@
-.d-wrapper {
-  @apply absolute;
-  @apply top-0;
-  @apply z-10;
-  @apply w-full;
-  @apply bg-transparent;
-  @apply text-white;
-  @apply p-8;
-  &__container {
+.d-container {
+  @apply bg-white;
+  @apply shadow-md;
+  &__nav {
     @apply container;
     @apply mx-auto;
+    @apply px-6;
+    @apply py-4;
     @apply flex;
     @apply justify-between;
     @apply items-center;
   }
-  &__brand {
+  &__logo {
     @apply flex;
-    @apply justify-center;
     @apply items-center;
-    @apply gap-x-3;
+    @apply space-x-4;
   }
-  &__nav {
-    @apply hidden;
-    @apply items-center;
-    @apply gap-8;
-    @screen md {
-      @apply flex;
-    }
-    &__link {
-      &--btn {
-        @apply rounded-none;
-        &:hover {
-          @apply cursor-pointer;
-        }
-        > span {
-          @apply text-white;
-        }
-      }
-    }
-    &__dropdown {
-      &-trigger {
-        @apply flex;
-        @apply items-center;
-        @apply cursor-pointer;
-        &:focus-visible {
-          @apply outline-none;
-        }
-        span {
-          @apply text-white;
-          &:hover {
-            @apply text-gray-300;
-          }
-        }
-      }
-      &__content-grid {
-        &__col-icon {
-          @apply text-green-700;
-        }
-        &__col-title {
-          @apply text-slate-600;
-        }
-        &__col-content {
-          @apply flex;
-          @apply flex-col;
-          @apply gap-2;
-          & a {
-            @apply font-bold;
-            @apply text-slate-600;
-            &:hover {
-              @apply text-green-700;
-            }
-          }
-        }
-      }
-    }
+  &__logo-link {
+    @apply text-xl;
+    @apply font-bold;
   }
-  &__cta {
+  &__nav-links {
+    @apply flex;
+    @apply space-x-8;
+  }
+  &__nav-link {
+    @apply text-gray-9;
     &:hover {
-      @apply cursor-pointer;
+      @apply text-teal-9;
+    }
+    &:focus-visible {
+      @apply outline-none;
+    }
+  }
+  &__nav-link--active {
+    @apply text-teal-9;
+  }
+  &__dropdown-item {
+    @apply block;
+    @apply px-4;
+    @apply py-2;
+    &:hover {
+      @apply bg-gray-100;
     }
   }
 }
