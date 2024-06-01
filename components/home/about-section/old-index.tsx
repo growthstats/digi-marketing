@@ -99,12 +99,12 @@ export default function AboutSection(_props: IAboutSectionProps) {
           </Box>
           <Text as="p" mb="8" size="6" id="about-section__text-content" className={cx(styles['d-section__text-content'])}>
             At <Strong>Growth Stats</Strong>, we understand that in the fast-paced world of{' '}
-            <Text as="span" color="mint" weight={'bold'}>
+            <Text as="span" color="teal" weight={'bold'}>
               digital marketing
             </Text>
             , staying ahead is key. Our innovative strategies and data-driven approach ensure your brand not only survives but thrives in
             the digital landscape. With a dedicated team of experts, we specialise in maximising your{' '}
-            <Text as="span" color="mint" weight={'bold'}>
+            <Text as="span" color="teal" weight={'bold'}>
               online presence, boosting engagement, and driving conversions.
             </Text>
           </Text>

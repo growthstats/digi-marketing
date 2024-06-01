@@ -1,7 +1,7 @@
 .d-container {
   @apply -mt-1;
   &__inline-wrapper {
-    @apply bg-[#57b5b3];
+    @apply bg-[var(--gs-color-primary)];
     @apply text-white;
     @apply inline-block;
     @apply text-nowrap;

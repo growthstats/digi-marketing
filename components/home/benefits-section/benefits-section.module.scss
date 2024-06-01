@@ -25,6 +25,6 @@
   &__icon {
     @apply w-16;
     @apply h-16;
-    @apply text-[#57b5b3];
+    @apply text-[var(--gs-color-primary)];
   }
 }

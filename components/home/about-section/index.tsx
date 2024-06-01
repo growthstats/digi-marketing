@@ -79,25 +79,25 @@ export default function AboutSection(_props: IAboutSectionProps) {
         <Text as="div" mb="8" size="6" id="about-section__text-content" className={cx(styles['d-section__text-content'])}>
           <Text as="p" mb={'1'}>
             Our <Strong>Digital Marketing</Strong> expertise delivers what Businesses want ……
-            <Text as="span" color="mint" weight={'bold'}>
+            <Text as="span" color="teal" weight={'bold'}>
               Growth
             </Text>
           </Text>
           <Text as="p" mb={'1'}>
             We minutely monitor the <Strong>Online Promotion Impact</Strong> and deliver ……
-            <Text as="span" color="mint" weight={'bold'}>
+            <Text as="span" color="teal" weight={'bold'}>
               Growth
             </Text>
           </Text>
           <Text as="p" mb={'1'}>
             <Strong>Creative Visual Inputs</Strong> that make your business website stand out, leading to ……
-            <Text as="span" color="mint" weight={'bold'}>
+            <Text as="span" color="teal" weight={'bold'}>
               Growth
             </Text>
           </Text>
           <Text as="p" mb={'1'}>
             Creating <Strong>Engaging Content</Strong> that keeps clients coming to you repeatedly ……
-            <Text as="span" color="mint" weight={'bold'}>
+            <Text as="span" color="teal" weight={'bold'}>
               Growth
             </Text>
           </Text>

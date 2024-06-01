@@ -93,11 +93,11 @@ export default function WhyChooseSection(_props: IWhyChooseSectionProps) {
           </Box>
           <Text as="p" mb="5" size="6" id="why-choose-section__text-content" className={cx(styles['d-section__text-content'])}>
             We leverage cutting-edge technologies, harnessing the power of{' '}
-            <Text as="span" color="mint" weight={'bold'}>
+            <Text as="span" color="teal" weight={'bold'}>
               Data Analytics
             </Text>{' '}
             data analytics and strategic insights to tailor solutions that align with your business goals. Our transparent and
-            <Text as="span" color="mint" weight={'bold'}>
+            <Text as="span" color="teal" weight={'bold'}>
               client-centric
             </Text>{' '}
             approach ensures you&apos;re always in the loop, empowering you to make informed decisions.
