@@ -1,5 +1,9 @@
+@use '/styles/mixin/layout.module.scss' as *;
+
 .d-section {
   @apply px-6;
+  @apply bg-[var(--gray-2)];
+  @include edge-to-edge();
   &__heading {
     @apply text-center;
   }
@@ -18,6 +22,7 @@
     @apply mx-auto;
     @apply max-w-[360px];
     @apply rounded-[var(--radius-5)];
+    @apply bg-white;
   }
   &__card {
     @apply px-4;
