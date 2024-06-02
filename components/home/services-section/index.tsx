@@ -62,19 +62,19 @@ export default function ServicesSection(_props: IServicesSectionProps) {
       { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
     );
 
-    // Timeline for CTA
-    const tlCTA = gsap.timeline({
+    // Timeline for Cards
+    const tlCards = gsap.timeline({
       scrollTrigger: {
         trigger: '#services-section__card-container',
         start: 'top 90%',
-        end: 'bottom 10%',
+        end: 'bottom 20%',
         scrub: false,
         markers: false,
         toggleActions: 'play reverse play reverse',
       },
     });
 
-    tlCTA.fromTo(
+    tlCards.fromTo(
       '#services-section__card-container',
       { opacity: 0, y: 20 }, // from state
       { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
