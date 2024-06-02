@@ -83,47 +83,49 @@ export default function ServicesSection(_props: IServicesSectionProps) {
 
   return (
     <Section id="services-section" className={cx(styles['d-section'])}>
-      <Heading id="services-section__heading" as="h2" size={'9'} mb={'6'} className={cx(styles['d-section__heading'])}>
-        One Place For{' '}
-        <Text as="span" color="teal">
-          Best Marketing Services{' '}
-        </Text>
-        Online
-      </Heading>
-      <Box id="services-section__sub-heading" className={cx(styles['d-section__sub-heading'])} mb={'8'}>
-        <Text as="p" align={'center'} size={'5'}>
-          We offer a complete bouquet of services that help take your business to the next level of growth.
-        </Text>
-      </Box>
-      {/* Services Grid */}
-      <Grid
-        id="services-section__card-container"
-        columns={{ initial: '1', sm: '2', lg: '3' }}
-        gap={'6'}
-        width={'auto'}
-        className={cx(styles['d-section__cards-container'])}
-      >
-        {curatedServices.map((service: TCuratedService) => (
-          <Box key={service.id} className={cx(styles['d-section__card-wrapper'])}>
-            <Box className={cx(styles['d-section__card'])}>
-              <Box className={cx(styles['d-section__card__inset'])} mb={'4'}>
-                <Image src={service.src} alt={service.title} width={360} height={203} className={cx(styles['d-section__card__img'])} />
-              </Box>
-              <Text as="div" size="5" weight="bold" align={'center'} mb={'3'} color="teal">
-                {service.title}
-              </Text>
-              <Text as="div" color="gray" size="4" align={'center'} mb={'4'}>
-                {service.description}
-              </Text>
-              <Box className={cx(styles['d-section__card__cta'])}>
-                <Button variant="surface" size={'2'}>
-                  Learn More
-                </Button>
+      <Box className={cx(styles['d-section__container'])}>
+        <Heading id="services-section__heading" as="h2" size={'9'} mb={'6'} className={cx(styles['d-section__heading'])}>
+          One Place For{' '}
+          <Text as="span" color="teal">
+            Best Marketing Services{' '}
+          </Text>
+          Online
+        </Heading>
+        <Box id="services-section__sub-heading" className={cx(styles['d-section__sub-heading'])} mb={'8'}>
+          <Text as="p" align={'center'} size={'5'}>
+            We offer a complete bouquet of services that help take your business to the next level of growth.
+          </Text>
+        </Box>
+        {/* Services Grid */}
+        <Grid
+          id="services-section__card-container"
+          columns={{ initial: '1', sm: '2', lg: '3' }}
+          gap={'6'}
+          width={'auto'}
+          className={cx(styles['d-section__cards-container'])}
+        >
+          {curatedServices.map((service: TCuratedService) => (
+            <Box key={service.id} className={cx(styles['d-section__card-wrapper'])}>
+              <Box className={cx(styles['d-section__card'])}>
+                <Box mb={'5'} className={cx(styles['d-section__card__inset'])}>
+                  <Image src={service.src} alt={service.title} width={360} height={203} className={cx(styles['d-section__card__img'])} />
+                </Box>
+                <Text as="div" size="5" weight="bold" align={'center'} mb={'5'} color="teal">
+                  {service.title}
+                </Text>
+                <Text as="div" color="gray" size="4" align={'center'} mb={'4'}>
+                  {service.description}
+                </Text>
+                <Box className={cx(styles['d-section__card__cta'])}>
+                  <Button variant="soft" size={'2'}>
+                    Learn More
+                  </Button>
+                </Box>
               </Box>
             </Box>
-          </Box>
-        ))}
-      </Grid>
+          ))}
+        </Grid>
+      </Box>
     </Section>
   );
 }

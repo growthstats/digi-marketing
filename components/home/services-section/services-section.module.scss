@@ -1,9 +1,12 @@
 @use '/styles/mixin/layout.module.scss' as *;
 
 .d-section {
-  @apply px-6;
   @apply bg-[var(--gray-2)];
   @include edge-to-edge();
+  &__container {
+    @apply container;
+    @apply mx-auto;
+  }
   &__heading {
     @apply text-center;
   }
