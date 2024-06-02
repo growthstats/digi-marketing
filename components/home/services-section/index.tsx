@@ -84,7 +84,7 @@ export default function ServicesSection(_props: IServicesSectionProps) {
   return (
     <Section id="services-section" className={cx(styles['d-section'])}>
       <Box className={cx(styles['d-section__container'])}>
-        <Heading id="services-section__heading" as="h2" size={'9'} mb={'6'} className={cx(styles['d-section__heading'])}>
+        <Heading id="services-section__heading" as="h2" size={'8'} mb={'6'} className={cx(styles['d-section__heading'])}>
           One Place For{' '}
           <Text as="span" color="teal">
             Best Marketing Services{' '}

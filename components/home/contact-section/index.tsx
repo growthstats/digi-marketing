@@ -35,34 +35,36 @@ export default function ContactSection(_props: IContactSectionProps) {
 
   return (
     <Section id="contact-section">
-      <Grid columns={{ initial: '1', md: '1fr auto' }} gap={'9'}>
-        {/* Col 1 */}
-        <Box id="contact-section__text-wrapper" className={cx(styles['d-section__text-wrapper'])} grow={'1'}>
-          <Box mb={'8'} className="text-center">
-            <BannerText wrapperClassName="contact-section-text" text="Embark on a journey of" textClassName="text-4xl" />
-            <BannerText wrapperClassName="contact-section-text" text="Unprecedented" textClassName="text-5xl" />
-            <BannerText wrapperClassName="contact-section-text" text="growth" textClassName="text-6xl" />
-          </Box>
-        </Box>
-
-        {/* Col 2 */}
-        <Card className={cx(styles['d-section__card'])}>
-          <Box className={cx(styles['d-section__card__content'])}>
-            <Text size={'7'} weight={'bold'} mb={'5'}>
-              Plan a project!
-            </Text>
-            <Text size={'5'} mb={'6'}>
-              Let&apos;s transform your online presence and elevate your brand to new heights. Explore our services and take the first step
-              towards digital excellence.
-            </Text>
-            <Box>
-              <button className={cx(styles['d-section__card__cta'])}>
-                <Text weight={'bold'}>Work with us</Text>
-              </button>
+      <Box className={cx(styles['d-section__container'])}>
+        <Grid columns={{ initial: '1', md: '1fr auto' }} gap={'9'}>
+          {/* Col 1 */}
+          <Box id="contact-section__text-wrapper" className={cx(styles['d-section__text-wrapper'])} grow={'1'}>
+            <Box mb={'8'} className="text-center">
+              <BannerText wrapperClassName="contact-section-text" text="Embark on a journey of" textClassName="text-xl md:text-4xl" />
+              <BannerText wrapperClassName="contact-section-text" text="Unprecedented" textClassName="text-2xl md:text-5xl" />
+              <BannerText wrapperClassName="contact-section-text" text="growth" textClassName="text-3xl md:text-6xl" />
             </Box>
           </Box>
-        </Card>
-      </Grid>
+
+          {/* Col 2 */}
+          <Card className={cx(styles['d-section__card'])}>
+            <Box className={cx(styles['d-section__card__content'])}>
+              <Text size={'7'} weight={'bold'} mb={'5'}>
+                Plan a project!
+              </Text>
+              <Text size={'5'} mb={'6'}>
+                Let&apos;s transform your online presence and elevate your brand to new heights. Explore our services and take the first
+                step towards digital excellence.
+              </Text>
+              <Box>
+                <button className={cx(styles['d-section__card__cta'])}>
+                  <Text weight={'bold'}>Work with us</Text>
+                </button>
+              </Box>
+            </Box>
+          </Card>
+        </Grid>
+      </Box>
     </Section>
   );
 }

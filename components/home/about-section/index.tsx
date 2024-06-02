@@ -73,8 +73,8 @@ export default function AboutSection(_props: IAboutSectionProps) {
     <Section id="about-section" size={'3'} className={cx(styles['d-section'])}>
       <div className={cx(styles['d-section__container'])}>
         <Box mb={'8'} className="text-center">
-          <BannerText wrapperClassName="about-section__heading" text="welcome to" textClassName="text-5xl" />
-          <BannerText wrapperClassName="about-section__heading" text="growth stats" textClassName="text-6xl" />
+          <BannerText wrapperClassName="about-section__heading" text="welcome to" textClassName="text-3xl md:text-5xl" />
+          <BannerText wrapperClassName="about-section__heading" text="growth stats" textClassName="text-4xl md:text-6xl" />
         </Box>
         <Text as="div" mb="8" size="6" id="about-section__text-content" className={cx(styles['d-section__text-content'])}>
           <Text as="p" mb={'1'}>

@@ -1,6 +1,10 @@
 @use '/styles/mixin/button.module.scss' as *;
 
 .d-section {
+  &__container {
+    @apply container;
+    @apply px-6;
+  }
   &__text-wrapper {
     @apply flex;
     @apply flex-col;
@@ -19,10 +23,14 @@
   }
   &__card {
     @apply bg-slate-800;
-    @apply px-12;
-    @apply py-14;
-    @apply w-96;
     @apply mx-auto;
+    @apply px-4;
+    @apply py-8;
+    @screen md {
+      @apply px-12;
+      @apply py-14;
+      @apply w-96;
+    }
     @screen lg {
       @apply ml-auto;
     }
