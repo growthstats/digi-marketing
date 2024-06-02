@@ -23,7 +23,7 @@ export default function HeroSection(_props: IHeroSectionProps) {
           <Text>Online Marketing</Text>
           <Text>For Rapid Growth</Text>
         </Heading>
-        <Box>
+        <Box className={cx(styles['d-section__subtitle-wrapper'])}>
           <Text as="p" size={'6'} weight={'medium'}>
             Growth Stats
           </Text>

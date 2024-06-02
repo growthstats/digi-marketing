@@ -10,5 +10,8 @@
   }
   &__dropdown-service-link {
     @apply text-teal-11;
+    :hover {
+      @apply font-bold;
+    }
   }
 }

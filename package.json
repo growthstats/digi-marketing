@@ -19,6 +19,7 @@
     "@sanity/react-loader": "^1.8.0",
     "@sanity/vision": "^3.26.1",
     "@studio-freight/lenis": "^1.0.34",
+    "@uidotdev/usehooks": "^2.4.1",
     "classnames": "^2.5.1",
     "framer-motion": "^11.0.3",
     "gsap": "^3.12.5",

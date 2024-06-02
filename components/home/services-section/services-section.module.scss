@@ -6,6 +6,7 @@
   &__container {
     @apply container;
     @apply mx-auto;
+    @apply px-6;
   }
   &__heading {
     @apply text-center;

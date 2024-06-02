@@ -32,7 +32,7 @@ export const ServiceDropdown: FC<IServiceDropdownProps> = ({ title, items, imgSr
       <Box className={cx(styles['d-container__dropdown-content'])}>
         {items.map((item) => (
           <Link key={item} className={cx(styles['d-container__dropdown-service-link'])} href={'/'}>
-            {item}
+            <Text weight={'medium'}>{item}</Text>
           </Link>
         ))}
       </Box>

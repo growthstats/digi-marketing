@@ -1,10 +1,13 @@
 'use client';
 
 import { Button, DropdownMenu, Flex, Grid, Text } from '@radix-ui/themes';
+import { useWindowScroll } from '@uidotdev/usehooks';
 import cx from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 import { ChevronDownIcon } from '../icons/icon-components';
 import styles from './header.module.scss';
@@ -14,6 +17,9 @@ export interface IHeaderProps {}
 
 export default function Header(_props: IHeaderProps) {
   const pathname = usePathname();
+  const [{ y }] = useWindowScroll();
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -63,8 +69,16 @@ export default function Header(_props: IHeaderProps) {
     },
   ];
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <header className={cx(styles['d-container'])}>
+    <header
+      className={cx(styles['d-container'], {
+        [styles['d-container--enable-bg-color']]: (y && y > 100) || isOpen,
+      })}
+    >
       <nav className={cx(styles['d-container__nav'])}>
         <div className={styles['d-container__logo']}>
           <Link href="/" className={styles['d-container__logo-link']}>
@@ -83,7 +97,7 @@ export default function Header(_props: IHeaderProps) {
                     })}
                   >
                     <Flex align={'center'} gap={'1'}>
-                      <Text size={'4'} weight={'medium'}>
+                      <Text size={'5'} weight={'bold'}>
                         Services
                       </Text>
                       <ChevronDownIcon size={20} />
@@ -104,7 +118,7 @@ export default function Header(_props: IHeaderProps) {
                 key={link.name}
                 className={`${styles['d-container__nav-link']} ${pathname === link.href ? styles['d-container__nav-link--active'] : ''}`}
               >
-                <Text size={'4'} weight={'medium'}>
+                <Text size={'5'} weight={'bold'}>
                   {link.name}
                 </Text>
               </Link>
@@ -112,9 +126,45 @@ export default function Header(_props: IHeaderProps) {
           )}
         </div>
         <div className={styles['d-container__contact-button']}>
-          <Button size={'3'}>Contact</Button>
+          <Button size={'3'}>
+            <Text size={'5'} weight={'medium'}>
+              Contact
+            </Text>
+          </Button>
+        </div>
+
+        <div className={cx(styles['d-container__menu-button-container'])}>
+          <button
+            onClick={toggleMenu}
+            type="button"
+            className={cx(styles['d-container__menu-button'])}
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            {isOpen ? <FaTimes /> : <FaBars />}
+          </button>
         </div>
       </nav>
+      <div className={cx(styles['d-container__mobile-menu'], { [styles['d-container__mobile-menu--open']]: isOpen })} id="mobile-menu">
+        <hr />
+        <div className={cx(styles['d-container__mobile-menu-content'])}>
+          {navLinks?.map(({ name, href }) => (
+            <Link key={name} href={`${href?.toString()}`} className={cx(styles['d-container__mobile-menu-link'])}>
+              <Text as="p" weight={'medium'}>
+                {name}
+              </Text>
+            </Link>
+          ))}
+          <hr />
+          <div className={styles['d-container__contact-button-mobile']}>
+            <Button size={'2'}>
+              <Text size={'4'} weight={'medium'}>
+                Contact Us
+              </Text>
+            </Button>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }

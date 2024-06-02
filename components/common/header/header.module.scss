@@ -1,9 +1,21 @@
 .d-container {
-  @apply bg-white;
-  @apply shadow-md;
-  @apply sticky;
+  @apply fixed;
   @apply top-0;
   @apply z-20;
+  @apply w-full;
+  @apply bg-transparent;
+  transition: all 0.3s;
+  &--enable-bg-color {
+    @apply bg-white;
+    @apply shadow-md;
+    .d-container__nav-link {
+      @apply text-gray-11;
+      &--active {
+        @apply border-b-2;
+        @apply border-[var(--gray-10)];
+      }
+    }
+  }
   &__nav {
     @apply container;
     @apply mx-auto;
@@ -23,20 +35,20 @@
     @apply font-bold;
   }
   &__nav-links {
-    @apply flex;
-    @apply space-x-8;
+    @apply hidden;
+    @screen md {
+      @apply flex;
+      @apply space-x-8;
+    }
   }
   &__nav-link {
-    @apply text-gray-9;
-    &:hover {
-      @apply text-teal-9;
-    }
+    @apply text-white;
     &:focus-visible {
       @apply outline-none;
     }
   }
   &__nav-link--active {
-    @apply text-teal-9;
+    @apply border-b-2;
   }
   &__dropdown-item {
     @apply block;
@@ -45,5 +57,69 @@
     &:hover {
       @apply bg-gray-100;
     }
+  }
+  &__contact-button {
+    @apply hidden;
+    @screen md {
+      @apply block;
+    }
+  }
+  // Mobile styles
+  &__menu-button-container {
+    @apply flex;
+    @apply items-center;
+    @screen md {
+      @apply hidden;
+    }
+  }
+  &__menu-button {
+    @apply bg-gray-100;
+    @apply inline-flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply p-2;
+    @apply rounded-md;
+    @apply text-gray-400;
+    &:hover {
+      @apply text-gray-500;
+      @apply bg-gray-200;
+    }
+    &:focus {
+      @apply outline-none;
+      @apply ring-2;
+      @apply ring-inset;
+      @apply ring-gray-300;
+    }
+  }
+  &__mobile-menu {
+    @apply hidden;
+    transition: all 0.3s;
+    @screen md {
+      @apply hidden;
+    }
+    &--open {
+      @apply block;
+    }
+  }
+  &__mobile-menu-content {
+    @apply bg-white;
+    @apply px-2;
+    @apply py-4;
+    @apply space-y-1;
+    @screen sm {
+      @apply px-3;
+    }
+  }
+  &__mobile-menu-link {
+    p {
+      @apply text-gray-11;
+      @apply mb-2;
+      &:hover {
+        @apply font-bold;
+      }
+    }
+  }
+  &__contact-button-mobile {
+    @apply pt-2;
   }
 }
