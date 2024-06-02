@@ -37,7 +37,7 @@
       @apply px-6;
       @apply text-white;
       @apply uppercase;
-      @include btn-border-drawing(#fff, #b8f9d3, 4px, bottom, right);
+      @include btn-border-drawing(#fff, var(--teal-4), 4px, bottom, right);
     }
   }
 }
