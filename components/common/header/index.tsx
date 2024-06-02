@@ -83,7 +83,7 @@ export default function Header(_props: IHeaderProps) {
                     })}
                   >
                     <Flex align={'center'} gap={'1'}>
-                      <Text size={'3'} weight={'medium'}>
+                      <Text size={'4'} weight={'medium'}>
                         Services
                       </Text>
                       <ChevronDownIcon size={20} />
@@ -104,7 +104,7 @@ export default function Header(_props: IHeaderProps) {
                 key={link.name}
                 className={`${styles['d-container__nav-link']} ${pathname === link.href ? styles['d-container__nav-link--active'] : ''}`}
               >
-                <Text size={'3'} weight={'medium'}>
+                <Text size={'4'} weight={'medium'}>
                   {link.name}
                 </Text>
               </Link>
