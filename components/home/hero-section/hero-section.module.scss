@@ -1,8 +1,8 @@
-.d-container {
+.d-section {
   @apply relative;
   @apply w-screen;
   @apply min-h-[100px];
-  @apply h-[90vh];
+  @apply h-[80vh];
   @apply overflow-hidden;
   @apply flex;
   @apply justify-center;
@@ -14,7 +14,7 @@
     @apply left-0;
     @apply right-0;
     @apply bottom-0;
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45));
     z-index: 1;
   }
   &__bg-video {
@@ -28,33 +28,36 @@
     @apply z-10;
     @apply flex;
     @apply flex-col;
+    @apply justify-center;
+    @apply items-center;
+    @apply gap-8;
     @apply w-full;
     @apply px-4;
-    @apply mx-auto;
-    @apply bottom-[5%];
-    @apply text-center;
+    @apply bottom-[10%];
+    @apply container;
     @apply text-white;
     @screen md {
-      @apply bottom-[10%];
       @apply w-9/12;
     }
   }
   &__hero-title {
-    // @apply text-5xl;
     @apply flex;
     @apply flex-col;
     @apply text-white;
-    text-shadow: 0 0 7px #66ffcc;
-    & span {
-      text-shadow:
-        0 0 5px #0fa,
-        0 0 10px #0fa;
+    span {
+      @apply text-7xl;
+      text-shadow: 0 0 7px var(--teal-9);
     }
   }
-  &__hero-subtitle {
-    @apply text-xl;
-    @apply my-5;
-    @apply mx-0;
-    @apply text-white;
+  &__hero-cta {
+    @apply bg-white;
+    @apply text-[var(--gray-12)];
+    &:hover {
+      @apply cursor-pointer;
+      @apply bg-[var(--gray-2)];
+      scale: 1.05;
+      @apply transition-all;
+      @apply ease-in;
+    }
   }
 }

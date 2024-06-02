@@ -11,7 +11,7 @@ export interface IBenefitsSectionProps {}
 export default function BenefitsSection(_props: IBenefitsSectionProps) {
   // TODO: Add popup animation for the cards with GSAP
   return (
-    <Section id="benefits-section" className={cx(styles['d-section'])}>
+    <Section size={'3'} id="benefits-section" className={cx(styles['d-section'])}>
       <Box className={cx(styles['d-section__container'])}>
         <Heading as="h3" mb={'6'} size={'8'} weight={'light'} className={cx(styles['d-section__heading'])}>
           We Can Improve Your Business Performance And Gain More Customers
