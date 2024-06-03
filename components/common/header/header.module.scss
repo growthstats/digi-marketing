@@ -1,18 +1,22 @@
 .d-container {
-  @apply fixed;
-  @apply top-0;
   @apply z-20;
   @apply w-full;
-  @apply bg-transparent;
+  @apply bg-white;
+  @apply shadow-md;
+  @apply sticky;
+  @apply top-0;
   transition: all 0.3s;
-  &--enable-bg-color {
-    @apply bg-white;
-    @apply shadow-md;
+  &--enable-fixed-pos {
+    @apply fixed;
+  }
+  &--enable-bg-transparent {
+    @apply bg-transparent;
+    @apply shadow-none;
     .d-container__nav-link {
-      @apply text-gray-11;
+      @apply text-white;
       &--active {
         @apply border-b-2;
-        @apply border-[var(--gray-10)];
+        @apply border-white;
       }
     }
   }
@@ -42,7 +46,8 @@
     }
   }
   &__nav-link {
-    @apply text-white;
+    @apply text-gray-11;
+    @apply border-[var(--gray-10)];
     &:focus-visible {
       @apply outline-none;
     }

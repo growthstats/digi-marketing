@@ -20,6 +20,8 @@ export default function Header(_props: IHeaderProps) {
   const [{ y }] = useWindowScroll();
 
   const [isOpen, setIsOpen] = useState(false);
+  const enableBgTransparent = pathname === '/' ? ((y !== null && y < 100) || isOpen ? true : false) : false;
+  const enableFixedPos = pathname === '/';
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -76,7 +78,8 @@ export default function Header(_props: IHeaderProps) {
   return (
     <header
       className={cx(styles['d-container'], {
-        [styles['d-container--enable-bg-color']]: (y && y > 100) || isOpen,
+        [styles['d-container--enable-bg-transparent']]: enableBgTransparent,
+        [styles['d-container--enable-fixed-pos']]: enableFixedPos,
       })}
     >
       <nav className={cx(styles['d-container__nav'])}>
