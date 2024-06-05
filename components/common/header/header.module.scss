@@ -12,6 +12,8 @@
   &--enable-bg-transparent {
     @apply bg-transparent;
     @apply shadow-none;
+  }
+  &__home-page {
     .d-container__nav-link {
       @apply text-white;
       &--active {

@@ -1,0 +1,24 @@
+.d-section {
+  &__container {
+    @apply flex;
+    @apply flex-col;
+    @apply gap-6;
+    @apply container;
+    @apply px-4;
+    @screen md {
+      @apply px-8;
+      @apply flex-row;
+    }
+  }
+  &__col {
+    @apply w-full;
+    @screen md {
+      @apply w-1/2;
+    }
+  }
+  &__img {
+    @apply w-full;
+    @apply h-auto;
+    @apply my-auto;
+  }
+}

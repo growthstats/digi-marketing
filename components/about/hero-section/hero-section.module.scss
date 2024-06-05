@@ -1,0 +1,39 @@
+@use '/styles/mixin/layout.module.scss' as *;
+
+.d-section {
+  @apply bg-[var(--gray-2)];
+  @include edge-to-edge;
+  @apply flex;
+  @apply justify-center;
+  &__container {
+    @apply flex;
+    @apply flex-col;
+    @apply gap-4;
+    @apply container;
+    @apply px-4;
+    @apply mt-16;
+    @apply text-center;
+  }
+  &__title {
+    @apply text-3xl;
+    @screen md {
+      @apply text-4xl;
+    }
+    @screen xl {
+      @apply text-5xl;
+    }
+  }
+  &__hr {
+    @apply w-16;
+    @apply mx-auto;
+    @apply border-b-2;
+    @apply border-[var(--teal-10)];
+  }
+  &__sub-title {
+    @apply text-[var(--gray-12)];
+  }
+  &__description {
+    @apply max-w-3xl;
+    @apply mx-auto;
+  }
+}

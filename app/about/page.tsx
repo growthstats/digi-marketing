@@ -1,7 +1,7 @@
-import * as React from 'react';
+import AboutPageTemplate from '@/components/templates/about';
 
 export interface IAboutProps {}
 
 export default function About(_props: IAboutProps) {
-  return <div>About page</div>;
+  return <AboutPageTemplate />;
 }
