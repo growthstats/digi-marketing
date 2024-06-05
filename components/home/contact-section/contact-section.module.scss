@@ -4,48 +4,39 @@
   &__container {
     @apply container;
     @apply px-6;
-  }
-  &__text-wrapper {
     @apply flex;
     @apply flex-col;
-    @apply justify-center;
+    @apply gap-6;
+    @apply text-center;
     @screen lg {
-      @apply px-8;
-    }
-    @screen 2xl {
-      @apply px-28;
+      @apply gap-8;
     }
   }
-  &__text-title1,
-  &__text-title2,
-  &__text-title3 {
-    @apply uppercase;
-  }
-  &__card {
-    @apply bg-slate-800;
-    @apply mx-auto;
-    @apply px-4;
-    @apply py-8;
+  &__title {
+    @apply text-4xl;
+    @apply text-[var(--gray-11)];
     @screen md {
-      @apply px-12;
-      @apply py-14;
-      @apply w-96;
+      @apply text-5xl;
     }
     @screen lg {
-      @apply ml-auto;
+      @apply text-6xl;
     }
-    &__content {
-      @apply flex;
-      @apply flex-col;
-      @apply text-center;
-      @apply text-white;
-    }
-    &__cta {
-      @apply py-3;
-      @apply px-6;
-      @apply text-white;
-      @apply uppercase;
-      @include btn-border-drawing(#fff, var(--teal-4), 4px, bottom, right);
+  }
+  &__sub-title {
+    @apply max-w-3xl;
+    @apply mx-auto;
+  }
+  &__cta-wrapper {
+  }
+  &__cta {
+    @apply py-3;
+    @apply px-6;
+    @apply uppercase;
+    @apply bg-[var(--teal-2)];
+    @include btn-border-drawing(var(--gray-11), var(--teal-11), 4px, bottom, right);
+    &:hover {
+      scale: 1.05;
+      transition: all ease;
     }
   }
 }
