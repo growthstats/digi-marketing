@@ -1,0 +1,46 @@
+@use '/styles/mixin/layout.module.scss' as *;
+
+.d-section {
+  @include edge-to-edge;
+  @apply bg-[var(--teal-11)];
+  &__container {
+    @apply container;
+    @apply mx-auto;
+    @apply px-6;
+    @apply flex;
+    @apply flex-col;
+    @apply gap-6;
+    @apply text-center;
+    @apply text-white;
+    @screen lg {
+      @apply gap-8;
+    }
+  }
+  &__title {
+    @apply text-4xl;
+    @screen md {
+      @apply text-5xl;
+    }
+    @screen lg {
+      @apply text-6xl;
+    }
+  }
+  &__sub-title {
+    @apply max-w-3xl;
+    @apply mx-auto;
+  }
+  &__cta-wrapper {
+  }
+  &__cta {
+    @apply py-3;
+    @apply px-6;
+    @apply uppercase;
+    @apply bg-[var(--gray-12)];
+    @apply text-white;
+    @apply rounded-full;
+    &:hover {
+      scale: 1.05;
+      transition: all ease;
+    }
+  }
+}
