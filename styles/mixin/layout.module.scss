@@ -1,6 +1,9 @@
 @mixin edge-to-edge {
   @apply overflow-hidden;
-  width: calc(100vw - 8px);
+  @apply w-screen;
   @apply relative;
   left: calc(-50vw + 50%);
+  @screen 2xl {
+    width: calc(100vw - 8px);
+  }
 }

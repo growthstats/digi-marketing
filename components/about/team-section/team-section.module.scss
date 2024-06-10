@@ -1,0 +1,84 @@
+@use '/styles/mixin/layout.module.scss' as *;
+
+.d-section {
+  @apply flex;
+  @apply flex-col;
+  @apply gap-16;
+  @apply bg-[var(--gray-2)];
+  @include edge-to-edge;
+  // TEAM
+  &__team-container {
+    @apply container;
+    @apply mx-auto;
+    @apply text-center;
+    @apply flex;
+    @apply flex-col;
+    @apply gap-8;
+  }
+  &__team-image {
+    @apply w-full;
+    @apply h-full;
+    @apply object-cover;
+  }
+  &__team-content {
+    @apply flex;
+    @apply flex-col;
+    @apply justify-center;
+    @apply mx-3;
+  }
+  &__team-title {
+    @apply mb-6;
+  }
+  &__team-text {
+    @screen md {
+      @apply max-w-screen-md;
+      @apply mx-auto;
+    }
+  }
+  // LEADERSHIP
+  &__leadership-container {
+    @apply container;
+    @apply mx-auto;
+    @apply text-center;
+    @apply flex;
+    @apply flex-col;
+    @apply justify-center;
+    @apply items-center;
+    @apply gap-8;
+    @screen lg {
+      @apply flex-row;
+    }
+  }
+  &__leadership-image-wrapper {
+    @apply w-full;
+    @apply px-6;
+    @apply flex-shrink-0;
+    @screen md {
+      @apply w-1/3;
+    }
+  }
+  &__leadership-image {
+    @apply w-full;
+    @apply h-full;
+    @apply max-w-[500px];
+    @screen md {
+      @apply h-auto;
+    }
+  }
+  &__leadership-content-wrapper {
+    @apply flex;
+    @apply flex-col;
+    @apply justify-center;
+    @apply items-center;
+    @apply px-6;
+    @screen lg {
+      @apply px-8;
+    }
+  }
+  &__leadership-title {
+    @apply mb-6;
+  }
+  &__leadership-text {
+    @apply w-auto;
+  }
+}

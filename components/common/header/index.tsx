@@ -21,7 +21,7 @@ export default function Header(_props: IHeaderProps) {
 
   const [isOpen, setIsOpen] = useState(false);
   const enableFixedPos = pathname === '/' || pathname === '/about';
-  const enableBgTransparent = enableFixedPos ? ((y !== null && y < 100) || isOpen ? true : false) : false;
+  const enableBgTransparent = enableFixedPos ? y !== null && y < 100 && !isOpen : false;
 
   const navLinks = [
     { name: 'Home', href: '/' },
