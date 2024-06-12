@@ -1,3 +1,5 @@
+@use '/styles/mixin/layout.module.scss' as *;
+
 .d-section {
   @apply relative;
   @apply w-screen;
@@ -34,7 +36,7 @@
     @apply w-full;
     @apply px-4;
     @apply bottom-[10%];
-    @apply container;
+    @include d-container;
     @apply text-white;
     @screen md {
       @apply w-9/12;

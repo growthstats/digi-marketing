@@ -4,7 +4,7 @@
   @apply bg-slate-800;
   @include edge-to-edge;
   &__container {
-    @apply container;
+    @include d-container;
     @apply mx-auto;
     @apply px-6;
   }

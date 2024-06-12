@@ -1,8 +1,9 @@
 @use '/styles/mixin/button.module.scss' as *;
+@use '/styles/mixin/layout.module.scss' as *;
 
 .d-section {
   &__container {
-    @apply container;
+    @include d-container;
     @apply px-6;
     @apply flex;
     @apply flex-col;

@@ -1,3 +1,5 @@
+@use '/styles/mixin/layout.module.scss' as *;
+
 .d-container {
   @apply z-20;
   @apply w-full;
@@ -23,7 +25,7 @@
     }
   }
   &__nav {
-    @apply container;
+    @include d-container;
     @apply mx-auto;
     @apply px-6;
     @apply py-4;

@@ -1,9 +1,11 @@
+@use '/styles/mixin/layout.module.scss' as *;
+
 .d-section {
   &__container {
     @apply flex;
     @apply flex-col;
     @apply gap-6;
-    @apply container;
+    @include d-container;
     @apply px-4;
     @screen md {
       @apply px-8;

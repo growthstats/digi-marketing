@@ -4,7 +4,7 @@
   @include edge-to-edge;
   @apply bg-[var(--teal-11)];
   &__container {
-    @apply container;
+    @include d-container;
     @apply mx-auto;
     @apply px-6;
     @apply flex;
@@ -28,8 +28,6 @@
   &__sub-title {
     @apply max-w-3xl;
     @apply mx-auto;
-  }
-  &__cta-wrapper {
   }
   &__cta {
     @apply py-3;

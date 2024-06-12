@@ -9,7 +9,7 @@
     @apply flex;
     @apply flex-col;
     @apply gap-4;
-    @apply container;
+    @include d-container;
     @apply px-4;
     @apply mt-16;
     @apply text-center;

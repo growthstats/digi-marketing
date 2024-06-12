@@ -8,7 +8,7 @@
   @include edge-to-edge;
   // TEAM
   &__team-container {
-    @apply container;
+    @include d-container;
     @apply mx-auto;
     @apply text-center;
     @apply flex;
@@ -37,7 +37,7 @@
   }
   // LEADERSHIP
   &__leadership-container {
-    @apply container;
+    @include d-container;
     @apply mx-auto;
     @apply text-center;
     @apply flex;
