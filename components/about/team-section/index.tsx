@@ -28,21 +28,21 @@ const TeamSection: FC<ITeamSectionProps> = (_props) => {
       { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 }, // to state
     );
 
-    const tlLeadershipTitle = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#leadership-title',
-        start: 'top 80%',
-        end: 'bottom 10%',
-        scrub: false,
-        markers: false,
-        toggleActions: 'play reverse play reverse', // onEnter onLeave onEnterBack onLeaveBack
-      },
-    });
-    tlLeadershipTitle.fromTo(
-      '.animate-leadership',
-      { opacity: 0, y: 20 }, // from state
-      { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 }, // to state
-    );
+    // const tlLeadershipTitle = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: '#leadership-title',
+    //     start: 'top 80%',
+    //     end: 'bottom 10%',
+    //     scrub: false,
+    //     markers: false,
+    //     toggleActions: 'play reverse play reverse', // onEnter onLeave onEnterBack onLeaveBack
+    //   },
+    // });
+    // tlLeadershipTitle.fromTo(
+    //   '.animate-leadership',
+    //   { opacity: 0, y: 20 }, // from state
+    //   { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 }, // to state
+    // );
   }, []);
 
   return (
@@ -69,7 +69,7 @@ const TeamSection: FC<ITeamSectionProps> = (_props) => {
         </AspectRatio>
       </Box>
       {/* LEADERSHIP */}
-      <Box className={cx(styles['d-section__leadership-container'])}>
+      {/* <Box className={cx(styles['d-section__leadership-container'])}>
         <Box className={cx(styles['d-section__leadership-image-wrapper'])}>
           <Image
             className={cx(styles['d-section__leadership-image'])}
@@ -98,7 +98,7 @@ const TeamSection: FC<ITeamSectionProps> = (_props) => {
             ensure <Text weight={'bold'}>100% Client Satisfaction</Text>.
           </Text>
         </Box>
-      </Box>
+      </Box> */}
     </Section>
   );
 };
