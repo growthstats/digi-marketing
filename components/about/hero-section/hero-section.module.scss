@@ -1,7 +1,7 @@
 @use '/styles/mixin/layout.module.scss' as *;
 
 .d-section {
-  @apply bg-[var(--gray-2)];
+  @apply bg-[var(--gray-3)];
   @include edge-to-edge;
   @apply flex;
   @apply justify-center;

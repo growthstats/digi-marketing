@@ -3,18 +3,21 @@
 .d-section {
   &__container {
     @apply flex;
-    @apply flex-col;
+    @apply flex-col-reverse;
     @apply gap-6;
-    @include d-container;
+    @apply max-w-screen-xl;
+    @apply mx-auto;
     @apply px-4;
     @screen md {
       @apply px-8;
+    }
+    @screen lg {
       @apply flex-row;
     }
   }
   &__col {
     @apply w-full;
-    @screen md {
+    @screen lg {
       @apply w-1/2;
     }
   }
