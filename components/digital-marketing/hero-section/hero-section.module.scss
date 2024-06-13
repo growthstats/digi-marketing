@@ -1,26 +1,22 @@
 @use '/styles/mixin/layout.module.scss' as *;
 
 .d-section {
+  @apply bg-[var(--gray-3)];
+  @include edge-to-edge;
   &__container {
-    @include d-container;
     @apply mt-20;
-    @apply flex;
-  }
-  &__image-col {
     @apply w-full;
-    @apply flex;
-    @apply justify-center;
-    @apply items-center;
-  }
-  &__image-wrapper {
-    @apply w-full;
-    @apply max-w-[565px];
-  }
-  &__content-col {
-    @apply w-full;
+    @apply max-w-screen-md;
     @apply py-4;
+    @apply mx-auto;
+    @apply text-center;
   }
   &__title {
     @apply text-6xl;
+  }
+  &__cta-wrapper {
+    button {
+      @apply cursor-pointer;
+    }
   }
 }
