@@ -1,0 +1,26 @@
+@use '/styles/mixin/layout.module.scss' as *;
+
+.d-section {
+  &__container {
+    @include d-container;
+    @apply mt-20;
+    @apply flex;
+  }
+  &__image-col {
+    @apply w-full;
+    @apply flex;
+    @apply justify-center;
+    @apply items-center;
+  }
+  &__image-wrapper {
+    @apply w-full;
+    @apply max-w-[565px];
+  }
+  &__content-col {
+    @apply w-full;
+    @apply py-4;
+  }
+  &__title {
+    @apply text-6xl;
+  }
+}

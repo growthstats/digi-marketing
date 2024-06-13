@@ -20,7 +20,7 @@ export default function Header(_props: IHeaderProps) {
   const [{ y }] = useWindowScroll();
 
   const [isOpen, setIsOpen] = useState(false);
-  const enableFixedPos = pathname === '/' || pathname === '/about';
+  const enableFixedPos = pathname === '/' || pathname === '/about' || pathname === '/digital-marketing';
   const enableBgTransparent = enableFixedPos ? y !== null && y < 100 && !isOpen : false;
 
   const navLinks = [
@@ -32,6 +32,7 @@ export default function Header(_props: IHeaderProps) {
   const servicesLinks = [
     {
       title: 'Digital Marketing',
+      href: '/digital-marketing',
       imgSrc: '/digital-marketing-service.svg',
       items: [
         'Search Engine Optimization',
@@ -50,11 +51,13 @@ export default function Header(_props: IHeaderProps) {
     {
       // Need to keep this empty for the verticle divider
       title: '',
+      href: '',
       imgSrc: '',
       items: [],
     },
     {
       title: 'Web Design & Development',
+      href: '/web-design-and-development',
       imgSrc: '/web-development-service.svg',
       items: [
         'Captivating User Experiences',
@@ -112,7 +115,13 @@ export default function Header(_props: IHeaderProps) {
                 <DropdownMenu.Content align="center">
                   <Grid columns={{ initial: '1fr 1px 1fr' }} py={'4'} px={'5'} gap={'8'}>
                     {servicesLinks.map((service) => (
-                      <ServiceDropdown key={service.title} title={service.title} items={service.items} imgSrc={service.imgSrc} />
+                      <ServiceDropdown
+                        key={service.title}
+                        title={service.title}
+                        href={service.href}
+                        items={service.items}
+                        imgSrc={service.imgSrc}
+                      />
                     ))}
                   </Grid>
                 </DropdownMenu.Content>

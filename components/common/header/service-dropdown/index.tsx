@@ -8,11 +8,12 @@ import styles from './service-dropdown.module.scss';
 
 interface IServiceDropdownProps {
   title: string;
+  href: string;
   items: string[];
   imgSrc: string;
 }
 
-export const ServiceDropdown: FC<IServiceDropdownProps> = ({ title, items, imgSrc }) => {
+export const ServiceDropdown: FC<IServiceDropdownProps> = ({ title, href, items, imgSrc }) => {
   if (title === '' || items.length == 0) return <Box height={'100%'} className="border"></Box>;
 
   return (
@@ -25,9 +26,11 @@ export const ServiceDropdown: FC<IServiceDropdownProps> = ({ title, items, imgSr
           src={imgSrc}
           className={cx(styles['d-container__dropdown-service-image'])}
         />
-        <Text className={cx(styles['d-container__dropdown-service-title'])} size={'5'} weight={'bold'}>
-          {title}
-        </Text>
+        <Link href={href}>
+          <Text className={cx(styles['d-container__dropdown-service-title'])} size={'5'} weight={'bold'}>
+            {title}
+          </Text>
+        </Link>
       </Flex>
       <Box className={cx(styles['d-container__dropdown-content'])}>
         {items.map((item) => (
