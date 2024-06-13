@@ -27,22 +27,6 @@ const TeamSection: FC<ITeamSectionProps> = (_props) => {
       { opacity: 0, y: 20 }, // from state
       { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 }, // to state
     );
-
-    // const tlLeadershipTitle = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: '#leadership-title',
-    //     start: 'top 80%',
-    //     end: 'bottom 10%',
-    //     scrub: false,
-    //     markers: false,
-    //     toggleActions: 'play reverse play reverse', // onEnter onLeave onEnterBack onLeaveBack
-    //   },
-    // });
-    // tlLeadershipTitle.fromTo(
-    //   '.animate-leadership',
-    //   { opacity: 0, y: 20 }, // from state
-    //   { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 }, // to state
-    // );
   }, []);
 
   return (
@@ -68,37 +52,6 @@ const TeamSection: FC<ITeamSectionProps> = (_props) => {
           />
         </AspectRatio>
       </Box>
-      {/* LEADERSHIP */}
-      {/* <Box className={cx(styles['d-section__leadership-container'])}>
-        <Box className={cx(styles['d-section__leadership-image-wrapper'])}>
-          <Image
-            className={cx(styles['d-section__leadership-image'])}
-            alt="Image of founder of Growth Stats Avinash Kawade"
-            src={'/user-icon-default.avif'}
-            width={400}
-            height={400}
-          />
-        </Box>
-        <Box className={cx(styles['d-section__leadership-content-wrapper'])}>
-          <Heading as="h3" size={'9'} id="leadership-title" className={cx(styles['d-section__leadership-title'], 'animate-leadership')}>
-            LEADERSHIP
-          </Heading>
-          <Text as="p" size={'6'} className={cx(styles['d-section__leadership-text'], 'animate-leadership')}>
-            At the helm of affairs is the founder of <Text weight={'bold'}>Growth Stats</Text>;{' '}
-            <Text color="teal" weight={'bold'}>
-              Mr. Avinash Kawade
-            </Text>
-            . His envious professional track record of work experience as a{' '}
-            <Text weight={'bold'}>Backend Operation (International Business)</Text>,{' '}
-            <Text weight={'bold'}>Digital Marketing Executive</Text>, <Text weight={'bold'}>Email marketing executive</Text>,{' '}
-            <Text weight={'bold'}>Marketing Associate</Text>, and <Text weight={'bold'}>Sales and Marketing Manager</Text> has helped our
-            organization grow at a phenomenal pace. His work experience combined with a determination to deliver excellence, has laid a
-            strong foundation for the company. We have a young team of 10 professionals who are experienced and trained to create an online
-            impression for your business that is unforgettable and inspiring. Our client servicing executives leave no stone unturned to
-            ensure <Text weight={'bold'}>100% Client Satisfaction</Text>.
-          </Text>
-        </Box>
-      </Box> */}
     </Section>
   );
 };
