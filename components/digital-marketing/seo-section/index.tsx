@@ -4,6 +4,8 @@ import Lottie from 'lottie-react';
 import { FC } from 'react';
 
 import seoServiceposterAnimation from '@/assets/animations/seo-service-poster.json';
+import seoServices from '@/assets/seo-services.json';
+import ServcieCardPill from '@/components/common/service-card-pill';
 
 import styles from './seo-section.module.scss';
 
@@ -41,6 +43,42 @@ const SEOSection: FC<ISEOSectionProps> = () => (
           </Button>
         </Box>
       </Box>
+    </Box>
+
+    {/* Services */}
+    <Heading as="h3" mb={'5'} className={cx(styles['d-section__services-title'])}>
+      SEO (Search Engine Optimization) Features
+    </Heading>
+    <Box className={cx(styles['d-section__services'])}>
+      <ServcieCardPill
+        className={cx(styles['d-section__service'])}
+        name={seoServices[0].name}
+        description={seoServices[0].description}
+        icon={'/seo-icon.png'}
+        orientation="right"
+        color="blue"
+      />
+      <ServcieCardPill
+        className={cx(styles['d-section__service'])}
+        name={seoServices[1].name}
+        description={seoServices[1].description}
+        icon={'/seo-icon.png'}
+        orientation="left"
+      />
+      <ServcieCardPill
+        className={cx(styles['d-section__service'])}
+        name={seoServices[2].name}
+        description={seoServices[2].description}
+        icon={'/seo-icon.png'}
+        orientation="right"
+      />
+      <ServcieCardPill
+        className={cx(styles['d-section__service'])}
+        name={seoServices[3].name}
+        description={seoServices[3].description}
+        icon={'/seo-icon.png'}
+        orientation="left"
+      />
     </Box>
   </Section>
 );

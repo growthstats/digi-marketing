@@ -4,6 +4,7 @@
   &__container {
     @include d-container;
     @apply flex;
+    @apply mb-8;
   }
   &__image-col {
     @apply w-full;
@@ -25,5 +26,25 @@
   }
   &__text-content {
     @apply max-w-[565px];
+  }
+  // Services
+  &__services-title {
+    @apply text-4xl;
+    @apply text-center;
+    @apply text-[var(--teal-12)];
+  }
+  &__services {
+    @apply flex;
+    @apply flex-wrap;
+    @apply gap-x-6;
+    @apply gap-y-10;
+    @apply justify-center;
+  }
+  &__service {
+    flex: 1 1 100%;
+    @apply box-border;
+    @screen lg {
+      flex: 1 1 45%;
+    }
   }
 }
