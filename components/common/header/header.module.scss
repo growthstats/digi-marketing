@@ -11,12 +11,15 @@
   &--enable-fixed-pos {
     @apply fixed;
   }
-  // TODO: Make text color white when bg is transparent
   &--enable-bg-transparent {
     @apply bg-transparent;
     @apply shadow-none;
     .d-container__nav-link {
       @apply text-white;
+      &--active {
+        @apply border-b-2;
+        @apply border-white;
+      }
     }
   }
   &__home-page {

@@ -1,12 +1,12 @@
-import { Box, Button, Heading, Section, Text } from '@radix-ui/themes';
+import { Box, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import { FC } from 'react';
 
 import styles from './hero-section.module.scss';
 
-interface IHeroSectionProps {}
+interface IServicesHeroSectionProps {}
 
-const HeroSection: FC<IHeroSectionProps> = () => (
+const ServicesHeroSection: FC<IServicesHeroSectionProps> = () => (
   <Section className={cx(styles['d-section'])}>
     <Box className={cx(styles['d-section__container'])}>
       <Heading as="h2" mb={'5'} className={cx(styles['d-section__title'])}>
@@ -16,13 +16,12 @@ const HeroSection: FC<IHeroSectionProps> = () => (
         We offer a complete bouquet of services that help take your business to the next level of growth.
       </Text>
       <Box className={cx(styles['d-section__cta-wrapper'])}>
-        {/* TODO: Replace this with a rounded custom button */}
-        <Button variant="outline" size={'4'}>
-          Work With Us
-        </Button>
+        <button className={cx(styles['d-section__cta'])}>
+          <Text weight={'bold'}>WORK WITH US</Text>
+        </button>
       </Box>
     </Box>
   </Section>
 );
 
-export default HeroSection;
+export default ServicesHeroSection;

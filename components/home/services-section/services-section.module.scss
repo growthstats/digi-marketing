@@ -10,6 +10,10 @@
   }
   &__heading {
     @apply text-center;
+    @apply text-3xl;
+    @screen md {
+      @apply text-6xl;
+    }
   }
   &__sub-heading {
     @apply px-10;

@@ -20,7 +20,7 @@ export default function Header(_props: IHeaderProps) {
   const [{ y }] = useWindowScroll();
 
   const [isOpen, setIsOpen] = useState(false);
-  const enableFixedPos = pathname === '/' || pathname === '/about' || pathname === '/digital-marketing';
+  const enableFixedPos = pathname === '/' || pathname === '/about' || pathname === '/services';
   const enableBgTransparent = enableFixedPos ? y !== null && y < 100 && !isOpen : false;
 
   const navLinks = [

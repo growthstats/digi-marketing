@@ -11,7 +11,7 @@
   &__container {
     // @apply my-20;
     @apply w-full;
-    @apply max-w-screen-md;
+    @apply max-w-screen-lg;
     @apply py-4;
     @apply mx-auto;
     @apply text-center;
@@ -19,16 +19,27 @@
   &__title {
     @apply text-4xl;
     @apply text-white;
+    @apply max-w-screen-lg;
     @screen md {
-      @apply text-6xl;
+      @apply text-7xl;
     }
   }
   &__sub-title {
     @apply text-gray-12;
+    @apply mx-auto;
+    @apply max-w-screen-md;
   }
-  &__cta-wrapper {
-    button {
-      @apply cursor-pointer;
+  &__cta {
+    @apply cursor-pointer;
+    @apply bg-white;
+    @apply px-6;
+    @apply py-4;
+    @apply rounded-full;
+    @apply shadow-2xl;
+    @apply transition-all;
+    @apply ease-in-out;
+    &:hover {
+      scale: 1.1;
     }
   }
 }
