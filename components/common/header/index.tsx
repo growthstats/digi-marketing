@@ -20,8 +20,7 @@ export default function Header(_props: IHeaderProps) {
   const [{ y }] = useWindowScroll();
 
   const [isOpen, setIsOpen] = useState(false);
-  const enableFixedPos = pathname === '/' || pathname === '/about' || pathname === '/services';
-  const enableBgTransparent = enableFixedPos ? y !== null && y < 100 && !isOpen : false;
+  const enableBgTransparent = y !== null && y < 100 && !isOpen;
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -82,7 +81,8 @@ export default function Header(_props: IHeaderProps) {
     <header
       className={cx(styles['d-container'], {
         [styles['d-container--enable-bg-transparent']]: enableBgTransparent,
-        [styles['d-container--enable-fixed-pos']]: enableFixedPos,
+        [styles['d-container--enable-fixed-pos']]: true,
+        [styles['d-container--color-white']]: pathname !== '/search-engine-optimization',
         [styles['d-container__home-page']]: enableBgTransparent && pathname === '/',
         'about-page': pathname === '/about',
       })}

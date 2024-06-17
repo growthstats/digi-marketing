@@ -11,9 +11,7 @@
   &--enable-fixed-pos {
     @apply fixed;
   }
-  &--enable-bg-transparent {
-    @apply bg-transparent;
-    @apply shadow-none;
+  &--color-white {
     .d-container__nav-link {
       @apply text-white;
       &--active {
@@ -21,6 +19,10 @@
         @apply border-white;
       }
     }
+  }
+  &--enable-bg-transparent {
+    @apply bg-transparent;
+    @apply shadow-none;
   }
   &__home-page {
     .d-container__nav-link {

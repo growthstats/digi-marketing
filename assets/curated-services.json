@@ -4,6 +4,7 @@
     "title": "SEO Services",
     "description": "We invent and create beautiful brands, digital products, and other most relevant digital things.",
     "linkText": "Learn More",
+    "linkHref": "/search-engine-optimization",
     "src": "/seo-service.jpeg"
   },
   {
@@ -11,6 +12,7 @@
     "title": "Email Marketing & Automation",
     "description": "We invent and create beautiful brands, digital products, and other most relevant digital things.",
     "linkText": "Learn More",
+    "linkHref": "/email-marketing-automation",
     "src": "/email-marketing-service.jpeg"
   },
   {
@@ -18,6 +20,7 @@
     "title": "Social Media Services",
     "description": "We invent and create beautiful brands, digital products, and other most relevant digital things.",
     "linkText": "Learn More",
+    "linkHref": "/social-media-services",
     "src": "/social-media-service-alt.webp"
   },
   {
@@ -25,6 +28,7 @@
     "title": "Web Design",
     "description": "We invent and create beautiful brands, digital products, and other most relevant digital things.",
     "linkText": "Learn More",
+    "linkHref": "/web-design",
     "src": "/web-design-service.jpeg"
   },
   {
@@ -32,6 +36,7 @@
     "title": "Web Development",
     "description": "We invent and create beautiful brands, digital products, and other most relevant digital things.",
     "linkText": "Learn More",
+    "linkHref": "/web-development",
     "src": "/web-development-service.jpeg"
   },
   {
@@ -39,6 +44,7 @@
     "title": "3D Websites",
     "description": "We invent and create beautiful brands, digital products, and other most relevant digital things.",
     "linkText": "Learn More",
+    "linkHref": "/3d-websites",
     "src": "/3d-website-service.jpeg"
   }
 ]

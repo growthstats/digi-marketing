@@ -1,8 +1,9 @@
-import { Box, Button, Grid, Heading, Section, Text } from '@radix-ui/themes';
+import { Box, Grid, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect } from 'react';
 
 import rawCuratedServices from '@/assets/curated-services.json';
@@ -18,6 +19,7 @@ type TCuratedService = {
   title: string;
   description: string;
   linkText: string;
+  linkHref: string;
   src: string;
 };
 
@@ -114,17 +116,20 @@ export default function ServicesSection(props: IServicesSectionProps) {
                 <Box mb={'5'} className={cx(styles['d-section__card__inset'])}>
                   <Image src={service.src} alt={service.title} width={360} height={203} className={cx(styles['d-section__card__img'])} />
                 </Box>
-                <Text as="div" size="5" weight="bold" align={'center'} mb={'5'} color="teal">
-                  {service.title}
-                </Text>
+                <Link href={service.linkHref}>
+                  <Text as="div" size="5" weight="bold" align={'center'} mb={'5'} color="teal">
+                    {service.title}
+                  </Text>
+                </Link>
                 <Text as="div" color="gray" size="4" align={'center'} mb={'4'}>
                   {service.description}
                 </Text>
-                <Box className={cx(styles['d-section__card__cta'])}>
+                {/* TODO: Check and remove this cta */}
+                {/* <Box className={cx(styles['d-section__card__cta'])}>
                   <Button variant="soft" size={'2'}>
                     Learn More
                   </Button>
-                </Box>
+                </Box> */}
               </Box>
             </Box>
           ))}

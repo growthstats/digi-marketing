@@ -3,7 +3,7 @@
 import cx from 'classnames';
 import { FC } from 'react';
 
-import ServicesSection from '@/components/home/services-section';
+import ServicesSection from '@/components/common/services-section';
 import ServicesHeroSection from '@/components/services/services-hero-section';
 
 import styles from './services-page-template.module.scss';
