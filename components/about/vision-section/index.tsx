@@ -96,14 +96,14 @@ export const VisionSection: FC<IVisionSectionProps> = (_props) => {
             <Heading as="h4" mb={'2'}>
               Transparency
             </Heading>
-            <Text>We are transparent with our clients and are always willing to share information without any reservations</Text>
+            <Text>We are transparent with our clients and are always willing to share information without any reservations.</Text>
           </Box>
           {/* 2 */}
           <Box className={cx('animate-value')}>
             <Heading as="h4" mb={'2'}>
               Quality
             </Heading>
-            <Text>Maintaining quality in every aspect of business leaves no scope for complaints</Text>
+            <Text>Maintaining quality in every aspect of business leaves no scope for complaints.</Text>
           </Box>
           {/* 3 */}
           <Box className={cx('animate-value')}>
@@ -112,7 +112,7 @@ export const VisionSection: FC<IVisionSectionProps> = (_props) => {
             </Heading>
             <Text>
               For us, every client carries the same value irrespective of the quantum of business involved. We engage with the same
-              commitment from the smallest to the largest of projects
+              commitment from the smallest to the largest of projects.
             </Text>
           </Box>
           {/* 4 */}
@@ -122,7 +122,7 @@ export const VisionSection: FC<IVisionSectionProps> = (_props) => {
             </Heading>
             <Text>
               We do not discriminate based on religion, color, nationality, etc. and we treat every employee and business associates with
-              great respect
+              great respect.
             </Text>
           </Box>
         </Grid>
