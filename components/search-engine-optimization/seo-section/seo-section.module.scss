@@ -10,7 +10,7 @@
     @apply flex-col;
     @apply mb-8;
     @apply px-6;
-    @apply h-[70svh];
+    @apply min-h-[70svh];
     @screen lg {
       @apply flex-row;
       @apply items-center;

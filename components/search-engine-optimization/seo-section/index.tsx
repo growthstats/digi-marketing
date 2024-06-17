@@ -28,6 +28,22 @@ const SEOSection: FC<ISEOSectionProps> = () => {
       },
     });
     tlSEOFeaturesTitle.fromTo(
+      '.animate-seo-title',
+      { opacity: 0, y: 20 }, // from state
+      { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 }, // to state
+    );
+
+    const tlSEOFeatures = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#seo-features',
+        start: 'top 80%',
+        end: 'bottom 10%',
+        scrub: false,
+        markers: false,
+        toggleActions: 'play reverse play reverse', // onEnter onLeave onEnterBack onLeaveBack
+      },
+    });
+    tlSEOFeatures.fromTo(
       '.animate-seo-feature',
       { opacity: 0, y: 20 }, // from state
       { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 }, // to state
@@ -68,10 +84,10 @@ const SEOSection: FC<ISEOSectionProps> = () => {
 
       {/* Services */}
       <Box className={cx(styles['d-section__services-container'])}>
-        <Heading as="h3" mb={'7'} className={cx(styles['d-section__services-title'], 'animate-seo-feature')} id="seo-features-title">
+        <Heading as="h3" mb={'7'} className={cx(styles['d-section__services-title'], 'animate-seo-title')} id="seo-features-title">
           SEO (Search Engine Optimization) Features
         </Heading>
-        <Box className={cx(styles['d-section__services'])}>
+        <Box className={cx(styles['d-section__services'])} id="seo-features">
           <ServcieCardPill
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
             name={seoServices[0].name}
