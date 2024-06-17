@@ -1,19 +1,18 @@
 .d-container {
   @apply flex;
+  @apply flex-col-reverse;
   @apply items-center;
   @apply gap-4;
-  @apply rounded-full;
   @apply py-6;
   @apply shadow-xl;
-  &--left-oriented {
+  @apply text-center;
+  @screen md {
     @apply flex-row-reverse;
-    @apply pr-14;
-    @apply pl-4;
+    @apply rounded-full;
+    @apply px-4;
   }
-  &--right-oriented {
-    @apply pl-14;
-    @apply pr-4;
-    @apply text-right;
+  @screen lg {
+    @apply pr-8;
   }
   &--color-blue {
     @apply bg-[var(--teal-2)];
@@ -22,14 +21,17 @@
     @apply w-full;
   }
   &__icon-wrapper {
-    @apply rounded-full;
     @apply flex;
     @apply justify-center;
     @apply items-center;
     @apply px-4;
     @apply w-40;
     @apply h-36;
+    // TODO: Remove the bg if no round icon can be found
     @apply bg-[var(--teal-5)];
+    @screen md {
+      @apply rounded-full;
+    }
   }
   &__icon {
     @apply w-full;

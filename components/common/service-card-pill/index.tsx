@@ -9,18 +9,15 @@ interface IServcieCardPillProps {
   name: string;
   description: string;
   icon: string;
-  orientation?: 'left' | 'right';
   className?: string;
   color?: 'blue' | 'orange' | 'red';
 }
 
-const ServcieCardPill: FC<IServcieCardPillProps> = ({ name, description, icon, className, orientation = 'left', color = 'blue' }) => (
+const ServcieCardPill: FC<IServcieCardPillProps> = ({ name, description, icon, className, color = 'blue' }) => (
   <Box
     className={cx(
       styles['d-container'],
       {
-        [styles['d-container--left-oriented']]: orientation === 'left',
-        [styles['d-container--right-oriented']]: orientation === 'right',
         [styles['d-container--color-blue']]: color === 'blue',
       },
       className,

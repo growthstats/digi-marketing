@@ -1,10 +1,15 @@
 @use '/styles/mixin/layout.module.scss' as *;
 
 .d-section {
-  @apply bg-[var(--gray-3)];
   @include edge-to-edge;
+  @apply h-[90svh];
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(16, 178, 218, 1) 100%);
   &__container {
-    @apply mt-20;
+    // @apply my-20;
     @apply w-full;
     @apply max-w-screen-md;
     @apply py-4;
@@ -12,7 +17,14 @@
     @apply text-center;
   }
   &__title {
-    @apply text-6xl;
+    @apply text-4xl;
+    @apply text-white;
+    @screen md {
+      @apply text-6xl;
+    }
+  }
+  &__sub-title {
+    @apply text-gray-12;
   }
   &__cta-wrapper {
     button {
