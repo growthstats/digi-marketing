@@ -17,8 +17,8 @@ const HeroSection: FC<IHeroSectionProps> = (_props) => (
         Get to Know Growth Stats Better
       </Heading>
       <Text className={cx(styles['d-section__description'])}>
-        At <Text weight={'medium'}>Growth Stats</Text> Our Services Scale To Your Needs, Reach Wherever You Work And Deliver What&apos;s
-        Next And Best For Your Business.
+        At <Text weight={'medium'}>Growth Stats</Text>, our services scale to your needs, reach wherever you work, and deliver the best
+        solutions for your business.
       </Text>
     </Box>
   </Section>

@@ -90,13 +90,13 @@ export default function AboutSection(_props: IAboutSectionProps) {
             </Text>
           </Text>
           <Text as="p" mb={'1'}>
-            <Strong>Creative Visual Inputs</Strong> that make your business website stand out, leading to ……
+            <Strong>Creative Visual Inputs</Strong> that will make your business website stand out, leading to ……
             <Text as="span" color="blue" weight={'bold'}>
               Growth
             </Text>
           </Text>
           <Text as="p" mb={'1'}>
-            Creating <Strong>Engaging Content</Strong> that keeps clients coming to you repeatedly ……
+            Creating <Strong>Engaging Content</Strong> that keeps clients coming back to you repeatedly ……
             <Text as="span" color="blue" weight={'bold'}>
               Growth
             </Text>

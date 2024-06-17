@@ -20,7 +20,7 @@ export default function HeroSection(_props: IHeroSectionProps) {
       </video>
       <Box className={cx(styles['d-section__overlay-content'])}>
         <Heading as="h1" weight={'bold'} className={cx(styles['d-section__hero-title'])}>
-          <Text>Online Marketing</Text>
+          <Text>Online Marketing </Text>
           <Text>For Rapid Growth</Text>
         </Heading>
         <Box className={cx(styles['d-section__subtitle-wrapper'])}>
@@ -28,7 +28,7 @@ export default function HeroSection(_props: IHeroSectionProps) {
             Growth Stats
           </Text>
           <Text as="p" size={'6'} weight={'medium'}>
-            We make your Growth Statistics Soar
+            We Make Your Growth Statistics Soar
           </Text>
         </Box>
         <Box>
