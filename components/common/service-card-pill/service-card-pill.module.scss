@@ -29,7 +29,7 @@
     @apply w-40;
     @apply h-36;
     // TODO: Remove the bg if no round icon can be found
-    @apply bg-[var(--blue-4)];
+    @apply bg-[var(--gs-color-primary)];
     @screen md {
       @apply rounded-full;
     }

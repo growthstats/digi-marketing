@@ -71,8 +71,8 @@ const SEOSection: FC<ISEOSectionProps> = () => {
           <Text as="p" size={'3'} mb={'5'} className={cx(styles['d-section__text-content'])}>
             Our experts optimize your website through on-page and off-page SEO. Various techniques are used to help your company website
             rank higher globally. It all starts with quality content writing, which includes keywords that are placed as per Google norms in
-            a strategic manner. Meta descriptions, headings, and subheadings, internal and external links, images, etc. are all paid
-            attention to so that your website links are click-worthy.
+            a strategic manner. Meta descriptions, headings, subheadings, internal and external links, images, etc. are all paid attention
+            to so that your website links are click-worthy.
           </Text>
           <Box className={cx(styles['d-section__cta-wrapper'])}>
             <Button id="digital-marketing__seo__cta" variant="outline" size={'4'}>

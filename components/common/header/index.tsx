@@ -82,7 +82,7 @@ export default function Header(_props: IHeaderProps) {
       className={cx(styles['d-container'], {
         [styles['d-container--enable-bg-transparent']]: enableBgTransparent,
         [styles['d-container--enable-fixed-pos']]: true,
-        [styles['d-container--color-white']]: pathname !== '/search-engine-optimization',
+        [styles['d-container--color-white']]: enableBgTransparent && pathname !== '/search-engine-optimization',
         [styles['d-container__home-page']]: enableBgTransparent && pathname === '/',
         'about-page': pathname === '/about',
       })}
@@ -142,7 +142,7 @@ export default function Header(_props: IHeaderProps) {
         <div className={styles['d-container__contact-button']}>
           <Button size={'3'}>
             <Text size={'5'} weight={'medium'}>
-              Contact
+              Let&apos;s talk
             </Text>
           </Button>
         </div>
@@ -173,7 +173,7 @@ export default function Header(_props: IHeaderProps) {
           <div className={styles['d-container__contact-button-mobile']}>
             <Button size={'2'}>
               <Text size={'4'} weight={'medium'}>
-                Contact Us
+                Let&apos;s talk
               </Text>
             </Button>
           </div>
