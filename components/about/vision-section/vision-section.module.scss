@@ -1,4 +1,7 @@
+@use '/styles/mixin/layout.module.scss' as *;
+
 .d-section {
+  @include d-container;
   &__mission-vision-wrapper {
     @apply flex;
     @apply flex-col;
