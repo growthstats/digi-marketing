@@ -23,13 +23,13 @@
     @apply -mt-[calc(3.5rem+16px)];
     @apply py-1;
     @apply px-2;
-    @apply bg-[var(--teal-11)];
+    @apply bg-[var(--blue-11)];
     @apply text-white;
     @apply font-bold;
   }
   &__mission-title {
     @apply mb-6;
-    @apply text-[var(--teal-11)];
+    @apply text-[var(--blue-11)];
     @apply text-5xl;
     @screen md {
       @apply mb-8;
@@ -81,7 +81,7 @@
     @apply py-1;
     @apply px-2;
     @apply bg-white;
-    @apply text-[var(--teal-11)];
+    @apply text-[var(--blue-11)];
     @apply font-bold;
   }
   &__values-title {

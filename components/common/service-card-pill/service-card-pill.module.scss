@@ -16,7 +16,7 @@
     @apply pr-8;
   }
   &--color-blue {
-    @apply bg-[var(--teal-2)];
+    @apply bg-[var(--blue-2)];
   }
   &__content-wrapper {
     @apply w-full;
@@ -29,7 +29,7 @@
     @apply w-40;
     @apply h-36;
     // TODO: Remove the bg if no round icon can be found
-    @apply bg-[var(--teal-5)];
+    @apply bg-[var(--blue-4)];
     @screen md {
       @apply rounded-full;
     }

@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="light">
       <body className={cx('bg-white', inter.variable)}>
-        <Theme accentColor="teal" grayColor="slate" appearance="light">
+        <Theme accentColor="blue" grayColor="slate" appearance="light">
           {/* <Preloader /> */}
           <Header />
           <div className="container mx-auto">{children}</div>

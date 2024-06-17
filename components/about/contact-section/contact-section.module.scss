@@ -2,7 +2,7 @@
 
 .d-section {
   @include edge-to-edge;
-  @apply bg-[var(--teal-11)];
+  @apply bg-[var(--blue-11)];
   &__container {
     @include d-container;
     @apply mx-auto;

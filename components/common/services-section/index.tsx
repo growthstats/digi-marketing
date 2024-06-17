@@ -92,7 +92,7 @@ export default function ServicesSection(props: IServicesSectionProps) {
       <Box className={cx(styles['d-section__container'])}>
         <Heading id="services-section__heading" as="h2" mb={'6'} className={cx(styles['d-section__heading'])}>
           One Place For{' '}
-          <Text as="span" color="teal">
+          <Text as="span" color="blue">
             Best Marketing Services{' '}
           </Text>
           Online
@@ -117,7 +117,7 @@ export default function ServicesSection(props: IServicesSectionProps) {
                   <Image src={service.src} alt={service.title} width={360} height={203} className={cx(styles['d-section__card__img'])} />
                 </Box>
                 <Link href={service.linkHref}>
-                  <Text as="div" size="5" weight="bold" align={'center'} mb={'5'} color="teal">
+                  <Text as="div" size="5" weight="bold" align={'center'} mb={'5'} color="blue">
                     {service.title}
                   </Text>
                 </Link>

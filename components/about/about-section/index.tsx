@@ -19,23 +19,23 @@ export const AboutSection: FC<IAboutSectionProps> = (_props) => (
         </Text>
         <Text size={'4'} as="div" mb={'4'}>
           We design your company website, do{' '}
-          <Text weight={'bold'} color="teal">
+          <Text weight={'bold'} color="blue">
             Search Engine Optimization
           </Text>{' '}
           of the website, do{' '}
-          <Text weight={'bold'} color="teal">
+          <Text weight={'bold'} color="blue">
             Creative Content Development
           </Text>
           , and{' '}
-          <Text weight={'bold'} color="teal">
+          <Text weight={'bold'} color="blue">
             Social Media Campaigns
           </Text>
           ,{' '}
-          <Text weight={'bold'} color="teal">
+          <Text weight={'bold'} color="blue">
             Write & Post Blogs
           </Text>
           ,{' '}
-          <Text weight={'bold'} color="teal">
+          <Text weight={'bold'} color="blue">
             Develop Three-Dimensional Websites
           </Text>{' '}
           that grabs eyeballs, etc. Through a strategic mix of online mediums, we deliver you the expected results.
@@ -43,13 +43,13 @@ export const AboutSection: FC<IAboutSectionProps> = (_props) => (
         <Text size={'4'} as="div" mb={'4'}>
           Our most <Text weight={'bold'}>Experienced</Text> and <Text weight={'bold'}>Skilled Professionals</Text> ensure that the online
           presence of your business through various tools and promotion of business on the internet will deliver consistent{' '}
-          <Text weight={'medium'} color="teal">
+          <Text weight={'medium'} color="blue">
             growth.
           </Text>
         </Text>
         <Text size={'4'} as="div">
           Since the year 2023, we have been serving the corporate sector by providing all{' '}
-          <Text color="teal" weight={'medium'}>
+          <Text color="blue" weight={'medium'}>
             Online Marketing Solutions
           </Text>{' '}
           in one place. Everything that we do ensures business growth for our clients. Growth is in our name and growing businesses is the

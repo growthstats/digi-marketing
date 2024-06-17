@@ -48,7 +48,7 @@
     @apply text-white;
     span {
       @apply text-5xl;
-      text-shadow: 0 0 7px var(--teal-9);
+      text-shadow: 0 0 7px var(--blue-9);
       @screen md {
         @apply text-6xl;
       }
