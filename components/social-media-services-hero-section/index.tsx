@@ -6,15 +6,15 @@ import Lottie from 'lottie-react';
 import { FC, useEffect } from 'react';
 
 import seoServiceposterAnimation from '@/assets/animations/seo-service-poster.json';
-import seoServices from '@/assets/seo-services.json';
-import ServcieCardPill from '@/components/common/service-card-pill';
+import socialMediaServices from '@/assets/social-media-services.json';
 
-import styles from './seo-section.module.scss';
+import ServiceCard from '../common/service-card';
+import styles from './social-media-services-hero-section.module.scss';
 
-interface ISEOSectionProps {}
+interface ISocialMediaServicesHeroSectionProps {}
 
 // TODO: Add gsap animations
-const SEOSection: FC<ISEOSectionProps> = () => {
+const SocialMediaServicesHeroSection: FC<ISocialMediaServicesHeroSectionProps> = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const tlSEOFeaturesTitle = gsap.timeline({
@@ -61,21 +61,18 @@ const SEOSection: FC<ISEOSectionProps> = () => {
         {/* Col 2 */}
         <Box className={cx(styles['d-section__content-col'])}>
           <Heading as="h2" mb={'5'} className={cx(styles['d-section__title'])}>
-            SEO (Search Engine Optimization)
+            Social Media Services
           </Heading>
-          <Text as="p" size={'3'} weight={'regular'} mb={'1'} className={cx(styles['d-section__text-content'])}>
-            We offer all types of SEO services that ensure the top ranking of your website on the search engines. Your website needs to be
-            SEO-friendly as it saves a lot of money on online advertisements. When your company website ranks higher in the search engine,
-            the probability of getting business is higher than your competitors.
-          </Text>
-          <Text as="p" size={'3'} mb={'5'} className={cx(styles['d-section__text-content'])}>
-            Our experts optimize your website through on-page and off-page SEO. Various techniques are used to help your company website
-            rank higher globally. It all starts with quality content writing, which includes keywords that are placed as per Google norms in
-            a strategic manner. Meta descriptions, headings, subheadings, internal and external links, images, etc. are all paid attention
-            to so that your website links are click-worthy.
+          <Text as="p" size={'3'} weight={'regular'} mb={'5'} className={cx(styles['d-section__text-content'])}>
+            At <Text weight={'medium'}>Growth Stats</Text>, we offer comprehensive Social Media Services designed to elevate your
+            brand&apos;s online presence and foster meaningful connections. From crafting and managing your social media brand to ensuring
+            stellar online reputation, our expert team strategically optimizes your interactions across popular platforms like Facebook,
+            Instagram, YouTube, and LinkedIn. We provide tailored solutions in brand management, account handling, and community engagement,
+            driving growth and retaining customer loyalty. Our focus is on delivering impactful, cost-effective strategies that amplify your
+            reach and cultivate a positive, lasting impression in the digital landscape.
           </Text>
           <Box className={cx(styles['d-section__cta-wrapper'])}>
-            <Button id="digital-marketing__seo__cta" variant="outline" size={'4'}>
+            <Button id="digital-marketing__seo__cta" size={'4'}>
               Contact Us
             </Button>
           </Box>
@@ -85,33 +82,50 @@ const SEOSection: FC<ISEOSectionProps> = () => {
       {/* Services */}
       <Box className={cx(styles['d-section__services-container'])}>
         <Heading as="h3" mb={'7'} className={cx(styles['d-section__services-title'], 'animate-seo-title')} id="seo-features-title">
-          SEO (Search Engine Optimization) Features
+          Social Media Service Features
         </Heading>
         <Box className={cx(styles['d-section__services'])} id="seo-features">
-          <ServcieCardPill
+          <ServiceCard
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
-            name={seoServices[0].name}
-            description={seoServices[0].description}
-            icon={'/seo-icon.png'}
+            name={socialMediaServices[0].name}
+            description={socialMediaServices[0].description}
+            imgSrc={'/seo-icon.png'}
             color="blue"
           />
-          <ServcieCardPill
+          <ServiceCard
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
-            name={seoServices[1].name}
-            description={seoServices[1].description}
-            icon={'/seo-icon.png'}
+            name={socialMediaServices[1].name}
+            description={socialMediaServices[1].description}
+            imgSrc={'/seo-icon.png'}
+            color="orange"
           />
-          <ServcieCardPill
+          <ServiceCard
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
-            name={seoServices[2].name}
-            description={seoServices[2].description}
-            icon={'/seo-icon.png'}
+            name={socialMediaServices[2].name}
+            description={socialMediaServices[2].description}
+            imgSrc={'/seo-icon.png'}
+            color="plum"
           />
-          <ServcieCardPill
+          <ServiceCard
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
-            name={seoServices[3].name}
-            description={seoServices[3].description}
-            icon={'/seo-icon.png'}
+            name={socialMediaServices[3].name}
+            description={socialMediaServices[3].description}
+            imgSrc={'/seo-icon.png'}
+            color="orange"
+          />
+          <ServiceCard
+            className={cx(styles['d-section__service'], 'animate-seo-feature')}
+            name={socialMediaServices[4].name}
+            description={socialMediaServices[4].description}
+            imgSrc={'/seo-icon.png'}
+            color="plum"
+          />
+          <ServiceCard
+            className={cx(styles['d-section__service'], 'animate-seo-feature')}
+            name={socialMediaServices[5].name}
+            description={socialMediaServices[5].description}
+            imgSrc={'/seo-icon.png'}
+            color="blue"
           />
         </Box>
       </Box>
@@ -119,4 +133,4 @@ const SEOSection: FC<ISEOSectionProps> = () => {
   );
 };
 
-export default SEOSection;
+export default SocialMediaServicesHeroSection;

@@ -7,7 +7,14 @@
   &__container {
     @include d-container;
     @apply flex;
+    @apply flex-col;
     @apply mb-8;
+    @apply px-6;
+    @apply min-h-[70svh];
+    @screen lg {
+      @apply flex-row;
+      @apply items-center;
+    }
   }
   &__image-col {
     @apply w-full;

@@ -1,0 +1,68 @@
+.d-container {
+  @apply flex;
+  @apply flex-col;
+  @apply justify-start;
+  @apply items-center;
+  @apply max-w-[300px];
+  @apply rounded-2xl;
+  @apply shadow-xl;
+  @apply p-8;
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  @apply ease-in-out;
+  &:hover {
+    @apply shadow-2xl;
+    .d-container__separator {
+      @apply w-16;
+    }
+  }
+  &--bg-blue {
+    @apply bg-[var(--blue-2)];
+    .d-container__separator {
+      @apply border-[var(--blue-11)];
+    }
+  }
+  &--bg-orange {
+    @apply bg-[var(--orange-2)];
+    .d-container__separator {
+      @apply border-[var(--orange-11)];
+    }
+  }
+  &--bg-plum {
+    @apply bg-[var(--plum-2)];
+    .d-container__separator {
+      @apply border-[var(--plum-11)];
+    }
+  }
+  &__image-wrapper {
+    @apply w-24;
+    @apply h-24;
+    @apply mb-4;
+  }
+  &__image {
+    @apply w-full;
+    @apply h-auto;
+  }
+  &__content-wrapper {
+  }
+  &__name {
+    @apply text-center;
+    @apply mb-4;
+    @apply text-xl;
+  }
+  &__separator {
+    @apply w-10;
+    @apply border;
+    @apply border-2;
+    @apply mx-auto;
+    @apply mb-4;
+    transition-property: width;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 400ms;
+    @apply ease-in-out;
+  }
+  &__description {
+    @apply text-center;
+  }
+}

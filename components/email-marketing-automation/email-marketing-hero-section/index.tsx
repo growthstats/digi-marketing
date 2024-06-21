@@ -5,15 +5,21 @@ import { FC } from 'react';
 
 import seoServiceposterAnimation from '@/assets/animations/seo-service-poster.json';
 
-import styles from './email-marketing-automation.module.scss';
+import styles from './email-marketing-hero-section.module.scss';
 
-interface IEmailMarketingAutomationSectionProps {}
+interface IEmailMarketingHeroSectionProps {}
 
 // TODO: Add gsap animations
-const EmailMarketingAutomationSection: FC<IEmailMarketingAutomationSectionProps> = () => (
+const EmailMarketingHeroSection: FC<IEmailMarketingHeroSectionProps> = () => (
   <Section className={cx(styles['d-section'])}>
     <Box className={cx(styles['d-section__container'])}>
       {/* Col 1 */}
+      <Box className={cx(styles['d-section__image-col'])}>
+        <Box className={cx(styles['d-section__image-wrapper'])}>
+          <Lottie animationData={seoServiceposterAnimation} />
+        </Box>
+      </Box>
+      {/* Col 2 */}
       <Box className={cx(styles['d-section__content-col'])}>
         <Heading as="h2" mb={'5'} className={cx(styles['d-section__title'])}>
           Email Marketing and Automation
@@ -29,14 +35,8 @@ const EmailMarketingAutomationSection: FC<IEmailMarketingAutomationSectionProps>
           </Button>
         </Box>
       </Box>
-      {/* Col 2 */}
-      <Box className={cx(styles['d-section__image-col'])}>
-        <Box className={cx(styles['d-section__image-wrapper'])}>
-          <Lottie animationData={seoServiceposterAnimation} />
-        </Box>
-      </Box>
     </Box>
   </Section>
 );
 
-export default EmailMarketingAutomationSection;
+export default EmailMarketingHeroSection;
