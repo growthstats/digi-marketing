@@ -100,18 +100,21 @@ const SEOHeroSection: FC<ISEOHeroSectionProps> = () => {
             name={seoServices[1].name}
             description={seoServices[1].description}
             icon={'/seo-icon.png'}
+            color="orange"
           />
           <ServcieCardPill
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
             name={seoServices[2].name}
             description={seoServices[2].description}
             icon={'/seo-icon.png'}
+            color="amber"
           />
           <ServcieCardPill
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
             name={seoServices[3].name}
             description={seoServices[3].description}
             icon={'/seo-icon.png'}
+            color="plum"
           />
         </Box>
       </Box>

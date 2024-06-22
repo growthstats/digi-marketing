@@ -10,7 +10,7 @@ interface IServcieCardPillProps {
   description: string;
   icon: string;
   className?: string;
-  color?: 'blue' | 'orange' | 'red';
+  color?: 'blue' | 'orange' | 'plum' | 'amber';
 }
 
 const ServcieCardPill: FC<IServcieCardPillProps> = ({ name, description, icon, className, color = 'blue' }) => (
@@ -18,7 +18,10 @@ const ServcieCardPill: FC<IServcieCardPillProps> = ({ name, description, icon, c
     className={cx(
       styles['d-container'],
       {
-        [styles['d-container--color-blue']]: color === 'blue',
+        [styles['d-container--bg-blue']]: color === 'blue',
+        [styles['d-container--bg-orange']]: color === 'orange',
+        [styles['d-container--bg-plum']]: color === 'plum',
+        [styles['d-container--bg-amber']]: color === 'amber',
       },
       className,
     )}

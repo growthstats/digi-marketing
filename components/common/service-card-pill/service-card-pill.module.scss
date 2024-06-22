@@ -6,6 +6,13 @@
   @apply py-6;
   @apply shadow-xl;
   @apply text-center;
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  @apply ease-in-out;
+  &:hover {
+    @apply shadow-2xl;
+  }
   @screen md {
     @apply flex-row-reverse;
     @apply rounded-full;
@@ -15,8 +22,30 @@
   @screen lg {
     @apply pr-8;
   }
-  &--color-blue {
+
+  &--bg-blue {
     @apply bg-[var(--blue-2)];
+    .d-container__icon-wrapper {
+      @apply bg-[var(--blue-7)];
+    }
+  }
+  &--bg-orange {
+    @apply bg-[var(--orange-2)];
+    .d-container__icon-wrapper {
+      @apply bg-[var(--orange-7)];
+    }
+  }
+  &--bg-plum {
+    @apply bg-[var(--plum-2)];
+    .d-container__icon-wrapper {
+      @apply bg-[var(--plum-7)];
+    }
+  }
+  &--bg-amber {
+    @apply bg-[var(--amber-2)];
+    .d-container__icon-wrapper {
+      @apply bg-[var(--amber-7)];
+    }
   }
   &__content-wrapper {
     @apply w-full;
@@ -28,8 +57,6 @@
     @apply px-4;
     @apply w-40;
     @apply h-36;
-    // TODO: Remove the bg if no round icon can be found
-    @apply bg-[var(--gs-color-primary)];
     @screen md {
       @apply rounded-full;
     }
