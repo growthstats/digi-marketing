@@ -1,9 +1,10 @@
+@use '/styles/mixin/animation.module.scss' as *;
+
 .d-container {
   @apply flex;
   @apply flex-col;
   @apply justify-start;
   @apply items-center;
-  @apply max-w-[300px];
   @apply rounded-2xl;
   @apply shadow-xl;
   @apply p-8;
@@ -17,6 +18,7 @@
       @apply w-16;
     }
   }
+  // Color styles
   &--bg-blue {
     @apply bg-[var(--blue-2)];
     .d-container__separator {
@@ -35,6 +37,58 @@
       @apply border-[var(--plum-11)];
     }
   }
+  // Variant styles
+  &--vertical {
+    @apply max-w-[300px];
+  }
+  &--horizontal {
+    @apply max-w-screen-lg;
+    @apply gap-8;
+    &:hover {
+      .d-container__image-wrapper {
+        @include vertical-move();
+      }
+      .d-container__separator {
+        @apply w-24;
+      }
+    }
+    @screen md {
+      @apply flex-row;
+      @apply p-12;
+    }
+    .d-container__image-col {
+      @apply w-full;
+      @apply h-auto;
+      @screen md {
+        @apply my-10;
+      }
+    }
+    .d-container__image-wrapper {
+      @apply w-full;
+      @apply h-auto;
+      @apply mx-auto;
+    }
+    .d-container__content-wrapper {
+      @apply w-full;
+    }
+    .d-container__name {
+      @screen md {
+        @apply text-start;
+        @apply text-3xl;
+      }
+    }
+    .d-container__description {
+      @screen md {
+        @apply text-start;
+      }
+    }
+  }
+  // Layout styles
+  &--layout-reverse {
+    @screen md {
+      @apply flex-row-reverse;
+    }
+  }
   &__image-wrapper {
     @apply w-24;
     @apply h-24;
@@ -43,8 +97,6 @@
   &__image {
     @apply w-full;
     @apply h-auto;
-  }
-  &__content-wrapper {
   }
   &__name {
     @apply text-center;
