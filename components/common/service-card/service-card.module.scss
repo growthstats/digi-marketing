@@ -77,6 +77,11 @@
         @apply text-3xl;
       }
     }
+    .d-container__separator {
+      @screen md {
+        @apply mx-0;
+      }
+    }
     .d-container__description {
       @screen md {
         @apply text-start;
