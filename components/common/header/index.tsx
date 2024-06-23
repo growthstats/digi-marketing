@@ -177,18 +177,20 @@ export default function Header(_props: IHeaderProps) {
                     <ChevronDownIcon size={20} className={cx(styles['d-container__mobile-toggle-icon'])} />
                   </button>
                 </Flex>
-                <Box
-                  className={cx(styles['d-container__services-mobile'], {
-                    [styles['d-container__services-mobile--open']]: isServicesDropdownOpen,
-                  })}
-                >
-                  <Flex direction={'column'} p={'2'} gap={'2'} className={cx(styles['d-container__dropdown-services'])}>
-                    {servicesLinks.map((service) => (
-                      <Link key={service.title} className={cx(styles['d-container__dropdown-service-link'])} href={service.href}>
-                        <Text weight={'medium'}>{service.title}</Text>
-                      </Link>
-                    ))}
-                  </Flex>
+                <Box className={cx(styles['d-container__services-mobile-container'])}>
+                  <Box
+                    className={cx(styles['d-container__services-mobile'], {
+                      [styles['d-container__services-mobile--open']]: isServicesDropdownOpen,
+                    })}
+                  >
+                    <Flex direction={'column'} p={'2'} gap={'2'} className={cx(styles['d-container__dropdown-services'])}>
+                      {servicesLinks.map((service) => (
+                        <Link key={service.title} className={cx(styles['d-container__dropdown-service-link'])} href={service.href}>
+                          <Text weight={'medium'}>{service.title}</Text>
+                        </Link>
+                      ))}
+                    </Flex>
+                  </Box>
                 </Box>
                 <hr />
               </>

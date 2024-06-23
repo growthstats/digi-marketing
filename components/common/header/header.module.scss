@@ -164,16 +164,17 @@
     @apply transition-all;
     @apply duration-300;
   }
+  &__services-mobile-container {
+    @apply overflow-hidden;
+  }
   &__services-mobile {
-    transition-property: height;
+    transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 500ms;
-    @apply ease-in-out;
-    @apply hidden;
-    @apply h-0;
+    @apply ease-in;
+    @apply mt-[-130%];
     &--open {
-      @apply block;
-      @apply h-auto;
+      @apply mt-0;
     }
   }
   &__contact-button-mobile {
