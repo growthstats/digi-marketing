@@ -78,7 +78,7 @@ const WebDevelopmentHeroSection: FC<IWebDevelopmentHeroSectionProps> = () => {
       {/* Services */}
       <Box className={cx(styles['d-section__services-container'])}>
         <Heading as="h3" mb={'7'} className={cx(styles['d-section__services-title'], 'animate-web-dev-title')} id="web-dev-features-title">
-          Web Developement Features
+          Web Development Features
         </Heading>
         <Box className={cx(styles['d-section__services'])} id="web-design-features">
           <ServiceCard

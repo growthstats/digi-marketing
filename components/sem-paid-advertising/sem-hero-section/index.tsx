@@ -76,7 +76,7 @@ const SEMHeroSection: FC<ISEMHeroSectionProps> = () => {
             to so that your website links are click-worthy.
           </Text>
           <Box className={cx(styles['d-section__cta-wrapper'])}>
-            <Button id="digital-marketing__seo__cta" variant="outline" size={'4'}>
+            <Button id="digital-marketing__seo__cta" size={'4'}>
               Contact Us
             </Button>
           </Box>

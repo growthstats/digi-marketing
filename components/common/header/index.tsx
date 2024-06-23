@@ -51,7 +51,7 @@ export default function Header(_props: IHeaderProps) {
     },
     {
       title: 'Web Development',
-      href: '/web-developemnt',
+      href: '/web-developement',
     },
     {
       title: '3D Websites',
@@ -107,7 +107,9 @@ export default function Header(_props: IHeaderProps) {
                   <Flex direction={'column'} p={'4'} gap={'2'} className={cx(styles['d-container__dropdown-services'])}>
                     {servicesLinks.map((service) => (
                       <Link key={service.title} className={cx(styles['d-container__dropdown-service-link'])} href={service.href}>
-                        <Text weight={'bold'}>{service.title}</Text>
+                        <Text as="p" weight={'bold'}>
+                          {service.title}
+                        </Text>
                       </Link>
                     ))}
                   </Flex>

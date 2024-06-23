@@ -97,21 +97,21 @@ const SocialMediaServicesHeroSection: FC<ISocialMediaServicesHeroSectionProps> =
             name={socialMediaServices[1].name}
             description={socialMediaServices[1].description}
             imgSrc={'/seo-icon.png'}
-            color="orange"
+            color="plum"
           />
           <ServiceCard
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
             name={socialMediaServices[2].name}
             description={socialMediaServices[2].description}
             imgSrc={'/seo-icon.png'}
-            color="plum"
+            color="orange"
           />
           <ServiceCard
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
             name={socialMediaServices[3].name}
             description={socialMediaServices[3].description}
             imgSrc={'/seo-icon.png'}
-            color="orange"
+            color="blue"
           />
           <ServiceCard
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
@@ -125,7 +125,7 @@ const SocialMediaServicesHeroSection: FC<ISocialMediaServicesHeroSectionProps> =
             name={socialMediaServices[5].name}
             description={socialMediaServices[5].description}
             imgSrc={'/seo-icon.png'}
-            color="blue"
+            color="orange"
           />
         </Box>
       </Box>
