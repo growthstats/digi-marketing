@@ -18,8 +18,9 @@ export default function Header(_props: IHeaderProps) {
   const pathname = usePathname();
   const [{ y }] = useWindowScroll();
 
-  const [isOpen, setIsOpen] = useState(false);
-  const enableBgTransparent = y !== null && y < 100 && !isOpen;
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const enableBgTransparent = y !== null && y < 100 && !isMenuOpen;
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -59,7 +60,7 @@ export default function Header(_props: IHeaderProps) {
   ];
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const shouldApplyWhiteColor = (pathname: string) => {
@@ -141,12 +142,12 @@ export default function Header(_props: IHeaderProps) {
             aria-controls="mobile-menu"
             aria-expanded="false"
           >
-            {isOpen ? <FaTimes /> : <FaBars />}
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
       </nav>
       {/* Mobile */}
-      <div className={cx(styles['d-container__mobile-menu'], { [styles['d-container__mobile-menu--open']]: isOpen })} id="mobile-menu">
+      <div className={cx(styles['d-container__mobile-menu'], { [styles['d-container__mobile-menu--open']]: isMenuOpen })} id="mobile-menu">
         <div className={cx(styles['d-container__mobile-menu-content'])}>
           <Box mb={'5'} my={'3'}>
             <Link href="/" className={styles['d-container__brand-link']}>
@@ -165,25 +166,28 @@ export default function Header(_props: IHeaderProps) {
                       Services
                     </Text>
                   </Link>
-                  {/* TODO: Replae this dowpdown with a expanding dropdown */}
-                  <DropdownMenu.Root key={link.name}>
-                    <DropdownMenu.Trigger>
-                      <button className={cx(styles['d-container__mobile-menu-link'])}>
-                        <ChevronDownIcon size={20} className="border" />
-                      </button>
-                    </DropdownMenu.Trigger>
-                    <DropdownMenu.Content align="center">
-                      <Flex direction={'column'} p={'4'} gap={'2'} className={cx(styles['d-container__dropdown-services'])}>
-                        {servicesLinks.map((service) => (
-                          <Link key={service.title} className={cx(styles['d-container__dropdown-service-link'])} href={service.href}>
-                            <Text weight={'medium'}>{service.title}</Text>
-                          </Link>
-                        ))}
-                      </Flex>
-                    </DropdownMenu.Content>
-                  </DropdownMenu.Root>
+                  <button
+                    className={cx(styles['d-container__mobile-menu-toggle'], {
+                      [styles['d-container__mobile-menu-toggle--open']]: isServicesDropdownOpen,
+                    })}
+                    onClick={() => setIsServicesDropdownOpen((prev) => !prev)}
+                  >
+                    <ChevronDownIcon size={20} className={cx(styles['d-container__mobile-toggle-icon'])} />
+                  </button>
                 </Flex>
-
+                <Box
+                  className={cx(styles['d-container__services-mobile'], {
+                    [styles['d-container__services-mobile--open']]: isServicesDropdownOpen,
+                  })}
+                >
+                  <Flex direction={'column'} p={'2'} gap={'2'} className={cx(styles['d-container__dropdown-services'])}>
+                    {servicesLinks.map((service) => (
+                      <Link key={service.title} className={cx(styles['d-container__dropdown-service-link'])} href={service.href}>
+                        <Text weight={'medium'}>{service.title}</Text>
+                      </Link>
+                    ))}
+                  </Flex>
+                </Box>
                 <hr />
               </>
             ) : (
