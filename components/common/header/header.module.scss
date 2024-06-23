@@ -12,6 +12,9 @@
     @apply fixed;
   }
   &--color-white {
+    .d-container__brand-name {
+      @apply text-white;
+    }
     .d-container__nav-link {
       @apply text-white;
       &--active {
@@ -42,14 +45,20 @@
     @apply justify-between;
     @apply items-center;
   }
-  &__logo {
+  &__brand {
     @apply flex;
     @apply items-center;
     @apply space-x-4;
   }
-  &__logo-link {
-    @apply text-xl;
+  &__brand-link {
+    @apply flex;
+    @apply items-center;
+    @apply gap-2;
+  }
+  &__brand-name {
+    @apply text-2xl;
     @apply font-bold;
+    @apply text-[var(--blue-12)];
   }
   &__nav-links {
     @apply hidden;
@@ -59,8 +68,8 @@
     }
   }
   &__nav-link {
-    @apply text-gray-11;
-    @apply border-[var(--gray-10)];
+    @apply text-blue-12;
+    @apply border-[var(--blue-12)];
     &:focus-visible {
       @apply outline-none;
     }
@@ -68,12 +77,10 @@
   &__nav-link--active {
     @apply border-b-2;
   }
-  &__dropdown-item {
-    @apply block;
-    @apply px-4;
-    @apply py-2;
-    &:hover {
-      @apply bg-gray-100;
+  &__dropdown-service-link {
+    @apply text-blue-11;
+    :hover {
+      @apply text-blue-12;
     }
   }
   &__contact-button {
@@ -120,9 +127,13 @@
     }
   }
   &__mobile-menu-content {
+    @apply fixed;
+    @apply top-0;
+    @apply h-full;
+    @apply w-2/3;
+    @apply shadow-2xl;
     @apply bg-white;
-    @apply px-2;
-    @apply py-4;
+    @apply p-4;
     @apply space-y-1;
     @screen sm {
       @apply px-3;
@@ -130,8 +141,8 @@
   }
   &__mobile-menu-link {
     p {
-      @apply text-gray-11;
-      @apply mb-2;
+      @apply text-blue-12;
+      @apply my-2;
       &:hover {
         @apply font-bold;
       }

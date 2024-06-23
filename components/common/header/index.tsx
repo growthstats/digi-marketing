@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, DropdownMenu, Flex, Grid, Text } from '@radix-ui/themes';
+import { Box, Button, DropdownMenu, Flex, Text } from '@radix-ui/themes';
 import { useWindowScroll } from '@uidotdev/usehooks';
 import cx from 'classnames';
 import Image from 'next/image';
@@ -11,7 +11,6 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 
 import { ChevronDownIcon } from '../icons/icon-components';
 import styles from './header.module.scss';
-import { ServiceDropdown } from './service-dropdown';
 
 export interface IHeaderProps {}
 
@@ -30,46 +29,32 @@ export default function Header(_props: IHeaderProps) {
 
   const servicesLinks = [
     {
-      title: 'Digital Marketing',
-      href: '/digital-marketing',
-      imgSrc: '/digital-marketing-service.svg',
-      items: [
-        'Search Engine Optimization',
-        'Technical SEO',
-        'Pay Per Click Management',
-        'Email Marketing',
-        'Content Marketing',
-        'Performance Marketing',
-        'E-Commerce',
-        'Social Media Marketing',
-        'Social Media Management',
-        'Social Media Brand Management',
-        'Content Writing & Copywriting',
-      ],
+      title: 'Search Engine Optimization',
+      href: '/search-engine-optimization',
     },
     {
-      // Need to keep this empty for the verticle divider
-      title: '',
-      href: '',
-      imgSrc: '',
-      items: [],
+      title: 'Email Marketing & Automation',
+      href: '/email-marketing-automation',
     },
     {
-      title: 'Web Design & Development',
-      href: '/web-design-and-development',
-      imgSrc: '/web-development-service.svg',
-      items: [
-        'Captivating User Experiences',
-        'Responsive Design',
-        'Brand Identity Integration',
-        'Customized Solutions',
-        'Robust Functionality',
-        'Content Management Systems (CMS)',
-        'SEO-Friendly Architecture',
-        'Speed and Performance',
-        '24/7 Technical Support',
-        'Regular Updates and Maintenance',
-      ],
+      title: 'SEM / Paid Advertising',
+      href: '/sem-paid-advertising',
+    },
+    {
+      title: 'Social Medis Services',
+      href: '/social-media-services',
+    },
+    {
+      title: 'Web Design',
+      href: '/web-design',
+    },
+    {
+      title: 'Web Development',
+      href: '/web-developemnt',
+    },
+    {
+      title: '3D Websites',
+      href: '/3d-websites',
     },
   ];
 
@@ -77,21 +62,26 @@ export default function Header(_props: IHeaderProps) {
     setIsOpen(!isOpen);
   };
 
+  const shouldApplyWhiteColor = (pathname: string) => {
+    const paths = ['/'];
+    return paths.includes(pathname);
+  };
+
   return (
     <header
       className={cx(styles['d-container'], {
         [styles['d-container--enable-bg-transparent']]: enableBgTransparent,
         [styles['d-container--enable-fixed-pos']]: true,
-        [styles['d-container--color-white']]: enableBgTransparent && pathname !== '/search-engine-optimization',
+        [styles['d-container--color-white']]: enableBgTransparent && shouldApplyWhiteColor(pathname),
         [styles['d-container__home-page']]: enableBgTransparent && pathname === '/',
         'about-page': pathname === '/about',
       })}
     >
       <nav className={cx(styles['d-container__nav'])}>
-        <div className={styles['d-container__logo']}>
-          <Link href="/" className={styles['d-container__logo-link']}>
-            {/* FIXME: Get better logo, cropped transparent top and bottom space */}
+        <div className={styles['d-container__brand']}>
+          <Link href="/" className={styles['d-container__brand-link']}>
             <Image alt="Growth Stats Logo" src={'/logo.png'} width={48} height={48} />
+            <Text className={cx(styles['d-container__brand-name'])}>Growth Stats</Text>
           </Link>
         </div>
         <div className={styles['d-container__nav-links']}>
@@ -113,17 +103,13 @@ export default function Header(_props: IHeaderProps) {
                   </button>
                 </DropdownMenu.Trigger>
                 <DropdownMenu.Content align="center">
-                  <Grid columns={{ initial: '1fr 1px 1fr' }} py={'4'} px={'5'} gap={'8'}>
+                  <Flex direction={'column'} p={'4'} gap={'2'} className={cx(styles['d-container__dropdown-services'])}>
                     {servicesLinks.map((service) => (
-                      <ServiceDropdown
-                        key={service.title}
-                        title={service.title}
-                        href={service.href}
-                        items={service.items}
-                        imgSrc={service.imgSrc}
-                      />
+                      <Link key={service.title} className={cx(styles['d-container__dropdown-service-link'])} href={service.href}>
+                        <Text weight={'bold'}>{service.title}</Text>
+                      </Link>
                     ))}
-                  </Grid>
+                  </Flex>
                 </DropdownMenu.Content>
               </DropdownMenu.Root>
             ) : (
@@ -159,17 +145,58 @@ export default function Header(_props: IHeaderProps) {
           </button>
         </div>
       </nav>
+      {/* Mobile */}
       <div className={cx(styles['d-container__mobile-menu'], { [styles['d-container__mobile-menu--open']]: isOpen })} id="mobile-menu">
-        <hr />
         <div className={cx(styles['d-container__mobile-menu-content'])}>
-          {navLinks?.map(({ name, href }) => (
-            <Link key={name} href={`${href?.toString()}`} className={cx(styles['d-container__mobile-menu-link'])}>
-              <Text as="p" weight={'medium'}>
-                {name}
+          <Box mb={'5'} my={'3'}>
+            <Link href="/" className={styles['d-container__brand-link']}>
+              <Image alt="Growth Stats Logo" src={'/logo.png'} width={48} height={48} />
+              <Text size={'6'} weight={'bold'}>
+                Growth Stats
               </Text>
             </Link>
-          ))}
-          <hr />
+          </Box>
+          {navLinks?.map((link) =>
+            link.name === 'Services' ? (
+              <>
+                <Flex align={'center'} gap={'1'} justify={'between'}>
+                  <Link href={link.href} key={link.name} className={styles['d-container__mobile-menu-link']}>
+                    <Text as="p" weight={'medium'}>
+                      Services
+                    </Text>
+                  </Link>
+                  {/* TODO: Replae this dowpdown with a expanding dropdown */}
+                  <DropdownMenu.Root key={link.name}>
+                    <DropdownMenu.Trigger>
+                      <button className={cx(styles['d-container__mobile-menu-link'])}>
+                        <ChevronDownIcon size={20} className="border" />
+                      </button>
+                    </DropdownMenu.Trigger>
+                    <DropdownMenu.Content align="center">
+                      <Flex direction={'column'} p={'4'} gap={'2'} className={cx(styles['d-container__dropdown-services'])}>
+                        {servicesLinks.map((service) => (
+                          <Link key={service.title} className={cx(styles['d-container__dropdown-service-link'])} href={service.href}>
+                            <Text weight={'medium'}>{service.title}</Text>
+                          </Link>
+                        ))}
+                      </Flex>
+                    </DropdownMenu.Content>
+                  </DropdownMenu.Root>
+                </Flex>
+
+                <hr />
+              </>
+            ) : (
+              <>
+                <Link href={link.href} key={link.name} className={styles['d-container__mobile-menu-link']}>
+                  <Text as="p" weight={'medium'}>
+                    {link.name}
+                  </Text>
+                </Link>
+                <hr />
+              </>
+            ),
+          )}
           <div className={styles['d-container__contact-button-mobile']}>
             <Button size={'2'}>
               <Text size={'4'} weight={'medium'}>
@@ -182,3 +209,11 @@ export default function Header(_props: IHeaderProps) {
     </header>
   );
 }
+
+// (
+//   <Link key={name} href={`${href?.toString()}`} className={cx(styles['d-container__mobile-menu-link'])}>
+//     <Text as="p" size={'5'} weight={'medium'}>
+//       {name}
+//     </Text>
+//   </Link>
+// )

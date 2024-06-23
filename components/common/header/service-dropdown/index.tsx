@@ -13,6 +13,7 @@ interface IServiceDropdownProps {
   imgSrc: string;
 }
 
+// TODO: Check and remove this component if unused
 export const ServiceDropdown: FC<IServiceDropdownProps> = ({ title, href, items, imgSrc }) => {
   if (title === '' || items.length == 0) return <Box height={'100%'} className="border"></Box>;
 
