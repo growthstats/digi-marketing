@@ -1,0 +1,58 @@
+@use '/styles/mixin/layout.module.scss' as *;
+
+.d-section {
+  @include edge-to-edge;
+  @apply min-h-[100svh];
+  @apply flex;
+  background-image: url('/contact/contact-page-hero-bg.jpg');
+  background-image: image-set(url('/contact/contact-page-hero-bg.avif') type('image/avif'), url('/bg-gradient-1.jpg') type('image/jpeg'));
+  background-size: cover;
+  background-attachment: fixed;
+  &:before {
+    content: '';
+    @apply absolute;
+    @apply top-0;
+    @apply left-0;
+    @apply right-0;
+    @apply bottom-0;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45));
+    z-index: 1;
+  }
+  &__container {
+    @apply flex;
+    @apply flex-col;
+    @apply justify-center;
+  }
+  &__heading {
+    @apply text-white;
+    @apply text-8xl;
+    @apply z-10;
+    @apply select-none;
+  }
+  // Slider Styles
+  &__text-slider {
+    @apply w-full;
+    svg {
+      @apply w-full;
+    }
+  }
+  &__slider-text {
+    @apply text-[150px];
+    @apply text-white;
+    @apply tracking-wide;
+    @apply stroke-2;
+    @apply select-none;
+    @apply stroke-white;
+    @apply select-none;
+    &:before {
+      content: '';
+      @apply h-12;
+      @apply block;
+    }
+    &:after {
+      content: '';
+      @apply h-12;
+      @apply block;
+    }
+  }
+}

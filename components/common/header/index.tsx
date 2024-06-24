@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Button, DropdownMenu, Flex, Text } from '@radix-ui/themes';
+import { Box, DropdownMenu, Flex, Text } from '@radix-ui/themes';
 import { useWindowScroll } from '@uidotdev/usehooks';
 import cx from 'classnames';
 import Image from 'next/image';
@@ -64,7 +64,7 @@ export default function Header(_props: IHeaderProps) {
   };
 
   const shouldApplyWhiteColor = (pathname: string) => {
-    const paths = ['/'];
+    const paths = ['/', '/contact'];
     return paths.includes(pathname);
   };
 
@@ -128,12 +128,12 @@ export default function Header(_props: IHeaderProps) {
             ),
           )}
         </div>
-        <div className={styles['d-container__contact-button']}>
-          <Button size={'3'}>
+        <div className={styles['d-container__contact-link-wrapper']}>
+          <Link href={'/contact'} className={cx(styles['d-container__contact-link'])}>
             <Text size={'5'} weight={'medium'}>
               Let&apos;s talk
             </Text>
-          </Button>
+          </Link>
         </div>
 
         <div className={cx(styles['d-container__menu-button-container'])}>
@@ -205,23 +205,15 @@ export default function Header(_props: IHeaderProps) {
               </>
             ),
           )}
-          <div className={styles['d-container__contact-button-mobile']}>
-            <Button size={'2'}>
+          <div className={styles['d-container__mobile-contact-link-wrapper']}>
+            <Link href={'/contact'} className={cx(styles['d-container__contact-link'])}>
               <Text size={'4'} weight={'medium'}>
                 Let&apos;s talk
               </Text>
-            </Button>
+            </Link>
           </div>
         </div>
       </div>
     </header>
   );
 }
-
-// (
-//   <Link key={name} href={`${href?.toString()}`} className={cx(styles['d-container__mobile-menu-link'])}>
-//     <Text as="p" size={'5'} weight={'medium'}>
-//       {name}
-//     </Text>
-//   </Link>
-// )

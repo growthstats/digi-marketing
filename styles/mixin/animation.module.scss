@@ -11,3 +11,16 @@
 
   animation: vertical-move #{$duration} ease-in-out infinite;
 }
+
+@mixin horizontal-scroll($distance: 3500px, $duration: 70s) {
+  @keyframes slide {
+    0% {
+      left: 0px;
+    }
+    100% {
+      left: -#{$ditance};
+    }
+  }
+
+  animation: slide #{$duration} linear infinite;
+}

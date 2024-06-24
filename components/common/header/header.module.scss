@@ -83,10 +83,23 @@
       @apply text-blue-12;
     }
   }
-  &__contact-button {
+  &__contact-link-wrapper {
     @apply hidden;
     @screen md {
       @apply block;
+    }
+  }
+  &__contact-link {
+    @apply bg-blue-9;
+    @apply text-white;
+    @apply py-3;
+    @apply px-5;
+    @apply rounded-md;
+    @apply shadow-md;
+    @apply transition-all;
+    &:hover {
+      @apply bg-blue-10;
+      @apply shadow-lg;
     }
   }
   // Mobile styles
@@ -177,7 +190,7 @@
       @apply mt-0;
     }
   }
-  &__contact-button-mobile {
-    @apply pt-2;
+  &__mobile-contact-link-wrapper {
+    @apply pt-5;
   }
 }
