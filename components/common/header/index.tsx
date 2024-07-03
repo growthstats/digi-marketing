@@ -106,7 +106,7 @@ export default function Header(_props: IHeaderProps) {
                 <DropdownMenu.Content align="center">
                   <Flex direction={'column'} p={'4'} gap={'2'} className={cx(styles['d-container__dropdown-services'])}>
                     {servicesLinks.map((service) => (
-                      <Link key={service.title} className={cx(styles['d-container__dropdown-service-link'])} href={service.href}>
+                      <Link key={service.href} className={cx(styles['d-container__dropdown-service-link'])} href={service.href}>
                         <Text as="p" weight={'bold'}>
                           {service.title}
                         </Text>
@@ -161,9 +161,9 @@ export default function Header(_props: IHeaderProps) {
           </Box>
           {navLinks?.map((link) =>
             link.name === 'Services' ? (
-              <>
+              <div key={`${link.name}-mobile-container`}>
                 <Flex align={'center'} gap={'1'} justify={'between'}>
-                  <Link href={link.href} key={link.name} className={styles['d-container__mobile-menu-link']}>
+                  <Link href={link.href} className={styles['d-container__mobile-menu-link']}>
                     <Text as="p" weight={'medium'}>
                       Services
                     </Text>
@@ -185,7 +185,11 @@ export default function Header(_props: IHeaderProps) {
                   >
                     <Flex direction={'column'} p={'2'} gap={'2'} className={cx(styles['d-container__dropdown-services'])}>
                       {servicesLinks.map((service) => (
-                        <Link key={service.title} className={cx(styles['d-container__dropdown-service-link'])} href={service.href}>
+                        <Link
+                          key={`${service.title}-mobile`}
+                          className={cx(styles['d-container__dropdown-service-link'])}
+                          href={service.href}
+                        >
                           <Text weight={'medium'}>{service.title}</Text>
                         </Link>
                       ))}
@@ -193,16 +197,16 @@ export default function Header(_props: IHeaderProps) {
                   </Box>
                 </Box>
                 <hr />
-              </>
+              </div>
             ) : (
-              <>
-                <Link href={link.href} key={link.name} className={styles['d-container__mobile-menu-link']}>
+              <div key={`${link.name}-mobile-container`}>
+                <Link href={link.href} key={`${link.name}-mobile`} className={styles['d-container__mobile-menu-link']}>
                   <Text as="p" weight={'medium'}>
                     {link.name}
                   </Text>
                 </Link>
                 <hr />
-              </>
+              </div>
             ),
           )}
           <div className={styles['d-container__mobile-contact-link-wrapper']}>
