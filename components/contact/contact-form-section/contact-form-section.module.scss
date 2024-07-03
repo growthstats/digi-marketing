@@ -1,2 +1,128 @@
+@use '/styles/mixin/layout.module.scss' as *;
+
 .d-section {
+  @include edge-to-edge;
+  @apply bg-gray-12;
+  &__form-container {
+    @include d-container;
+    @apply mb-20;
+  }
+  &__form-heading {
+    @apply text-white;
+    @apply text-7xl;
+    @apply mb-10;
+  }
+  &__contact-form {
+  }
+  &__form-fields-row {
+    @apply flex;
+    @apply gap-x-20;
+    @apply mb-10;
+  }
+  &__form-fields-col {
+    @apply w-full;
+    @apply flex;
+    @apply flex-col;
+    @apply gap-4;
+  }
+  &__form-control {
+    @apply text-white;
+    position: relative;
+    padding: 25px 0 0;
+  }
+  &__form-control-label {
+    @apply block;
+    @apply font-medium;
+    position: absolute;
+    top: 0px;
+    transition: 0.2s;
+    font-size: 1rem;
+    margin-left: 7px;
+    color: var(--blue-10);
+    &:after {
+      content: '*';
+      @apply text-red-700;
+      @apply ml-1;
+    }
+  }
+  &__form-control-text-input {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 3px solid var(--blue-10);
+    outline: 0;
+    font-size: 1.3rem;
+    color: white;
+    padding: 7px 7px;
+    background: var(--gray-11);
+    transition: border-color 0.2s;
+    &::placeholder {
+      color: transparent;
+    }
+    &:placeholder-shown ~ .d-section__form-control-label {
+      font-size: 1.3rem;
+      cursor: text;
+      top: 33px;
+      color: white;
+      margin-left: 7px;
+    }
+    &:focus {
+      ~ .d-section__form-control-label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 1rem;
+        color: var(--blue-10);
+        font-weight: 700;
+      }
+      padding-bottom: 6px;
+      font-weight: 700;
+      border-width: 3px;
+      border-image: linear-gradient(to right, var(--blue-10), var(--blue-11));
+      border-image-slice: 1;
+    }
+    /* reset input */
+    &:required,
+    &:invalid {
+      box-shadow: none;
+    }
+  }
+  &__form-control-textarea-input {
+    @apply min-h-36;
+    @apply h-full;
+  }
+  &__form-submit-wrapper {
+    @apply flex;
+    @apply justify-center;
+  }
+  &__form-submit {
+  }
+  // Info Styles
+  &__info-container {
+    @include d-container;
+  }
+  &__info-row {
+    @apply flex;
+    @apply gap-x-20;
+  }
+  &__info-col {
+    @apply w-full;
+  }
+  &__info-title {
+    @apply text-6xl;
+    @apply text-white;
+    @apply mb-10;
+  }
+  &__info-link {
+    @apply text-white;
+    @apply mb-6;
+    &:hover {
+      @apply text-blue-10;
+    }
+  }
+  &__info-address {
+    @apply text-white;
+    @apply mb-6;
+  }
 }

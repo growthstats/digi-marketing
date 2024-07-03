@@ -29,7 +29,7 @@
     "description": "We invent and create beautiful brands, digital products, and other most relevant digital things.",
     "linkText": "Learn More",
     "linkHref": "/web-design",
-    "src": "/web-design-service.jpeg"
+    "src": "/home/web-design-service.jpeg"
   },
   {
     "id": 5,
@@ -37,14 +37,14 @@
     "description": "We invent and create beautiful brands, digital products, and other most relevant digital things.",
     "linkText": "Learn More",
     "linkHref": "/web-development",
-    "src": "/web-development-service.jpeg"
+    "src": "/home/e-commerce-service.webp"
   },
   {
     "id": 6,
-    "title": "3D Websites",
+    "title": "SEM / Paid Advertising",
     "description": "We invent and create beautiful brands, digital products, and other most relevant digital things.",
     "linkText": "Learn More",
-    "linkHref": "/3d-websites",
+    "linkHref": "/sem-paid-advertising",
     "src": "/3d-website-service.jpeg"
   }
 ]

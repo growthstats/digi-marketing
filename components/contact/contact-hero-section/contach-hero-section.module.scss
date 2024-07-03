@@ -37,13 +37,14 @@
     }
   }
   &__slider-text {
-    @apply text-[150px];
-    @apply text-white;
+    @apply text-9xl;
     @apply tracking-wide;
-    @apply stroke-2;
     @apply select-none;
-    @apply stroke-white;
     @apply select-none;
+    background: radial-gradient(circle, #80ffc1 0%, #ff6161 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
     &:before {
       content: '';
       @apply h-12;
