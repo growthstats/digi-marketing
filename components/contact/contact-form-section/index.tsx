@@ -1,7 +1,10 @@
+import 'react-toastify/dist/ReactToastify.css';
+
 import { Box, Button, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import Link from 'next/link';
 import { ChangeEventHandler, FC, FormEventHandler, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 
 import styles from './contact-form-section.module.scss';
 
@@ -27,14 +30,13 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    // Perform form submission logic here
+
     const newErrors = validateForm();
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
     }
 
-    // Submit form data to a specific URL
     const url = 'https://formkeep.com/f/be36b12536b6';
     fetch(url, {
       method: 'POST',
@@ -45,15 +47,14 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
       },
     })
       .then((response) => response.json())
-      .then((data) => {
-        console.log('Form submission response:', data);
+      .then(() => {
+        toast.success('Form submitted successfully!');
         setFormData(initialFormData);
         setErrors({});
-        // Handle response as needed
       })
       .catch((error) => {
         console.error('Form submission error:', error);
-        // Handle error as needed
+        toast.error('Error submitting the form. Please try again.');
       });
   };
 
@@ -189,6 +190,7 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
           </Box>
         </Box>
       </Box>
+      <ToastContainer position="bottom-left" />
     </Section>
   );
 };
