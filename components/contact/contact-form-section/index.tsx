@@ -34,6 +34,7 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
     fetch(url, {
       method: 'POST',
       body: JSON.stringify(formData),
+      mode: 'no-cors',
       headers: {
         Accept: 'UTF-8',
         'Content-Type': 'multipart/form-data',
