@@ -51,7 +51,7 @@ export default function Header(_props: IHeaderProps) {
     },
     {
       title: 'Web Development',
-      href: '/web-developement',
+      href: '/web-development',
     },
     {
       title: '3D Websites',
