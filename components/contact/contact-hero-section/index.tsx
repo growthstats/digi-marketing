@@ -10,7 +10,7 @@ interface IContactHeroSectionProps {}
 const ContactHeroSection: FC<IContactHeroSectionProps> = () => (
   <Section className={cx(styles['d-section'])}>
     <Box className={cx(styles['d-section__container'])}>
-      <Heading as="h1" mb={'7'} ml={'9'} className={cx(styles['d-section__heading'])}>
+      <Heading as="h1" mb={'7'} ml={{ initial: '6', md: '9' }} className={cx(styles['d-section__heading'])}>
         Contact
       </Heading>
       <Box className={cx(styles['d-section__text-slider'])}>

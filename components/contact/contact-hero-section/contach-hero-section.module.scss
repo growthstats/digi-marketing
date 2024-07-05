@@ -25,9 +25,12 @@
   }
   &__heading {
     @apply text-white;
-    @apply text-8xl;
+    @apply text-6xl;
     @apply z-10;
     @apply select-none;
+    @screen md {
+      @apply text-8xl;
+    }
   }
   // Slider Styles
   &__text-slider {
@@ -37,7 +40,7 @@
     }
   }
   &__slider-text {
-    @apply text-9xl;
+    @apply text-8xl;
     @apply tracking-wide;
     @apply select-none;
     @apply select-none;
@@ -54,6 +57,9 @@
       content: '';
       @apply h-12;
       @apply block;
+    }
+    @screen md {
+      @apply text-9xl;
     }
   }
 }
