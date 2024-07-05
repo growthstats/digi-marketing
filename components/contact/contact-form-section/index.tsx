@@ -9,7 +9,7 @@ interface IContactFormSectionProps {}
 
 const ContactFormSection: FC<IContactFormSectionProps> = () => {
   const initialFormData = {
-    name: '',
+    cname: '',
     email: '',
     phone: '',
     message: '',
@@ -35,8 +35,8 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
       method: 'POST',
       body: JSON.stringify(formData),
       headers: {
-        Accept: 'application/javascript',
-        'Content-Type': 'application/json',
+        Accept: 'UTF-8',
+        'Content-Type': 'multipart/form-data',
       },
     })
       .then((response) => response.json())
