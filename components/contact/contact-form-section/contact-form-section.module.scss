@@ -87,6 +87,10 @@
     &:invalid {
       box-shadow: none;
     }
+    // Error tate styles
+    &--error {
+      border: 3px solid var(--crimson-11);
+    }
   }
   &__form-control-textarea-input {
     @apply min-h-36;

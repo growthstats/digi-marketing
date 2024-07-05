@@ -15,6 +15,7 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
     message: '',
   };
   const [formData, setFormData] = useState(initialFormData);
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   const handleFormDataChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = (event) => {
     const { name, value } = event.target;
@@ -27,7 +28,11 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
   const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     // Perform form submission logic here
-    // console.log(formData);
+    const newErrors = validateForm();
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
 
     // Submit form data to a specific URL
     const url = 'https://formkeep.com/f/be36b12536b6';
@@ -42,12 +47,31 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log('Form submission response:', data);
+        setFormData(initialFormData);
+        setErrors({});
         // Handle response as needed
       })
       .catch((error) => {
         console.error('Form submission error:', error);
         // Handle error as needed
       });
+  };
+
+  const validateForm = () => {
+    const newErrors: { [key: string]: string } = {};
+    if (!formData.cname.trim()) newErrors.cname = 'Name is required';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Email address is invalid';
+    }
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone number is required';
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      newErrors.phone = 'Phone number is invalid';
+    }
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
+    return newErrors;
   };
 
   return (
@@ -67,10 +91,12 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
                   type="text"
                   placeholder="Name"
                   onChange={handleFormDataChange}
-                  className={cx(styles['d-section__form-control-text-input'])}
+                  className={cx(styles['d-section__form-control-text-input'], {
+                    [styles['d-section__form-control-text-input--error']]: errors.cname,
+                  })}
                 />
                 <label htmlFor="cname" className={cx(styles['d-section__form-control-label'])}>
-                  Name
+                  Name {errors.cname ? <Text>({errors.cname})</Text> : null}
                 </label>
               </Box>
               {/* Email */}
@@ -80,10 +106,12 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
                   type="text"
                   placeholder="Email"
                   onChange={handleFormDataChange}
-                  className={cx(styles['d-section__form-control-text-input'])}
+                  className={cx(styles['d-section__form-control-text-input'], {
+                    [styles['d-section__form-control-text-input--error']]: errors.email,
+                  })}
                 />
                 <label htmlFor="email" className={cx(styles['d-section__form-control-label'])}>
-                  Email
+                  Email {errors.email ? <Text>({errors.email})</Text> : null}
                 </label>
               </Box>
               {/* Phone */}
@@ -93,10 +121,12 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
                   type="text"
                   placeholder="Phone"
                   onChange={handleFormDataChange}
-                  className={cx(styles['d-section__form-control-text-input'])}
+                  className={cx(styles['d-section__form-control-text-input'], {
+                    [styles['d-section__form-control-text-input--error']]: errors.phone,
+                  })}
                 />
                 <label htmlFor="phone" className={cx(styles['d-section__form-control-label'])}>
-                  Phone
+                  Phone {errors.phone ? <Text>({errors.phone})</Text> : null}
                 </label>
               </Box>
             </Box>
@@ -107,10 +137,12 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
                   name="message"
                   placeholder="Message"
                   onChange={handleFormDataChange}
-                  className={cx(styles['d-section__form-control-text-input'], styles['d-section__form-control-textarea-input'])}
+                  className={cx(styles['d-section__form-control-text-input'], styles['d-section__form-control-textarea-input'], {
+                    [styles['d-section__form-control-text-input--error']]: errors.message,
+                  })}
                 />
                 <label htmlFor="message" className={cx(styles['d-section__form-control-label'])}>
-                  Message
+                  Message {errors.message ? <Text>({errors.message})</Text> : null}
                 </label>
               </Box>
             </Box>
