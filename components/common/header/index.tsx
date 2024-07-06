@@ -137,7 +137,9 @@ export default function Header(_props: IHeaderProps) {
           <button
             onClick={toggleMenu}
             type="button"
+            role="button"
             className={cx(styles['d-container__menu-button'])}
+            aria-label="Toggle Menu Button"
             aria-controls="mobile-menu"
             aria-expanded="false"
           >
