@@ -66,6 +66,7 @@ export default function Header(_props: IHeaderProps) {
 
   return (
     <header
+      role="banner"
       className={cx(styles['d-container'], {
         [styles['d-container--enable-bg-transparent']]: enableBgTransparent,
         [styles['d-container--enable-fixed-pos']]: true,
@@ -74,7 +75,7 @@ export default function Header(_props: IHeaderProps) {
         'about-page': pathname === '/about',
       })}
     >
-      <nav className={cx(styles['d-container__nav'])}>
+      <nav role="navigation" className={cx(styles['d-container__nav'])}>
         <div className={styles['d-container__brand']}>
           <Link href="/" className={styles['d-container__brand-link']}>
             <Image alt="Growth Stats Logo" src={'/logo.png'} width={48} height={48} />

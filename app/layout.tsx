@@ -26,7 +26,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Theme accentColor="blue" grayColor="slate" appearance="light">
           {/* <Preloader /> */}
           <Header />
-          <div className="container mx-auto">{children}</div>
+          <main role="main" className="container mx-auto">
+            {children}
+          </main>
           {draftMode().isEnabled && <VisualEditing />}
           <Footer />
           <LenisScroller />
