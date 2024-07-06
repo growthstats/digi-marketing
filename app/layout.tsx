@@ -13,6 +13,7 @@ import Header from '@/components/common/header';
 import { LenisScroller } from '@/components/common/lennis-scroller';
 // import Preloader from '@/components/common/preloader';
 import VisualEditing from '@/components/VisualEditiing';
+// import WebVitals from '@/components/WebVitals';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' });
 
@@ -32,6 +33,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Theme>
         {/* Org Schema JSON-LD */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchemaJsonLd) }} />
+        {/* Web Vitals */}
+        {/* <WebVitals /> */}
       </body>
     </html>
   );
