@@ -125,60 +125,57 @@ export default function Footer(_props: IFooterProps) {
 
           <div className="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left">
             <div>
-              <strong className="font-medium dark:text-gray-900 text-white"> Services </strong>
+              <strong className="font-medium dark:text-gray-900 text-white">Digital Marketing</strong>
 
               <ul className="mt-6 space-y-1">
                 <li>
-                  <a className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75" href="#">
-                    Marketing
+                  <a
+                    className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75"
+                    href="/search-engine-optimization"
+                  >
+                    SEO
                   </a>
                 </li>
 
                 <li>
-                  <a className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75" href="#">
-                    Graphic Design
+                  <a
+                    className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75"
+                    href="/email-marketing-automation"
+                  >
+                    Email Marketing & Automation
                   </a>
                 </li>
 
                 <li>
-                  <a className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75" href="#">
-                    App Development
-                  </a>
-                </li>
-
-                <li>
-                  <a className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75" href="#">
-                    Web Development
+                  <a
+                    className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75"
+                    href="/social-media-services"
+                  >
+                    Social Media Services
                   </a>
                 </li>
               </ul>
             </div>
 
             <div>
-              <strong className="font-medium dark:text-gray-900 text-white"> About </strong>
+              <strong className="font-medium dark:text-gray-900 text-white"> Web Development </strong>
 
               <ul className="mt-6 space-y-1">
                 <li>
-                  <a className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75" href="#">
-                    About
+                  <a
+                    className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75"
+                    href="/web-design"
+                  >
+                    Web Design
                   </a>
                 </li>
 
                 <li>
-                  <a className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75" href="#">
-                    Careers
-                  </a>
-                </li>
-
-                <li>
-                  <a className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75" href="#">
-                    History
-                  </a>
-                </li>
-
-                <li>
-                  <a className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75" href="#">
-                    Our Team
+                  <a
+                    className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75"
+                    href="/web-development"
+                  >
+                    Web Development
                   </a>
                 </li>
               </ul>
@@ -189,20 +186,14 @@ export default function Footer(_props: IFooterProps) {
 
               <ul className="mt-6 space-y-1">
                 <li>
-                  <a className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75" href="#">
-                    FAQs
+                  <a className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75" href="/about">
+                    About
                   </a>
                 </li>
 
                 <li>
-                  <a className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75" href="#">
+                  <a className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75" href="/contact">
                     Contact
-                  </a>
-                </li>
-
-                <li>
-                  <a className="dark:text-gray-700 transition dark:hover:text-gray-700/75 text-white hover:text-white/75" href="#">
-                    Live Chat
                   </a>
                 </li>
               </ul>
@@ -211,7 +202,7 @@ export default function Footer(_props: IFooterProps) {
         </div>
 
         <div className="mt-16 border-t border-gray-800 pt-8 dark:border-gray-100">
-          <p className="text-center text-xs/relaxed text-gray-400 dark:text-gray-500">© Growth Stats 2022. All rights reserved.</p>
+          <p className="text-center text-xs/relaxed text-gray-400 dark:text-gray-500">© Growth Stats 2024. All rights reserved.</p>
         </div>
       </div>
     </footer>
