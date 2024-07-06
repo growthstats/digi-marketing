@@ -115,6 +115,15 @@ const WebDevelopmentHeroSection: FC<IWebDevelopmentHeroSectionProps> = () => {
             color="plum"
             variant="horizontal"
           />
+          <ServiceCard
+            className={cx(styles['d-section__service'], 'animate-web-design-feature')}
+            name={webDevelopmentServices[4].name}
+            description={webDevelopmentServices[4].description}
+            imgSrc={'/web-development/3d-websites.svg'}
+            color="orange"
+            variant="horizontal"
+            layout="reverse"
+          />
         </Box>
       </Box>
     </Section>
