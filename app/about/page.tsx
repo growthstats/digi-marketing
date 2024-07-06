@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     title: 'About Us - Growth Stats | Complete Digital Marketing Solutions',
     description:
       'Discover Growth Stats, your go-to for complete digital marketing solutions including SEO, content development, social media campaigns, and 3D animation. Serving the corporate sector since 2023, we ensure consistent business growth through our expert services.',
+    siteName: 'Growth Stats',
     type: 'website',
     url: `${BASE_URL}/about`,
     images: [

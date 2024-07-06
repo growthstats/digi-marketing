@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: 'Social Media Services - Growth Stats | Enhance Your Social Presence',
     description:
       'Elevate your social media presence with Growth Stats comprehensive social media services. Our expert team crafts engaging content and manages your social profiles to build your brand and drive engagement.',
+    siteName: 'Growth Stats',
     type: 'website',
     url: `${BASE_URL}/social-media-services`,
     images: [

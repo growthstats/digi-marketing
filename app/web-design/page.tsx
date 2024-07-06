@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: 'Web Design Services - Growth Stats | Create Stunning Websites',
     description:
       'Transform your online presence with Growth Stats professional web design services. Our creative team designs stunning and functional websites that engage your audience and drive business growth.',
+    siteName: 'Growth Stats',
     type: 'website',
     url: `${BASE_URL}/web-design`,
     images: [

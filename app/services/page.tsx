@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     title: 'Our Services - Growth Stats | Comprehensive Digital Marketing Solutions',
     description:
       'Explore the range of services offered by Growth Stats, including SEO, web design, social media marketing, email marketing automation, and more. Our expert team is dedicated to driving your business growth.',
+    siteName: 'Growth Stats',
     type: 'website',
     url: `${BASE_URL}/services`,
     images: [

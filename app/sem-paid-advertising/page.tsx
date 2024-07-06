@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     title: 'SEM & Paid Advertising - Growth Stats | Drive Targeted Traffic',
     description:
       'Boost your online presence and drive targeted traffic with Growth Stats SEM and paid advertising services. Our expert team creates and manages effective ad campaigns to maximize your ROI.',
+    siteName: 'Growth Stats',
     type: 'website',
     url: `${BASE_URL}/sem-paid-advertising`,
     images: [

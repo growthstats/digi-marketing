@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     title: 'Growth Stats - Complete Digital Marketing Solutions',
     description:
       'Growth Stats provides comprehensive digital marketing solutions including SEO, content development, social media campaigns, and 3D animation. We ensure business growth through our strategic mix of online mediums.',
+    siteName: 'Growth Stats',
     type: 'website',
     url: `${BASE_URL}/`,
     images: [

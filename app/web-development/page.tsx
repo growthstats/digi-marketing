@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     title: 'Web Development Services - Growth Stats | Build Robust Websites',
     description:
       'Elevate your online presence with Growth Stats web development services. Our expert developers create robust, scalable, and high-performance websites tailored to meet your business needs.',
+    siteName: 'Growth Stats',
     type: 'website',
     url: `${BASE_URL}/web-development`,
     images: [

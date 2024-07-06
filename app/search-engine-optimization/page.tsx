@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     title: 'Search Engine Optimization (SEO) - Growth Stats | Improve Your Online Visibility',
     description:
       'Enhance your online visibility with Growth Stats comprehensive SEO services. Our expert team utilizes cutting-edge techniques to boost your search engine rankings and drive organic traffic to your website.',
+    siteName: 'Growth Stats',
     type: 'website',
     url: `${BASE_URL}/search-engine-optimization`,
     images: [

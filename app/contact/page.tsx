@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     title: 'Contact Us - Growth Stats | Get In Touch',
     description:
       'Reach out to Growth Stats for any inquiries or to get started with our digital marketing services. We are here to help you grow your business through expert online marketing solutions.',
+    siteName: 'Growth Stats',
     type: 'website',
     url: `${BASE_URL}/contact`,
     images: [
