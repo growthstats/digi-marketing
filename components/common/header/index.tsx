@@ -127,7 +127,7 @@ export default function Header(_props: IHeaderProps) {
         </div>
         <div className={styles['d-container__contact-link-wrapper']}>
           <Link href={'/contact'} className={cx(styles['d-container__contact-link'])}>
-            <Text size={'5'} weight={'medium'}>
+            <Text size={'5'} weight={'bold'}>
               Let&apos;s talk
             </Text>
           </Link>
