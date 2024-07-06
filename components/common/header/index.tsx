@@ -42,7 +42,7 @@ export default function Header(_props: IHeaderProps) {
       href: '/sem-paid-advertising',
     },
     {
-      title: 'Social Medis Services',
+      title: 'Social Media Services',
       href: '/social-media-services',
     },
     {
@@ -52,10 +52,6 @@ export default function Header(_props: IHeaderProps) {
     {
       title: 'Web Development',
       href: '/web-development',
-    },
-    {
-      title: '3D Websites',
-      href: '/3d-websites',
     },
   ];
 

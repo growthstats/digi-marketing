@@ -1,0 +1,29 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Growth Stats",
+  "url": "https://growth-stats.vercel.app",
+  "logo": "https://growth-stats.vercel.app/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-800-555-5555",
+    "contactType": "Customer Service",
+    "areaServed": "US",
+    "availableLanguage": "English"
+  },
+  "sameAs": [
+    "https://www.facebook.com/yourprofile",
+    "https://www.twitter.com/yourprofile",
+    "https://www.linkedin.com/company/yourprofile",
+    "https://www.instagram.com/yourprofile"
+  ],
+  "description": "Growth Stats provides comprehensive digital marketing solutions including SEO, content development, social media campaigns, and 3D animation. We ensure business growth through our strategic mix of online mediums.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1234 Main Street",
+    "addressLocality": "City",
+    "addressRegion": "State",
+    "postalCode": "12345",
+    "addressCountry": "US"
+  }
+}

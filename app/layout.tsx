@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Inter } from 'next/font/google';
 import { draftMode } from 'next/headers';
 
+import orgSchemaJsonLd from '@/assets/org-schema.json';
 import Footer from '@/components/common/footer';
 import Header from '@/components/common/header';
 import { LenisScroller } from '@/components/common/lennis-scroller';
@@ -29,6 +30,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
           <LenisScroller />
         </Theme>
+        {/* Org Schema JSON-LD */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchemaJsonLd) }} />
       </body>
     </html>
   );
