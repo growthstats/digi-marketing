@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 
 import WebDevelopmentPageTemplate from '@/components/templates/web-development';
+import { BASE_URL } from '@/utils/constants';
 
 export const metadata: Metadata = {
   title: 'Web Development Services - Growth Stats | Build Robust Websites',
@@ -14,13 +15,13 @@ export const metadata: Metadata = {
     'Business Growth',
     'Growth Stats',
   ],
-  authors: [{ name: 'Growth Stats', url: 'https://growth-stats.vercel.app' }],
+  authors: [{ name: 'Growth Stats', url: BASE_URL }],
   openGraph: {
     title: 'Web Development Services - Growth Stats | Build Robust Websites',
     description:
       'Elevate your online presence with Growth Stats web development services. Our expert developers create robust, scalable, and high-performance websites tailored to meet your business needs.',
     type: 'website',
-    url: 'https://growth-stats.vercel.app/web-development',
+    url: `${BASE_URL}/web-development`,
     images: [
       {
         url: 'https://www.yourwebsite.com/images/web-development.jpg', // TODO: replace with an actual image URL if available

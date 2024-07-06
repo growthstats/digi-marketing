@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 
 import SearchEngineOptimizationPageTemplate from '@/components/templates/search-engine-optimization';
+import { BASE_URL } from '@/utils/constants';
 
 export interface IServicesProps {}
 
@@ -9,13 +10,13 @@ export const metadata: Metadata = {
   description:
     'Enhance your online visibility with Growth Stats comprehensive SEO services. Our expert team utilizes cutting-edge techniques to boost your search engine rankings and drive organic traffic to your website.',
   keywords: ['Search Engine Optimization', 'SEO', 'Online Visibility', 'Organic Traffic', 'SEO Services', 'Growth Stats'],
-  authors: [{ name: 'Growth Stats', url: 'https://growth-stats.vercel.app' }],
+  authors: [{ name: 'Growth Stats', url: BASE_URL }],
   openGraph: {
     title: 'Search Engine Optimization (SEO) - Growth Stats | Improve Your Online Visibility',
     description:
       'Enhance your online visibility with Growth Stats comprehensive SEO services. Our expert team utilizes cutting-edge techniques to boost your search engine rankings and drive organic traffic to your website.',
     type: 'website',
-    url: 'https://growth-stats.vercel.app/search-engine-optimization',
+    url: `${BASE_URL}/search-engine-optimization`,
     images: [
       {
         url: 'https://www.yourwebsite.com/images/seo.jpg', // TODO: replace with an actual image URL if available

@@ -1,19 +1,20 @@
 import { Metadata } from 'next';
 
 import SEMPaidAdvertisingPageTemplate from '@/components/templates/sem-paid-advertising';
+import { BASE_URL } from '@/utils/constants';
 
 export const metadata: Metadata = {
   title: 'SEM & Paid Advertising - Growth Stats | Drive Targeted Traffic',
   description:
     'Boost your online presence and drive targeted traffic with Growth Stats SEM and paid advertising services. Our expert team creates and manages effective ad campaigns to maximize your ROI.',
   keywords: ['SEM', 'Paid Advertising', 'Online Advertising', 'Targeted Traffic', 'Ad Campaigns', 'ROI', 'Growth Stats'],
-  authors: [{ name: 'Growth Stats', url: 'https://growth-stats.vercel.app' }],
+  authors: [{ name: 'Growth Stats', url: BASE_URL }],
   openGraph: {
     title: 'SEM & Paid Advertising - Growth Stats | Drive Targeted Traffic',
     description:
       'Boost your online presence and drive targeted traffic with Growth Stats SEM and paid advertising services. Our expert team creates and manages effective ad campaigns to maximize your ROI.',
     type: 'website',
-    url: 'https://growth-stats.vercel.app/sem-paid-advertising',
+    url: `${BASE_URL}/sem-paid-advertising`,
     images: [
       {
         url: 'https://www.yourwebsite.com/images/sem-advertising.jpg', // TODO: replace with an actual image URL if available
