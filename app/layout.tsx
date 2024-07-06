@@ -1,6 +1,7 @@
 import './globals.css';
 
 import { Theme } from '@radix-ui/themes';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import cx from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
           <LenisScroller />
         </Theme>
+        <SpeedInsights />
         {/* Org Schema JSON-LD */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchemaJsonLd) }} />
         {/* Web Vitals */}
