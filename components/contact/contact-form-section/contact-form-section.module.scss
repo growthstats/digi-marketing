@@ -1,7 +1,6 @@
 @use '/styles/mixin/layout.module.scss' as *;
 
 .d-section {
-  @include edge-to-edge;
   @apply bg-gray-12;
   &__form-container {
     @include d-container;

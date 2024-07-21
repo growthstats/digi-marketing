@@ -1,7 +1,6 @@
 @use '/styles/mixin/layout.module.scss' as *;
 
 .d-section {
-  @include edge-to-edge;
   @apply bg-[var(--blue-11)];
   &__container {
     @include d-container;

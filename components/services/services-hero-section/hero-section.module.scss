@@ -1,7 +1,6 @@
 @use '/styles/mixin/layout.module.scss' as *;
 
 .d-section {
-  @include edge-to-edge;
   @apply h-[90svh];
   @apply flex;
   @apply justify-center;
@@ -9,7 +8,6 @@
   background: rgb(255, 255, 255);
   background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(16, 178, 218, 1) 100%);
   &__container {
-    // @apply my-20;
     @apply w-full;
     @apply max-w-screen-lg;
     @apply py-4;

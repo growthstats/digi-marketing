@@ -2,7 +2,6 @@
 
 .d-section {
   @apply bg-slate-800;
-  @include edge-to-edge;
   &__container {
     @include d-container;
     @apply mx-auto;

@@ -23,7 +23,7 @@ type TCuratedService = {
   src: string;
 };
 
-export default function ServicesSection(props: IServicesSectionProps) {
+export default function ServicesSection(props: Readonly<IServicesSectionProps>) {
   const { sectionClassName } = props;
 
   // Ensure the icon names are correct in the JSON
@@ -124,12 +124,6 @@ export default function ServicesSection(props: IServicesSectionProps) {
                 <Text as="div" color="gray" size="4" align={'center'} mb={'4'}>
                   {service.description}
                 </Text>
-                {/* TODO: Check and remove this cta */}
-                {/* <Box className={cx(styles['d-section__card__cta'])}>
-                  <Button variant="soft" size={'2'}>
-                    Learn More
-                  </Button>
-                </Box> */}
               </Box>
             </Box>
           ))}

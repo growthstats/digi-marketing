@@ -12,22 +12,20 @@ import orgSchemaJsonLd from '@/assets/org-schema.json';
 import Footer from '@/components/common/footer';
 import Header from '@/components/common/header';
 import { LenisScroller } from '@/components/common/lennis-scroller';
-// import Preloader from '@/components/common/preloader';
 import VisualEditing from '@/components/VisualEditiing';
 // import WebVitals from '@/components/WebVitals';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   gsap.registerPlugin(ScrollTrigger);
 
   return (
     <html lang="en" className="light">
       <body className={cx('bg-white', inter.variable)}>
         <Theme accentColor="blue" grayColor="slate" appearance="light">
-          {/* <Preloader /> */}
           <Header />
-          <main role="main" className="container mx-auto">
+          <main role="main" className="mx-auto">
             {children}
           </main>
           {draftMode().isEnabled && <VisualEditing />}
