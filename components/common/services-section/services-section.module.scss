@@ -34,17 +34,17 @@
   &__card {
     @apply px-4;
     @apply py-6;
+    &__inset {
+      @apply -mx-4;
+      @apply -mt-6;
+    }
     &__img {
       @apply block;
       @apply object-cover;
       @apply w-full;
-      @apply h-[203px];
+      @apply h-[250px];
       @apply bg-[var(--gray-5)];
       @apply rounded-t-[var(--radius-5)];
-    }
-    &__inset {
-      @apply -mx-4;
-      @apply -mt-6;
     }
     &__cta {
       @apply w-full;
