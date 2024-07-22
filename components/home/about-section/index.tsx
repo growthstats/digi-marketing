@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Section, Strong, Text } from '@radix-ui/themes';
+import { Box, Section, Strong, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -73,7 +73,6 @@ export default function AboutSection(_props: IAboutSectionProps) {
     <Section id="about-section" size={'3'} className={cx(styles['d-section'])}>
       <div className={cx(styles['d-section__container'])}>
         <Box mb={'8'} className="text-center">
-          {/* <BannerText wrapperClassName="about-section__heading" text="welcome to" textClassName="text-3xl md:text-5xl" /> */}
           <BannerText wrapperClassName="about-section__heading" text="growth stats" textClassName="text-4xl md:text-6xl" />
         </Box>
         <Text as="div" mb="8" size="6" id="about-section__text-content" className={cx(styles['d-section__text-content'])}>
@@ -84,29 +83,20 @@ export default function AboutSection(_props: IAboutSectionProps) {
             </Text>
           </Text>
           <Text as="p" mb={'1'}>
-            We minutely monitor the <Strong>Online Promotion Impact</Strong> and deliver ……
-            <Text as="span" color="blue" weight={'bold'}>
-              Growth
-            </Text>
+            We minutely monitor the <Strong>Online Promotion Impact</Strong> and deliver results
           </Text>
           <Text as="p" mb={'1'}>
-            <Strong>Creative Visual Inputs</Strong> that will make your business website stand out, leading to ……
-            <Text as="span" color="blue" weight={'bold'}>
-              Growth
-            </Text>
+            <Strong>Creative Visual Inputs</Strong> that will make your business website stand out
           </Text>
           <Text as="p" mb={'1'}>
-            Creating <Strong>Engaging Content</Strong> that keeps clients coming back to you repeatedly ……
-            <Text as="span" color="blue" weight={'bold'}>
-              Growth
-            </Text>
+            Creating <Strong>Engaging Content</Strong> that keeps clients coming back to you repeatedly
           </Text>
         </Text>
-        <Flex justify={'center'}>
+        {/* <Flex justify={'center'}>
           <Button id="about-section__cta" variant="outline" size={'4'}>
             Learn More
           </Button>
-        </Flex>
+        </Flex> */}
       </div>
     </Section>
   );
