@@ -4,7 +4,7 @@ export default function Footer(_props: IFooterProps) {
   return (
     <footer className="bg-gray-900 dark:bg-white" role="contentinfo">
       <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-md">
+        {/* <div className="mx-auto max-w-md">
           <strong className="block text-center text-xl font-bold text-white sm:text-3xl dark:text-gray-900">
             Want us to email you with the latest blockbuster news?
           </strong>
@@ -28,7 +28,7 @@ export default function Footer(_props: IFooterProps) {
               </button>
             </div>
           </form>
-        </div>
+        </div> */}
 
         <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
           <div className="mx-auto max-w-sm lg:max-w-none">
