@@ -7,7 +7,7 @@ import { FC, useEffect } from 'react';
 
 import seoServiceposterAnimation from '@/assets/animations/seo-service-poster.json';
 import semServices from '@/assets/sem-services.json';
-import ServcieCardPill from '@/components/common/service-card-pill';
+import ServiceCard from '@/components/common/service-card';
 
 import styles from './sem-hero-section.module.scss';
 
@@ -89,30 +89,39 @@ const SEMHeroSection: FC<ISEMHeroSectionProps> = () => {
           SEM / Paid Advertising Features
         </Heading>
         <Box className={cx(styles['d-section__services'])} id="seo-features">
-          <ServcieCardPill
-            className={cx(styles['d-section__service'], 'animate-seo-feature')}
+          <ServiceCard
+            className={cx(styles['d-section__service'], 'animate-web-design-feature')}
             name={semServices[0].name}
             description={semServices[0].description}
-            icon={'/seo-icon.png'}
-            color="blue"
+            imgSrc={'/sem/performance-marketing-illustration.svg'}
+            color="plum"
+            variant="horizontal"
+            layout="reverse"
           />
-          <ServcieCardPill
-            className={cx(styles['d-section__service'], 'animate-seo-feature')}
+          <ServiceCard
+            className={cx(styles['d-section__service'], 'animate-web-design-feature', 'ml-auto')}
             name={semServices[1].name}
             description={semServices[1].description}
-            icon={'/seo-icon.png'}
+            imgSrc={'/sem/pay-per-click-illustration.svg'}
+            color="orange"
+            variant="horizontal"
           />
-          <ServcieCardPill
-            className={cx(styles['d-section__service'], 'animate-seo-feature')}
+          <ServiceCard
+            className={cx(styles['d-section__service'], 'animate-web-design-feature')}
             name={semServices[2].name}
             description={semServices[2].description}
-            icon={'/seo-icon.png'}
+            imgSrc={'/sem/google-ads-illustration.svg'}
+            color="blue"
+            variant="horizontal"
+            layout="reverse"
           />
-          <ServcieCardPill
-            className={cx(styles['d-section__service'], 'animate-seo-feature')}
+          <ServiceCard
+            className={cx(styles['d-section__service'], 'animate-web-design-feature', 'ml-auto')}
             name={semServices[3].name}
             description={semServices[3].description}
-            icon={'/seo-icon.png'}
+            imgSrc={'/sem/social-media-campaign-illustration.svg'}
+            color="plum"
+            variant="horizontal"
           />
         </Box>
       </Box>
