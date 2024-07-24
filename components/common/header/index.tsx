@@ -137,7 +137,6 @@ export default function Header(_props: IHeaderProps) {
           <button
             onClick={toggleMenu}
             type="button"
-            role="button"
             className={cx(styles['d-container__menu-button'])}
             aria-label="Toggle Menu Button"
             aria-controls="mobile-menu"
@@ -189,7 +188,9 @@ export default function Header(_props: IHeaderProps) {
                           className={cx(styles['d-container__dropdown-service-link'])}
                           href={service.href}
                         >
-                          <Text weight={'medium'}>{service.title}</Text>
+                          <Text as="p" weight={'medium'}>
+                            {service.title}
+                          </Text>
                         </Link>
                       ))}
                     </Flex>
