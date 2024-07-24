@@ -10,7 +10,7 @@
   {
     "id": 2,
     "title": "Email Marketing & Automation",
-    "description": "Email marketing is one of the successful ways to conduct promotional campaigns. Email marketing is used to target the right audience and engage with them. Automation: Based on the user behavior or their online interests, we send targeted communication to the audience.",
+    "description": "Email marketing is one of the most successful ways to conduct promotional campaigns. Email marketing is used to target the right audience and engage with them. Automation: Based on the user behavior or their online interests, we send targeted communication to the audience.",
     "linkText": "Learn More",
     "linkHref": "/email-marketing-automation",
     "src": "/home/email-marketing-service.webp"
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "title": "Web Design",
-    "description": "Designing web pages that evoke interest and leave a memorable visual impact on the audience is achieved through great web design. The visual layout and user interface of websites, responsiveness, and ease of using it on multiple types of devices contribute to the customer experience and ensure their engagement on your business website.",
+    "description": "Designing web pages that evoke interest and leave a memorable visual impact on the audience is achieved through great web design. The visual layout and user interface of websites, responsiveness, and ease of use on multiple types of devices contribute to the customer experience and ensure their engagement on your business website.",
     "linkText": "Learn More",
     "linkHref": "/web-design",
     "src": "/home/web-design-service.webp"
@@ -34,7 +34,7 @@
   {
     "id": 5,
     "title": "Web Development",
-    "description": "As the name suggests, Web development deals with developing a website and maintaining it. We ensure perfect functionality through server management, coding, database integration.",
+    "description": "As the name suggests, Web development deals with developing a website and maintaining it. We ensure perfect functionality through server management, coding, and database integration.",
     "linkText": "Learn More",
     "linkHref": "/web-development",
     "src": "/home/web-development-service.webp"
@@ -42,7 +42,7 @@
   {
     "id": 6,
     "title": "SEM / Paid Advertising",
-    "description": "Search Engine Marketing is doing paid advertising on search engines like ‘Google’ or ‘Bing’. This helps in promoting website. Display ads, pay-per-click (PPC) campaigns, and remarketing are a part of SEM.",
+    "description": "Search Engine Marketing is doing paid advertising on search engines like ‘Google’ or ‘Bing’. This helps in promoting the website. Display ads, pay-per-click (PPC) campaigns, and remarketing are a part of SEM.",
     "linkText": "Learn More",
     "linkHref": "/sem-paid-advertising",
     "src": "/home/sem-advertising-service.webp"
