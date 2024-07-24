@@ -13,7 +13,6 @@ import styles from './social-media-services-hero-section.module.scss';
 
 interface ISocialMediaServicesHeroSectionProps {}
 
-// TODO: Add gsap animations
 const SocialMediaServicesHeroSection: FC<ISocialMediaServicesHeroSectionProps> = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -89,42 +88,42 @@ const SocialMediaServicesHeroSection: FC<ISocialMediaServicesHeroSectionProps> =
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
             name={socialMediaServices[0].name}
             description={socialMediaServices[0].description}
-            imgSrc={'/seo-icon.png'}
+            imgSrc={'/social-media-services/Social-media-brand-management-icon.png'}
             color="blue"
           />
           <ServiceCard
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
             name={socialMediaServices[1].name}
             description={socialMediaServices[1].description}
-            imgSrc={'/seo-icon.png'}
+            imgSrc={'/social-media-services/social-media-account-management-icon.png'}
             color="plum"
           />
           <ServiceCard
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
             name={socialMediaServices[2].name}
             description={socialMediaServices[2].description}
-            imgSrc={'/seo-icon.png'}
+            imgSrc={'/social-media-services/online-reputation-management-icon.png'}
             color="orange"
           />
           <ServiceCard
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
             name={socialMediaServices[3].name}
             description={socialMediaServices[3].description}
-            imgSrc={'/seo-icon.png'}
+            imgSrc={'/social-media-services/community-managemet-icon.png'}
             color="blue"
           />
           <ServiceCard
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
             name={socialMediaServices[4].name}
             description={socialMediaServices[4].description}
-            imgSrc={'/seo-icon.png'}
+            imgSrc={'/social-media-services/social-media-marketing-icon.png'}
             color="plum"
           />
           <ServiceCard
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
             name={socialMediaServices[5].name}
             description={socialMediaServices[5].description}
-            imgSrc={'/seo-icon.png'}
+            imgSrc={'/social-media-services/social-media-optimization-icon.png'}
             color="orange"
           />
         </Box>
