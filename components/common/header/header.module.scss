@@ -7,7 +7,7 @@
   @apply shadow-md;
   @apply sticky;
   @apply top-0;
-  transition: all 0.3s;
+  transition: all 0.2s;
   &--enable-fixed-pos {
     @apply fixed;
   }
