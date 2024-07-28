@@ -13,6 +13,7 @@ import orgSchemaJsonLd from '@/assets/org-schema.json';
 import Footer from '@/components/common/footer';
 import Header from '@/components/common/header';
 import { LenisScroller } from '@/components/common/lennis-scroller';
+import { Toaster } from '@/components/ui/toaster';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' });
 
@@ -27,16 +28,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <main role="main" className="mx-auto">
             {children}
           </main>
-          {draftMode().isEnabled && <VisualEditing />}
           <Footer />
+          <Toaster />
           <LenisScroller />
+          {draftMode().isEnabled && <VisualEditing />}
         </Theme>
 
         <SpeedInsights />
         {/* Org Schema JSON-LD */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchemaJsonLd) }} />
-        {/* Web Vitals */}
-        {/* <WebVitals /> */}
       </body>
     </html>
   );

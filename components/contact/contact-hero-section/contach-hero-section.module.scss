@@ -1,6 +1,7 @@
 @use '/styles/mixin/layout.module.scss' as *;
 
 .d-section {
+  @apply relative;
   @apply min-h-[100svh];
   @apply flex;
   background-image: url('/contact/contact-page-hero-bg.jpg');

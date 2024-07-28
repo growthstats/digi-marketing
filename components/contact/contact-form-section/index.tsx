@@ -1,46 +1,44 @@
-import 'react-toastify/dist/ReactToastify.css';
-
-import { Box, Button, Heading, Section, Text } from '@radix-ui/themes';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Box, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
+import { LinkedinIcon, MailIcon, PhoneIcon } from 'lucide-react';
 import Link from 'next/link';
-import { ChangeEventHandler, FC, FormEventHandler, useState } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
+import { FC } from 'react';
+import { useForm } from 'react-hook-form';
+import { BsTwitterX } from 'react-icons/bs';
+import { FaFacebookSquare } from 'react-icons/fa';
+import { z } from 'zod';
 
+import { Button } from '@/components/ui/button';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { toast } from '@/components/ui/use-toast';
+
+import contactFormSchema from './contact-form.schema';
 import styles from './contact-form-section.module.scss';
 
 interface IContactFormSectionProps {}
 
 const ContactFormSection: FC<IContactFormSectionProps> = () => {
-  const initialFormData = {
+  const defaultFormValues = {
     cname: '',
     email: '',
     phone: '',
     message: '',
   };
-  const [formData, setFormData] = useState(initialFormData);
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
-  const handleFormDataChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = (event) => {
-    const { name, value } = event.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
-  };
+  const form = useForm<z.infer<typeof contactFormSchema>>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: defaultFormValues,
+  });
 
-  const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
-    event.preventDefault();
-
-    const newErrors = validateForm();
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
-    }
-
+  function onSubmit(values: z.infer<typeof contactFormSchema>) {
+    // Do something with the form values.
     const url = 'https://formkeep.com/f/be36b12536b6';
     fetch(url, {
       method: 'POST',
-      body: JSON.stringify(formData),
+      body: JSON.stringify(values),
       headers: {
         Accept: 'application/javascript',
         'Content-Type': 'application/json',
@@ -48,137 +46,165 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
     })
       .then((response) => response.json())
       .then(() => {
-        toast.success('Form submitted successfully!');
-        setFormData(initialFormData);
-        setErrors({});
+        toast({
+          title: 'Form submitted successfully!',
+        });
+        form.reset();
       })
       .catch((error) => {
         console.error('Form submission error:', error);
-        toast.error('Error submitting the form. Please try again.');
+        toast({
+          title: 'Error submitting the form. Please try again.',
+          variant: 'destructive',
+        });
       });
-  };
-
-  const validateForm = () => {
-    const newErrors: { [key: string]: string } = {};
-    if (!formData.cname.trim()) newErrors.cname = 'Name is required';
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Email address is invalid';
-    }
-    if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
-    } else if (!/^\d{10}$/.test(formData.phone)) {
-      newErrors.phone = 'Phone number is invalid';
-    }
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
-    return newErrors;
-  };
+    // ✅ This will be type-safe and validated.
+  }
 
   return (
     <Section className={cx(styles['d-section'])}>
-      {/* Form */}
-      <Box className={cx(styles['d-section__form-container'])}>
-        <Heading as="h3" className={cx(styles['d-section__form-heading'])}>
-          Message Us
-        </Heading>
-        <form onSubmit={handleSubmit} className={cx(styles['d-section__contact-form'])}>
-          <Box className={cx(styles['d-section__form-fields-row'])}>
-            <Box className={cx(styles['d-section__form-fields-col'])}>
-              {/* Name */}
-              <Box className={cx(styles['d-section__form-control'])}>
-                <input
-                  name="cname"
-                  type="text"
-                  placeholder="Name"
-                  onChange={handleFormDataChange}
-                  className={cx(styles['d-section__form-control-text-input'], {
-                    [styles['d-section__form-control-text-input--error']]: errors.cname,
-                  })}
-                />
-                <label htmlFor="cname" className={cx(styles['d-section__form-control-label'])}>
-                  Name {errors.cname ? <Text>({errors.cname})</Text> : null}
-                </label>
-              </Box>
-              {/* Email */}
-              <Box className={cx(styles['d-section__form-control'])}>
-                <input
-                  name="email"
-                  type="text"
-                  placeholder="Email"
-                  onChange={handleFormDataChange}
-                  className={cx(styles['d-section__form-control-text-input'], {
-                    [styles['d-section__form-control-text-input--error']]: errors.email,
-                  })}
-                />
-                <label htmlFor="email" className={cx(styles['d-section__form-control-label'])}>
-                  Email {errors.email ? <Text>({errors.email})</Text> : null}
-                </label>
-              </Box>
-              {/* Phone */}
-              <Box className={cx(styles['d-section__form-control'])}>
-                <input
-                  name="phone"
-                  type="text"
-                  placeholder="Phone"
-                  onChange={handleFormDataChange}
-                  className={cx(styles['d-section__form-control-text-input'], {
-                    [styles['d-section__form-control-text-input--error']]: errors.phone,
-                  })}
-                />
-                <label htmlFor="phone" className={cx(styles['d-section__form-control-label'])}>
-                  Phone {errors.phone ? <Text>({errors.phone})</Text> : null}
-                </label>
-              </Box>
-            </Box>
-            <Box className={cx(styles['d-section__form-fields-col'])}>
-              {/* Message */}
-              <Box className={cx(styles['d-section__form-control'], 'h-full')}>
-                <textarea
-                  name="message"
-                  placeholder="Message"
-                  onChange={handleFormDataChange}
-                  className={cx(styles['d-section__form-control-text-input'], styles['d-section__form-control-textarea-input'], {
-                    [styles['d-section__form-control-text-input--error']]: errors.message,
-                  })}
-                />
-                <label htmlFor="message" className={cx(styles['d-section__form-control-label'])}>
-                  Message {errors.message ? <Text>({errors.message})</Text> : null}
-                </label>
-              </Box>
-            </Box>
-          </Box>
-          {/* Submit Form */}
-          <Box className={cx(styles['d-section__form-submit-wrapper'])}>
-            <Button size={'4'} className={cx(styles['d-section__form-submit'])} type="submit">
-              Submit
-            </Button>
-          </Box>
-        </form>
-      </Box>
-      {/* Contact Info */}
-      <Box className={cx(styles['d-section__info-container'])}>
-        <Box className={cx(styles['d-section__info-row'])}>
-          <Box className={cx(styles['d-section__info-col'])}>
+      <div className={cx(styles['d-section__container'])}>
+        {/* Form */}
+        <Box className={cx(styles['d-section__form-container'])}>
+          <Heading as="h3" className={cx(styles['d-section__form-heading'])}>
+            Message Us
+          </Heading>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className={styles['d-section__contact-form']}>
+              <div className={cx(styles['d-section__form-fields-row'])}>
+                <div className={cx(styles['d-section__form-fields-col'])}>
+                  {/* Name */}
+                  <FormField
+                    control={form.control}
+                    name="cname"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-primary">Username</FormLabel>
+                        <FormControl>
+                          <Input placeholder="John Doe" {...field} required />
+                        </FormControl>
+                        <FormDescription>This is your name.</FormDescription>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div className={cx(styles['d-section__form-fields-col'])}>
+                  {/* Phone */}
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-primary">Phone</FormLabel>
+                        <FormControl>
+                          <Input placeholder="9876456785" {...field} required />
+                        </FormControl>
+                        <FormDescription>This is your phone number.</FormDescription>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+              </div>
+              <div className={cx(styles['d-section__form-fields-row'])}>
+                <div className={cx(styles['d-section__form-fields-col'])}>
+                  {/* Email */}
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-primary">Email</FormLabel>
+                        <FormControl>
+                          <Input placeholder="name@example.com" {...field} required />
+                        </FormControl>
+                        <FormDescription>This is your email id.</FormDescription>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+              </div>
+              <div className={cx(styles['d-section__form-fields-row'])}>
+                <div className={cx(styles['d-section__form-fields-col'])}>
+                  {/* Message */}
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-primary">Message</FormLabel>
+                        <FormControl>
+                          <Textarea placeholder="Write to us" className="resize-none" {...field} required />
+                        </FormControl>
+                        <FormDescription>
+                          You can <span>@mention</span> other users and organizations.
+                        </FormDescription>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+              </div>
+              <div className={cx(styles['d-section__form-submit-wrapper'])}>
+                <Button type="submit" size={'lg'}>
+                  Send Us Email
+                </Button>
+              </div>
+            </form>
+          </Form>
+        </Box>
+        {/* Contact Info */}
+        <Box className={cx(styles['d-section__info-container'])}>
+          <Box className={cx(styles['d-section__info-block'])}>
             <Heading as="h4" className={cx(styles['d-section__info-title'])}>
               General Inquiries
             </Heading>
             <Box className={cx(styles['d-section__info-link'])}>
-              <Link href={'mailto:info@growthstats.com'}>
-                <Text as="p" size={'5'}>
-                  info@growthstats.com
-                </Text>
+              <Link href={'mailto:info@growthstats.io'}>
+                <div className="flex gap-2">
+                  <MailIcon />
+                  <Text as="p" size={'5'}>
+                    info@growthstats.io
+                  </Text>
+                </div>
               </Link>
             </Box>
             <Box className={cx(styles['d-section__info-link'])}>
               <Link href={'tel:876-876-7654'}>
-                <Text as="p" size={'5'}>
-                  Tel: 876-876-7654
-                </Text>
+                <div className="flex gap-2">
+                  <PhoneIcon />
+                  <Text as="p" size={'5'}>
+                    +91 9156409994
+                  </Text>
+                </div>
               </Link>
             </Box>
           </Box>
-          <Box className={cx(styles['d-section__info-col'])}>
+          <Box className={cx(styles['d-section__info-block'])}>
+            <Heading as="h4" className={cx(styles['d-section__info-title'])}>
+              Social
+            </Heading>
+            <Box className={cx(styles['d-section__social-links'])}>
+              <Link href={'https://www.linkedin.com/company/growth-stats/'} target="_blank" aria-label="LinkedIn">
+                <div className="flex gap-2">
+                  <LinkedinIcon width={28} height={28} />
+                </div>
+              </Link>
+              <Link href={'https://x.com/growthstatss?t=t29czJkY9RHGFOlOzW0oXQ&s=08'} target="_blank" aria-label="TwitterX">
+                <div className="flex gap-2">
+                  <BsTwitterX width={28} height={28} fontSize={28} />
+                </div>
+              </Link>
+              <Link href={'https://www.facebook.com/profile.php?id=61562893092078&mibextid=ZbWKwL'} target="_blank" aria-label="Facebook">
+                <div className="flex gap-2">
+                  <FaFacebookSquare width={28} height={28} fontSize={28} />
+                </div>
+              </Link>
+            </Box>
+          </Box>
+          <Box className={cx(styles['d-section__info-block'])}>
             <Heading as="h4" className={cx(styles['d-section__info-title'])}>
               Location
             </Heading>
@@ -189,8 +215,7 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
             </Box>
           </Box>
         </Box>
-      </Box>
-      <ToastContainer position="bottom-left" />
+      </div>
     </Section>
   );
 };
