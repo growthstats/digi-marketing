@@ -118,6 +118,7 @@ declare global {
     type LinkList = {
       readonly _type: 'link.list';
       link: Link;
+      className?: string;
       links?: Link[];
     };
 

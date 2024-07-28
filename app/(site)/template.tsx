@@ -29,7 +29,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
   // }, []);
   return (
     <div ref={containerRef}>
-      <div className="absolute top-0 right-0 bottom-0 left-0 h-screen w-screen">
+      <div className="absolute top-0 right-0 bottom-0 left-0 h-screen">
         <div id="banner-1" ref={banner1Ref} className="animate-banner min-h-full bg-neutral-950 z-40 fixed top-0 left-0 w-1/4"></div>
         <div id="banner-2" ref={banner2Ref} className="animate-banner min-h-full bg-neutral-950 z-40 fixed top-0 left-1/4 w-1/4"></div>
         <div id="banner-3" ref={banner3Ref} className="animate-banner min-h-full bg-neutral-950 z-40 fixed top-0 left-2/4 w-1/4"></div>

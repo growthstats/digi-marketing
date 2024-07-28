@@ -1,7 +1,8 @@
 @use '/styles/mixin/layout.module.scss' as *;
 
 .header-wrapper {
-  @apply sticky;
+  @apply fixed;
+  @apply w-full;
   @apply top-0;
   @apply z-20;
   @apply border-b;
@@ -9,9 +10,6 @@
   @apply bg-background;
   @apply max-md:header-open:shadow-lg;
   transition: all 0.2s;
-  &--enable-fixed-pos {
-    @apply fixed;
-  }
   &--color-white {
     .d-container__brand-name {
       @apply text-white;
@@ -23,10 +21,14 @@
         @apply border-white;
       }
     }
+    .d-container__nav-link-list {
+      @apply text-white;
+    }
   }
   &--enable-bg-transparent {
     @apply bg-transparent;
     @apply shadow-none;
+    @apply border-none;
   }
   &__home-page {
     .d-container__nav-link {
@@ -54,6 +56,26 @@
   @apply p-4;
   @screen md {
     grid-template: 'logo nav lang ctas' auto / 1fr 1fr auto auto;
+  }
+  &__nav {
+    @apply flex;
+    @apply items-center;
+    @apply gap-y-2;
+    @apply [grid-area:nav];
+    @apply max-md:my-4;
+    @apply max-md:flex-col;
+    @apply max-md:header-closed:hidden;
+  }
+  &__nav-link {
+    @apply text-base;
+    @apply font-bold;
+    @screen md {
+      @apply px-3;
+    }
+  }
+  &__nav-link-list {
+    @apply text-base;
+    @apply font-bold;
   }
 }
 

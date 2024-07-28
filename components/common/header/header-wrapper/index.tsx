@@ -1,11 +1,23 @@
 'use client';
 
+import { useWindowScroll } from '@uidotdev/usehooks';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 
+import { cn } from '@/lib/utils';
+
+import styles from '../header.module.scss';
 export default function HeaderWrapper({ className, children }: Readonly<React.HTMLAttributes<HTMLDivElement>>) {
   const ref = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
+  const [{ y }] = useWindowScroll();
+
+  const enableBgTransparent = y !== null && y < 100;
+
+  const shouldApplyWhiteColor = (pathname: string) => {
+    const paths = ['/', '/contact'];
+    return paths.includes(pathname);
+  };
 
   // set --header-height
   useEffect(() => {
@@ -29,7 +41,15 @@ export default function HeaderWrapper({ className, children }: Readonly<React.HT
   }, [pathname]);
 
   return (
-    <header ref={ref} className={className}>
+    <header
+      ref={ref}
+      className={cn(className, {
+        [styles['header-wrapper--enable-bg-transparent']]: enableBgTransparent,
+        [styles['header-wrapper--color-white']]: enableBgTransparent && shouldApplyWhiteColor(pathname),
+        [styles['header-wrapper__home-page']]: enableBgTransparent && pathname === '/',
+        'about-page': pathname === '/about',
+      })}
+    >
       {children}
     </header>
   );

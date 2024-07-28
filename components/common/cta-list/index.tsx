@@ -12,7 +12,7 @@ export default function CTAList({
 
   return (
     <div className={cn('flex flex-wrap items-center gap-[.5em]', className)}>
-      {ctas?.map((cta) => <CtaLink className="max-sm:w-full" {...cta} key={cta._key} />)}
+      {ctas?.map((cta) => <CtaLink className="max-sm:w-full text-base" {...cta} key={cta._key} />)}
     </div>
   );
 }
