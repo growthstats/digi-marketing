@@ -5,7 +5,9 @@ import { redirect } from 'next/navigation';
 import { client } from '@/sanity/lib/client';
 import { token } from '@/sanity/lib/token';
 
-const clientWithToken = client.withConfig({ token });
+const clientWithToken = client.withConfig({
+  token,
+});
 
 export async function GET(request: Request) {
   const { isValid, redirectTo = '/' } = await validatePreviewUrl(clientWithToken, request.url);

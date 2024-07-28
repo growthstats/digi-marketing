@@ -1,7 +1,7 @@
 'use client';
-import Lenis from '@studio-freight/lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Lenis from 'lenis';
 import { useEffect } from 'react';
 
 export const LenisScroller = () => {
@@ -15,13 +15,6 @@ export const LenisScroller = () => {
     });
 
     gsap.ticker.lagSmoothing(0);
-
-    // function raf(time: number) {
-    //   lenis.raf(time);
-    //   requestAnimationFrame(raf);
-    // }
-
-    // requestAnimationFrame(raf);
 
     return () => {
       lenis.destroy();
