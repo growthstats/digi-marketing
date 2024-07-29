@@ -1,10 +1,8 @@
-@use '/styles/mixin/layout.module.scss' as *;
-
 .d-section {
   &__container {
     @apply flex;
     @apply flex-col-reverse;
-    @apply gap-6;
+    @apply gap-10;
     @apply max-w-screen-xl;
     @apply mx-auto;
     @apply px-4;
@@ -15,15 +13,18 @@
       @apply flex-row;
     }
   }
-  &__col {
+  &__content {
     @apply w-full;
-    @screen lg {
-      @apply w-1/2;
-    }
+  }
+  &__image-wrapper {
+    @apply w-full;
+    @apply max-w-[389px];
+    @apply shrink-0;
   }
   &__img {
-    @apply w-full;
-    @apply h-auto;
-    @apply my-auto;
+    @apply w-auto;
+    @apply h-[550px];
+    @apply rounded-2xl;
+    @apply object-cover;
   }
 }
