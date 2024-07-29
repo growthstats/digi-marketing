@@ -1,10 +1,9 @@
 import { stegaClean } from '@sanity/client/stega';
+import Link from 'next/link';
 
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { processUrl } from '@/sanity/lib/url';
-
-import TransitionLink from '../transition-link';
 
 export default function CTALink({ link, style, className, children, ...rest }: Sanity.CTA & React.HTMLAttributes<HTMLAnchorElement>) {
   const linkContent = children || link?.label || link?.internal?.title || link?.external;
@@ -19,7 +18,7 @@ export default function CTALink({ link, style, className, children, ...rest }: S
 
   if (link?.type === 'internal' && link.internal) {
     return (
-      <TransitionLink
+      <Link
         href={processUrl(link.internal, {
           base: false,
           params: link.params,
@@ -27,7 +26,7 @@ export default function CTALink({ link, style, className, children, ...rest }: S
         {...props}
       >
         {linkContent}
-      </TransitionLink>
+      </Link>
     );
   }
 
