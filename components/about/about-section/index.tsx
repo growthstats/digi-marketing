@@ -59,7 +59,7 @@ export const AboutSection: FC<IAboutSectionProps> = (_props) => (
       <Box className={cx(styles['d-section__col'])}>
         <Image
           alt="About Us Section Image"
-          src={'/email-marketing-service.jpeg'}
+          src={'/about/about-company.png'}
           width={330}
           height={220}
           className={cx(styles['d-section__img'])}
