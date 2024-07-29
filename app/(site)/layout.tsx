@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Inter } from 'next/font/google';
 import { draftMode } from 'next/headers';
 import { VisualEditing } from 'next-sanity';
+import NextTopLoader from 'nextjs-toploader';
 
 import orgSchemaJsonLd from '@/assets/org-schema.json';
 import Footer from '@/components/common/footer';
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className="light">
       <body className={cx('bg-white', inter.variable)}>
+        <NextTopLoader />
         <Theme accentColor="blue" grayColor="slate" appearance="light">
           <Header />
           <main role="main" className="mx-auto">
