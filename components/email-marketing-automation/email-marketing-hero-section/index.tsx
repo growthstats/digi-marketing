@@ -3,20 +3,19 @@ import cx from 'classnames';
 import Lottie from 'lottie-react';
 import { FC } from 'react';
 
-import seoServiceposterAnimation from '@/assets/animations/seo-service-poster.json';
+import emailMarketingHeroAnimation from '@/assets/animations/email-marketing-hero-lottie.json';
 
 import styles from './email-marketing-hero-section.module.scss';
 
 interface IEmailMarketingHeroSectionProps {}
 
-// TODO: Add gsap animations
 const EmailMarketingHeroSection: FC<IEmailMarketingHeroSectionProps> = () => (
   <Section className={cx(styles['d-section'])}>
     <Box className={cx(styles['d-section__container'])}>
       {/* Col 1 */}
       <Box className={cx(styles['d-section__image-col'])}>
         <Box className={cx(styles['d-section__image-wrapper'])}>
-          <Lottie animationData={seoServiceposterAnimation} />
+          <Lottie animationData={emailMarketingHeroAnimation} />
         </Box>
       </Box>
       {/* Col 2 */}

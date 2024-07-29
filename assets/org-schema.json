@@ -2,28 +2,28 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Growth Stats",
-  "url": "https://growth-stats.vercel.app",
-  "logo": "https://growth-stats.vercel.app/logo.png",
+  "url": "https://growthstats.io",
+  "logo": "https://growthstats.io/logo.png",
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+1-800-555-5555",
+    "telephone": "+91-915-640-9994",
     "contactType": "Customer Service",
-    "areaServed": "US",
+    "areaServed": "IN",
     "availableLanguage": "English"
   },
   "sameAs": [
-    "https://www.facebook.com/yourprofile",
-    "https://www.twitter.com/yourprofile",
-    "https://www.linkedin.com/company/yourprofile",
-    "https://www.instagram.com/yourprofile"
+    "https://www.facebook.com/profile.php?id=61562893092078&mibextid=ZbWKwL",
+    "https://x.com/growthstatss?t=t29czJkY9RHGFOlOzW0oXQ&s=08",
+    "https://www.linkedin.com/company/growth-stats/",
+    "http://t.me/Growthstats"
   ],
   "description": "Growth Stats provides comprehensive digital marketing solutions including SEO, content development, social media campaigns, and 3D animation. We ensure business growth through our strategic mix of online mediums.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "1234 Main Street",
-    "addressLocality": "City",
-    "addressRegion": "State",
-    "postalCode": "12345",
-    "addressCountry": "US"
+    "streetAddress": "B.T Kawade Road, Sai Sulochana, opposite to shirke company, Ganesh Nagar, Ghorpadi",
+    "addressLocality": "Pune",
+    "addressRegion": "Maharashtra",
+    "postalCode": "411036",
+    "addressCountry": "IN"
   }
 }

@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lottie from 'lottie-react';
 import { FC, useEffect } from 'react';
 
-import seoServiceposterAnimation from '@/assets/animations/seo-service-poster.json';
+import socialMediaServicesHeroAnimation from '@/assets/animations/social-media-services-hero-lottie.json';
 import socialMediaServices from '@/assets/social-media-services.json';
 
 import ServiceCard from '../common/service-card';
@@ -54,7 +54,7 @@ const SocialMediaServicesHeroSection: FC<ISocialMediaServicesHeroSectionProps> =
         {/* Col 1 */}
         <Box className={cx(styles['d-section__image-col'])}>
           <Box className={cx(styles['d-section__image-wrapper'])}>
-            <Lottie animationData={seoServiceposterAnimation} />
+            <Lottie animationData={socialMediaServicesHeroAnimation} />
           </Box>
         </Box>
         {/* Col 2 */}
