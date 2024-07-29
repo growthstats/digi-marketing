@@ -1,6 +1,5 @@
 import { MetadataRoute } from 'next';
 
-// TODO: Update the icon src's with correct images
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Growth Stats',
@@ -13,12 +12,12 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#317EFB',
     icons: [
       {
-        src: '/icons/icon-192x192.png',
+        src: '/icons/logo-192x192.png',
         sizes: '192x192',
         type: 'image/png',
       },
       {
-        src: '/icons/icon-512x512.png',
+        src: '/icons/logo-512x512.png',
         sizes: '512x512',
         type: 'image/png',
       },
@@ -31,14 +30,14 @@ export default function manifest(): MetadataRoute.Manifest {
     scope: '/',
     screenshots: [
       {
-        src: '/screenshots/screenshot1.png',
+        src: '/screenshots/homepage-ss-1.png',
         type: 'image/png',
-        sizes: '540x720',
+        sizes: '1904x970',
       },
       {
-        src: '/screenshots/screenshot2.png',
+        src: '/screenshots/homepage-ss-2.png',
         type: 'image/png',
-        sizes: '540x720',
+        sizes: '1908x970',
       },
     ],
     related_applications: [],
@@ -49,7 +48,7 @@ export default function manifest(): MetadataRoute.Manifest {
         url: '/about',
         icons: [
           {
-            src: '/icons/about-icon.png',
+            src: '/icons/logo-192x192.png',
             sizes: '192x192',
             type: 'image/png',
           },
@@ -60,7 +59,7 @@ export default function manifest(): MetadataRoute.Manifest {
         url: '/contact',
         icons: [
           {
-            src: '/icons/contact-icon.png',
+            src: '/icons/logo-192x192.png',
             sizes: '192x192',
             type: 'image/png',
           },

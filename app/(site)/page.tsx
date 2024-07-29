@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     url: `${BASE_URL}/`,
     images: [
       {
-        url: 'https://www.yourwebsite.com/images/homepage.jpg', // TODO: replace with an actual image URL if available
-        width: 800,
-        height: 600,
+        url: `${BASE_URL}/screenshots/homepage-og.png`,
+        width: 1428,
+        height: 728,
         alt: 'Growth Stats Digital Marketing Solutions',
       },
     ],
