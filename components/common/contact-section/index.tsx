@@ -11,14 +11,13 @@ export interface IContactSectionProps {}
 export default function ContactSection(_props: IContactSectionProps) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    // FIXME: Aimation for the col1 text
     const tlTitle = gsap.timeline({
       scrollTrigger: {
-        trigger: '#contact-section__title',
-        start: 'top 70%',
-        end: 'bottom 10%',
+        trigger: '#contact-section__box',
+        start: 'top 80%',
+        end: 'bottom 20%',
         scrub: false,
-        markers: false,
+        markers: true,
         toggleActions: 'play reverse play reverse', // onEnter onLeave onEnterBack onLeaveBack
       },
     });
@@ -26,14 +25,14 @@ export default function ContactSection(_props: IContactSectionProps) {
     tlTitle.fromTo(
       '.contact-section-elem',
       { opacity: 0, y: 20 }, // from state
-      { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 }, // to state
+      { opacity: 1, y: 0, duration: 0.3, delay: 0.5, stagger: 0.3 }, // to state
     );
   }, []);
 
   return (
     <Section id="contact-section" className={cx(styles['d-section'])}>
-      <Box className={cx(styles['d-section__container'])}>
-        <Heading as="h3" className={cx(styles['d-section__title'], 'contact-section-elem')} id="contact-section__title">
+      <Box className={cx(styles['d-section__container'])} id="contact-section__box">
+        <Heading as="h3" className={cx(styles['d-section__title'], 'contact-section-elem')}>
           Have A Project In Mind?
         </Heading>
         <Text size={'5'} className={cx(styles['d-section__sub-title'], 'contact-section-elem')}>
