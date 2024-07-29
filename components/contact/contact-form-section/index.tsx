@@ -161,25 +161,27 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
             <Heading as="h4" className={cx(styles['d-section__info-title'])}>
               General Inquiries
             </Heading>
-            <Box className={cx(styles['d-section__info-link'])}>
-              <Link href={'mailto:info@growthstats.io'}>
-                <div className="flex gap-2">
-                  <MailIcon />
-                  <Text as="p" size={'5'}>
-                    info@growthstats.io
-                  </Text>
-                </div>
-              </Link>
-            </Box>
-            <Box className={cx(styles['d-section__info-link'])}>
-              <Link href={'tel:876-876-7654'}>
-                <div className="flex gap-2">
-                  <PhoneIcon />
-                  <Text as="p" size={'5'}>
-                    +91 9156409994
-                  </Text>
-                </div>
-              </Link>
+            <Box className={cx(styles['d-section__info-links'])}>
+              <Box className={cx(styles['d-section__info-link'])}>
+                <Link href={'mailto:info@growthstats.io'}>
+                  <div className="flex gap-2">
+                    <MailIcon />
+                    <Text as="p" size={'5'}>
+                      info@growthstats.io
+                    </Text>
+                  </div>
+                </Link>
+              </Box>
+              <Box className={cx(styles['d-section__info-link'])}>
+                <Link href={'tel:876-876-7654'}>
+                  <div className="flex gap-2">
+                    <PhoneIcon />
+                    <Text as="p" size={'5'}>
+                      +91 9156409994
+                    </Text>
+                  </div>
+                </Link>
+              </Box>
             </Box>
           </Box>
           <Box className={cx(styles['d-section__info-block'])}>

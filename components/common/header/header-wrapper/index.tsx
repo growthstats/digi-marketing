@@ -2,17 +2,19 @@
 
 import { useWindowScroll } from '@uidotdev/usehooks';
 import { usePathname } from 'next/navigation';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { cn } from '@/lib/utils';
 
 import styles from '../header.module.scss';
+
 export default function HeaderWrapper({ className, children }: Readonly<React.HTMLAttributes<HTMLDivElement>>) {
   const ref = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const [{ y }] = useWindowScroll();
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
-  const enableBgTransparent = y !== null && y < 100;
+  const enableBgTransparent = !isMenuOpen && y !== null && y < 100;
 
   const shouldApplyWhiteColor = (pathname: string) => {
     const paths = ['/', '/contact'];
@@ -38,7 +40,19 @@ export default function HeaderWrapper({ className, children }: Readonly<React.HT
     if (typeof document === 'undefined') return;
     const toggle = document.querySelector('#header-open') as HTMLInputElement;
     if (toggle) toggle.checked = false;
+    setIsMenuOpen(false);
   }, [pathname]);
+
+  // track mobile menu toggle state
+  useEffect(() => {
+    const toggle = document.querySelector('#header-open') as HTMLInputElement;
+    if (toggle) {
+      const handleToggle = () => setIsMenuOpen(toggle.checked);
+      toggle.addEventListener('change', handleToggle);
+
+      return () => toggle.removeEventListener('change', handleToggle);
+    }
+  }, []);
 
   return (
     <header

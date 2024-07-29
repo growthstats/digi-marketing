@@ -8,7 +8,7 @@ import InteractiveDetails from '../interactive-details';
 export default function LinkList({ className, link, links }: Readonly<Sanity.LinkList>) {
   return (
     <InteractiveDetails className={cn(className, 'group relative h-full')} closeAfterNavigate>
-      <summary className="flex items-center gap-1 font-bold md:px-3">
+      <summary className="flex items-center gap-1 font-bold md:px-3 py-2">
         {link.label}
         <CgChevronRight className="transition-transform group-open:rotate-90 md:rotate-90" />
       </summary>

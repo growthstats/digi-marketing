@@ -10,7 +10,6 @@
     @apply gap-10;
     @screen xl {
       @apply flex-row;
-      // @apply flex-row-reverse;
     }
   }
   &__form-container {
@@ -58,7 +57,7 @@
     @apply px-8;
     @apply flex;
     @apply flex-col;
-    @apply space-y-8;
+    @apply space-y-10;
     @screen xl {
       @apply justify-start;
     }
@@ -74,9 +73,13 @@
       @apply text-5xl;
     }
   }
+  &__info-links {
+    @apply flex;
+    @apply flex-col;
+    @apply gap-5;
+  }
   &__info-link {
     @apply text-white;
-    @apply mb-6;
     &:hover {
       @apply text-blue-10;
     }

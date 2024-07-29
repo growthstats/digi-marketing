@@ -24,6 +24,9 @@
     .d-container__nav-link-list {
       @apply text-white;
     }
+    .d-container__toggle {
+      @apply text-white;
+    }
   }
   &--enable-bg-transparent {
     @apply bg-transparent;
@@ -64,7 +67,6 @@
     @apply [grid-area:nav];
     @apply max-md:my-4;
     @apply max-md:flex-col;
-    @apply max-md:header-closed:hidden;
   }
   &__nav-link {
     @apply text-base;
