@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useEffect } from 'react';
 
 import rawCuratedServices from '@/assets/curated-services.json';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 import styles from './services-section.module.scss';
 
@@ -114,7 +115,9 @@ export default function ServicesSection(props: Readonly<IServicesSectionProps>) 
             <Box key={service.id} className={cx(styles['d-section__card-wrapper'])}>
               <Box className={cx(styles['d-section__card'])}>
                 <Box mb={'5'} className={cx(styles['d-section__card__inset'])}>
-                  <Image src={service.src} alt={service.title} width={360} height={270} className={cx(styles['d-section__card__img'])} />
+                  <AspectRatio ratio={16 / 9}>
+                    <Image src={service.src} alt={service.title} width={360} height={203} className={cx(styles['d-section__card__img'])} />
+                  </AspectRatio>
                 </Box>
                 <Link href={service.linkHref}>
                   <Text as="div" size="5" weight="bold" align={'center'} mb={'5'} color="blue">
