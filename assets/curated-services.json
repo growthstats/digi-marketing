@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "SEO Services",
-    "description": "We optimize websites leading to their improved visibility in search engine results. We undertake a step-by-step approach starting with keyword research, then on-page optimization, link building, and finally technical SEO.",
+    "description": "We optimize websites for improved visibility in search engine results through a step-by-step approach: starting with keyword research, then on-page optimization, link building, and finally technical SEO.",
     "linkText": "Learn More",
     "linkHref": "/search-engine-optimization",
     "src": "/home/seo-service-1920x1080px.webp"
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "title": "Email Marketing & Automation",
-    "description": "Email marketing is one of the most successful ways to conduct promotional campaigns. Email marketing is used to target the right audience and engage with them. Automation: Based on the user behavior or their online interests, we send targeted communication to the audience.",
+    "description": "Email marketing is one of the most successful method for promotional campaigns, targeting the right audience and engaging with them. Automation allows us to send targeted communication based on user behavior and online interests.",
     "linkText": "Learn More",
     "linkHref": "/email-marketing-automation",
     "src": "/home/email-marketing-automation-1920x1080px.webp"
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "title": "Social Media Services",
-    "description": "Optimizing and managing profiles on popular social media like ‘X’, Facebook, Linkedin, Instagram come under this service head. This leads to better client interaction, engagement, and awareness and elicits a desired response from the target audience.",
+    "description": "Optimizing and managing profiles on popular social media like ‘X’, Facebook, LinkedIn, and Instagram enhances client interaction, engagement, and awareness, elicites desired responses from the target audience.",
     "linkText": "Learn More",
     "linkHref": "/social-media-services",
     "src": "/home/social-media-services-1920x1080px.webp"
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "title": "Web Design",
-    "description": "Designing web pages that evoke interest and leave a memorable visual impact on the audience is achieved through great web design. The visual layout and user interface of websites, responsiveness, and ease of use on multiple types of devices contribute to the customer experience and ensure their engagement on your business website.",
+    "description": "Great web design evokes interest and leaves a memorable visual impact. Visual layout, user interface, responsiveness, and ease of use across devices contribute to the customer experience and ensure engagement on your business website.",
     "linkText": "Learn More",
     "linkHref": "/web-design",
     "src": "/home/web-design-1920x1080px.webp"
@@ -42,7 +42,7 @@
   {
     "id": 6,
     "title": "SEM / Paid Advertising",
-    "description": "Search Engine Marketing is doing paid advertising on search engines like ‘Google’ or ‘Bing’. This helps in promoting the website. Display ads, pay-per-click (PPC) campaigns, and remarketing are a part of SEM.",
+    "description": "Search Engine Marketing (SEM) is doing paid advertising on search engines like Google and Bing. This helps in promoting the website through display ads, pay-per-click (PPC) campaigns, and remarketing strategies.",
     "linkText": "Learn More",
     "linkHref": "/sem-paid-advertising",
     "src": "/home/sem-paid-advertising-1920x1080px.webp"

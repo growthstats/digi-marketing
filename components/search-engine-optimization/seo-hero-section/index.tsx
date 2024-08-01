@@ -64,15 +64,13 @@ const SEOHeroSection: FC<ISEOHeroSectionProps> = () => {
             SEO (Search Engine Optimization)
           </Heading>
           <Text as="p" size={'3'} weight={'regular'} mb={'1'} className={cx(styles['d-section__text-content'])}>
-            We offer all types of SEO services that ensure the top ranking of your website on the search engines. Your website needs to be
-            SEO-friendly as it saves a lot of money on online advertisements. When your company website ranks higher in the search engine,
-            the probability of getting business is higher than your competitors.
+            We offer all types of SEO services to ensure your website ranks at the top of search engines. An SEO-friendly site saves money
+            on ads, and a higher ranking increases your chances of business over competitors.
           </Text>
           <Text as="p" size={'3'} mb={'5'} className={cx(styles['d-section__text-content'])}>
-            Our experts optimize your website through on-page and off-page SEO. Various techniques are used to help your company website
-            rank higher globally. It all starts with quality content writing, which includes keywords that are placed as per Google norms in
-            a strategic manner. Meta descriptions, headings, subheadings, internal and external links, images, etc. are all paid attention
-            to so that your website links are click-worthy.
+            Our experts optimize through on-page and off-page techniques. It starts with quality content writing that strategically
+            incorporates keywords according to Google norms. We focus on meta descriptions, headings, subheadings, internal and external
+            links, and images to make your website links click-worthy.
           </Text>
           <Box className={cx(styles['d-section__cta-wrapper'])}>
             <Button id="digital-marketing__seo__cta" size={'4'}>

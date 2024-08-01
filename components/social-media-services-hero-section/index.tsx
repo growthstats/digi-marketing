@@ -63,12 +63,11 @@ const SocialMediaServicesHeroSection: FC<ISocialMediaServicesHeroSectionProps> =
             Social Media Services
           </Heading>
           <Text as="p" size={'3'} weight={'regular'} mb={'5'} className={cx(styles['d-section__text-content'])}>
-            At <Text weight={'medium'}>Growth Stats</Text>, we offer comprehensive Social Media Services designed to elevate your
-            brand&apos;s online presence and foster meaningful connections. From crafting and managing your social media brand to ensuring
-            stellar online reputation, our expert team strategically optimizes your interactions across popular platforms like Facebook,
-            Instagram, YouTube, and LinkedIn. We provide tailored solutions in brand management, account handling, and community engagement,
-            driving growth and retaining customer loyalty. Our focus is on delivering impactful, cost-effective strategies that amplify your
-            reach and cultivate a positive, lasting impression in the digital landscape.
+            At <Text weight={'bold'}>Growth Stats</Text>, we offer comprehensive Social Media Services designed to elevate your brand&apos;s
+            online presence and foster meaningful connections. Our expert team strategically optimizes your interactions across platforms
+            like Facebook, Instagram, YouTube, and LinkedIn, ensuring stellar online reputation. We provide tailored solutions in brand
+            management, account handling, and community engagement, driving growth and retaining customer loyalty through impactful,
+            cost-effective strategies.
           </Text>
           <Box className={cx(styles['d-section__cta-wrapper'])}>
             <Button id="digital-marketing__seo__cta" size={'4'}>
