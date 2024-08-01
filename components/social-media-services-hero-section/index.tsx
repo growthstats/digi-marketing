@@ -88,43 +88,53 @@ const SocialMediaServicesHeroSection: FC<ISocialMediaServicesHeroSectionProps> =
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
             name={socialMediaServices[0].name}
             description={socialMediaServices[0].description}
-            imgSrc={'/social-media-services/Social-media-brand-management-icon.png'}
-            color="blue"
+            imgSrc={'/social-media-services/social-media-brand-management-illustration.svg'}
+            color="plum"
+            variant="horizontal"
+            layout="reverse"
           />
           <ServiceCard
-            className={cx(styles['d-section__service'], 'animate-seo-feature')}
+            className={cx(styles['d-section__service'], 'animate-seo-feature', 'ml-auto')}
             name={socialMediaServices[1].name}
             description={socialMediaServices[1].description}
-            imgSrc={'/social-media-services/social-media-account-management-icon.png'}
-            color="plum"
+            imgSrc={'/social-media-services/social-media-account-management-illustration.svg'}
+            color="orange"
+            variant="horizontal"
           />
           <ServiceCard
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
             name={socialMediaServices[2].name}
             description={socialMediaServices[2].description}
-            imgSrc={'/social-media-services/online-reputation-management-icon.png'}
-            color="orange"
+            imgSrc={'/social-media-services/online-reputation-management-illustration.svg'}
+            color="blue"
+            variant="horizontal"
+            layout="reverse"
           />
           <ServiceCard
-            className={cx(styles['d-section__service'], 'animate-seo-feature')}
+            className={cx(styles['d-section__service'], 'animate-seo-feature', 'ml-auto')}
             name={socialMediaServices[3].name}
             description={socialMediaServices[3].description}
-            imgSrc={'/social-media-services/community-managemet-icon.png'}
-            color="blue"
+            imgSrc={'/social-media-services/community-management-illustration.svg'}
+            color="plum"
+            variant="horizontal"
+            layout="reverse"
           />
           <ServiceCard
             className={cx(styles['d-section__service'], 'animate-seo-feature')}
             name={socialMediaServices[4].name}
             description={socialMediaServices[4].description}
-            imgSrc={'/social-media-services/social-media-marketing-icon.png'}
-            color="plum"
+            imgSrc={'/social-media-services/social-media-marketing-illustration.svg'}
+            color="orange"
+            variant="horizontal"
           />
           <ServiceCard
-            className={cx(styles['d-section__service'], 'animate-seo-feature')}
+            className={cx(styles['d-section__service'], 'animate-seo-feature', 'ml-auto')}
             name={socialMediaServices[5].name}
             description={socialMediaServices[5].description}
-            imgSrc={'/social-media-services/social-media-optimization-icon.png'}
-            color="orange"
+            imgSrc={'/social-media-services/social-media-optimization-illustration.svg'}
+            color="blue"
+            variant="horizontal"
+            layout="reverse"
           />
         </Box>
       </Box>
