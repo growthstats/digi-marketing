@@ -2,6 +2,7 @@
 
 import { Box, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
+import Link from 'next/link';
 
 import { useScrollTriggerAnimation } from '@/utils/hooks/use-scroll-trigger-animation';
 
@@ -26,10 +27,10 @@ export default function ContactSection(_props: IContactSectionProps) {
           Let&apos;s transform your online presence and elevate your brand to new heights. Explore our services and take the first step
           towards digital excellence.
         </Text>
-        <Box className={cx(styles['d-section__cta-wrapper'], 'contact-section-elem')}>
-          <button className={cx(styles['d-section__cta'])}>
+        <Box className="relative py-3 px-6">
+          <Link href={'/contact'} className={cx(styles['d-section__cta'], 'contact-section-elem')}>
             <Text weight={'bold'}>Work with us</Text>
-          </button>
+          </Link>
         </Box>
       </Box>
     </Section>
