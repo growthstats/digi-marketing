@@ -75,10 +75,15 @@ export default function ServicesSection(props: Readonly<IServicesSectionProps>) 
                     {service.title}
                   </Text>
                 </Link>
-                <Text as="div" color="gray" size="4" align={'center'} mb={'4'}>
+                <Text as="div" color="gray" size="4" align={'center'}>
                   {service.description}
                 </Text>
               </Box>
+              <Link href={service.linkHref} className="mb-6">
+                <Text as="div" size="4" weight="medium" align={'center'} color="blue">
+                  Learn More
+                </Text>
+              </Link>
             </Box>
           ))}
         </Grid>

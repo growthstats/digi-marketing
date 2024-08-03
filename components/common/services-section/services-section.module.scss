@@ -30,6 +30,9 @@
     @apply max-w-[360px];
     @apply rounded-[var(--radius-5)];
     @apply bg-white;
+    @apply flex;
+    @apply flex-col;
+    @apply justify-between;
   }
   &__card {
     @apply px-4;
@@ -42,7 +45,6 @@
       @apply block;
       @apply object-cover;
       @apply w-full;
-      @apply h-[203px];
       @apply bg-[var(--gray-5)];
       @apply rounded-t-[var(--radius-5)];
     }
