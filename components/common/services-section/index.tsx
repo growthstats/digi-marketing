@@ -63,28 +63,29 @@ export default function ServicesSection(props: Readonly<IServicesSectionProps>) 
           ref={cardContainerScrollTrigger}
         >
           {curatedServices.map((service: TCuratedService) => (
-            <Box key={service.id} className={cx(styles['d-section__card-wrapper'])} ref={cardTrigger}>
-              <Box className={cx(styles['d-section__card'])}>
-                <Box mb={'5'} className={cx(styles['d-section__card__inset'])}>
-                  <AspectRatio ratio={16 / 9}>
-                    <Image src={service.src} alt={service.title} width={360} height={203} className={cx(styles['d-section__card__img'])} />
-                  </AspectRatio>
-                </Box>
-                <Link href={service.linkHref}>
+            <Link href={service.linkHref} key={service.id}>
+              <Box className={cx(styles['d-section__card-wrapper'])} ref={cardTrigger}>
+                <Box className={cx(styles['d-section__card'])}>
+                  <Box mb={'5'} className={cx(styles['d-section__card__inset'])}>
+                    <AspectRatio ratio={16 / 9}>
+                      <Image
+                        src={service.src}
+                        alt={service.title}
+                        width={360}
+                        height={203}
+                        className={cx(styles['d-section__card__img'])}
+                      />
+                    </AspectRatio>
+                  </Box>
                   <Text as="div" size="5" weight="bold" align={'center'} mb={'5'} color="blue">
                     {service.title}
                   </Text>
-                </Link>
-                <Text as="div" color="gray" size="4" align={'center'}>
-                  {service.description}
-                </Text>
+                  <Text as="div" color="gray" size="4" align={'center'}>
+                    {service.description}
+                  </Text>
+                </Box>
               </Box>
-              <Link href={service.linkHref} className="mb-6">
-                <Text as="div" size="4" weight="medium" align={'center'} color="blue">
-                  Learn More
-                </Text>
-              </Link>
-            </Box>
+            </Link>
           ))}
         </Grid>
       </Box>

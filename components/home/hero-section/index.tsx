@@ -1,5 +1,8 @@
-import { Box, Button, Heading, Section, Text } from '@radix-ui/themes';
+import { Box, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
+import Link from 'next/link';
+
+import { buttonVariants } from '@/components/ui/button';
 
 import styles from './hero-section.module.scss';
 
@@ -21,22 +24,22 @@ export default function HeroSection(_props: IHeroSectionProps) {
         Your browser does not support the video tag.
       </video>
       <Box className={cx(styles['d-section__overlay-content'])}>
-        <Heading as="h1" weight={'bold'} className={cx(styles['d-section__hero-title'])}>
+        <Heading as="h1" weight={'bold'} align={'center'} className={cx(styles['d-section__hero-title'])}>
           <Text>Online Marketing </Text>
           <Text>For Rapid Growth</Text>
         </Heading>
         <Box className={cx(styles['d-section__subtitle-wrapper'])}>
-          <Text as="p" size={'6'} weight={'medium'}>
+          <Text as="p" size={{ initial: '4', md: '6' }} weight={'medium'}>
             Growth Stats
           </Text>
-          <Text as="p" size={'6'} weight={'medium'}>
+          <Text as="p" size={{ initial: '4', md: '6' }} weight={'medium'}>
             We Make Your Growth Statistics Soar
           </Text>
         </Box>
         <Box>
-          <Button size={'4'} className={cx(styles['d-section__hero-cta'])}>
-            <Text weight={'bold'}>Work with us</Text>
-          </Button>
+          <Link href={'/contact'} className={cx(buttonVariants({ variant: 'default', size: 'default' }), styles['d-section__hero-cta'])}>
+            <Text weight={'bold'}>Work With Us</Text>
+          </Link>
         </Box>
       </Box>
     </Section>

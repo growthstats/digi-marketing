@@ -45,7 +45,7 @@
     @apply flex-col;
     @apply text-white;
     span {
-      @apply text-5xl;
+      @apply text-4xl;
       text-shadow: 0 0 7px var(--blue-9);
       @screen md {
         @apply text-6xl;

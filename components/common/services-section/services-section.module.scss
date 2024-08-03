@@ -25,7 +25,7 @@
     @apply mx-auto;
   }
   &__card-wrapper {
-    @apply shadow-lg;
+    @apply shadow-md;
     @apply mx-auto;
     @apply max-w-[360px];
     @apply rounded-[var(--radius-5)];
@@ -33,6 +33,11 @@
     @apply flex;
     @apply flex-col;
     @apply justify-between;
+    @apply transition-all;
+    @apply duration-300;
+    &:hover {
+      @apply shadow-2xl;
+    }
   }
   &__card {
     @apply px-4;
