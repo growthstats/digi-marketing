@@ -17,6 +17,7 @@ export default function HeroSection(_props: IHeroSectionProps) {
         preload="auto"
       >
         <source src="/home-hero-section-bg.webm" type="video/webm" />
+        <track src="/home-hero-section-bg-captions.vtt" kind="captions" srcLang="en" label="english_captions" />
         Your browser does not support the video tag.
       </video>
       <Box className={cx(styles['d-section__overlay-content'])}>
