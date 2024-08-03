@@ -14,7 +14,7 @@ export default function HeroSection(_props: IHeroSectionProps) {
         loop
         muted
         playsInline // Improves autoplay on mobile devices
-        preload="metadata"
+        preload="auto"
       >
         <source src="/home-hero-section-bg.webm" type="video/webm" />
         Your browser does not support the video tag.
