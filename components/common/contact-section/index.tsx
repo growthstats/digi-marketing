@@ -2,38 +2,23 @@
 
 import { Box, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect } from 'react';
+
+import { useScrollTriggerAnimation } from '@/utils/hooks/use-scroll-trigger-animation';
 
 import styles from './contact-section.module.scss';
 
 export interface IContactSectionProps {}
 
 export default function ContactSection(_props: IContactSectionProps) {
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const tlTitle = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#contact-section__box',
-        start: 'top 80%',
-        end: 'bottom 20%',
-        scrub: false,
-        markers: false,
-        toggleActions: 'play reverse play reverse', // onEnter onLeave onEnterBack onLeaveBack
-      },
-    });
-
-    tlTitle.fromTo(
-      '.contact-section-elem',
-      { opacity: 0, y: 20 }, // from state
-      { opacity: 1, y: 0, duration: 0.3, delay: 0.5, stagger: 0.3 }, // to state
-    );
-  }, []);
+  const [boxScrollTrigger] = useScrollTriggerAnimation(
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, duration: 0.3, delay: 0.3, stagger: 0.1 },
+    '.contact-section-elem',
+  );
 
   return (
     <Section id="contact-section" className={cx(styles['d-section'])}>
-      <Box className={cx(styles['d-section__container'])} id="contact-section__box">
+      <Box className={cx(styles['d-section__container'])} ref={boxScrollTrigger}>
         <Heading as="h3" className={cx(styles['d-section__title'], 'contact-section-elem')}>
           Have A Project In Mind?
         </Heading>

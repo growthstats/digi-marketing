@@ -2,14 +2,12 @@
 
 import { Box, Grid, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from 'react';
 
 import rawCuratedServices from '@/assets/curated-services.json';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { useScrollTriggerAnimation } from '@/utils/hooks/use-scroll-trigger-animation';
 
 import styles from './services-section.module.scss';
 
@@ -32,89 +30,40 @@ export default function ServicesSection(props: Readonly<IServicesSectionProps>) 
   // Ensure the icon names are correct in the JSON
   const curatedServices: TCuratedService[] = rawCuratedServices as TCuratedService[];
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  const [headingScrollTrigger] = useScrollTriggerAnimation({ opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, delay: 0.3 });
 
-    // Timeline for heading
-    const tlHeading = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#services-section__heading',
-        start: 'top 80%',
-        end: 'bottom 10%',
-        scrub: false,
-        markers: false,
-        toggleActions: 'play reverse play reverse', // onEnter onLeave onEnterBack onLeaveBack
-      },
-    });
+  const [subHeadingScrollTrigger] = useScrollTriggerAnimation({ opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, delay: 0.3 });
 
-    tlHeading.fromTo(
-      '#services-section__heading',
-      { opacity: 0, y: 20 }, // from state
-      { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
-    );
-
-    // Timeline for text content
-    const tlTextContent = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#services-section__sub-heading',
-        start: 'top 80%',
-        end: 'bottom 10%',
-        scrub: false,
-        markers: false,
-        toggleActions: 'play reverse play reverse',
-      },
-    });
-
-    tlTextContent.fromTo(
-      '#services-section__sub-heading',
-      { opacity: 0, y: 20 }, // from state
-      { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
-    );
-
-    // Timeline for Cards
-    const tlCards = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#services-section__card-container',
-        start: 'top 90%',
-        end: 'bottom 20%',
-        scrub: false,
-        markers: false,
-        toggleActions: 'play reverse play reverse',
-      },
-    });
-
-    tlCards.fromTo(
-      '#services-section__card-container',
-      { opacity: 0, y: 20 }, // from state
-      { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
-    );
-  }, []);
+  const [cardContainerScrollTrigger, cardTrigger] = useScrollTriggerAnimation(
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, duration: 0.5, delay: 0.3 },
+  );
 
   return (
-    <Section id="services-section" className={cx(styles['d-section'], sectionClassName)}>
+    <Section className={cx(styles['d-section'], sectionClassName)}>
       <Box className={cx(styles['d-section__container'])}>
-        <Heading id="services-section__heading" as="h2" mb={'6'} className={cx(styles['d-section__heading'])}>
+        <Heading as="h2" mb={'6'} className={cx(styles['d-section__heading'])} ref={headingScrollTrigger}>
           One Place For{' '}
           <Text as="span" color="blue">
             Best Marketing Services{' '}
           </Text>
           Online
         </Heading>
-        <Box id="services-section__sub-heading" className={cx(styles['d-section__sub-heading'])} mb={'8'}>
+        <Box className={cx(styles['d-section__sub-heading'])} mb={'8'} ref={subHeadingScrollTrigger}>
           <Text as="p" align={'center'} size={'5'}>
             We offer a complete bouquet of services that help take your business to the next level of growth.
           </Text>
         </Box>
         {/* Services Grid */}
         <Grid
-          id="services-section__card-container"
           columns={{ initial: '1', sm: '2', lg: '3' }}
           gap={'6'}
           width={'auto'}
           className={cx(styles['d-section__cards-container'])}
+          ref={cardContainerScrollTrigger}
         >
           {curatedServices.map((service: TCuratedService) => (
-            <Box key={service.id} className={cx(styles['d-section__card-wrapper'])}>
+            <Box key={service.id} className={cx(styles['d-section__card-wrapper'])} ref={cardTrigger}>
               <Box className={cx(styles['d-section__card'])}>
                 <Box mb={'5'} className={cx(styles['d-section__card__inset'])}>
                   <AspectRatio ratio={16 / 9}>

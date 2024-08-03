@@ -2,82 +2,34 @@
 
 import { Box, Section, Strong, Text } from '@radix-ui/themes';
 import cx from 'classnames';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect } from 'react';
 
 import BannerText from '@/components/common/banner-text';
+import { useScrollTriggerAnimation } from '@/utils/hooks/use-scroll-trigger-animation';
 
 import styles from './about-section.module.scss';
 
 export interface IAboutSectionProps {}
 
 export default function AboutSection(_props: IAboutSectionProps) {
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  const [headingScrollTrigger] = useScrollTriggerAnimation(
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, duration: 0.5, delay: 0.3, stagger: 0.3 },
+  );
 
-    // Timeline for heading
-    const tlHeading = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.about-section__heading',
-        start: 'top 80%',
-        end: 'bottom 10%',
-        scrub: false,
-        markers: false,
-        toggleActions: 'play reverse play reverse', // onEnter onLeave onEnterBack onLeaveBack
-      },
-    });
-
-    tlHeading.fromTo(
-      '.about-section__heading',
-      { opacity: 0, y: 20 }, // from state
-      { opacity: 1, y: 0, duration: 0.5, delay: 0.3, stagger: 0.3 }, // to state
-    );
-
-    // Timeline for text content
-    const tlTextContent = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#about-section__text-content',
-        start: 'top 80%',
-        end: 'bottom 10%',
-        scrub: false,
-        markers: false,
-        toggleActions: 'play reverse play reverse',
-      },
-    });
-
-    tlTextContent.fromTo(
-      '#about-section__text-content',
-      { opacity: 0, y: 20 }, // from state
-      { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
-    );
-
-    // Timeline for CTA
-    const tlCTA = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#about-section__cta',
-        start: 'top 90%',
-        end: 'bottom 10%',
-        scrub: false,
-        markers: false,
-        toggleActions: 'play reverse play reverse',
-      },
-    });
-
-    tlCTA.fromTo(
-      '#about-section__cta',
-      { opacity: 0, y: 20 }, // from state
-      { opacity: 1, y: 0, duration: 0.5, delay: 0.3 }, // to state
-    );
-  }, []);
+  const [textContentScrollTrigger] = useScrollTriggerAnimation({ opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, delay: 0.3 });
 
   return (
-    <Section id="about-section" size={'3'} className={cx(styles['d-section'])}>
+    <Section size={'3'} className={cx(styles['d-section'])}>
       <div className={cx(styles['d-section__container'])}>
         <Box mb={'8'} className="text-center">
-          <BannerText wrapperClassName="about-section__heading" text="growth stats" textClassName="text-4xl md:text-6xl" />
+          <BannerText
+            ref={headingScrollTrigger}
+            wrapperClassName="about-section__heading"
+            text="growth stats"
+            textClassName="text-4xl md:text-6xl"
+          />
         </Box>
-        <Text as="div" mb="8" size="6" id="about-section__text-content" className={cx(styles['d-section__text-content'])}>
+        <Text ref={textContentScrollTrigger} as="div" mb="8" size="6" className={cx(styles['d-section__text-content'])}>
           <Text as="p" mb={'1'}>
             Our <Strong>Digital Marketing</Strong> expertise delivers what Businesses want ……
             <Text as="span" color="blue" weight={'bold'}>
