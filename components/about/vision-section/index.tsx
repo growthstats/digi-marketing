@@ -1,70 +1,40 @@
 import { Box, Grid, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
+
+import { useScrollTriggerAnimation } from '@/utils/hooks/use-scroll-trigger-animation';
 
 import styles from './vision-section.module.scss';
 
 interface IVisionSectionProps {}
 
 export const VisionSection: FC<IVisionSectionProps> = (_props) => {
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const tlMissionTitle = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#mission-title',
-        start: 'top 80%',
-        end: 'bottom 10%',
-        scrub: false,
-        markers: false,
-        toggleActions: 'play reverse play reverse', // onEnter onLeave onEnterBack onLeaveBack
-      },
-    });
-    tlMissionTitle.fromTo(
-      '.animate-mission',
-      { opacity: 0, y: 20 }, // from state
-      { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 }, // to state
-    );
+  const [missionScrolltrigger] = useScrollTriggerAnimation(
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 },
+    '.animate-mission',
+    { end: 'bottom 20%' },
+  );
 
-    const tlVisionTitle = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#vision-title',
-        start: 'top 80%',
-        end: 'bottom 10%',
-        scrub: false,
-        markers: false,
-        toggleActions: 'play reverse play reverse', // onEnter onLeave onEnterBack onLeaveBack
-      },
-    });
-    tlVisionTitle.fromTo(
-      '.animate-vision',
-      { opacity: 0, y: 20 }, // from state
-      { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 }, // to state
-    );
+  const [visionScrolltrigger] = useScrollTriggerAnimation(
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 },
+    '.animate-vision',
+    { end: 'bottom 20%' },
+  );
 
-    const tlValuesTitle = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#values-title',
-        start: 'top 80%',
-        end: 'bottom 10%',
-        scrub: false,
-        markers: false,
-        toggleActions: 'play reverse play reverse', // onEnter onLeave onEnterBack onLeaveBack
-      },
-    });
-    tlValuesTitle.fromTo(
-      '.animate-value',
-      { opacity: 0, y: 20 }, // from state
-      { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 }, // to state
-    );
-  }, []);
+  const [valuesScrolltrigger] = useScrollTriggerAnimation(
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 },
+    '.animate-value',
+    { end: 'bottom 20%' },
+  );
 
   return (
     <Section className={cx(styles['d-section'])}>
       <Box className={cx(styles['d-section__mission-vision-wrapper'])}>
         {/* Mission */}
-        <Box className={cx(styles['d-section__mission-container'])}>
+        <Box className={cx(styles['d-section__mission-container'])} ref={missionScrolltrigger}>
           <Box className={cx(styles['d-section__mission-badge'])}>WHO WE ARE</Box>
           <Heading as="h3" id="mission-title" className={cx(styles['d-section__mission-title'], 'animate-mission')}>
             Our Mission
@@ -74,7 +44,7 @@ export const VisionSection: FC<IVisionSectionProps> = (_props) => {
           </Text>
         </Box>
         {/* Vision */}
-        <Box className={cx(styles['d-section__vision-container'])}>
+        <Box className={cx(styles['d-section__vision-container'])} ref={visionScrolltrigger}>
           <Box className={cx(styles['d-section__vision-badge'])}>WHAT WE STRIVE FOR</Box>
           <Heading as="h3" id="vision-title" className={cx(styles['d-section__vision-title'], 'animate-vision')}>
             Our Vision
@@ -85,7 +55,7 @@ export const VisionSection: FC<IVisionSectionProps> = (_props) => {
         </Box>
       </Box>
       {/* Values */}
-      <Box className={cx(styles['d-section__values-container'])}>
+      <Box className={cx(styles['d-section__values-container'])} ref={valuesScrolltrigger}>
         <Box className={cx(styles['d-section__values-badge'])}>GUIDING PRINCIPLES</Box>
         <Heading as="h3" id="values-title" className={cx(styles['d-section__values-title'], 'animate-value')}>
           Our Values
