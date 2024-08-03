@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { BsTwitterX } from 'react-icons/bs';
-import { FaFacebookSquare } from 'react-icons/fa';
+import { FaFacebookSquare, FaInstagram, FaTelegram } from 'react-icons/fa';
 import { z } from 'zod';
 
 import { Button } from '@/components/ui/button';
@@ -194,14 +194,24 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
                   <LinkedinIcon width={28} height={28} />
                 </div>
               </Link>
-              <Link href={'https://x.com/growthstatss?t=t29czJkY9RHGFOlOzW0oXQ&s=08'} target="_blank" aria-label="TwitterX">
+              <Link href={'https://x.com/growthstatss'} target="_blank" aria-label="TwitterX">
                 <div className="flex gap-2">
                   <BsTwitterX width={28} height={28} fontSize={28} />
                 </div>
               </Link>
-              <Link href={'https://www.facebook.com/profile.php?id=61562893092078&mibextid=ZbWKwL'} target="_blank" aria-label="Facebook">
+              <Link href={'https://www.facebook.com/profile.php?id=61562893092078'} target="_blank" aria-label="Facebook">
                 <div className="flex gap-2">
                   <FaFacebookSquare width={28} height={28} fontSize={28} />
+                </div>
+              </Link>
+              <Link href={'https://www.instagram.com/growth.stats/'} target="_blank" aria-label="Instagram">
+                <div className="flex gap-2">
+                  <FaInstagram width={28} height={28} fontSize={28} />
+                </div>
+              </Link>
+              <Link href={'http://t.me/Growthstats'} target="_blank" aria-label="Instagram">
+                <div className="flex gap-2">
+                  <FaTelegram width={28} height={28} fontSize={28} />
                 </div>
               </Link>
             </Box>
