@@ -64,9 +64,8 @@ const WebDesignHeroSection: FC<IWebDesignHeroSectionProps> = () => {
             Web Design
           </Heading>
           <Text as="p" size={'3'} weight={'regular'} mb={'5'} className={cx(styles['d-section__text-content'])}>
-            Web design is a critical aspect of any business. Here, we plan, conceptualize, and implement to create a website design that
-            offers a wonderful user experience and is practical in function. The web design process is woven around user experience. We
-            create websites that are easy to navigate and look impressive with features like 3D animations and designs.
+            Web design is crucial for any business. We plan, conceptualize, and implement to create a website that offers an excellent user
+            experience and is functional. Our designs feature easy navigation, impressive visuals, and 3D animations.
           </Text>
           <Box className={cx(styles['d-section__cta-wrapper'])}>
             <Button id="digital-marketing__seo__cta" size={'4'}>

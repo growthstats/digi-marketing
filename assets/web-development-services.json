@@ -1,22 +1,22 @@
 [
   {
     "name": "Static Websites",
-    "description": "Static websites are those that do not involve regular changes in them. They are like your printed company profile uploaded on the internet. The only difference is that people can submit their contact details, reviews, etc., on the static website. These sites are ideal for showcasing your brand's core information with fast load times and minimal maintenance, providing a simple yet effective online presence for businesses that don't need frequent updates."
+    "description": "Static websites don't involve regular changes. They are like your printed company profile uploaded online. The difference is people can submit contact details and reviews. These sites showcase core information with fast load times and minimal maintenance, ideal for businesses not needing frequent updates."
   },
   {
     "name": "CMS Backed Websites",
-    "description": "A Content Management System (CMS) empowers you to control your website's content effortlessly. With a CMS, you can easily create, edit, and manage content without technical expertise. Ideal for blogs, e-commerce, or news sites, our team specializes in robust CMS platforms like WordPress, Drupal, and custom solutions. We ensure your site is user-friendly, secure, and scalable, allowing multiple users to collaborate and keep content fresh and aligned with your business goals."
+    "description": "A Content Management System (CMS) empowers you to control your website's content effortlessly. With a CMS, you can easily create, edit, and manage content without technical expertise. Ideal for blogs, e-commerce, or news sites, we specialize in WordPress, Drupal, and custom solutions."
   },
   {
     "name": "Customized Solutions",
-    "description": "We understand that every business has unique requirements and goals. Our Customized Solutions are designed to address your specific challenges and aspirations. Whether you need a bespoke web application, specialized e-commerce functionality, or integrations with existing systems, we collaborate closely with you to develop tailored solutions that align perfectly with your vision and objectives."
+    "description": "We understand that every business has unique requirements and goals. Our Customized Solutions address your specific challenges and aspirations. Whether you need a bespoke web application, specialized e-commerce functionality, or system integrations, we develop tailored solutions aligned with your vision and objectives."
   },
   {
     "name": "Performance & SEO",
-    "description": "SEO encompasses all activities to improve a website's search engine ranking. Measuring performance, evaluating, and correcting content are integral parts of this process. Our team ensures your website is optimized for speed, responsiveness, and user experience key factors for both ranking and customer satisfaction. By continuously monitoring and improving these aspects, we help your site achieve and maintain top-tier performance and visibility, driving more organic traffic and engagement."
+    "description": "Our team optimizes your website for speed, responsiveness, and user experience. We measure performance, evaluate, and correct content, ensuring top-tier performance and visibility. Continuous monitoring drives more organic traffic and engagement, improving ranking and customer satisfaction."
   },
   {
     "name": "3D Websites",
-    "description": "Our 3D website service is highly sought after by both domestic and international clients. For an immersive and engaging experience, a 3D website is the perfect solution. 3D visuals on a website have phenomenal advantages, drawing attention to specific aspects. Our 3D animations, whether static or dynamic, enhance interactivity and arouse curiosity. Visitors stay focused on the 3D animated elements and highlighted text, making it a captivating experience compared to standard websites."
+    "description": "Our 3D website service, popular with domestic and international clients, offers immersive experiences. 3D visuals attract attention, enhance interactivity, and maintain focus on animated elements and highlighted text, making the experience more captivating compared to standard websites."
   }
 ]

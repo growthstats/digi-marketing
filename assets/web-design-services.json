@@ -1,7 +1,7 @@
 [
   {
     "name": "User Interface Design (UI)",
-    "description": "Designing the user interaction with the computer is user interface design. This encompasses the screen look, style, sounds, etc. that comprises the UI or User Interface. We make the best user interface design to ensure customer engagement."
+    "description": "UI design emphasizes aesthetics, while UX focuses on creating meaningful experiences, including function, branding, and usability. Users engage through blogs, social media, websites, or ads. Ensuring their goals are met during and after interaction is crucial."
   },
   {
     "name": "User Experience Design (UX)",
@@ -9,6 +9,6 @@
   },
   {
     "name": "Brand & Identity",
-    "description": "The visible elements of a brand like the color, the design language followed, logo, etc. create a Brand identity. This identity makes your brand fixated in customers. We create this brand identity through consistent marketing and ensure that your brand or business occupies the top-of-the-mind recall, leading to sales."
+    "description": "The visible elements of a brand, like color, design language, and logo, create a brand identity. This identity fixes your brand in customers' minds. Through consistent marketing, we ensure your brand occupies top-of-mind recall, leading to sales."
   }
 ]

@@ -22,7 +22,7 @@ export default function HeroSection(_props: IHeroSectionProps) {
       <Box className={cx(styles['d-section__overlay-content'])}>
         <Heading as="h1" weight={'bold'} className={cx(styles['d-section__hero-title'])}>
           <Text>Online Marketing </Text>
-          <Text>for Rapid Growth</Text>
+          <Text>For Rapid Growth</Text>
         </Heading>
         <Box className={cx(styles['d-section__subtitle-wrapper'])}>
           <Text as="p" size={'6'} weight={'medium'}>

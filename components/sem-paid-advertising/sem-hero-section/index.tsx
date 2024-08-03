@@ -63,17 +63,9 @@ const SEMHeroSection: FC<ISEMHeroSectionProps> = () => {
           <Heading as="h2" mb={'5'} className={cx(styles['d-section__title'])}>
             SEM / Paid Advertising
           </Heading>
-          {/* TODO: Replace with correct text content */}
           <Text as="p" size={'3'} weight={'regular'} mb={'1'} className={cx(styles['d-section__text-content'])}>
-            We offer all types of SEO services that ensure the top ranking of your website on the search engines. Your website needs to be
-            SEO-friendly as it saves a lot of money on online advertisements. When your company website ranks higher in the search engine,
-            the probability of getting business is higher than your competitors.
-          </Text>
-          <Text as="p" size={'3'} mb={'5'} className={cx(styles['d-section__text-content'])}>
-            Our experts optimize your website through on-page and off-page SEO. Various techniques are used to help your company website
-            rank higher globally. It all starts with quality content writing, which includes keywords that are placed as per Google norms in
-            a strategic manner. Meta descriptions, headings, subheadings, internal and external links, images, etc. are all paid attention
-            to so that your website links are click-worthy.
+            Search Engine Marketing is crucial in today&apos;s competitive world. With intense competition and short attention spans, SEM
+            enhances your brand&apos;s visibility and drives targeted traffic, providing a strategic advantage for business success.
           </Text>
           <Box className={cx(styles['d-section__cta-wrapper'])}>
             <Button id="digital-marketing__seo__cta" size={'4'}>
