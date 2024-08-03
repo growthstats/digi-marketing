@@ -44,7 +44,7 @@ const TeamSection: FC<ITeamSectionProps> = (_props) => {
         </Box>
         <AspectRatio ratio={16 / 5}>
           <Image
-            src={'/team-unsplash.jpg'}
+            src={'/about/team-bg.webp'}
             alt="team freestanding letters"
             className={cx(styles['d-section__team-image'])}
             width={585}
