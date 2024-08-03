@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Section, Strong, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import gsap from 'gsap';
@@ -92,11 +94,6 @@ export default function AboutSection(_props: IAboutSectionProps) {
             Creating <Strong>Engaging Content</Strong> that keeps clients coming back to you repeatedly
           </Text>
         </Text>
-        {/* <Flex justify={'center'}>
-          <Button id="about-section__cta" variant="outline" size={'4'}>
-            Learn More
-          </Button>
-        </Flex> */}
       </div>
     </Section>
   );

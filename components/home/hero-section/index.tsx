@@ -14,8 +14,9 @@ export default function HeroSection(_props: IHeroSectionProps) {
         loop
         muted
         playsInline // Improves autoplay on mobile devices
+        preload="metadata"
       >
-        <source src="/home-hero-section-bg.mp4" type="video/mp4" />
+        <source src="/home-hero-section-bg.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>
       <Box className={cx(styles['d-section__overlay-content'])}>
@@ -40,9 +41,6 @@ export default function HeroSection(_props: IHeroSectionProps) {
     </Section>
   );
 }
-
-// Growth Stats
-// We make your Growth Statistics Soar
 
 /*
 Refs

@@ -3,8 +3,6 @@ import '@/app/globals.css';
 import { Theme } from '@radix-ui/themes';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import cx from 'classnames';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Inter } from 'next/font/google';
 import { draftMode } from 'next/headers';
 import { VisualEditing } from 'next-sanity';
@@ -19,8 +17,6 @@ import { Toaster } from '@/components/ui/toaster';
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' });
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  gsap.registerPlugin(ScrollTrigger);
-
   return (
     <html lang="en" className="light">
       <body className={cx('bg-white', inter.variable)}>

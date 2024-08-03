@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import gsap from 'gsap';

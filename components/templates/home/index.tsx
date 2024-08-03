@@ -1,5 +1,3 @@
-'use client';
-
 import ContactSection from '@/components/common/contact-section';
 import ServicesSection from '@/components/common/services-section';
 import AboutSection from '@/components/home/about-section';
