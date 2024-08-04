@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: `${BASE_URL}/social-media-services`,
     images: [
       {
-        url: 'https://www.yourwebsite.com/images/social-media-services.jpg', // TODO: replace with an actual image URL if available
+        url: `${BASE_URL}/screenshots/homepage-og.png`, // TODO: replace with an actual image URL if available
         width: 800,
         height: 600,
         alt: 'Social Media Services by Growth Stats',

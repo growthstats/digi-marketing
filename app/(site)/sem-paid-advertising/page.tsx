@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: `${BASE_URL}/sem-paid-advertising`,
     images: [
       {
-        url: 'https://www.yourwebsite.com/images/sem-advertising.jpg', // TODO: replace with an actual image URL if available
+        url: `${BASE_URL}/screenshots/homepage-og.png`, // TODO: replace with an actual image URL if available
         width: 800,
         height: 600,
         alt: 'SEM and Paid Advertising by Growth Stats',
