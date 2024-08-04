@@ -1,6 +1,5 @@
+import CtaLink from '@/components/common/cta-link';
 import { cn } from '@/lib/utils';
-
-import CtaLink from '../cta-link';
 
 export default function CTAList({
   ctas,

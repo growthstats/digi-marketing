@@ -1,8 +1,8 @@
 import { CgChevronRight } from 'react-icons/cg';
 
+import CTALink from '@/components/common/cta-link';
 import { cn } from '@/lib/utils';
 
-import CTALink from '../../cta-link';
 import InteractiveDetails from '../interactive-details';
 
 export default function LinkList({ className, link, links }: Readonly<Sanity.LinkList>) {

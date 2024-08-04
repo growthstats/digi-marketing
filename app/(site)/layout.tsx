@@ -9,9 +9,9 @@ import { VisualEditing } from 'next-sanity';
 import NextTopLoader from 'nextjs-toploader';
 
 import orgSchemaJsonLd from '@/assets/org-schema.json';
-import Footer from '@/components/common/footer';
-import Header from '@/components/common/header';
 import { LenisScroller } from '@/components/common/lennis-scroller';
+import Footer from '@/components/footer';
+import Header from '@/components/header';
 import { Toaster } from '@/components/ui/toaster';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' });

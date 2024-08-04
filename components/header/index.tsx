@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
+import CTAList from '@/components/common/cta-list';
+import Img from '@/components/common/Img';
 import { cn } from '@/lib/utils';
 import { getSiteData } from '@/sanity/utils/get-site-data';
 
-import CTAList from '../cta-list';
-import Img from '../Img';
 import styles from './header.module.scss';
 import HeaderWrapper from './header-wrapper';
 import Navigation from './navigation';

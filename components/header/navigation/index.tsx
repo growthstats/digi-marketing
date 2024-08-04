@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import CTALink from '@/components/common/cta-link';
 import { cn } from '@/lib/utils';
 import { getSiteData } from '@/sanity/utils/get-site-data';
 
-import CTALink from '../../cta-link';
 import styles from '../header.module.scss';
 import LinkList from '../link-list';
 

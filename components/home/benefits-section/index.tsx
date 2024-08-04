@@ -30,7 +30,7 @@ export default function BenefitsSection(_props: IBenefitsSectionProps) {
               </Heading>
             </Flex>
             <Text as="div" size={'4'}>
-              We have an experienced team of professionals and the total experience of the team is 72 years.
+              We have an experienced team of professionals and the total experience of the team is 7 years.
             </Text>
           </Card>
 

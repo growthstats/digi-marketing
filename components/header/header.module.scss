@@ -1,0 +1,82 @@
+@use '/styles/mixin/layout.module.scss' as *;
+
+.header-wrapper {
+  @apply fixed;
+  @apply w-full;
+  @apply top-0;
+  @apply z-20;
+  @apply border-b;
+  @apply border-primary/10;
+  @apply bg-background;
+  @apply max-md:header-open:shadow-lg;
+  transition: all 0.2s;
+  &--color-white {
+    .d-container__brand-name {
+      @apply text-white;
+    }
+    .d-container__nav-link {
+      @apply text-white;
+      &--active {
+        @apply border-b-2;
+        @apply border-white;
+      }
+    }
+    .d-container__nav-link-list {
+      @apply text-white;
+    }
+    .d-container__toggle {
+      @apply text-white;
+    }
+  }
+  &--enable-bg-transparent {
+    @apply bg-transparent;
+    @apply shadow-none;
+    @apply border-none;
+  }
+  &__home-page {
+    .d-container__nav-link {
+      @apply text-white;
+      &--active {
+        @apply border-b-2;
+        @apply border-white;
+      }
+    }
+  }
+}
+
+.d-container {
+  grid-template:
+    'logo toggle' auto
+    'nav nav' auto
+    'lang lang' auto
+    'ctas ctas' auto / 1fr auto;
+  @apply z-20;
+  @apply mx-auto;
+  @apply grid;
+  @apply max-w-screen-xl;
+  @apply items-center;
+  @apply gap-x-6;
+  @apply p-4;
+  @screen md {
+    grid-template: 'logo nav lang ctas' auto / 1fr 1fr auto auto;
+  }
+  &__nav {
+    @apply flex;
+    @apply items-center;
+    @apply gap-y-2;
+    @apply [grid-area:nav];
+    @apply max-md:my-4;
+    @apply max-md:flex-col;
+  }
+  &__nav-link {
+    @apply text-base;
+    @apply font-bold;
+    @screen md {
+      @apply px-3;
+    }
+  }
+  &__nav-link-list {
+    @apply text-base;
+    @apply font-bold;
+  }
+}
