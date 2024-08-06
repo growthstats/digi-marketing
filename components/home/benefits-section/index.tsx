@@ -9,11 +9,10 @@ import styles from './benefits-section.module.scss';
 export interface IBenefitsSectionProps {}
 
 export default function BenefitsSection(_props: IBenefitsSectionProps) {
-  // TODO: Add popup animation for the cards with GSAP
   return (
     <Section size={'3'} id="benefits-section" className={cx(styles['d-section'])}>
       <Box className={cx(styles['d-section__container'])}>
-        <Heading as="h3" mb={'6'} size={'8'} weight={'light'} className={cx(styles['d-section__heading'])}>
+        <Heading as="h3" mb={'6'} size={{ initial: '6', md: '8' }} weight={'light'} className={cx(styles['d-section__heading'])}>
           We Can Improve Your Business Performance And Gain More Customers
         </Heading>
         <Grid columns={{ initial: '1', sm: '2' }} gap={'7'}>
