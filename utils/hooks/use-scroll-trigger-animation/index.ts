@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 interface ScrollTriggerAnimationConfig {
   fromVars?: gsap.TweenVars;
   toVars?: gsap.TweenVars;
-  target?: string | Element | null;
+  target?: gsap.TweenTarget;
   scrollTriggerOptions?: ScrollTrigger.Vars;
 }
 
@@ -16,9 +16,8 @@ export const useScrollTriggerAnimation = ({
   scrollTriggerOptions = {},
 }: ScrollTriggerAnimationConfig = {}) => {
   const scrollTriggerRef = useRef(null);
-  const targetRef = useRef(null);
 
-  const targetElems = target ?? targetRef.current ?? scrollTriggerRef.current;
+  const targetElems = target ?? scrollTriggerRef.current;
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -42,5 +41,5 @@ export const useScrollTriggerAnimation = ({
     };
   }, [fromVars, toVars, scrollTriggerOptions, scrollTriggerRef, targetElems]);
 
-  return { scrollTriggerRef, targetRef };
+  return { scrollTriggerRef };
 };

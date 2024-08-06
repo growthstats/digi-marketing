@@ -34,7 +34,9 @@ export default function ServicesSection(props: Readonly<IServicesSectionProps>) 
 
   const { scrollTriggerRef: subHeadingScrollTrigger } = useScrollTriggerAnimation();
 
-  const { scrollTriggerRef: cardContainerScrollTrigger, targetRef: cardTarget } = useScrollTriggerAnimation();
+  const { scrollTriggerRef: cardContainerScrollTrigger } = useScrollTriggerAnimation({
+    target: '.services-section__card',
+  });
 
   return (
     <Section className={cx(styles['d-section'], sectionClassName)}>
@@ -61,7 +63,7 @@ export default function ServicesSection(props: Readonly<IServicesSectionProps>) 
         >
           {curatedServices.map((service: TCuratedService) => (
             <Link href={service.linkHref} key={service.id}>
-              <Box className={cx(styles['d-section__card-wrapper'])} ref={cardTarget}>
+              <Box className={cx(styles['d-section__card-wrapper'], 'services-section__card')}>
                 <Box className={cx(styles['d-section__card'])}>
                   <Box mb={'5'} className={cx(styles['d-section__card__inset'])}>
                     <AspectRatio ratio={16 / 9}>
