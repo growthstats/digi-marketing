@@ -1,13 +1,15 @@
 'use client';
 
-import { Box, Button, Heading, Section, Text } from '@radix-ui/themes';
+import { Box, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import Lottie from 'lottie-react';
+import Link from 'next/link';
 import { FC } from 'react';
 
 import webDevelopmentHeroLottieAnimation from '@/assets/animations/web-dev-hero-lottie.json';
 import webDevelopmentServices from '@/assets/web-development-services.json';
 import ServiceCard from '@/components/common/service-card';
+import { buttonVariants } from '@/components/ui/button';
 
 import styles from './web-dev-hero-section.module.scss';
 
@@ -33,9 +35,9 @@ const WebDevelopmentHeroSection: FC<IWebDevelopmentHeroSectionProps> = () => (
           static and CMS-backed websites.
         </Text>
         <Box className={cx(styles['d-section__cta-wrapper'])}>
-          <Button id="digital-marketing__seo__cta" size={'4'}>
+          <Link href={'/contact'} className={cx(buttonVariants({ size: 'lg' }))}>
             Contact Us
-          </Button>
+          </Link>
         </Box>
       </Box>
     </Box>

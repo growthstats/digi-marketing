@@ -33,7 +33,7 @@ const SEOHeroSection: FC<ISEOHeroSectionProps> = () => (
           quality content, strategic keyword use, meta descriptions, links, and image optimization.
         </Text>
         <Box className={cx(styles['d-section__cta-wrapper'])}>
-          <Link href={'/contact'} id="digital-marketing__seo__cta" className={cx(buttonVariants({ size: 'lg' }))}>
+          <Link href={'/contact'} className={cx(buttonVariants({ size: 'lg' }))}>
             Contact Us
           </Link>
         </Box>

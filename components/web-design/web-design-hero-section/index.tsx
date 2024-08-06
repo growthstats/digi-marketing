@@ -1,13 +1,15 @@
 'use client';
 
-import { Box, Button, Heading, Section, Text } from '@radix-ui/themes';
+import { Box, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import Lottie from 'lottie-react';
+import Link from 'next/link';
 import { FC } from 'react';
 
 import webDesignHeroLottieAnimation from '@/assets/animations/web-design-hero-lottie.json';
 import webDesignServices from '@/assets/web-design-services.json';
 import ServiceCard from '@/components/common/service-card';
+import { buttonVariants } from '@/components/ui/button';
 
 import styles from './web-design-hero-section.module.scss';
 
@@ -32,9 +34,9 @@ const WebDesignHeroSection: FC<IWebDesignHeroSectionProps> = () => (
           experience and is functional. Our designs feature easy navigation, impressive visuals, and 3D animations.
         </Text>
         <Box className={cx(styles['d-section__cta-wrapper'])}>
-          <Button id="digital-marketing__seo__cta" size={'4'}>
+          <Link href={'/contact'} className={cx(buttonVariants({ size: 'lg' }))}>
             Contact Us
-          </Button>
+          </Link>
         </Box>
       </Box>
     </Box>

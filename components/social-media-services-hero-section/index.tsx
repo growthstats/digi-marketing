@@ -1,14 +1,16 @@
 'use client';
 
-import { Box, Button, Heading, Section, Text } from '@radix-ui/themes';
+import { Box, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import Lottie from 'lottie-react';
+import Link from 'next/link';
 import { FC } from 'react';
 
 import socialMediaServicesHeroAnimation from '@/assets/animations/social-media-services-hero-lottie.json';
 import socialMediaServices from '@/assets/social-media-services.json';
 
 import ServiceCard from '../common/service-card';
+import { buttonVariants } from '../ui/button';
 import styles from './social-media-services-hero-section.module.scss';
 
 interface ISocialMediaServicesHeroSectionProps {}
@@ -32,7 +34,9 @@ const SocialMediaServicesHeroSection: FC<ISocialMediaServicesHeroSectionProps> =
           connections. Our expert team optimizes interactions on Facebook, Instagram, YouTube, LinkedIn, and more for growth and loyalty.
         </Text>
         <Box className={cx(styles['d-section__cta-wrapper'])}>
-          <Button size={'4'}>Contact Us</Button>
+          <Link href={'/contact'} className={cx(buttonVariants({ size: 'lg' }))}>
+            Contact Us
+          </Link>{' '}
         </Box>
       </Box>
     </Box>

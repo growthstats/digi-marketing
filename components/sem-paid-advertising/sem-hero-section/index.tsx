@@ -1,13 +1,15 @@
 'use client';
 
-import { Box, Button, Heading, Section, Text } from '@radix-ui/themes';
+import { Box, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import Lottie from 'lottie-react';
+import Link from 'next/link';
 import { FC } from 'react';
 
 import semPaidAdvertisingHeroAnimation from '@/assets/animations/sem-paid-advertising-hero-lottie.json';
 import semServices from '@/assets/sem-services.json';
 import ServiceCard from '@/components/common/service-card';
+import { buttonVariants } from '@/components/ui/button';
 
 import styles from './sem-hero-section.module.scss';
 
@@ -32,9 +34,9 @@ const SEMHeroSection: FC<ISEMHeroSectionProps> = () => (
           enhances your brand&apos;s visibility and drives targeted traffic, providing a strategic advantage for business success.
         </Text>
         <Box className={cx(styles['d-section__cta-wrapper'])}>
-          <Button id="digital-marketing__seo__cta" size={'4'}>
+          <Link href={'/contact'} className={cx(buttonVariants({ size: 'lg' }))}>
             Contact Us
-          </Button>
+          </Link>
         </Box>
       </Box>
     </Box>
