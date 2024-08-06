@@ -18,7 +18,7 @@ export const useScrollTriggerAnimation = ({
   const scrollTriggerRef = useRef(null);
   const targetRef = useRef(null);
 
-  const targetElems = target ?? scrollTriggerRef.current ?? targetRef.current;
+  const targetElems = target ?? targetRef.current ?? scrollTriggerRef.current;
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);

@@ -11,28 +11,20 @@ import styles from './about-section.module.scss';
 export interface IAboutSectionProps {}
 
 export default function AboutSection(_props: IAboutSectionProps) {
-  const { scrollTriggerRef: headingScrollTrigger } = useScrollTriggerAnimation();
-
-  const { scrollTriggerRef: textContentScrollTrigger } = useScrollTriggerAnimation();
+  const { scrollTriggerRef, targetRef } = useScrollTriggerAnimation();
 
   return (
     <Section size={'3'} className={cx(styles['d-section'])}>
       <div className={cx(styles['d-section__container'])}>
         <Box mb={'8'} className="text-center">
           <BannerText
-            ref={headingScrollTrigger}
+            ref={scrollTriggerRef}
             wrapperClassName="about-section__heading"
             text="growth stats"
             textClassName="text-4xl md:text-6xl"
           />
         </Box>
-        <Text
-          ref={textContentScrollTrigger}
-          as="div"
-          mb="8"
-          size={{ initial: '3', md: '5' }}
-          className={cx(styles['d-section__text-content'])}
-        >
+        <Text ref={targetRef} as="div" mb="8" size={{ initial: '3', md: '5' }} className={cx(styles['d-section__text-content'])}>
           <Text as="p" mb={'1'}>
             Our <Strong>Digital Marketing</Strong> expertise delivers what Businesses want ……
             <Text as="span" color="blue" weight={'bold'}>
