@@ -1,40 +1,27 @@
+'use client';
+
 import { AspectRatio, Box, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
+
+import { useScrollTriggerAnimation } from '@/utils/hooks/use-scroll-trigger-animation';
 
 import styles from './team-section.module.scss';
 
 interface ITeamSectionProps {}
 
 const TeamSection: FC<ITeamSectionProps> = (_props) => {
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const tlTeamTitle = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#team-title',
-        start: 'top 80%',
-        end: 'bottom 10%',
-        scrub: false,
-        markers: false,
-        toggleActions: 'play reverse play reverse', // onEnter onLeave onEnterBack onLeaveBack
-      },
-    });
-    tlTeamTitle.fromTo(
-      '.animate-team',
-      { opacity: 0, y: 20 }, // from state
-      { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 }, // to state
-    );
-  }, []);
+  const { scrollTriggerRef: teamTitleScrollTrigger } = useScrollTriggerAnimation({
+    target: '.animate-team',
+  });
 
   return (
     <Section className={cx(styles['d-section'])}>
       {/* TEAM */}
       <Box className={cx(styles['d-section__team-container'])}>
         <Box className={cx(styles['d-section__team-content'])}>
-          <Heading as="h3" size={'9'} id="team-title" className={cx(styles['d-section__team-title'], 'animate-team')}>
+          <Heading as="h3" size={'9'} ref={teamTitleScrollTrigger} className={cx(styles['d-section__team-title'], 'animate-team')}>
             TEAM
           </Heading>
           <Text as="p" size={'6'} className={cx(styles['d-section__team-text'], 'animate-team')}>

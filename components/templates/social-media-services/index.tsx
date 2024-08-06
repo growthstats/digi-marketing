@@ -1,5 +1,3 @@
-'use client';
-
 import ContactSection from '@/components/common/contact-section';
 import SocialMediaServicesHeroSection from '@/components/social-media-services-hero-section';
 

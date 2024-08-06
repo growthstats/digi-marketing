@@ -1,5 +1,3 @@
-'use client';
-
 import { FC } from 'react';
 
 import AboutSection from '@/components/about/about-section';

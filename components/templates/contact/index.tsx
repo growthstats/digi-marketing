@@ -1,5 +1,3 @@
-'use client';
-
 import { FC } from 'react';
 
 import ContactFormSection from '@/components/contact/contact-form-section';

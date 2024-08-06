@@ -1,3 +1,4 @@
+'use client';
 import { Box, Button, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import Lottie from 'lottie-react';

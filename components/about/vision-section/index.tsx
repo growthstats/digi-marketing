@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Grid, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import React, { FC } from 'react';
@@ -9,26 +11,20 @@ import styles from './vision-section.module.scss';
 interface IVisionSectionProps {}
 
 export const VisionSection: FC<IVisionSectionProps> = (_props) => {
-  const [missionScrolltrigger] = useScrollTriggerAnimation(
-    { opacity: 0, y: 20 },
-    { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 },
-    '.animate-mission',
-    { end: 'bottom 20%' },
-  );
+  const { scrollTriggerRef: missionScrolltrigger } = useScrollTriggerAnimation({
+    target: '.animate-mission',
+    scrollTriggerOptions: { end: 'bottom 20%' },
+  });
 
-  const [visionScrolltrigger] = useScrollTriggerAnimation(
-    { opacity: 0, y: 20 },
-    { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 },
-    '.animate-vision',
-    { end: 'bottom 20%' },
-  );
+  const { scrollTriggerRef: visionScrolltrigger } = useScrollTriggerAnimation({
+    target: '.animate-vision',
+    scrollTriggerOptions: { end: 'bottom 20%' },
+  });
 
-  const [valuesScrolltrigger] = useScrollTriggerAnimation(
-    { opacity: 0, y: 20 },
-    { opacity: 1, y: 0, duration: 0.5, delay: 0.5, stagger: 0.3 },
-    '.animate-value',
-    { end: 'bottom 20%' },
-  );
+  const { scrollTriggerRef: valuesScrolltrigger } = useScrollTriggerAnimation({
+    target: '.animate-value',
+    scrollTriggerOptions: { end: 'bottom 20%' },
+  });
 
   return (
     <Section className={cx(styles['d-section'])}>

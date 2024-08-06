@@ -30,14 +30,11 @@ export default function ServicesSection(props: Readonly<IServicesSectionProps>) 
   // Ensure the icon names are correct in the JSON
   const curatedServices: TCuratedService[] = rawCuratedServices as TCuratedService[];
 
-  const [headingScrollTrigger] = useScrollTriggerAnimation({ opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, delay: 0.3 });
+  const { scrollTriggerRef: headingScrollTrigger } = useScrollTriggerAnimation();
 
-  const [subHeadingScrollTrigger] = useScrollTriggerAnimation({ opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, delay: 0.3 });
+  const { scrollTriggerRef: subHeadingScrollTrigger } = useScrollTriggerAnimation();
 
-  const [cardContainerScrollTrigger, cardTrigger] = useScrollTriggerAnimation(
-    { opacity: 0, y: 20 },
-    { opacity: 1, y: 0, duration: 0.5, delay: 0.3 },
-  );
+  const { scrollTriggerRef: cardContainerScrollTrigger, targetRef: cardTarget } = useScrollTriggerAnimation();
 
   return (
     <Section className={cx(styles['d-section'], sectionClassName)}>
@@ -64,7 +61,7 @@ export default function ServicesSection(props: Readonly<IServicesSectionProps>) 
         >
           {curatedServices.map((service: TCuratedService) => (
             <Link href={service.linkHref} key={service.id}>
-              <Box className={cx(styles['d-section__card-wrapper'])} ref={cardTrigger}>
+              <Box className={cx(styles['d-section__card-wrapper'])} ref={cardTarget}>
                 <Box className={cx(styles['d-section__card'])}>
                   <Box mb={'5'} className={cx(styles['d-section__card__inset'])}>
                     <AspectRatio ratio={16 / 9}>

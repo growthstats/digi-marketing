@@ -3,6 +3,8 @@ import cx from 'classnames';
 import Image from 'next/image';
 import { FC } from 'react';
 
+import { useScrollTriggerAnimation } from '@/utils/hooks/use-scroll-trigger-animation';
+
 import styles from './service-card.module.scss';
 
 interface IServiceCardProps {
@@ -18,8 +20,13 @@ interface IServiceCardProps {
 const ServiceCard: FC<IServiceCardProps> = (props) => {
   const { imgSrc, name, description, className, variant = 'vertical', layout = 'normal', color = 'blue' } = props;
 
+  const { scrollTriggerRef } = useScrollTriggerAnimation({
+    toVars: { opacity: 1, y: 0, duration: 0.5, delay: 0.3 },
+  });
+
   return (
     <Box
+      ref={scrollTriggerRef}
       className={cx(
         styles['d-container'],
         {

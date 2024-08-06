@@ -2,22 +2,30 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
 
-export const useScrollTriggerAnimation = (
-  fromVars: gsap.TweenVars,
-  toVars: gsap.TweenVars,
-  target: string | null = null,
-  scrollTriggerOptions: ScrollTrigger.Vars = {},
-) => {
-  const scrollTrigger = useRef(null);
-  const trigger = useRef(null);
-  const targetElems = target ? target : (scrollTrigger.current ?? trigger);
+interface ScrollTriggerAnimationConfig {
+  fromVars?: gsap.TweenVars;
+  toVars?: gsap.TweenVars;
+  target?: string | Element | null;
+  scrollTriggerOptions?: ScrollTrigger.Vars;
+}
+
+export const useScrollTriggerAnimation = ({
+  fromVars = { opacity: 0, y: 20 },
+  toVars = { opacity: 1, y: 0, duration: 0.5, delay: 0.3, stagger: 0.3 },
+  target = null,
+  scrollTriggerOptions = {},
+}: ScrollTriggerAnimationConfig = {}) => {
+  const scrollTriggerRef = useRef(null);
+  const targetRef = useRef(null);
+
+  const targetElems = target ?? scrollTriggerRef.current ?? targetRef.current;
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: scrollTrigger.current,
+        trigger: scrollTriggerRef.current,
         start: 'top 80%',
         end: 'bottom 10%',
         scrub: false,
@@ -32,7 +40,7 @@ export const useScrollTriggerAnimation = (
     return () => {
       tl.kill();
     };
-  }, [trigger, fromVars, toVars, scrollTriggerOptions, scrollTrigger, targetElems]);
+  }, [fromVars, toVars, scrollTriggerOptions, scrollTriggerRef, targetElems]);
 
-  return [scrollTrigger, trigger];
+  return { scrollTriggerRef, targetRef };
 };

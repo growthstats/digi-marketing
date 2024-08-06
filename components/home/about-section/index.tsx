@@ -11,9 +11,9 @@ import styles from './about-section.module.scss';
 export interface IAboutSectionProps {}
 
 export default function AboutSection(_props: IAboutSectionProps) {
-  const [headingScrollTrigger] = useScrollTriggerAnimation({ opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, delay: 0.3 });
+  const { scrollTriggerRef: headingScrollTrigger } = useScrollTriggerAnimation();
 
-  const [textContentScrollTrigger] = useScrollTriggerAnimation({ opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, delay: 0.3 });
+  const { scrollTriggerRef: textContentScrollTrigger } = useScrollTriggerAnimation();
 
   return (
     <Section size={'3'} className={cx(styles['d-section'])}>

@@ -1,5 +1,3 @@
-'use client';
-
 import ContactSection from '@/components/common/contact-section';
 import EmailMarketingHeroSection from '@/components/email-marketing-automation/email-marketing-hero-section';
 

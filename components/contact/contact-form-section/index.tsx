@@ -1,3 +1,5 @@
+'use client';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Box, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
