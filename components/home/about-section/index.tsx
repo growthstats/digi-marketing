@@ -26,12 +26,7 @@ export default function AboutSection(_props: IAboutSectionProps) {
             textClassName="text-4xl md:text-6xl"
           />
         </Box>
-        <Text
-          as="div"
-          mb="8"
-          size={{ initial: '3', md: '5' }}
-          className={cx(styles['d-section__text-content'], 'about-section__about-text')}
-        >
+        <Text as="div" size={{ initial: '3', md: '5' }} className={cx(styles['d-section__text-content'], 'about-section__about-text')}>
           <Text as="p" mb={'1'}>
             Our <Strong>Digital Marketing</Strong> expertise delivers what Businesses want ……
             <Text as="span" color="blue" weight={'bold'}>
