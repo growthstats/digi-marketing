@@ -4,8 +4,6 @@ import { Theme } from '@radix-ui/themes';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import cx from 'classnames';
 import { Inter } from 'next/font/google';
-import { draftMode } from 'next/headers';
-import { VisualEditing } from 'next-sanity';
 import NextTopLoader from 'nextjs-toploader';
 
 import orgSchemaJsonLd from '@/assets/org-schema.json';
@@ -13,6 +11,7 @@ import { LenisScroller } from '@/components/common/lennis-scroller';
 import Footer from '@/components/footer';
 import Header from '@/components/header';
 import { Toaster } from '@/components/ui/toaster';
+import VisualEditingControls from '@/components/VisualEditingControls';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' });
 
@@ -29,7 +28,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Footer />
           <Toaster />
           <LenisScroller />
-          {draftMode().isEnabled && <VisualEditing />}
+          <VisualEditingControls />
         </Theme>
 
         <SpeedInsights />

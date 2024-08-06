@@ -45,6 +45,7 @@ export default defineConfig({
         locations: locate,
       },
       previewUrl: {
+        // eslint-disable-next-line no-restricted-globals
         origin: typeof location === 'undefined' ? 'http://localhost:3000' : location.origin,
         draftMode: {
           enable: '/api/draft',
@@ -62,11 +63,6 @@ export default defineConfig({
         : input;
 
       return docActionComponents;
-    },
-  },
-  beta: {
-    treeArrayEditing: {
-      enabled: true,
     },
   },
 });
