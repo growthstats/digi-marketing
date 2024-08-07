@@ -36,6 +36,7 @@ export default function ServicesSection(props: Readonly<IServicesSectionProps>) 
 
   const { scrollTriggerRef: cardContainerScrollTrigger } = useScrollTriggerAnimation({
     target: '.services-section__card',
+    toVars: { opacity: 1, y: 0, duration: 0.5, delay: 0.3 },
   });
 
   return (

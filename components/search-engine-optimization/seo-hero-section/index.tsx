@@ -42,7 +42,7 @@ const SEOHeroSection: FC<ISEOHeroSectionProps> = () => (
 
     {/* Services */}
     <Box className={cx(styles['d-section__services-container'])}>
-      <Heading as="h3" mb={'7'} className={cx(styles['d-section__services-title'], 'animate-seo-title')} id="seo-features-title">
+      <Heading as="h3" mb={'7'} className={cx(styles['d-section__services-title'])}>
         SEO (Search Engine Optimization) Features
       </Heading>
       <Box className={cx(styles['d-section__services'])}>
