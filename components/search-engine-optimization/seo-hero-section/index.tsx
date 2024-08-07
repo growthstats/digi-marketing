@@ -28,7 +28,7 @@ const SEOHeroSection: FC<ISEOHeroSectionProps> = () => (
         <Heading as="h2" mb={'5'} className={cx(styles['d-section__title'])}>
           SEO (Search Engine Optimization)
         </Heading>
-        <Text as="p" size={'3'} weight={'regular'} mb={'3'} className={cx(styles['d-section__text-content'])}>
+        <Text as="p" size={'3'} weight={'regular'} mb={'5'} className={cx(styles['d-section__text-content'])}>
           We provide comprehensive SEO services to boost your website’s search engine ranking. Our experts enhance site performance through
           quality content, strategic keyword use, meta descriptions, links, and image optimization.
         </Text>

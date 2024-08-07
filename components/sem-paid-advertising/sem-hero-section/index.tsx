@@ -29,7 +29,7 @@ const SEMHeroSection: FC<ISEMHeroSectionProps> = () => (
         <Heading as="h2" mb={'5'} className={cx(styles['d-section__title'])}>
           SEM / Paid Advertising
         </Heading>
-        <Text as="p" size={'3'} weight={'regular'} mb={'1'} className={cx(styles['d-section__text-content'])}>
+        <Text as="p" size={'3'} weight={'regular'} mb={'5'} className={cx(styles['d-section__text-content'])}>
           Search Engine Marketing is crucial in today&apos;s competitive world. With intense competition and short attention spans, SEM
           enhances your brand&apos;s visibility and drives targeted traffic, providing a strategic advantage for business success.
         </Text>
