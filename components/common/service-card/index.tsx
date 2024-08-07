@@ -1,5 +1,6 @@
 import { Box, Heading, Text } from '@radix-ui/themes';
 import cx from 'classnames';
+import kebabCase from 'lodash/kebabCase';
 import Image from 'next/image';
 import { FC } from 'react';
 
@@ -19,14 +20,16 @@ interface IServiceCardProps {
 
 const ServiceCard: FC<IServiceCardProps> = (props) => {
   const { imgSrc, name, description, className, variant = 'vertical', layout = 'normal', color = 'blue' } = props;
+  const cardWrapperId = kebabCase(name);
 
   const { scrollTriggerRef } = useScrollTriggerAnimation({
+    target: `#${cardWrapperId}`,
     toVars: { opacity: 1, y: 0, duration: 0.5, delay: 0.3 },
   });
-
   return (
     <Box
       ref={scrollTriggerRef}
+      id={cardWrapperId}
       className={cx(
         styles['d-container'],
         {
