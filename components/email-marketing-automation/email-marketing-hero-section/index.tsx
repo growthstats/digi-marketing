@@ -1,10 +1,12 @@
 'use client';
-import { Box, Button, Heading, Section, Text } from '@radix-ui/themes';
+import { Box, Heading, Section, Text } from '@radix-ui/themes';
 import cx from 'classnames';
 import Lottie from 'lottie-react';
+import Link from 'next/link';
 import { FC } from 'react';
 
 import emailMarketingHeroAnimation from '@/assets/animations/email-marketing-hero-lottie.json';
+import { buttonVariants } from '@/components/ui/button';
 
 import styles from './email-marketing-hero-section.module.scss';
 
@@ -30,9 +32,9 @@ const EmailMarketingHeroSection: FC<IEmailMarketingHeroSectionProps> = () => (
           emails to the right clients. This ensures a continuous flow of business.
         </Text>
         <Box className={cx(styles['d-section__cta-wrapper'])}>
-          <Button id="digital-marketing__seo__cta" size={'4'}>
+          <Link href={'/contact'} className={cx(buttonVariants({ size: 'lg' }))}>
             Contact Us
-          </Button>
+          </Link>
         </Box>
       </Box>
     </Box>
