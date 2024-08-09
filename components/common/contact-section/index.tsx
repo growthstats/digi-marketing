@@ -13,6 +13,9 @@ export interface IContactSectionProps {}
 export default function ContactSection(_props: IContactSectionProps) {
   const { scrollTriggerRef: boxScrollTrigger } = useScrollTriggerAnimation({
     target: '.contact-section-elem',
+    scrollTriggerOptions: {
+      start: 'top 90%',
+    },
   });
 
   return (
