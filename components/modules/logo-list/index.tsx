@@ -46,13 +46,13 @@ export default async function LogoList({
           } as React.CSSProperties
         }
       >
-        {allLogos.map((logo) => (
+        {allLogos.map((logo, key) => (
           <Img
             className=" w-[200px] shrink-0 object-contain max-sm:w-[150px]"
-            style={{ '--index': logo._key } as React.CSSProperties}
+            style={{ '--index': key } as React.CSSProperties}
             image={logo.image?.[logoType]}
             imageWidth={400}
-            key={logo._key}
+            key={logo._id}
           />
         ))}
       </figure>
