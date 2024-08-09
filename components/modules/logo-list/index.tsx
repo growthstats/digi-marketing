@@ -24,7 +24,7 @@ export default async function LogoList({
     autoScroll?: boolean;
   }>
 >) {
-  const allLogos = logos || (await sanityFetch<Sanity.Logo[]>({ query: groq`*[_type == 'logo']` }));
+  const allLogos = logos ?? (await sanityFetch<Sanity.Logo[]>({ query: groq`*[_type == 'logo']` }));
 
   return (
     <section className="section space-y-8">
