@@ -11,6 +11,12 @@
   }
 }
 
+@media (min-width: 768px) {
+  .track {
+    --dur: 16s;
+  }
+}
+
 @keyframes scroll {
   to {
     translate: var(--dx) 0;
