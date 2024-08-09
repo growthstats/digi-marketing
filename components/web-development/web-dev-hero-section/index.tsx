@@ -26,7 +26,7 @@ const WebDevelopmentHeroSection: FC<IWebDevelopmentHeroSectionProps> = () => (
       </Box>
       {/* Col 2 */}
       <Box className={cx(styles['d-section__content-col'])}>
-        <Heading as="h2" mb={'5'} className={cx(styles['d-section__title'])}>
+        <Heading as="h1" mb={'5'} className={cx(styles['d-section__title'])}>
           Web Development
         </Heading>
         <Text as="p" size={'4'} weight={'regular'} mb={'5'} className={cx(styles['d-section__text-content'])}>
@@ -44,7 +44,7 @@ const WebDevelopmentHeroSection: FC<IWebDevelopmentHeroSectionProps> = () => (
 
     {/* Services */}
     <Box className={cx(styles['d-section__services-container'])}>
-      <Heading as="h3" mb={'7'} className={cx(styles['d-section__services-title'], 'animate-web-dev-title')} id="web-dev-features-title">
+      <Heading as="h2" mb={'7'} className={cx(styles['d-section__services-title'], 'animate-web-dev-title')} id="web-dev-features-title">
         Web Development Features
       </Heading>
       <Box className={cx(styles['d-section__services'])} id="web-design-features">

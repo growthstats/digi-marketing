@@ -26,7 +26,7 @@ const WebDesignHeroSection: FC<IWebDesignHeroSectionProps> = () => (
       </Box>
       {/* Col 2 */}
       <Box className={cx(styles['d-section__content-col'])}>
-        <Heading as="h2" mb={'5'} className={cx(styles['d-section__title'])}>
+        <Heading as="h1" mb={'5'} className={cx(styles['d-section__title'])}>
           Web Design
         </Heading>
         <Text as="p" size={'3'} weight={'regular'} mb={'5'} className={cx(styles['d-section__text-content'])}>
@@ -44,7 +44,7 @@ const WebDesignHeroSection: FC<IWebDesignHeroSectionProps> = () => (
     {/* Services */}
     <Box className={cx(styles['d-section__services-container'])}>
       <Heading
-        as="h3"
+        as="h2"
         mb={'7'}
         className={cx(styles['d-section__services-title'], 'animate-web-design-title')}
         id="web-design-features-title"

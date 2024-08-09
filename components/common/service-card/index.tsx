@@ -52,7 +52,7 @@ const ServiceCard: FC<IServiceCardProps> = (props) => {
         </Box>
       </Box>
       <Box className={cx(styles['d-container__content-wrapper'])}>
-        <Heading as="h4" className={cx(styles['d-container__name'])}>
+        <Heading as="h3" className={cx(styles['d-container__name'])}>
           {name}
         </Heading>
         <Box className={cx(styles['d-container__separator'])} />
