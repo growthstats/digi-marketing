@@ -44,12 +44,12 @@ const WebDevelopmentHeroSection: FC<IWebDevelopmentHeroSectionProps> = () => (
 
     {/* Services */}
     <Box className={cx(styles['d-section__services-container'])}>
-      <Heading as="h2" mb={'7'} className={cx(styles['d-section__services-title'], 'animate-web-dev-title')} id="web-dev-features-title">
+      <Heading as="h2" mb={'7'} className={cx(styles['d-section__services-title'])}>
         Web Development Features
       </Heading>
-      <Box className={cx(styles['d-section__services'])} id="web-design-features">
+      <Box className={cx(styles['d-section__services'])}>
         <ServiceCard
-          className={cx(styles['d-section__service'], 'animate-web-design-feature')}
+          className={cx(styles['d-section__service'])}
           name={webDevelopmentServices[0].name}
           description={webDevelopmentServices[0].description}
           imgSrc={'/web-development/static-website-illustration.svg'}
@@ -58,7 +58,7 @@ const WebDevelopmentHeroSection: FC<IWebDevelopmentHeroSectionProps> = () => (
           layout="reverse"
         />
         <ServiceCard
-          className={cx(styles['d-section__service'], 'animate-web-design-feature', 'ml-auto')}
+          className={cx(styles['d-section__service'], 'ml-auto')}
           name={webDevelopmentServices[1].name}
           description={webDevelopmentServices[1].description}
           imgSrc={'/web-development/cms-illustration.svg'}
@@ -66,7 +66,7 @@ const WebDevelopmentHeroSection: FC<IWebDevelopmentHeroSectionProps> = () => (
           variant="horizontal"
         />
         <ServiceCard
-          className={cx(styles['d-section__service'], 'animate-web-design-feature')}
+          className={cx(styles['d-section__service'])}
           name={webDevelopmentServices[2].name}
           description={webDevelopmentServices[2].description}
           imgSrc={'/web-development/custom-solution-illustration.svg'}
@@ -75,7 +75,7 @@ const WebDevelopmentHeroSection: FC<IWebDevelopmentHeroSectionProps> = () => (
           layout="reverse"
         />
         <ServiceCard
-          className={cx(styles['d-section__service'], 'animate-web-design-feature', 'ml-auto')}
+          className={cx(styles['d-section__service'], 'ml-auto')}
           name={webDevelopmentServices[3].name}
           description={webDevelopmentServices[3].description}
           imgSrc={'/web-development/performace-seo-illustration.svg'}
@@ -83,7 +83,7 @@ const WebDevelopmentHeroSection: FC<IWebDevelopmentHeroSectionProps> = () => (
           variant="horizontal"
         />
         <ServiceCard
-          className={cx(styles['d-section__service'], 'animate-web-design-feature')}
+          className={cx(styles['d-section__service'])}
           name={webDevelopmentServices[4].name}
           description={webDevelopmentServices[4].description}
           imgSrc={'/web-development/3d-websites.svg'}
