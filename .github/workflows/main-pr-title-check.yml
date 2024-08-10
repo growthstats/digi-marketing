@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - main
+    types: [opened, edited, synchronize]
 
 jobs:
   check-pr-title:
@@ -12,9 +13,9 @@ jobs:
       - name: Check PR title format
         run: |
           PR_TITLE="${{ github.event.pull_request.title }}"
-          if [[ "$PR_TITLE" =~ ^\[Release\]\[(PATCH|MINOR|MAJOR)\]\[.*\]$ ]]; then
+          if [[ "$PR_TITLE" =~ ^\[RELEASE\]\[(PATCH|MINOR|MAJOR)\]\[.*\]$ ]]; then
             echo "PR title is correctly formatted."
           else
-            echo "Error: PR title must be in the format [Release][PATCH|MINOR|MAJOR][Description]"
+            echo "Error: PR title must be in the format [RELEASE][PATCH|MINOR|MAJOR][Description]"
             exit 1
           fi
