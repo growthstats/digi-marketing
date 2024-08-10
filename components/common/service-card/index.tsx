@@ -28,6 +28,7 @@ const ServiceCard: FC<IServiceCardProps> = (props) => {
     toVars: { opacity: 1, y: 0, duration: 0.5, delay: 0.3 },
     scrollTriggerOptions: {
       start: 'top 90%',
+      markers: false,
     },
   });
 
