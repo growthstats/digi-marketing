@@ -20,7 +20,7 @@ export default function ContactSection(_props: IContactSectionProps) {
 
   return (
     <Section id="contact-section" className={cx(styles['d-section'])} ref={sectionScrollTrigger}>
-      <Box className={cx(styles['d-section__container'], 'contact-section-elem')}>
+      <Box className={cx(styles['d-section__container'])}>
         <Heading as="h2" className={cx(styles['d-section__title'], 'contact-section-elem')}>
           Have A Project In Mind?
         </Heading>
