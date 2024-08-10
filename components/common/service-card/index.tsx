@@ -4,6 +4,7 @@ import kebabCase from 'lodash/kebabCase';
 import Image from 'next/image';
 import { FC } from 'react';
 
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { useScrollTriggerAnimation } from '@/utils/hooks/use-scroll-trigger-animation';
 
 import styles from './service-card.module.scss';
@@ -27,6 +28,7 @@ const ServiceCard: FC<IServiceCardProps> = (props) => {
     toVars: { opacity: 1, y: 0, duration: 0.5, delay: 0.3 },
     scrollTriggerOptions: {
       start: 'top 90%',
+      markers: true,
     },
   });
 
@@ -51,9 +53,9 @@ const ServiceCard: FC<IServiceCardProps> = (props) => {
       )}
     >
       <Box className={cx(styles['d-container__image-col'])}>
-        <Box className={cx(styles['d-container__image-wrapper'])}>
-          <Image alt={name} src={imgSrc} width={60} height={60} className={cx(styles['d-container__image'])} />
-        </Box>
+        <AspectRatio ratio={4 / 3}>
+          <Image alt={name} src={imgSrc} layout="fill" className={cx(styles['d-container__image'])} />
+        </AspectRatio>
       </Box>
       <Box className={cx(styles['d-container__content-wrapper'])}>
         <Heading as="h3" className={cx(styles['d-container__name'])}>
