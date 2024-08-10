@@ -9,8 +9,5 @@
     "@semantic-release/github",
     "@semantic-release/git"
   ],
-  "preset": "conventionalcommits",
-  "overrides": {
-    "conventional-changelog-conventionalcommits": ">= 8.0.0"
-  }
+  "preset": "conventionalcommits"
 }
