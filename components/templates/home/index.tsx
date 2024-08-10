@@ -12,25 +12,7 @@ export default function HomePageTemplate(_props: IHomePageTemplateProps) {
     <div>
       <HeroSection />
       <AboutSection />
-      <LogoList
-        autoScroll
-        intro={[
-          {
-            _type: 'block',
-            _key: '773b78ae6db2',
-            style: 'h2',
-            markDefs: [],
-            children: [
-              {
-                _type: 'span',
-                _key: '2347ca16a2c4',
-                text: 'Our Clients',
-                marks: [],
-              },
-            ],
-          },
-        ]}
-      />
+      <LogoList autoScroll pretitle="Our Clients" />
       <ServicesSection />
       <BenefitsSection />
       <ContactSection />
