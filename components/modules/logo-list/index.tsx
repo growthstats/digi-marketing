@@ -53,6 +53,7 @@ export default async function LogoList({
             image={logo.image?.[logoType]}
             imageWidth={400}
             key={logo._id}
+            alt={logo.name}
           />
         ))}
       </figure>
