@@ -9,8 +9,14 @@ export const metadata: Metadata = {
   title: 'Search Engine Optimization (SEO) - Growth Stats | Improve Your Online Visibility',
   description:
     'Enhance your online visibility with Growth Stats comprehensive SEO services. Our expert team utilizes cutting-edge techniques to boost your search engine rankings and drive organic traffic to your website.',
+  generator: 'Next.js',
+  applicationName: 'Growth Stats',
+  referrer: 'origin-when-cross-origin',
   keywords: ['Search Engine Optimization', 'SEO', 'Online Visibility', 'Organic Traffic', 'SEO Services', 'Growth Stats'],
   authors: [{ name: 'Growth Stats', url: BASE_URL }],
+  alternates: {
+    canonical: 'https://growthstats.io/search-engine-optimization',
+  },
   openGraph: {
     title: 'Search Engine Optimization (SEO) - Growth Stats | Improve Your Online Visibility',
     description:

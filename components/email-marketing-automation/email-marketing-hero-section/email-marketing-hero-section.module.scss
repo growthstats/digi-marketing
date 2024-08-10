@@ -30,10 +30,21 @@
     @apply py-6;
   }
   &__title {
-    @apply text-5xl;
+    @apply text-3xl;
     @apply text-[var(--blue-12)];
+    @apply text-center;
+    @apply mx-auto;
+    @screen md {
+      @apply text-5xl;
+    }
   }
   &__text-content {
     @apply max-w-[565px];
+    @apply text-center;
+    @apply mx-auto;
+  }
+  &__cta-wrapper {
+    @apply flex;
+    @apply justify-center;
   }
 }

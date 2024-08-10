@@ -7,8 +7,14 @@ export const metadata: Metadata = {
   title: 'Social Media Services - Growth Stats | Enhance Your Social Presence',
   description:
     'Elevate your social media presence with Growth Stats comprehensive social media services. Our expert team crafts engaging content and manages your social profiles to build your brand and drive engagement.',
+  generator: 'Next.js',
+  applicationName: 'Growth Stats',
+  referrer: 'origin-when-cross-origin',
   keywords: ['Social Media Services', 'Social Media Management', 'Social Media Marketing', 'Brand Building', 'Engagement', 'Growth Stats'],
   authors: [{ name: 'Growth Stats', url: BASE_URL }],
+  alternates: {
+    canonical: 'https://growthstats.io/social-media-services',
+  },
   openGraph: {
     title: 'Social Media Services - Growth Stats | Enhance Your Social Presence',
     description:

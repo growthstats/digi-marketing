@@ -1,6 +1,7 @@
 import '@/app/globals.css';
 
 import { Theme } from '@radix-ui/themes';
+import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import cx from 'classnames';
 import { Inter } from 'next/font/google';
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <VisualEditingControls />
         </Theme>
 
+        <Analytics />
         <SpeedInsights />
         {/* Org Schema JSON-LD */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchemaJsonLd) }} />

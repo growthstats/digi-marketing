@@ -13,12 +13,15 @@ export interface IContactSectionProps {}
 export default function ContactSection(_props: IContactSectionProps) {
   const { scrollTriggerRef: boxScrollTrigger } = useScrollTriggerAnimation({
     target: '.contact-section-elem',
+    scrollTriggerOptions: {
+      start: 'top 90%',
+    },
   });
 
   return (
     <Section id="contact-section" className={cx(styles['d-section'])}>
       <Box className={cx(styles['d-section__container'])} ref={boxScrollTrigger}>
-        <Heading as="h3" className={cx(styles['d-section__title'], 'contact-section-elem')}>
+        <Heading as="h2" className={cx(styles['d-section__title'], 'contact-section-elem')}>
           Have A Project In Mind?
         </Heading>
         <Text size={'5'} className={cx(styles['d-section__sub-title'], 'contact-section-elem')}>

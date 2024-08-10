@@ -1,0 +1,57 @@
+name: Release Workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [closed]
+
+jobs:
+  release:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Determine version bump from PR title
+        id: determine_version
+        run: |
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          if [[ "$PR_TITLE" == *"[PATCH]"* ]]; then
+            echo "patch" > bump_type.txt
+          elif [[ "$PR_TITLE" == *"[MINOR]"* ]]; then
+            echo "minor" > bump_type.txt
+          elif [[ "$PR_TITLE" == *"[MAJOR]"* ]]; then
+            echo "major" > bump_type.txt
+          else
+            echo "Error: PR title must contain [PATCH], [MINOR], or [MAJOR]"
+            exit 1
+          fi
+
+      - name: Bump version
+        run: |
+          BUMP_TYPE=$(cat bump_type.txt)
+          npm version $BUMP_TYPE
+          git push origin main --tags
+
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ github.ref_name }}
+          release_name: Release ${{ github.ref_name }}
+          body: |
+            ## What's Changed
+            - List of changes for this release
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
