@@ -98,30 +98,6 @@
     font-weight: bold;
   }
 
-  .h1 {
-    @apply _h text-3xl;
-  }
-
-  .h2 {
-    @apply _h text-2xl;
-  }
-
-  .h3 {
-    @apply _h text-xl;
-  }
-
-  .h4 {
-    @apply _h text-lg;
-  }
-
-  .h5 {
-    @apply _h;
-  }
-
-  .h6 {
-    @apply _h;
-  }
-
   .technical {
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -149,14 +125,6 @@
 
   .action {
     @apply _btn frosted-glass text-balance rounded border border-transparent bg-gradient-to-br from-accent/70 to-accent text-white shadow;
-  }
-
-  .action-outline {
-    @apply _btn frosted-glass text-balance rounded border border-accent/10 bg-gradient-to-br from-background/70 to-background text-accent hover:border-accent/15;
-  }
-
-  .ghost {
-    @apply _btn frosted-glass rounded hover:bg-accent/5;
   }
 
   .link {
@@ -217,7 +185,7 @@
       padding-left: 1.5em;
     }
 
-    & a:not(:is(.action, .action-outline, .ghost)) {
+    & a:not(:is(.action)) {
       @apply link;
 
       &[href^='http'] {
