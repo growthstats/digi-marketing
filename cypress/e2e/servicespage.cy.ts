@@ -16,7 +16,7 @@ describe('services page spec', () => {
       .contains('a', 'Search Engine Optimization')
       .click({ force: true });
 
-    cy.get("g[clip-path='url(#__lottie_element_2)']").should('be.visible');
+    cy.get('g[clip-path="url(#__lottie_element_2)"]').should('be.visible');
 
     // cards count
     cy.get('.rt-Box .service-card_d-container__cCpNa').should('have.length', 4);
