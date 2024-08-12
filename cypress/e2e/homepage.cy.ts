@@ -1,31 +1,29 @@
-describe('homepage spec', () => {
-  beforeEach('visit url passes', () => {
-    // main url
-    cy.visit('https://develop.growthstats.io/');
+describe('home page spec', () => {
+  beforeEach('url passes', () => {
+    cy.visit('https://growthstats.io/'); // main url
   });
 
-  it('home page tests passes', () => {
-    // home page
+  it('titles verification', () => {
+    cy.get('h1').eq(0).contains('Online Marketing ');
+    cy.get('div[class="banner-text_d-container__heading__rRJie text-4xl md:text-6xl"]').contains('growth stats');
+  });
+
+  it('client logo, cards verification', () => {
+    cy.get('section.section.space-y-8').find('img').should('exist');
+
+    cy.get(
+      'div[class="rt-Grid rt-r-gtc-1 sm:rt-r-gtc-2 lg:rt-r-gtc-3 rt-r-gap-6 rt-r-w services-section_d-section__cards-container__BfYQV"]',
+    )
+      .find('a')
+      .should('have.length', 6);
+  });
+
+  it('benefits section', () => {
     cy.get('h3').eq(0).contains('We Can Improve Your Business Performance And Gain More Customers');
-    cy.get('h3').eq(1).contains('Have A Project In Mind?');
-
-    // Assuming you want to click on the first three contact buttons
-    for (let i = 0; i < 3; i++) {
-      cy.get("a[href='/contact']").eq(i).click();
-      cy.go('back'); // Navigates back to the previous page
-    }
-
-    cy.wait(3000);
-    // scroll to the contact section
-    cy.get('#contact-section').scrollIntoView();
-    cy.wait(3000);
-    cy.get('#contact-section').should('be.visible');
-    cy.wait(3000);
   });
 
-  it('about page tests passes', () => {
-    // about page
-    cy.get("a[href='/about']").first().click();
-    cy.get('h1').contains('About Growth Stats');
+  it('contact section, total contact links verification', () => {
+    cy.verifyContactSectionElements(); // verify elements
+    cy.logContactLinksCount(); // verify contact links
   });
 });
