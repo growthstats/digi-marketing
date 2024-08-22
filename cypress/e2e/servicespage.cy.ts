@@ -75,7 +75,6 @@ describe('services page spec', () => {
       }
     });
 
-    // Check performance
-    cy.checkPagePerformance();
+    cy.checkPagePerformance(); // Check performance
   });
 });

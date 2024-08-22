@@ -25,5 +25,6 @@ describe('home page spec', () => {
   it('contact section, total contact links verification', () => {
     cy.verifyContactSectionElements(); // verify elements
     cy.logContactLinksCount(); // verify contact links
+    cy.checkPagePerformance(); // Check performance
   });
 });
