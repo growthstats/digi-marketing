@@ -3,5 +3,7 @@ declare namespace Cypress {
   interface Chainable<Subject = any> {
     logContactLinksCount(): Chainable<Subject>;
     verifyContactSectionElements(): Chainable<Subject>;
+    logCardLinksCount(): Chainable<Subject>;
+    checkPagePerformance(): Chainable<Subject>;
   }
 }
