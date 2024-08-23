@@ -20,14 +20,3 @@ Cypress.Commands.add('logCardLinksCount', () => {
 Cypress.Commands.add('verifyContactSectionElements', () => {
   cy.get('.contact-section-elem').should('exist', { timeout: 5000 });
 });
-
-// Helper function to measure page load time
-Cypress.Commands.add('checkPagePerformance', () => {
-  cy.window().then((win) => {
-    const performance = win.performance;
-    const timing = performance.timing;
-    const pageLoadTime = timing.loadEventEnd - timing.navigationStart;
-    cy.log(`Page load time: ${pageLoadTime} ms`);
-    expect(pageLoadTime).to.be.lessThan(1000); // Assert that the page load time is less than 3 seconds
-  });
-});

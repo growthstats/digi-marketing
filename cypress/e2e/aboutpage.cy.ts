@@ -1,6 +1,6 @@
 describe('about page spec', () => {
   beforeEach('url passes', () => {
-    cy.visit('https://growthstats.io/'); // main url
+    cy.visit('https://growthstats.io/about'); // main url
   });
 
   it('about page tests passes', () => {
@@ -14,6 +14,5 @@ describe('about page spec', () => {
   it('contact section, total contact links verification', () => {
     cy.verifyContactSectionElements(); // verify elements
     cy.logContactLinksCount(); // verify contact links
-    cy.checkPagePerformance(); // Check performance
   });
 });

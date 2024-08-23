@@ -4,6 +4,5 @@ declare namespace Cypress {
     logContactLinksCount(): Chainable<Subject>;
     verifyContactSectionElements(): Chainable<Subject>;
     logCardLinksCount(): Chainable<Subject>;
-    checkPagePerformance(): Chainable<Subject>;
   }
 }

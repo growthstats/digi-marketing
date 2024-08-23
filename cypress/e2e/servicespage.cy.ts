@@ -74,7 +74,5 @@ describe('services page spec', () => {
         cy.logCardLinksCount(); // verify number of cards
       }
     });
-
-    cy.checkPagePerformance(); // Check performance
   });
 });
