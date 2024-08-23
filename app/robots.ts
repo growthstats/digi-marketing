@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-import { BASE_URL } from '@/utils/constants';
+import { PROD_BASE_URL } from '@/utils/constants';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/studio/',
     },
-    sitemap: BASE_URL,
+    sitemap: PROD_BASE_URL,
   };
 }

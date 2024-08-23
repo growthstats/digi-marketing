@@ -99,27 +99,65 @@
   }
 
   .h1 {
-    @apply _h text-3xl;
+    @apply scroll-m-20;
+    @apply text-4xl;
+    @apply font-extrabold;
+    @apply tracking-tight;
+    @apply lg:text-5xl;
   }
 
   .h2 {
-    @apply _h text-2xl;
+    @apply scroll-m-20;
+    @apply border-b;
+    @apply pb-2;
+    @apply text-3xl;
+    @apply font-semibold;
+    @apply tracking-tight;
+    @apply first:mt-0;
   }
 
   .h3 {
-    @apply _h text-xl;
+    @apply scroll-m-20;
+    @apply text-2xl;
+    @apply font-semibold;
+    @apply tracking-tight;
   }
 
   .h4 {
-    @apply _h text-lg;
+    @apply scroll-m-20;
+    @apply text-xl;
+    @apply font-semibold;
+    @apply tracking-tight;
   }
 
-  .h5 {
-    @apply _h;
+  .p {
+    @apply leading-7;
+    @apply [&:not(:first-child)]:mt-6;
   }
 
-  .h6 {
-    @apply _h;
+  .blockquote {
+    @apply mt-6;
+    @apply border-l-2;
+    @apply pl-6;
+    @apply italic;
+  }
+
+  .ul {
+    @apply my-6;
+    @apply ml-6;
+    @apply list-disc;
+    @apply [&>li]:mt-2;
+  }
+
+  .code {
+    @apply relative;
+    @apply rounded;
+    @apply bg-muted;
+    @apply px-[0.3rem];
+    @apply py-[0.2rem];
+    @apply font-mono;
+    @apply text-sm;
+    @apply font-semibold;
   }
 
   .technical {
@@ -151,14 +189,6 @@
     @apply _btn frosted-glass text-balance rounded border border-transparent bg-gradient-to-br from-accent/70 to-accent text-white shadow;
   }
 
-  .action-outline {
-    @apply _btn frosted-glass text-balance rounded border border-accent/10 bg-gradient-to-br from-background/70 to-background text-accent hover:border-accent/15;
-  }
-
-  .ghost {
-    @apply _btn frosted-glass rounded hover:bg-accent/5;
-  }
-
   .link {
     text-decoration: underline;
 
@@ -176,7 +206,7 @@
   /* layout */
 
   .section {
-    @apply mx-auto max-w-screen-xl p-8 max-md:px-4 md:py-12;
+    @apply mx-auto py-16 max-md:px-4;
   }
 
   /* richtext */
@@ -204,20 +234,12 @@
       @apply h4;
     }
 
-    & h5 {
-      @apply h5;
-    }
-
-    & h6 {
-      @apply h6;
-    }
-
     & :is(ul, ol) {
       list-style: revert;
       padding-left: 1.5em;
     }
 
-    & a:not(:is(.action, .action-outline, .ghost)) {
+    & a:not(:is(.action)) {
       @apply link;
 
       &[href^='http'] {
