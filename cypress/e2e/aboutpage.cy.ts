@@ -4,7 +4,6 @@ describe('about page spec', () => {
   });
 
   it('about page tests passes', () => {
-    cy.get('a[href="/about"]').first().click();
     cy.get('h1').contains('About Growth Stats');
 
     // verify about us section img
