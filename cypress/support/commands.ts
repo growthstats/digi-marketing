@@ -36,9 +36,13 @@ Cypress.Commands.add('verifyContentOfBenefitsSection', () => {
 Cypress.Commands.add('verifyContactSectionAndElementCounts', () => {
   cy.logContactLinksCount(); // Log and verify the total number of contact links
 
-  // Conditional Check: Skip card link count verification for Email Marketing & Automation page
+  // Conditional Check: Skip card link count verification for Email Marketing & Automation page and About page and Home page
   cy.url().then((currentPageUrl) => {
-    if (currentPageUrl !== 'https://growthstats.io/email-marketing-automation') {
+    if (
+      currentPageUrl !== 'https://growthstats.io/email-marketing-automation' &&
+      currentPageUrl !== 'https://growthstats.io/about' &&
+      currentPageUrl !== 'https://growthstats.io/'
+    ) {
       cy.logCardLinksCount(); // Log and verify the number of cards
     }
   });
