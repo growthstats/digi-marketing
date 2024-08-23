@@ -12,8 +12,7 @@ describe('About Page Test Suite', () => {
   });
 
   // Test Case: Verify Contact Section and Total Contact Links
-  it('Should verify the contact section and the total number of contact links', () => {
-    cy.verifyContactSectionElements(); // Verify the presence of contact section elements
-    cy.logContactLinksCount(); // Log and verify the total number of contact links
+  afterEach('Should verify the contact section and the total number of contact links', () => {
+    cy.verifyContactSectionAndElementCounts();
   });
 });

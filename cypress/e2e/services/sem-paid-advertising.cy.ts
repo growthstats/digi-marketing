@@ -1,7 +1,6 @@
 describe('Services Page Test Suite', () => {
   beforeEach('url passes', () => {
-    cy.visit('https://growthstats.io/'); // Visit the main URL
-    cy.get('details').click(); // Open the services dropdown menu
+    cy.navigateToMainUrlAndOpenServicesDropdown();
   });
 
   // Test Case: Verify "SEM / Paid Advertising" Page
@@ -16,14 +15,6 @@ describe('Services Page Test Suite', () => {
   });
 
   afterEach('contact section, total contact links verification', () => {
-    cy.verifyContactSectionElements(); // Verify the presence of contact section elements
-    cy.logContactLinksCount(); // Log and verify the total number of contact links
-
-    // Conditional Check: Skip card link count verification for Email Marketing & Automation page
-    cy.url().then((currentPageUrl) => {
-      if (currentPageUrl !== 'https://growthstats.io/email-marketing-automation') {
-        cy.logCardLinksCount(); // Log and verify the number of cards
-      }
-    });
+    cy.verifyContactSectionAndElementCounts();
   });
 });
