@@ -98,6 +98,68 @@
     font-weight: bold;
   }
 
+  .h1 {
+    @apply scroll-m-20;
+    @apply text-4xl;
+    @apply font-extrabold;
+    @apply tracking-tight;
+    @apply lg:text-5xl;
+  }
+
+  .h2 {
+    @apply scroll-m-20;
+    @apply border-b;
+    @apply pb-2;
+    @apply text-3xl;
+    @apply font-semibold;
+    @apply tracking-tight;
+    @apply first:mt-0;
+  }
+
+  .h3 {
+    @apply scroll-m-20;
+    @apply text-2xl;
+    @apply font-semibold;
+    @apply tracking-tight;
+  }
+
+  .h4 {
+    @apply scroll-m-20;
+    @apply text-xl;
+    @apply font-semibold;
+    @apply tracking-tight;
+  }
+
+  .p {
+    @apply leading-7;
+    @apply [&:not(:first-child)]:mt-6;
+  }
+
+  .blockquote {
+    @apply mt-6;
+    @apply border-l-2;
+    @apply pl-6;
+    @apply italic;
+  }
+
+  .ul {
+    @apply my-6;
+    @apply ml-6;
+    @apply list-disc;
+    @apply [&>li]:mt-2;
+  }
+
+  .code {
+    @apply relative;
+    @apply rounded;
+    @apply bg-muted;
+    @apply px-[0.3rem];
+    @apply py-[0.2rem];
+    @apply font-mono;
+    @apply text-sm;
+    @apply font-semibold;
+  }
+
   .technical {
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -170,14 +232,6 @@
 
     & h4 {
       @apply h4;
-    }
-
-    & h5 {
-      @apply h5;
-    }
-
-    & h6 {
-      @apply h6;
     }
 
     & :is(ul, ol) {
