@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/studio/',
     },
-    sitemap: PROD_BASE_URL,
+    sitemap: `${PROD_BASE_URL}/sitemap.xml`,
   };
 }
