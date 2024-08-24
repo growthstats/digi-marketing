@@ -10,9 +10,11 @@ describe('Services Page Test Suite', () => {
 
     // Verify the visibility of the hero animation
     cy.get('[class*="web-dev-hero-section_d-section__image-wrapper"]').find('svg').should('be.visible');
-  });
 
-  afterEach('contact section, total contact links verification', () => {
+    // Log and verify the number of cards
+    cy.logCardLinksCount();
+
+    // Verify contact section, total contact links verification
     cy.verifyContactSectionAndElementCounts();
   });
 });

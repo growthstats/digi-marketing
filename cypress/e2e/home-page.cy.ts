@@ -57,10 +57,8 @@ describe('Home Page Test Suite', () => {
   it('Should verify the content of the benefits section', () => {
     // Verify the benefits section heading
     cy.get('h3').eq(0).contains('We Can Improve Your Business Performance And Gain More Customers');
-  });
 
-  // Test Case: Verify Contact Section and Total Contact Links
-  afterEach('Should verify the contact section and the total number of contact links', () => {
+    // Test Case: Verify Contact Section and Total Contact Links
     cy.verifyContactSectionAndElementCounts();
   });
 });

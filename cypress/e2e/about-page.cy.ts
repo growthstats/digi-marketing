@@ -10,10 +10,8 @@ describe('About Page Test Suite', () => {
 
     // Verify the visibility of the "About Us" section image
     cy.get('img[alt="About Us Section Image"]').should('be.visible');
-  });
 
-  // Test Case: Verify Contact Section and Total Contact Links
-  afterEach('Should verify the contact section and the total number of contact links', () => {
+    // Test Case: Verify Contact Section and Total Contact Links
     cy.verifyContactSectionAndElementCounts();
   });
 });

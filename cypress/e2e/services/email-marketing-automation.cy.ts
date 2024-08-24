@@ -13,9 +13,8 @@ describe('Services Page Test Suite', () => {
 
     // Verify the visibility of the hero animation
     cy.get('[class*="email-marketing-hero-section_d-section"]').find('svg').should('be.visible');
-  });
 
-  afterEach('contact section, total contact links verification', () => {
+    // Verify contact section, total contact links verification
     cy.verifyContactSectionAndElementCounts();
   });
 });
