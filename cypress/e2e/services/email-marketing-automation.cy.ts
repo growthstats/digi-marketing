@@ -11,7 +11,8 @@ describe('Services Page Test Suite', () => {
       .contains('a', 'Email Marketing & Automation')
       .click({ force: true }); // Navigate to the Email Marketing & Automation page
 
-    cy.get('[class*="email-marketing-hero-section_d-section"]').find('svg').should('be.visible'); // Verify the visibility of the hero animation
+    // Verify the visibility of the hero animation
+    cy.get('[class*="email-marketing-hero-section_d-section"]').find('svg').should('be.visible');
   });
 
   afterEach('contact section, total contact links verification', () => {

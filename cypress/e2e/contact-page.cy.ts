@@ -1,6 +1,6 @@
 describe('Contact page Tets Suite', () => {
   beforeEach('navigate to contact Page', () => {
-    cy.visit('https://growthstats.io/contact');
+    cy.visit('https://growthstats.io/contact'); // Visit the Contact page URL
   });
 
   // Test Case: Verify Contact Page Titles

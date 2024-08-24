@@ -5,7 +5,8 @@ describe('About Page Test Suite', () => {
 
   // Test Case: Verify About Page Elements
   it('Should verify the presence of key elements on the About page', () => {
-    cy.get('h1').contains('About Growth Stats'); // Verify the heading text
+    // Verify the heading text
+    cy.get('h1').contains('About Growth Stats');
 
     // Verify the visibility of the "About Us" section image
     cy.get('img[alt="About Us Section Image"]').should('be.visible');

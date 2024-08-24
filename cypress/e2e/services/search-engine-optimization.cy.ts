@@ -11,7 +11,8 @@ describe('Services Page Test Suite', () => {
       .contains('a', 'Search Engine Optimization')
       .click({ force: true }); // Navigate to the Search Engine Optimization page
 
-    cy.get('[class*="seo-section_d-section__image-wrapper"]').find('svg').should('be.visible'); // Verify the visibility of the hero animation
+    // Verify the visibility of the hero animation
+    cy.get('[class*="seo-section_d-section__image-wrapper"]').find('svg').should('be.visible');
   });
 
   afterEach('contact section, total contact links verification', () => {

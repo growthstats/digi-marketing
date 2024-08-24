@@ -11,7 +11,8 @@ describe('Services Page Test Suite', () => {
       .contains('a', 'Social Media Services')
       .click({ force: true }); // Navigate to the Social Media Services page
 
-    cy.get('[class*="social-media-services-hero-section_d-section__image-wrapper"]').find('svg').should('be.visible'); // Verify the visibility of the hero animation
+    // Verify the visibility of the hero animation
+    cy.get('[class*="social-media-services-hero-section_d-section__image-wrapper"]').find('svg').should('be.visible');
   });
 
   afterEach('contact section, total contact links verification', () => {
