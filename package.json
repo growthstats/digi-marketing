@@ -12,7 +12,8 @@
     "format": "npx prettier --write . --ignore-path .gitignore",
     "type-check": "tsc --noEmit",
     "generate": "sanity schema extract && sanity typegen generate",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:run": "node_modules/.bin/cypress run --headless --browser chrome --spec \"cypress/e2e/**/*.cy.ts\""
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
