@@ -3,6 +3,11 @@ describe('Home Page Test Suite', () => {
     cy.visit('https://growthstats.io/'); // Visit the Home page URL
   });
 
+  // Test Case: Verify images have alt text
+  it('Should verify all images have alt text', () => {
+    cy.get('body').find('img').should('have.attr', 'alt');
+  });
+
   // Test Case: Verify Home Page Titles
   it('Should verify the main titles on the Home page', () => {
     // Verify the first H1 title
@@ -17,11 +22,35 @@ describe('Home Page Test Suite', () => {
     cy.get('section.section.space-y-8').find('img').should('exist');
 
     // Verify there are 6 service cards
-    cy.get(
-      'div[class="rt-Grid rt-r-gtc-1 sm:rt-r-gtc-2 lg:rt-r-gtc-3 rt-r-gap-6 rt-r-w services-section_d-section__cards-container__BfYQV"]',
-    )
-      .find('a')
-      .should('have.length', 6);
+    cy.get('div.services-section_d-section__cards-container__BfYQV').find('a').should('have.length', 6);
+
+    // Verify card links
+    const serviceslinks = [
+      '/search-engine-optimization',
+      '/email-marketing-automation',
+      '/social-media-services',
+      '/web-design',
+      '/web-development',
+      '/sem-paid-advertising',
+    ];
+
+    serviceslinks.forEach((serviceslink) => {
+      cy.get('div.services-section_d-section__cards-container__BfYQV').find(`a[href="${serviceslink}"]`).should('exist');
+    });
+
+    // Verify card names
+    const services = [
+      'SEO Services',
+      'Email Marketing & Automation',
+      'Social Media Services',
+      'Web Design',
+      'Web Development',
+      'SEM / Paid Advertising',
+    ];
+
+    services.forEach((service) => {
+      cy.get('a div[data-accent-color$="blue"]').contains(service);
+    });
   });
 
   // Test Case: Verify Benefits Section
