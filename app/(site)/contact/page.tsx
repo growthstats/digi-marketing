@@ -9,7 +9,13 @@ export const metadata: Metadata = {
   title: 'Contact Us - Growth Stats | Get In Touch',
   description:
     'Reach out to Growth Stats for any inquiries or to get started with our digital marketing services. We are here to help you grow your business through expert online marketing solutions.',
+  generator: 'Next.js',
+  applicationName: 'Growth Stats',
+  referrer: 'origin-when-cross-origin',
   keywords: ['Contact Growth Stats', 'Digital Marketing Inquiries', 'Get In Touch', 'Online Marketing Solutions', 'Business Growth'],
+  alternates: {
+    canonical: 'https://growthstats.io/contact',
+  },
   authors: [{ name: 'Growth Stats', url: BASE_URL }],
   openGraph: {
     title: 'Contact Us - Growth Stats | Get In Touch',

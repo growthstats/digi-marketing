@@ -9,7 +9,13 @@ export const metadata: Metadata = {
   title: 'Email Marketing Automation - Growth Stats | Boost Your Engagement',
   description:
     'Maximize your customer engagement with Growth Stats email marketing automation services. Our tailored strategies and advanced tools ensure effective communication and higher conversion rates for your business.',
+  generator: 'Next.js',
+  applicationName: 'Growth Stats',
+  referrer: 'origin-when-cross-origin',
   keywords: ['Email Marketing', 'Marketing Automation', 'Customer Engagement', 'Email Campaigns', 'Conversion Rates', 'Growth Stats'],
+  alternates: {
+    canonical: 'https://growthstats.io/email-marketing-automation',
+  },
   authors: [{ name: 'Growth Stats', url: BASE_URL }],
   openGraph: {
     title: 'Email Marketing Automation - Growth Stats | Boost Your Engagement',

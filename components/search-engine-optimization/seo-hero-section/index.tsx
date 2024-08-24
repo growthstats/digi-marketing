@@ -25,7 +25,7 @@ const SEOHeroSection: FC<ISEOHeroSectionProps> = () => (
       </Box>
       {/* Col 2 */}
       <Box className={cx(styles['d-section__content-col'])}>
-        <Heading as="h2" mb={'5'} className={cx(styles['d-section__title'])}>
+        <Heading as="h1" mb={'5'} className={cx(styles['d-section__title'])}>
           SEO (Search Engine Optimization)
         </Heading>
         <Text as="p" size={'3'} weight={'regular'} mb={'5'} className={cx(styles['d-section__text-content'])}>
@@ -42,7 +42,7 @@ const SEOHeroSection: FC<ISEOHeroSectionProps> = () => (
 
     {/* Services */}
     <Box className={cx(styles['d-section__services-container'])}>
-      <Heading as="h3" mb={'7'} className={cx(styles['d-section__services-title'])}>
+      <Heading as="h2" mb={'7'} className={cx(styles['d-section__services-title'])}>
         SEO (Search Engine Optimization) Features
       </Heading>
       <Box className={cx(styles['d-section__services'])}>

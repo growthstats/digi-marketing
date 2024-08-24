@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: 'Web Development Services - Growth Stats | Build Robust Websites',
   description:
     'Elevate your online presence with Growth Stats web development services. Our expert developers create robust, scalable, and high-performance websites tailored to meet your business needs.',
+  generator: 'Next.js',
+  applicationName: 'Growth Stats',
+  referrer: 'origin-when-cross-origin',
   keywords: [
     'Web Development Services',
     'Website Development',
@@ -16,6 +19,9 @@ export const metadata: Metadata = {
     'Growth Stats',
   ],
   authors: [{ name: 'Growth Stats', url: BASE_URL }],
+  alternates: {
+    canonical: 'https://growthstats.io/web-development',
+  },
   openGraph: {
     title: 'Web Development Services - Growth Stats | Build Robust Websites',
     description:

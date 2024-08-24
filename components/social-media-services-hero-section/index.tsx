@@ -26,7 +26,7 @@ const SocialMediaServicesHeroSection: FC<ISocialMediaServicesHeroSectionProps> =
       </Box>
       {/* Col 2 */}
       <Box className={cx(styles['d-section__content-col'])}>
-        <Heading as="h2" mb={'5'} className={cx(styles['d-section__title'])}>
+        <Heading as="h1" mb={'5'} className={cx(styles['d-section__title'])}>
           Social Media Services
         </Heading>
         <Text as="p" size={'3'} weight={'regular'} mb={'5'} className={cx(styles['d-section__text-content'])}>
@@ -43,7 +43,7 @@ const SocialMediaServicesHeroSection: FC<ISocialMediaServicesHeroSectionProps> =
 
     {/* Services */}
     <Box className={cx(styles['d-section__services-container'])}>
-      <Heading as="h3" mb={'7'} className={cx(styles['d-section__services-title'])}>
+      <Heading as="h2" mb={'7'} className={cx(styles['d-section__services-title'])}>
         Social Media Service Features
       </Heading>
       <Box className={cx(styles['d-section__services'])}>

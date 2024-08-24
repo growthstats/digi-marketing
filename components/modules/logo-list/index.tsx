@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { PortableText } from '@portabletext/react';
+import { Text } from '@radix-ui/themes';
+import { stegaClean } from '@sanity/client/stega';
 import { groq } from 'next-sanity';
 
 import Img from '@/components/common/Img';
-import Pretitle from '@/components/common/pretitle';
 import { cn } from '@/lib/utils';
 import { sanityFetch } from '@/sanity/lib/fetch';
 
@@ -30,7 +31,9 @@ export default async function LogoList({
     <section className="section space-y-8">
       {(pretitle || intro) && (
         <header className="richtext mx-auto max-w-screen-sm text-balance text-center text-foreground">
-          <Pretitle>{pretitle}</Pretitle>
+          <Text as="div" weight={'bold'} size={{ initial: '8' }}>
+            {stegaClean(pretitle)}
+          </Text>
           <PortableText value={intro} />
         </header>
       )}
@@ -53,6 +56,7 @@ export default async function LogoList({
             image={logo.image?.[logoType]}
             imageWidth={400}
             key={logo._id}
+            alt={logo.name}
           />
         ))}
       </figure>

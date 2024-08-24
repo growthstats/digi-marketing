@@ -17,10 +17,16 @@ export const useScrollTriggerAnimation = ({
 }: ScrollTriggerAnimationConfig = {}) => {
   const scrollTriggerRef = useRef(null);
 
-  const targetElems = target ?? scrollTriggerRef.current;
-
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    const targetElems = target ?? scrollTriggerRef.current;
+
+    if (!targetElems) {
+      // eslint-disable-next-line no-console
+      console.warn('GSAP target not found');
+      return;
+    }
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -39,7 +45,7 @@ export const useScrollTriggerAnimation = ({
     return () => {
       tl.kill();
     };
-  }, [fromVars, toVars, scrollTriggerOptions, scrollTriggerRef, targetElems]);
+  }, [fromVars, toVars, scrollTriggerOptions, scrollTriggerRef, target]);
 
   return { scrollTriggerRef };
 };

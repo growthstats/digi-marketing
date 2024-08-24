@@ -45,7 +45,7 @@
     @apply max-w-screen-lg;
     @apply gap-8;
     &:hover {
-      .d-container__image-wrapper {
+      .d-container__image {
         @include vertical-move();
       }
       .d-container__separator {

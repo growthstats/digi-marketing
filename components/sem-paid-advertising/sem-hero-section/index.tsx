@@ -26,7 +26,7 @@ const SEMHeroSection: FC<ISEMHeroSectionProps> = () => (
       </Box>
       {/* Col 2 */}
       <Box className={cx(styles['d-section__content-col'])}>
-        <Heading as="h2" mb={'5'} className={cx(styles['d-section__title'])}>
+        <Heading as="h1" mb={'5'} className={cx(styles['d-section__title'])}>
           SEM / Paid Advertising
         </Heading>
         <Text as="p" size={'3'} weight={'regular'} mb={'5'} className={cx(styles['d-section__text-content'])}>
@@ -43,7 +43,7 @@ const SEMHeroSection: FC<ISEMHeroSectionProps> = () => (
 
     {/* Services */}
     <Box className={cx(styles['d-section__services-container'])}>
-      <Heading as="h3" mb={'7'} className={cx(styles['d-section__services-title'], 'animate-seo-title')} id="seo-features-title">
+      <Heading as="h2" mb={'7'} className={cx(styles['d-section__services-title'], 'animate-seo-title')} id="seo-features-title">
         SEM / Paid Advertising Features
       </Heading>
       <Box className={cx(styles['d-section__services'])} id="sem-features">

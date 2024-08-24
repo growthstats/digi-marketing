@@ -28,6 +28,7 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
     email: '',
     phone: '',
     message: '',
+    subscribe_be36b12536b6_46315: '',
   };
 
   const form = useForm<z.infer<typeof contactFormSchema>>({
@@ -143,6 +144,25 @@ const ContactFormSection: FC<IContactFormSectionProps> = () => {
                         <FormDescription>
                           You can <span>@mention</span> other users and organizations.
                         </FormDescription>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+              </div>
+              <div className={cx(styles['d-section__form-fields-row'])}>
+                <div className={cx(styles['d-section__form-fields-col'])}>
+                  {/* Spam filter hidden field */}
+                  <FormField
+                    control={form.control}
+                    name="subscribe_be36b12536b6_46315"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-primary hidden">Hidden Field</FormLabel>
+                        <FormControl>
+                          <Input placeholder="" {...field} hidden />
+                        </FormControl>
+                        <FormDescription className="hidden">Hidden field to filter spam submissions.</FormDescription>
                         <FormMessage />
                       </FormItem>
                     )}

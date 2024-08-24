@@ -7,8 +7,14 @@ export const metadata: Metadata = {
   title: 'SEM & Paid Advertising - Growth Stats | Drive Targeted Traffic',
   description:
     'Boost your online presence and drive targeted traffic with Growth Stats SEM and paid advertising services. Our expert team creates and manages effective ad campaigns to maximize your ROI.',
+  generator: 'Next.js',
+  applicationName: 'Growth Stats',
+  referrer: 'origin-when-cross-origin',
   keywords: ['SEM', 'Paid Advertising', 'Online Advertising', 'Targeted Traffic', 'Ad Campaigns', 'ROI', 'Growth Stats'],
   authors: [{ name: 'Growth Stats', url: BASE_URL }],
+  alternates: {
+    canonical: 'https://growthstats.io/sem-paid-advertising',
+  },
   openGraph: {
     title: 'SEM & Paid Advertising - Growth Stats | Drive Targeted Traffic',
     description:

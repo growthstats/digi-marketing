@@ -23,7 +23,7 @@ const EmailMarketingHeroSection: FC<IEmailMarketingHeroSectionProps> = () => (
       </Box>
       {/* Col 2 */}
       <Box className={cx(styles['d-section__content-col'])}>
-        <Heading as="h2" mb={'5'} className={cx(styles['d-section__title'])}>
+        <Heading as="h1" mb={'5'} className={cx(styles['d-section__title'])}>
           Email Marketing and Automation
         </Heading>
         <Text as="p" size={'3'} weight={'regular'} mb={'5'} className={cx(styles['d-section__text-content'])}>

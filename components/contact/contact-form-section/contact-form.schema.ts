@@ -10,6 +10,7 @@ const contactFormSchema = z.object({
     .min(10, 'Phone number must be at least 10 digits')
     .regex(/^\d{10}$/, 'Phone number is invalid'),
   message: z.string().min(10, 'Message is must be at least 10 characters.').max(500, 'Message is too long'),
+  subscribe_be36b12536b6_46315: z.string(),
 });
 
 export default contactFormSchema;
