@@ -43,3 +43,8 @@ Cypress.Commands.add('verifyContentOfBenefitsSection', () => {
     cy.get('h3').eq(0).contains('We Can Improve Your Business Performance And Gain More Customers'); // Verify the benefits section heading
   });
 });
+
+// Add this custom command in your Cypress commands file
+Cypress.Commands.add('selectService', (serviceName, serviceUrl) => {
+  cy.get('ul.anim-fade-to-b').contains('a', serviceName).should('have.attr', 'href', serviceUrl).click({ force: true });
+});

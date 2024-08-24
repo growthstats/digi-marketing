@@ -4,15 +4,11 @@ describe('Services Page Test Suite', () => {
   });
 
   // Test Case: Verify "Social Media Services" Page
-  it('Social Media Services page', () => {
-    cy.get('ul.anim-fade-to-b')
-      .find('li')
-      .find('a[href="/social-media-services"]')
-      .contains('a', 'Social Media Services')
-      .click({ force: true }); // Navigate to the Social Media Services page
+  it('Should navigate to and verify elements on the Social Media Services page', () => {
+    cy.selectService('Social Media Services', '/social-media-services');
 
     // Verify the visibility of the hero animation
-    cy.get('[class*="social-media-services-hero-section_d-section__image-wrapper"]').find('svg').should('be.visible');
+    cy.get('[class*="social-media-services-hero-section_d-section__image-wrapper"] svg').should('be.visible');
 
     // Log and verify the number of cards
     cy.logCardLinksCount();

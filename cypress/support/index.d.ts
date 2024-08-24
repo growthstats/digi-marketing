@@ -7,5 +7,6 @@ declare namespace Cypress {
     navigateToMainUrlAndOpenServicesDropdown(): Chainable<Subject>;
     verifyContactSectionAndElementCounts(): Chainable<Subject>;
     verifyContentOfBenefitsSection(): Chainable<Subject>;
+    selectService(serviceName: string, serviceUrl: string): Chainable<Subject>;
   }
 }

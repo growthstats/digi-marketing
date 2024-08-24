@@ -6,12 +6,12 @@ describe('About Page Test Suite', () => {
   // Test Case: Verify About Page Elements
   it('Should verify the presence of key elements on the About page', () => {
     // Verify the heading text
-    cy.get('h1').contains('About Growth Stats');
+    cy.get('h1').should('contain.text', 'About Growth Stats');
 
     // Verify the visibility of the "About Us" section image
     cy.get('img[alt="About Us Section Image"]').should('be.visible');
 
-    // Test Case: Verify Contact Section and Total Contact Links
+    // Verify Contact Section and Total Contact Links
     cy.verifyContactSectionAndElementCounts();
   });
 });
