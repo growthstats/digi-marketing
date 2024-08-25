@@ -1,8 +1,4 @@
 describe('Footer Test Suite', () => {
-  beforeEach('Navigate to Home Page', () => {
-    cy.visit('https://growthstats.io/'); // Visit the Home page URL
-  });
-
   // Test Case: Verify Footer and Navigation Links
   it('Should verify the footer and its elements', () => {
     // Verify the header exists
@@ -15,6 +11,6 @@ describe('Footer Test Suite', () => {
     cy.get('.flex.flex-wrap.items-start.gap-x-12.gap-y-6').find('a').should('have.length', 8);
 
     // Verify the copyright logo and company name present and visible
-    cy.get('.flex.flex-wrap.justify-center.gap-x-6.gap-y-2.p-4.text-sm').contains('© 2024 Growth Stats');
+    cy.get('.flex.flex-wrap.justify-center.gap-x-6.gap-y-2.p-4.text-sm').should('contain.text', '© 2024 Growth Stats');
   });
 });

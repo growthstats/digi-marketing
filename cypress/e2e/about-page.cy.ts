@@ -1,17 +1,15 @@
 describe('About Page Test Suite', () => {
-  beforeEach('Navigate to About Page', () => {
-    cy.visit('https://growthstats.io/about'); // Visit the About page URL
-  });
-
   // Test Case: Verify About Page Elements
   it('Should verify the presence of key elements on the About page', () => {
+    // Visit the About page URL
+    cy.visit('https://growthstats.io/about');
     // Verify the heading text
-    cy.get('h1').contains('About Growth Stats');
+    cy.get('h1').should('contain.text', 'About Growth Stats');
 
     // Verify the visibility of the "About Us" section image
     cy.get('img[alt="About Us Section Image"]').should('be.visible');
 
-    // Test Case: Verify Contact Section and Total Contact Links
+    // Verify Contact Section and Total Contact Links
     cy.verifyContactSectionAndElementCounts();
   });
 });

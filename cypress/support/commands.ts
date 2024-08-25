@@ -10,15 +10,14 @@ Cypress.Commands.add('logContactLinksCount', () => {
   });
 });
 
-Cypress.Commands.add('logCardLinksCount', () => {
-  cy.get('[id*="service-card--"]').then(($cards) => {
-    const cardcount = $cards.length;
-    cy.log('Number of cards: ' + cardcount);
-  });
-});
-
 Cypress.Commands.add('verifyContactSectionElements', () => {
   cy.get('.contact-section-elem').should('exist', { timeout: 5000 });
+});
+
+// Verify markers do not exist
+Cypress.Commands.add('verifyMarkers', () => {
+  cy.get('gsap-marker-start').should('not.exist');
+  cy.get('gsap-marker-end').should('not.exist');
 });
 
 Cypress.Commands.add('verifyContactSectionAndElementCounts', () => {
@@ -30,16 +29,18 @@ Cypress.Commands.add('verifyContactSectionAndElementCounts', () => {
       cy.verifyContactSectionElements(); // Verify the contact section
     }
   });
+
+  cy.verifyMarkers(); // Verify markers
 });
 
-Cypress.Commands.add('navigateToMainUrlAndOpenServicesDropdown', () => {
-  cy.visit('https://growthstats.io/'); // Visit the main URL
-  cy.get('details').click(); // Open the services dropdown menu
-});
-
-Cypress.Commands.add('verifyContentOfBenefitsSection', () => {
-  // Test Case: Verify Benefits Section
-  it('Should verify the content of the benefits section', () => {
-    cy.get('h3').eq(0).contains('We Can Improve Your Business Performance And Gain More Customers'); // Verify the benefits section heading
+Cypress.Commands.add('logCardLinksCount', () => {
+  cy.get('[id*="service-card--"]').then(($cards) => {
+    const cardcount = $cards.length;
+    cy.log('Number of cards: ' + cardcount);
   });
+});
+
+// Verify services links and card names on services page
+Cypress.Commands.add('selectService', (serviceName, serviceUrl) => {
+  cy.get('ul.anim-fade-to-b').contains('a', serviceName).should('have.attr', 'href', serviceUrl).click({ force: true });
 });

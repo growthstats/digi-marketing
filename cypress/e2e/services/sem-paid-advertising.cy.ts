@@ -1,18 +1,11 @@
 describe('Services Page Test Suite', () => {
-  beforeEach('url passes', () => {
-    cy.navigateToMainUrlAndOpenServicesDropdown();
-  });
-
   // Test Case: Verify "SEM / Paid Advertising" Page
-  it('SEM Paid Advertising page', () => {
-    cy.get('ul.anim-fade-to-b')
-      .find('li')
-      .find('a[href="/sem-paid-advertising"]')
-      .contains('a', 'SEM / Paid Advertising')
-      .click({ force: true }); // Navigate to the SEM / Paid Advertising page
+  it('Should navigate to and verify elements on the SEM / Paid Advertising page', () => {
+    cy.get('details').click(); // Open the services dropdown menu
+    cy.selectService('SEM / Paid Advertising', '/sem-paid-advertising');
 
     // Verify the visibility of the hero animation
-    cy.get('[class*="sem-hero-section_d-section__image-wrapper"]').find('svg').should('be.visible');
+    cy.get('[class*="sem-hero-section_d-section__image-wrapper"] svg').should('be.visible');
 
     // Log and verify the number of cards
     cy.logCardLinksCount();
