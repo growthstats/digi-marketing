@@ -1,10 +1,8 @@
 describe('About Page Test Suite', () => {
-  beforeEach('Navigate to About Page', () => {
-    cy.visit('https://growthstats.io/about'); // Visit the About page URL
-  });
-
   // Test Case: Verify About Page Elements
   it('Should verify the presence of key elements on the About page', () => {
+    // Visit the About page URL
+    cy.visit('https://growthstats.io/about');
     // Verify the heading text
     cy.get('h1').should('contain.text', 'About Growth Stats');
 

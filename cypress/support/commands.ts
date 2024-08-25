@@ -30,14 +30,17 @@ Cypress.Commands.add('verifyContactSectionAndElementCounts', () => {
       cy.verifyContactSectionElements(); // Verify the contact section
     }
   });
+
+  cy.verifyMarkers(); // Verify markers
 });
 
-// Verify the benefits section heading
-Cypress.Commands.add('verifyContentOfBenefitsSection', () => {
-  cy.get('h3').eq(0).contains('We Can Improve Your Business Performance And Gain More Customers');
-});
-
-// Add this custom command in your Cypress commands file
+// Verify services links and card names on services page
 Cypress.Commands.add('selectService', (serviceName, serviceUrl) => {
   cy.get('ul.anim-fade-to-b').contains('a', serviceName).should('have.attr', 'href', serviceUrl).click({ force: true });
+});
+
+// Verify markers do not exist
+Cypress.Commands.add('verifyMarkers', () => {
+  cy.get('gsap-marker-start').should('not.exist');
+  cy.get('gsap-marker-end').should('not.exist');
 });
