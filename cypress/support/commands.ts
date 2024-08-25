@@ -10,15 +10,14 @@ Cypress.Commands.add('logContactLinksCount', () => {
   });
 });
 
-Cypress.Commands.add('logCardLinksCount', () => {
-  cy.get('[id*="service-card--"]').then(($cards) => {
-    const cardcount = $cards.length;
-    cy.log('Number of cards: ' + cardcount);
-  });
-});
-
 Cypress.Commands.add('verifyContactSectionElements', () => {
   cy.get('.contact-section-elem').should('exist', { timeout: 5000 });
+});
+
+// Verify markers do not exist
+Cypress.Commands.add('verifyMarkers', () => {
+  cy.get('gsap-marker-start').should('not.exist');
+  cy.get('gsap-marker-end').should('not.exist');
 });
 
 Cypress.Commands.add('verifyContactSectionAndElementCounts', () => {
@@ -34,13 +33,14 @@ Cypress.Commands.add('verifyContactSectionAndElementCounts', () => {
   cy.verifyMarkers(); // Verify markers
 });
 
+Cypress.Commands.add('logCardLinksCount', () => {
+  cy.get('[id*="service-card--"]').then(($cards) => {
+    const cardcount = $cards.length;
+    cy.log('Number of cards: ' + cardcount);
+  });
+});
+
 // Verify services links and card names on services page
 Cypress.Commands.add('selectService', (serviceName, serviceUrl) => {
   cy.get('ul.anim-fade-to-b').contains('a', serviceName).should('have.attr', 'href', serviceUrl).click({ force: true });
-});
-
-// Verify markers do not exist
-Cypress.Commands.add('verifyMarkers', () => {
-  cy.get('gsap-marker-start').should('not.exist');
-  cy.get('gsap-marker-end').should('not.exist');
 });
