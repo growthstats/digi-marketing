@@ -1,10 +1,7 @@
 describe('Services Page Test Suite', () => {
-  beforeEach('Navigate to Main URL and Open Services Dropdown', () => {
-    cy.navigateToMainUrlAndOpenServicesDropdown();
-  });
-
   // Test Case: Verify "Social Media Services" Page
   it('Should navigate to and verify elements on the Social Media Services page', () => {
+    cy.get('details').click(); // Open the services dropdown menu
     cy.selectService('Social Media Services', '/social-media-services');
 
     // Verify the visibility of the hero animation

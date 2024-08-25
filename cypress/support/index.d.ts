@@ -4,9 +4,9 @@ declare namespace Cypress {
     logContactLinksCount(): Chainable<Subject>;
     verifyContactSectionElements(): Chainable<Subject>;
     logCardLinksCount(): Chainable<Subject>;
-    navigateToMainUrlAndOpenServicesDropdown(): Chainable<Subject>;
     verifyContactSectionAndElementCounts(): Chainable<Subject>;
     verifyContentOfBenefitsSection(): Chainable<Subject>;
     selectService(serviceName: string, serviceUrl: string): Chainable<Subject>;
+    verifyMarkers(): Chainable<Subject>;
   }
 }

@@ -32,16 +32,9 @@ Cypress.Commands.add('verifyContactSectionAndElementCounts', () => {
   });
 });
 
-Cypress.Commands.add('navigateToMainUrlAndOpenServicesDropdown', () => {
-  cy.visit('https://growthstats.io/'); // Visit the main URL
-  cy.get('details').click(); // Open the services dropdown menu
-});
-
+// Verify the benefits section heading
 Cypress.Commands.add('verifyContentOfBenefitsSection', () => {
-  // Test Case: Verify Benefits Section
-  it('Should verify the content of the benefits section', () => {
-    cy.get('h3').eq(0).contains('We Can Improve Your Business Performance And Gain More Customers'); // Verify the benefits section heading
-  });
+  cy.get('h3').eq(0).contains('We Can Improve Your Business Performance And Gain More Customers');
 });
 
 // Add this custom command in your Cypress commands file

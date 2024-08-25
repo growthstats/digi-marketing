@@ -1,10 +1,7 @@
 describe('Services Page Test Suite', () => {
-  beforeEach('Navigate to Main URL and Open Services Dropdown', () => {
-    cy.navigateToMainUrlAndOpenServicesDropdown();
-  });
-
   // Test Case: Verify "SEM / Paid Advertising" Page
   it('Should navigate to and verify elements on the SEM / Paid Advertising page', () => {
+    cy.get('details').click(); // Open the services dropdown menu
     cy.selectService('SEM / Paid Advertising', '/sem-paid-advertising');
 
     // Verify the visibility of the hero animation

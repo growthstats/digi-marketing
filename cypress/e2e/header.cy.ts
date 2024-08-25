@@ -1,8 +1,4 @@
 describe('Header Test Suite', () => {
-  beforeEach('Navigate to Home Page', () => {
-    cy.visit('https://growthstats.io/'); // Visit the Home page URL
-  });
-
   // Test Case: Verify Header and Navigation Links
   it('Should verify the header and its elements', () => {
     // Verify the header exists

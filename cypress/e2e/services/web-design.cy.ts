@@ -1,10 +1,7 @@
 describe('Services Page Test Suite', () => {
-  beforeEach('Navigate to Main URL and Open Services Dropdown', () => {
-    cy.navigateToMainUrlAndOpenServicesDropdown();
-  });
-
   // Test Case: Verify "Web Design" Page
   it('Should navigate to and verify elements on the Web Design page', () => {
+    cy.get('details').click(); // Open the services dropdown menu
     cy.selectService('Web Design', '/web-design');
 
     // Verify the visibility of the hero animation

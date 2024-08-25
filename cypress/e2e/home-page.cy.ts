@@ -1,8 +1,4 @@
 describe('Home Page Test Suite', () => {
-  beforeEach('Navigate to Home Page', () => {
-    cy.visit('https://growthstats.io/'); // Visit the Home page URL
-  });
-
   // Test Case: Verify images have alt text
   it('Should verify all images have alt text', () => {
     cy.get('img').each(($img) => {
