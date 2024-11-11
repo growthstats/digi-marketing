@@ -130,6 +130,14 @@
     @apply tracking-tight;
   }
 
+  .h5 {
+    @apply _h;
+  }
+
+  .h6 {
+    @apply _h;
+  }
+
   .p {
     @apply leading-7;
     @apply [&:not(:first-child)]:mt-6;
@@ -232,6 +240,14 @@
 
     & h4 {
       @apply h4;
+    }
+
+    & h5 {
+      @apply h5;
+    }
+
+    & h6 {
+      @apply h6;
     }
 
     & :is(ul, ol) {
