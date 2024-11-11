@@ -1,6 +1,5 @@
 import '@/app/globals.css';
 
-import { GoogleAnalytics } from '@next/third-parties/google';
 import { Theme } from '@radix-ui/themes';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -37,8 +36,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SpeedInsights />
         {/* Org Schema JSON-LD */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchemaJsonLd) }} />
-        {/* GA4 */}
-        <GoogleAnalytics gaId="G-EJSN3DYVRB" />
       </body>
     </html>
   );
