@@ -1,6 +1,6 @@
 import { stegaClean } from '@sanity/client/stega';
 
-import Img from '@/components/common/img';
+import Img from '@/components/common/Img';
 
 export default function Image({
   value,

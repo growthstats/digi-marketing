@@ -52,6 +52,7 @@ declare global {
       featured: boolean;
       hideTableOfContents: boolean;
       publishDate: string;
+      heroImage: Sanity.Image;
     };
 
     type BlogCategory = SanityDocument<{

@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 import CustomHTML from '../CustomHTML';
 import AnchoredHeading from './AnchoredHeading';
 import Code from './Code';
-import Image from './Image';
+import CustomImage from './Image';
 
 // Block components
 const HeadingComponent = (as: 'h2' | 'h3' | 'h4' | 'h5' | 'h6') => {
@@ -31,15 +31,21 @@ const components = {
     blockquote: BlockquoteComponent,
   },
   types: {
-    image: Image,
+    image: CustomImage,
     code: Code,
     'custom-html': ({ value }: { value: any }) => <CustomHTML {...value} />,
   },
 };
 
-export default function Content({ value, className, children }: { value: any } & React.ComponentProps<'div'>) {
+export default function Content({
+  value,
+  heroImage,
+  className,
+  children,
+}: { value: any; heroImage: Sanity.Image } & React.ComponentProps<'div'>) {
   return (
     <div className={cn('richtext mx-auto w-full space-y-[1em] [&>:first-child]:!mt-0', className)}>
+      <CustomImage value={heroImage} />
       <PortableText value={value} components={components} />
       {children}
     </div>

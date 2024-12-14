@@ -31,7 +31,7 @@ export default function PostContent({ post, ...props }: Readonly<{ post?: Sanity
           </aside>
         )}
 
-        <Content value={post.body} className={cn(css.body, 'grid max-w-screen-md')}>
+        <Content value={post.body} heroImage={post.heroImage} className={cn(css.body, 'grid max-w-screen-md')}>
           <hr />
         </Content>
       </div>
