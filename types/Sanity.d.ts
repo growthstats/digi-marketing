@@ -49,7 +49,10 @@ declare global {
       readTime: number;
       headings?: { style: string; text: string; _key: string }[];
       categories: BlogCategory[];
+      featured: boolean;
+      hideTableOfContents: boolean;
       publishDate: string;
+      heroImage: Sanity.Image;
     };
 
     type BlogCategory = SanityDocument<{
