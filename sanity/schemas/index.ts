@@ -13,6 +13,7 @@ import testimonial from './documents/testimonial';
 // modules
 import accordionList from './modules/accordion-list';
 import blogList from './modules/blog-list';
+import blogPostContent from './modules/blog-post-content';
 import breadcrumbs from './modules/breadcrumbs';
 import callout from './modules/callout';
 import creativeModule from './modules/creative';
@@ -35,6 +36,7 @@ import linkList from './objects/link.list';
 import metadata from './objects/metadata';
 import modules from './objects/modules';
 import uid from './objects/uid';
+import youtube from './objects/youtube';
 
 export const schemaTypes = [
   // documents
@@ -57,10 +59,12 @@ export const schemaTypes = [
   metadata,
   modules,
   uid,
+  youtube,
 
   // modules
   accordionList,
   blogList,
+  blogPostContent,
   breadcrumbs,
   callout,
   creativeModule,

@@ -18,7 +18,7 @@ export default defineType({
       default: true,
     },
     {
-      title: 'SEO',
+      title: 'SEO / Metadata',
       name: 'seo',
       icon: SearchIcon,
     },
@@ -31,12 +31,54 @@ export default defineType({
       hidden: true,
     }),
     defineField({
+      name: 'title',
+      type: 'string',
+      group: 'mainContent',
+      validation: (Rule) => Rule.required().error('A title is required.'),
+    }),
+    defineField({
+      name: 'heroImage',
+      type: 'image',
+      title: 'Hero Image',
+      group: 'mainContent',
+      options: { hotspot: true },
+      fields: [
+        defineField({
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative Text',
+        }),
+      ],
+      validation: (Rule) => Rule.required().error('A hero image is required.'),
+    }),
+    defineField({
+      name: 'publishDate',
+      type: 'date',
+      group: 'mainContent',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'author',
+      type: 'string',
+      group: 'mainContent',
+    }),
+    defineField({
+      name: 'categories',
+      type: 'array',
+      title: 'Categories',
+      group: 'mainContent',
+      of: [{ type: 'reference', to: { type: 'blog.category' } }],
+    }),
+    defineField({
       name: 'body',
       type: 'array',
       group: 'mainContent',
       of: [
         { type: 'block' },
         imageBlock,
+        defineArrayMember({
+          type: 'youtube',
+        }),
         defineArrayMember({
           type: 'code',
           options: {
@@ -46,21 +88,10 @@ export default defineType({
       ],
     }),
     defineField({
-      name: 'categories',
+      name: 'relatedPosts',
       type: 'array',
       group: 'mainContent',
-      of: [
-        {
-          type: 'reference',
-          to: [{ type: 'blog.category' }],
-        },
-      ],
-    }),
-    defineField({
-      name: 'publishDate',
-      type: 'date',
-      group: 'mainContent',
-      validation: (Rule) => Rule.required(),
+      of: [{ type: 'reference', to: [{ type: 'blog.post' }] }],
     }),
     defineField({
       name: 'metadata',
@@ -70,9 +101,9 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'metadata.title',
+      title: 'title',
       subtitle: 'publishDate',
-      media: 'metadata.image',
+      media: 'heroImage',
     },
   },
   orderings: [
@@ -83,7 +114,7 @@ export default defineType({
     },
     {
       title: 'Title',
-      name: 'metadata.title',
+      name: 'title',
       by: [{ field: 'title', direction: 'asc' }],
     },
   ],

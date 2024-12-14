@@ -6,6 +6,7 @@ export default defineType({
   of: [
     { type: 'accordion-list' },
     { type: 'blog-list' },
+    { type: 'blog-post-content' },
     { type: 'breadcrumbs' },
     { type: 'callout' },
     { type: 'creative-module' },
@@ -35,6 +36,7 @@ export default defineType({
           title: 'Content',
           of: ['accordion-list', 'blog-list', 'richtext-module', 'custom-html'],
         },
+        { name: 'blog', of: ['blog-list', 'blog-post-content'] },
         {
           name: 'navigation',
           title: 'Navigation',
